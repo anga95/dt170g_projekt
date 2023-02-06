@@ -52,13 +52,6 @@
                     break;
                 case "Friday":
                     // Add information about Friday here
-                    break;
-                case "Saturday":
-                    // Add information about Saturday here
-                    break;
-                case "Sunday":
-                    // Add information about Sunday here
-                    break;
                 default:
                     break;
             }
