@@ -1,6 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<!DOCTYPE html>
-<html>
+
 <%@ include file="head.jsp" %>
 
 <body>
@@ -75,7 +74,7 @@
               <h5 class="card-title">Monday</h5>
               <p class="card-text">Fatimas köttfärslimpa med brunsås och potatismos.</p>
             </div>
-          `;
+          `
                     break;
                 case "Tuesday":
 

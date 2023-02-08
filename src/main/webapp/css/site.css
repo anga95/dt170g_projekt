@@ -1,0 +1,27 @@
+
+@font-face {
+    font-family: "Julius Sans One";
+    src: url("JuliusSansOne-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Cedarville Cursive";
+    src : url("CedarvilleCursive-Regular.ttf");
+}
+@font-face {
+    font-family: "Sofia Sans Semi";
+    src: url("SofiaSansSemiCondensed-VariableFont_wght.ttf");
+}
+
+
+
+  h1{
+      font-family:"Julius Sans One", sans-serif;
+
+}
+
+p{
+    font-family: "Cedarville Cursive", sans-serif;
+
+}
+
