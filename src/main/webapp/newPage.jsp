@@ -9,7 +9,7 @@
 <html>
 <%@ include file="head.jsp" %>
 
-<body>
-<h1>hello world</h1>
+<%@ include file="navbar.jsp" %>
+<h1 class="display-1 text-center"><%= "A La Carte" %></h1>
 </body>
 </html>
