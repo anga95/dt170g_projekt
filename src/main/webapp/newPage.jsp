@@ -18,14 +18,29 @@
         <div class="col-3">
             <ul class="list-group">
                 <li class="list-group-item border-0" id="forratt">
-                    <p class="testing">FÖRRÄTT</p><hr>
-                    <p>This is some text under item  da daadsadadaadddada1</p></li>
+                    <h2>FÖRRÄTT</h2><hr>
+                    <p>Pellentesque habitant morbi tristique senectus
+                        et netus et malesuada fames ac turpis egestas.
+                        Vestibulum tortor quam, feugiat vitae, ultricies
+                        eget, tempor sit amet, ante. Donec eu libero sit
+                        amet quam egestas semper. Aenean ultricies mi
+                        vitae est. Mauris placerat eleifend leo.</p></li>
                 <li class="list-group-item border-0" id="huvudratt">
-                    HUVUDRÄTT<br><hr>
-                    <p>This is some text under item 2</p></li>
+                    <h2>HUVUDRÄTT</h2><hr>
+                    <p>Pellentesque habitant morbi tristique senectus
+                        et netus et malesuada fames ac turpis egestas.
+                        Vestibulum tortor quam, feugiat vitae, ultricies
+                        eget, tempor sit amet, ante. Donec eu libero sit
+                        amet quam egestas semper. Aenean ultricies mi
+                        vitae est. Mauris placerat eleifend leo.</p></li>
                 <li class="list-group-item border-0" id="dessert">
-                    DESSERT<br><hr>
-                    <p>This is some text under item 3</p></li>
+                    <h2>DESSERT</h2><hr>
+                    <p>Pellentesque habitant morbi tristique senectus
+                        et netus et malesuada fames ac turpis egestas.
+                        Vestibulum tortor quam, feugiat vitae, ultricies
+                        eget, tempor sit amet, ante. Donec eu libero sit
+                        amet quam egestas semper. Aenean ultricies mi
+                        vitae est. Mauris placerat eleifend leo.</p></li>
             </ul>
 
         </div>

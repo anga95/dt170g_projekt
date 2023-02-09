@@ -25,3 +25,12 @@ p{
 
 }
 
+h2{
+    font-family: "Julius Sans One", sans-serif;
+    text-align: center;
+}
+
+hr {
+    border: 1px dashed #a0772d;
+}
+
