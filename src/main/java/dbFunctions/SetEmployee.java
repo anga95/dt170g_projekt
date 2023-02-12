@@ -1,5 +1,5 @@
 package dbFunctions;
-import app.Employee;
+import entity.EmployeeEntity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -22,10 +22,10 @@ public class SetEmployee extends HttpServlet {
         setEmployee(fname, lname, telephone);
         response.setStatus(200);
     }
-    public void setEmployee(String fname, String lname, String telephone){
-        Employee employee = new Employee();
-        employee.setFirst_name(fname);
-        employee.setLast_name(lname);
+    public void setEmployee(String first_name, String last_name, String telephone){
+        EmployeeEntity employee = new EmployeeEntity();
+        employee.setFirstName(first_name);
+        employee.setLastName(last_name);
         employee.setTelephone(telephone);
 
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("db");
