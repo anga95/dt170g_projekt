@@ -1,0 +1,1398 @@
+[2023-02-12T21:05:40.795524+01:00] [] [INFO] [NCLS-GFLAUNCHER-00005] [jakarta.enterprise.launcher] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  JVM invocation command line:
+/Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home/bin/java
+-cp
+/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/modules/glassfish.jar
+-DWALL_CLOCK_START=2023-02-12T20:05:40.633137Z
+-XX:+UnlockDiagnosticVMOptions
+-XX:NewRatio=2
+-Xmx512m
+--add-opens=java.base/java.io=ALL-UNNAMED
+--add-opens=java.base/java.lang=ALL-UNNAMED
+--add-opens=java.base/java.util=ALL-UNNAMED
+--add-opens=java.base/sun.net.www.protocol.jrt=ALL-UNNAMED
+--add-opens=java.naming/javax.naming.spi=ALL-UNNAMED
+--add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+--add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED
+--add-exports=java.naming/com.sun.jndi.ldap=ALL-UNNAMED
+--add-exports=java.base/jdk.internal.vm.annotation=ALL-UNNAMED
+--add-opens=java.base/jdk.internal.vm.annotation=ALL-UNNAMED
+-javaagent:/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/lib/monitor/flashlight-agent.jar
+-Djava.awt.headless=true
+-Djdk.corba.allowOutputStreamSubclass=true
+-Djdk.tls.rejectClientInitiatedRenegotiation=true
+-Djavax.xml.accessExternalSchema=all
+-Djava.security.policy=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1/config/server.policy
+-Djava.security.auth.login.config=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1/config/login.conf
+-Dcom.sun.enterprise.security.httpsOutboundKeyAlias=s1as
+-Djavax.net.ssl.keyStore=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1/config/keystore.jks
+-Djavax.net.ssl.trustStore=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1/config/cacerts.jks
+-Djdbc.drivers=org.apache.derby.jdbc.ClientDriver
+-DANTLR_USE_DIRECT_CLASS_LOADING=true
+-Dcom.sun.enterprise.config.config_environment_factory_class=com.sun.enterprise.config.serverbeans.AppserverConfigEnvironmentFactory
+-Dorg.glassfish.additionalOSGiBundlesToStart=org.apache.felix.shell,org.apache.felix.gogo.runtime,org.apache.felix.gogo.shell,org.apache.felix.gogo.command,org.apache.felix.shell.remote,org.apache.felix.fileinstall
+-Dosgi.shell.telnet.port=6666
+-Dosgi.shell.telnet.maxconn=1
+-Dosgi.shell.telnet.ip=127.0.0.1
+-Dgosh.args=--nointeractive
+-Dfelix.fileinstall.dir=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/modules/autostart/
+-Dfelix.fileinstall.poll=5000
+-Dfelix.fileinstall.log.level=2
+-Dfelix.fileinstall.bundles.new.start=true
+-Dfelix.fileinstall.bundles.startTransient=true
+-Dfelix.fileinstall.disableConfigSave=false
+-Dorg.glassfish.gmbal.no.multipleUpperBoundsException=true
+-Dcom.ctc.wstx.returnNullForDefaultNamespace=true
+-Djdk.attach.allowAttachSelf=true
+-Dcom.sun.aas.instanceRoot=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1
+-Dcom.sun.aas.installRoot=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish
+-Djava.library.path=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/lib:/Users/andreas/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/bin
+com.sun.enterprise.glassfish.bootstrap.ASMain
+-upgrade
+false
+-domaindir
+/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1
+-read-stdin
+true
+-asadmin-args
+--host,,,localhost,,,--port,,,4848,,,--secure=false,,,--terse=false,,,--echo=false,,,--interactive=false,,,start-domain,,,--verbose=false,,,--watchdog=false,,,--debug=false,,,--domaindir,,,/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains,,,domain1
+-domainname
+domain1
+-instancename
+server
+-type
+DAS
+-verbose
+false
+-asadmin-classpath
+/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/lib/client/appserver-cli.jar
+-debug
+false
+-asadmin-classname
+com.sun.enterprise.admin.cli.AdminMain]]
+
+[2023-02-12T21:05:41.964658+01:00] [GlassFish 7.0] [SEVERE] [] [] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 1000] [[
+  Ignoring unrecognized element jms-service at Line number = 290
+Column number = 104
+System Id = null
+Public Id = null
+Location Uri= null
+CharacterOffset = 18870
+]]
+
+[2023-02-12T21:05:41.970314+01:00] [GlassFish 7.0] [SEVERE] [] [] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 1000] [[
+  Ignoring unrecognized element jms-availability at Line number = 413
+Column number = 29
+System Id = null
+Public Id = null
+Location Uri= null
+CharacterOffset = 28234
+]]
+
+[2023-02-12T21:05:42.071820+01:00] [GlassFish 7.0] [INFO] [] [com.sun.enterprise.server.logging.LogManagerService] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Using property file: /Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1/config/logging.properties]]
+
+[2023-02-12T21:05:42.089069+01:00] [GlassFish 7.0] [INFO] [NCLS-LOGGING-00009] [com.sun.enterprise.server.logging.LogManagerService] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Running GlassFish Version: Eclipse GlassFish  7.0.0  (build master-b1292-g9052d5b 2020-12-19T17:24:00+0000)]]
+
+[2023-02-12T21:05:42.154100+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [admin-realm] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2023-02-12T21:05:42.154956+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [file] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2023-02-12T21:05:42.157209+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [certificate] of classtype [com.sun.enterprise.security.auth.realm.certificate.CertificateRealm] successfully created.]]
+
+[2023-02-12T21:05:42.279597+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 13ms - bound to [/0.0.0.0:8080]]]
+
+[2023-02-12T21:05:42.295484+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 1ms - bound to [/0.0.0.0:8181]]]
+
+[2023-02-12T21:05:42.298485+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 1ms - bound to [/0.0.0.0:4848]]]
+
+[2023-02-12T21:05:42.321895+01:00] [GlassFish 7.0] [INFO] [SEC-SVCS-00100] [jakarta.enterprise.security.services] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Authorization Service has successfully initialized.]]
+
+[2023-02-12T21:05:42.355249+01:00] [GlassFish 7.0] [INFO] [] [org.glassfish.ha.store.spi.BackingStoreFactoryRegistry] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Registered org.glassfish.ha.store.adapter.cache.ShoalBackingStoreProxy for persistence-type = replicated in BackingStoreFactoryRegistry]]
+
+[2023-02-12T21:05:42.368220+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 1ms - bound to [/0.0.0.0:3700]]]
+
+[2023-02-12T21:05:42.517587+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00017] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Eclipse GlassFish  7.0.0  (master-b1292-g9052d5b 2020-12-19T17:24:00+0000) startup time : Embedded (1 013ms), startup services(470ms), total(1 483ms)]]
+
+[2023-02-12T21:05:42.611353+01:00] [GlassFish 7.0] [INFO] [NCLS-JMX-00005] [jakarta.enterprise.system.jmx] [tid: _ThreadID=67 _ThreadName=Thread-6] [levelValue: 800] [[
+  JMXStartupService has started JMXConnector on JMXService URL service:jmx:rmi://localhost:8686/jndi/rmi://localhost:8686/jmxrmi]]
+
+[2023-02-12T21:05:43.482051+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:43.656525+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01002] [jakarta.enterprise.system.core.security] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Java security manager is disabled.]]
+
+[2023-02-12T21:05:43.656965+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01010] [jakarta.enterprise.system.core.security] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Entering Security Startup Service.]]
+
+[2023-02-12T21:05:43.659496+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01143] [jakarta.enterprise.system.core.security] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Loading policy provider org.glassfish.exousia.modules.locked.SimplePolicyProvider.]]
+
+[2023-02-12T21:05:43.672022+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01011] [jakarta.enterprise.system.core.security] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Security Service(s) started successfully.]]
+
+[2023-02-12T21:05:43.754159+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Created HTTP listener http-listener-1 on host/port 0.0.0.0:8080]]
+
+[2023-02-12T21:05:43.756529+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Created HTTP listener http-listener-2 on host/port 0.0.0.0:8181]]
+
+[2023-02-12T21:05:43.757202+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Created HTTP listener admin-listener on host/port 0.0.0.0:4848]]
+
+[2023-02-12T21:05:43.765887+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00200] [jakarta.enterprise.web] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Created virtual server server]]
+
+[2023-02-12T21:05:43.767108+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00200] [jakarta.enterprise.web] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Created virtual server __asadmin]]
+
+[2023-02-12T21:05:43.841828+01:00] [GlassFish 7.0] [INFO] [AS-WEB-CORE-00306] [jakarta.enterprise.web.core] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Setting JAAS app name glassfish-web]]
+
+[2023-02-12T21:05:43.842162+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00201] [jakarta.enterprise.web] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Virtual server server loaded default web module ]]
+
+[2023-02-12T21:05:44.040782+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:44.060826+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:44.061276+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:44.061561+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:44.061969+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:44.062354+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:44.062612+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:44.062880+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:44.063187+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:44.063465+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:44.063708+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:44.064082+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:44.064372+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:44.064621+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:44.064860+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:44.065292+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:44.065536+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:44.065774+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:44.066003+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:44.066315+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:44.066545+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:44.066951+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:44.112185+01:00] [GlassFish 7.0] [WARNING] [] [jakarta.enterprise.web.util] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 900] [[
+  The web application [unknown] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.]]
+
+[2023-02-12T21:05:44.122098+01:00] [GlassFish 7.0] [INFO] [] [org.jboss.weld.Version] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  WELD-000900: 5.1.0 (Final)]]
+
+[2023-02-12T21:05:44.371581+01:00] [GlassFish 7.0] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jersey.ext.cdi1x.internal.ProcessAllAnnotatedTypes.processAnnotatedType(@Observes ProcessAnnotatedType<?>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2023-02-12T21:05:44.378228+01:00] [GlassFish 7.0] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] org.glassfish.sse.impl.ServerSentEventCdiExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2023-02-12T21:05:44.757980+01:00] [GlassFish 7.0] [INFO] [] [org.glassfish.soteria.servlet.SamRegistrationInstaller] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Initializing Soteria 3.0.1 for context '/dt170g_projekt-1.0-SNAPSHOT']]
+
+[2023-02-12T21:05:44.775432+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Loading application [dt170g_projekt-1.0-SNAPSHOT] at [/dt170g_projekt-1.0-SNAPSHOT]]]
+
+[2023-02-12T21:05:44.808608+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  dt170g_projekt-1.0-SNAPSHOT was successfully deployed in 1 876 milliseconds.]]
+
+[2023-02-12T21:05:49.123121+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=136 _ThreadName=Thread-31] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:49.228767+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=136 _ThreadName=Thread-31] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:49.232353+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=136 _ThreadName=Thread-31] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:49.232663+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=136 _ThreadName=Thread-31] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:49.232939+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=136 _ThreadName=Thread-31] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:05:49.299656+01:00] [GlassFish 7.0] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=136 _ThreadName=Thread-31] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jersey.ext.cdi1x.internal.ProcessAllAnnotatedTypes.processAnnotatedType(@Observes ProcessAnnotatedType<?>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2023-02-12T21:05:49.302737+01:00] [GlassFish 7.0] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=136 _ThreadName=Thread-31] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] org.glassfish.sse.impl.ServerSentEventCdiExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2023-02-12T21:05:49.641295+01:00] [GlassFish 7.0] [INFO] [] [org.glassfish.soteria.servlet.SamRegistrationInstaller] [tid: _ThreadID=136 _ThreadName=Thread-31] [levelValue: 800] [[
+  Initializing Soteria 3.0.1 for context '']]
+
+[2023-02-12T21:05:49.669692+01:00] [GlassFish 7.0] [INFO] [faces.config.listener.version] [jakarta.enterprise.resource.webcontainer.faces.config] [tid: _ThreadID=136 _ThreadName=Thread-31] [levelValue: 800] [[
+  Initializing Mojarra 4.0.0 for context '']]
+
+[2023-02-12T21:05:49.874186+01:00] [GlassFish 7.0] [INFO] [NCLS-REST-00001] [jakarta.enterprise.admin.rest] [tid: _ThreadID=48 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  Listening to REST requests at context: /management/domain.]]
+
+[2023-02-12T21:05:50.082780+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=136 _ThreadName=Thread-31] [levelValue: 800] [[
+  Loading application [__admingui] at [/]]]
+
+[2023-02-12T21:05:50.083411+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00022] [jakarta.enterprise.system.core] [tid: _ThreadID=136 _ThreadName=Thread-31] [levelValue: 800] [[
+  Loading application __admingui done in 1 029 ms]]
+
+[2023-02-12T21:05:50.181946+01:00] [GlassFish 7.0] [WARNING] [] [jakarta.enterprise.system.container.web.com.sun.web.security] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [levelValue: 900] [[
+  Context path from ServletContext:  differs from path from bundle: /]]
+
+[2023-02-12T21:05:50.911489+01:00] [GlassFish 7.0] [INFO] [] [org.glassfish.admingui] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [levelValue: 800] [[
+  Redirecting to &#x2f;common&#x2f;index.jsf]]
+
+[2023-02-12T21:05:50.946794+01:00] [GlassFish 7.0] [INFO] [] [org.glassfish.admingui] [tid: _ThreadID=170 _ThreadName=admin-listener(6)] [levelValue: 800] [[
+  Admin Console: Initializing Session Attributes...]]
+
+[2023-02-12T21:17:46.661605+01:00] [GlassFish 7.0] [INFO] [] [org.glassfish.hk2.classmodel] [tid: _ThreadID=170 _ThreadName=admin-listener(6)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:17:46.782763+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.resource.resourceadapter.com.sun.enterprise.resource.pool] [tid: _ThreadID=170 _ThreadName=admin-listener(6)] [levelValue: 800] [[
+  Created connection pool and added it to PoolManager: Pool [org.glassfish.resourcebase.resources.api.PoolInfo@c56f757b[jndiName=pool, applicationName=null, moduleName=null]] PoolSize=0  FreeResources=0  QueueSize=0 matching=off validation=off]]
+
+[2023-02-12T21:17:46.834590+01:00] [GlassFish 7.0] [WARNING] [test.connection.pool.failed] [jakarta.enterprise.resource.resourceadapter.com.sun.enterprise.connectors.service] [tid: _ThreadID=170 _ThreadName=admin-listener(6)] [levelValue: 900] [[
+  RAR8054: Exception while creating an unpooled [test] connection for pool [ org.glassfish.resourcebase.resources.api.PoolInfo@c56f757b[jndiName=pool, applicationName=null, moduleName=null] ], Connection could not be allocated because: java.net.ConnectException : Error connecting to server localhost on port 1 527 with message Connection refused (Connection refused).]]
+
+[2023-02-12T21:17:46.837763+01:00] [GlassFish 7.0] [SEVERE] [] [org.glassfish.admingui] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [levelValue: 1000] [[
+  RestResponse.getResponse&#x28;&#x29; gives FAILURE.  endpoint &#x3d; &#x27;http&#x3a;&#x2f;&#x2f;localhost&#x3a;4848&#x2f;management&#x2f;domain&#x2f;resources&#x2f;ping-connection-pool.json&#x27;&#x3b; attrs &#x3d; &#x27;&#x7b;id&#x3d;pool&#x7d;&#x27;]]
+
+[2023-02-12T21:26:15.510687+01:00] [GlassFish 7.0] [INFO] [NCLS-REST-00001] [jakarta.enterprise.admin.rest] [tid: _ThreadID=48 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  Listening to REST requests at context: /command/domain.]]
+
+[2023-02-12T21:26:15.529559+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00092] [jakarta.enterprise.system.core] [tid: _ThreadID=223 _ThreadName=Thread-43] [levelValue: 800] [[
+  Server shutdown initiated]]
+
+[2023-02-12T21:26:15.535658+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=223 _ThreadName=Thread-43] [levelValue: 800] [[
+  FileMonitoring shutdown]]
+
+[2023-02-12T21:26:15.538578+01:00] [GlassFish 7.0] [INFO] [NCLS-JMX-00002] [jakarta.enterprise.system.jmx] [tid: _ThreadID=223 _ThreadName=Thread-43] [levelValue: 800] [[
+  JMXStartupService: Stopped JMXConnectorServer: null]]
+
+[2023-02-12T21:26:15.538765+01:00] [GlassFish 7.0] [INFO] [NCLS-JMX-00001] [jakarta.enterprise.system.jmx] [tid: _ThreadID=223 _ThreadName=Thread-43] [levelValue: 800] [[
+  JMXStartupService and JMXConnectors have been shut down.]]
+
+[2023-02-12T21:26:15.559897+01:00] [GlassFish 7.0] [SEVERE] [] [jakarta.enterprise.web.util] [tid: _ThreadID=225 _ThreadName=RunLevelControllerThread-1676233575540] [levelValue: 1000] [[
+  The web application [] created a ThreadLocal with key of type [java.lang.ThreadLocal] (value [java.lang.ThreadLocal@20b7351d]) and a value of type [org.glassfish.admingui.theme.AdminguiThemeContext] (value [org.glassfish.admingui.theme.AdminguiThemeContext@64a23623]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.]]
+
+[2023-02-12T21:26:15.560435+01:00] [GlassFish 7.0] [SEVERE] [] [jakarta.enterprise.web.util] [tid: _ThreadID=225 _ThreadName=RunLevelControllerThread-1676233575540] [levelValue: 1000] [[
+  The web application [] created a ThreadLocal with key of type [java.lang.ThreadLocal] (value [java.lang.ThreadLocal@20b7351d]) and a value of type [org.glassfish.admingui.theme.AdminguiThemeContext] (value [org.glassfish.admingui.theme.AdminguiThemeContext@64a23623]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.]]
+
+[2023-02-12T21:26:15.560630+01:00] [GlassFish 7.0] [SEVERE] [] [jakarta.enterprise.web.util] [tid: _ThreadID=225 _ThreadName=RunLevelControllerThread-1676233575540] [levelValue: 1000] [[
+  The web application [] created a ThreadLocal with key of type [java.lang.ThreadLocal] (value [java.lang.ThreadLocal@20b7351d]) and a value of type [org.glassfish.admingui.theme.AdminguiThemeContext] (value [org.glassfish.admingui.theme.AdminguiThemeContext@64a23623]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.]]
+
+[2023-02-12T21:26:15.560829+01:00] [GlassFish 7.0] [SEVERE] [] [jakarta.enterprise.web.util] [tid: _ThreadID=225 _ThreadName=RunLevelControllerThread-1676233575540] [levelValue: 1000] [[
+  The web application [] created a ThreadLocal with key of type [java.lang.ThreadLocal] (value [java.lang.ThreadLocal@20b7351d]) and a value of type [org.glassfish.admingui.theme.AdminguiThemeContext] (value [org.glassfish.admingui.theme.AdminguiThemeContext@64a23623]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.]]
+
+[2023-02-12T21:26:15.560957+01:00] [GlassFish 7.0] [SEVERE] [] [jakarta.enterprise.web.util] [tid: _ThreadID=225 _ThreadName=RunLevelControllerThread-1676233575540] [levelValue: 1000] [[
+  The web application [] created a ThreadLocal with key of type [java.lang.ThreadLocal] (value [java.lang.ThreadLocal@20b7351d]) and a value of type [org.glassfish.admingui.theme.AdminguiThemeContext] (value [org.glassfish.admingui.theme.AdminguiThemeContext@64a23623]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.]]
+
+[2023-02-12T21:26:15.561197+01:00] [GlassFish 7.0] [SEVERE] [] [jakarta.enterprise.web.util] [tid: _ThreadID=225 _ThreadName=RunLevelControllerThread-1676233575540] [levelValue: 1000] [[
+  The web application [] created a ThreadLocal with key of type [java.lang.ThreadLocal] (value [java.lang.ThreadLocal@20b7351d]) and a value of type [org.glassfish.admingui.theme.AdminguiThemeContext] (value [org.glassfish.admingui.theme.AdminguiThemeContext@64a23623]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.]]
+
+[2023-02-12T21:26:15.576353+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=227 _ThreadName=RunLevelControllerThread-1676233575540] [levelValue: 800] [[
+  JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool]]]
+
+[2023-02-12T21:26:15.580120+01:00] [GlassFish 7.0] [INFO] [ra.stop-successful] [jakarta.enterprise.resource.resourceadapter.com.sun.enterprise.connectors.service] [tid: _ThreadID=229 _ThreadName=Thread-49] [levelValue: 800] [[
+  RAR7094: __ds_jdbc_ra shutdown successful.]]
+
+[2023-02-12T21:26:15.581125+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00013] [jakarta.enterprise.system.core] [tid: _ThreadID=223 _ThreadName=Thread-43] [levelValue: 800] [[
+  Shutdown procedure finished]]
+
+[2023-02-12T21:26:15.582599+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=14 _ThreadName=GlassFish Shutdown Hook] [levelValue: 800] [[
+  Completed shutdown of GlassFish runtime]]
+
+[2023-02-12T21:32:07.207509+01:00] [] [INFO] [NCLS-GFLAUNCHER-00005] [jakarta.enterprise.launcher] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  JVM invocation command line:
+/Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home/bin/java
+-cp
+/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/modules/glassfish.jar
+-DWALL_CLOCK_START=2023-02-12T20:32:07.010004Z
+-XX:+UnlockDiagnosticVMOptions
+-XX:NewRatio=2
+-Xmx512m
+--add-opens=java.base/java.io=ALL-UNNAMED
+--add-opens=java.base/java.lang=ALL-UNNAMED
+--add-opens=java.base/java.util=ALL-UNNAMED
+--add-opens=java.base/sun.net.www.protocol.jrt=ALL-UNNAMED
+--add-opens=java.naming/javax.naming.spi=ALL-UNNAMED
+--add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+--add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED
+--add-exports=java.naming/com.sun.jndi.ldap=ALL-UNNAMED
+--add-exports=java.base/jdk.internal.vm.annotation=ALL-UNNAMED
+--add-opens=java.base/jdk.internal.vm.annotation=ALL-UNNAMED
+-javaagent:/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/lib/monitor/flashlight-agent.jar
+-Djava.awt.headless=true
+-Djdk.corba.allowOutputStreamSubclass=true
+-Djdk.tls.rejectClientInitiatedRenegotiation=true
+-Djavax.xml.accessExternalSchema=all
+-Djava.security.policy=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1/config/server.policy
+-Djava.security.auth.login.config=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1/config/login.conf
+-Dcom.sun.enterprise.security.httpsOutboundKeyAlias=s1as
+-Djavax.net.ssl.keyStore=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1/config/keystore.jks
+-Djavax.net.ssl.trustStore=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1/config/cacerts.jks
+-Djdbc.drivers=org.apache.derby.jdbc.ClientDriver
+-DANTLR_USE_DIRECT_CLASS_LOADING=true
+-Dcom.sun.enterprise.config.config_environment_factory_class=com.sun.enterprise.config.serverbeans.AppserverConfigEnvironmentFactory
+-Dorg.glassfish.additionalOSGiBundlesToStart=org.apache.felix.shell,org.apache.felix.gogo.runtime,org.apache.felix.gogo.shell,org.apache.felix.gogo.command,org.apache.felix.shell.remote,org.apache.felix.fileinstall
+-Dosgi.shell.telnet.port=6666
+-Dosgi.shell.telnet.maxconn=1
+-Dosgi.shell.telnet.ip=127.0.0.1
+-Dgosh.args=--nointeractive
+-Dfelix.fileinstall.dir=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/modules/autostart/
+-Dfelix.fileinstall.poll=5000
+-Dfelix.fileinstall.log.level=2
+-Dfelix.fileinstall.bundles.new.start=true
+-Dfelix.fileinstall.bundles.startTransient=true
+-Dfelix.fileinstall.disableConfigSave=false
+-Dorg.glassfish.gmbal.no.multipleUpperBoundsException=true
+-Dcom.ctc.wstx.returnNullForDefaultNamespace=true
+-Djdk.attach.allowAttachSelf=true
+-Dcom.sun.aas.instanceRoot=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1
+-Dcom.sun.aas.installRoot=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish
+-Djava.library.path=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/lib:/Users/andreas/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/bin
+com.sun.enterprise.glassfish.bootstrap.ASMain
+-upgrade
+false
+-domaindir
+/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1
+-read-stdin
+true
+-asadmin-args
+--host,,,localhost,,,--port,,,4848,,,--secure=false,,,--terse=false,,,--echo=false,,,--interactive=false,,,start-domain,,,--verbose=false,,,--watchdog=false,,,--debug=false,,,--domaindir,,,/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains,,,domain1
+-domainname
+domain1
+-instancename
+server
+-type
+DAS
+-verbose
+false
+-asadmin-classpath
+/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/lib/client/appserver-cli.jar
+-debug
+false
+-asadmin-classname
+com.sun.enterprise.admin.cli.AdminMain]]
+
+[2023-02-12T21:32:08.443520+01:00] [GlassFish 7.0] [INFO] [] [com.sun.enterprise.server.logging.LogManagerService] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Using property file: /Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1/config/logging.properties]]
+
+[2023-02-12T21:32:08.460744+01:00] [GlassFish 7.0] [INFO] [NCLS-LOGGING-00009] [com.sun.enterprise.server.logging.LogManagerService] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Running GlassFish Version: Eclipse GlassFish  7.0.0  (build master-b1292-g9052d5b 2020-12-19T17:24:00+0000)]]
+
+[2023-02-12T21:32:08.532392+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [admin-realm] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2023-02-12T21:32:08.533294+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [file] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2023-02-12T21:32:08.535896+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [certificate] of classtype [com.sun.enterprise.security.auth.realm.certificate.CertificateRealm] successfully created.]]
+
+[2023-02-12T21:32:08.678509+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 13ms - bound to [/0.0.0.0:8080]]]
+
+[2023-02-12T21:32:08.691683+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 0ms - bound to [/0.0.0.0:8181]]]
+
+[2023-02-12T21:32:08.693979+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 0ms - bound to [/0.0.0.0:4848]]]
+
+[2023-02-12T21:32:08.718286+01:00] [GlassFish 7.0] [INFO] [SEC-SVCS-00100] [jakarta.enterprise.security.services] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Authorization Service has successfully initialized.]]
+
+[2023-02-12T21:32:08.748300+01:00] [GlassFish 7.0] [INFO] [] [org.glassfish.ha.store.spi.BackingStoreFactoryRegistry] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Registered org.glassfish.ha.store.adapter.cache.ShoalBackingStoreProxy for persistence-type = replicated in BackingStoreFactoryRegistry]]
+
+[2023-02-12T21:32:08.766976+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 0ms - bound to [/0.0.0.0:3700]]]
+
+[2023-02-12T21:32:08.788415+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00017] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Eclipse GlassFish  7.0.0  (master-b1292-g9052d5b 2020-12-19T17:24:00+0000) startup time : Embedded (934ms), startup services(372ms), total(1 306ms)]]
+
+[2023-02-12T21:32:08.916764+01:00] [GlassFish 7.0] [INFO] [NCLS-JMX-00005] [jakarta.enterprise.system.jmx] [tid: _ThreadID=58 _ThreadName=Thread-6] [levelValue: 800] [[
+  JMXStartupService has started JMXConnector on JMXService URL service:jmx:rmi://192.168.50.124:8686/jndi/rmi://192.168.50.124:8686/jmxrmi]]
+
+[2023-02-12T21:32:09.774908+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=84 _ThreadName=pool-12-thread-1] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 0ms - bound to [/0.0.0.0:8080]]]
+
+[2023-02-12T21:32:09.782072+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=84 _ThreadName=pool-12-thread-1] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 1ms - bound to [/0.0.0.0:8181]]]
+
+[2023-02-12T21:32:09.852216+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:09.900280+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=101 _ThreadName=Thread-18] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:10.014896+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01002] [jakarta.enterprise.system.core.security] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Java security manager is disabled.]]
+
+[2023-02-12T21:32:10.016059+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01010] [jakarta.enterprise.system.core.security] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Entering Security Startup Service.]]
+
+[2023-02-12T21:32:10.017783+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01143] [jakarta.enterprise.system.core.security] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Loading policy provider org.glassfish.exousia.modules.locked.SimplePolicyProvider.]]
+
+[2023-02-12T21:32:10.031778+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01011] [jakarta.enterprise.system.core.security] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Security Service(s) started successfully.]]
+
+[2023-02-12T21:32:10.094096+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=101 _ThreadName=Thread-18] [levelValue: 800] [[
+  Created HTTP listener http-listener-1 on host/port 0.0.0.0:8080]]
+
+[2023-02-12T21:32:10.095135+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=101 _ThreadName=Thread-18] [levelValue: 800] [[
+  Created HTTP listener http-listener-2 on host/port 0.0.0.0:8181]]
+
+[2023-02-12T21:32:10.096123+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=101 _ThreadName=Thread-18] [levelValue: 800] [[
+  Created HTTP listener admin-listener on host/port 0.0.0.0:4848]]
+
+[2023-02-12T21:32:10.110487+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00200] [jakarta.enterprise.web] [tid: _ThreadID=101 _ThreadName=Thread-18] [levelValue: 800] [[
+  Created virtual server server]]
+
+[2023-02-12T21:32:10.111970+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00200] [jakarta.enterprise.web] [tid: _ThreadID=101 _ThreadName=Thread-18] [levelValue: 800] [[
+  Created virtual server __asadmin]]
+
+[2023-02-12T21:32:10.163689+01:00] [GlassFish 7.0] [INFO] [NCLS-REST-00001] [jakarta.enterprise.admin.rest] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Listening to REST requests at context: /management/domain.]]
+
+[2023-02-12T21:32:10.163689+01:00] [GlassFish 7.0] [INFO] [NCLS-REST-00001] [jakarta.enterprise.admin.rest] [tid: _ThreadID=48 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  Listening to REST requests at context: /management/domain.]]
+
+[2023-02-12T21:32:10.199801+01:00] [GlassFish 7.0] [INFO] [AS-WEB-CORE-00306] [jakarta.enterprise.web.core] [tid: _ThreadID=101 _ThreadName=Thread-18] [levelValue: 800] [[
+  Setting JAAS app name glassfish-web]]
+
+[2023-02-12T21:32:10.200076+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00201] [jakarta.enterprise.web] [tid: _ThreadID=101 _ThreadName=Thread-18] [levelValue: 800] [[
+  Virtual server server loaded default web module ]]
+
+[2023-02-12T21:32:10.425595+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:10.433254+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=101 _ThreadName=Thread-18] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:10.441780+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=101 _ThreadName=Thread-18] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:10.442278+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=101 _ThreadName=Thread-18] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:10.442676+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=101 _ThreadName=Thread-18] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:10.449921+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:10.450369+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:10.450662+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:10.450971+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:10.451390+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:10.451750+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:10.452048+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:10.452335+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:10.452616+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:10.453226+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:10.453716+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:10.454053+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:10.454336+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:10.454601+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:10.455002+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:10.455345+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:10.455619+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:10.455904+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:10.456247+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:10.456542+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:10.456874+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:10.476218+01:00] [GlassFish 7.0] [SEVERE] [] [jakarta.enterprise.system.core] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 1000] [[
+  Exception while deploying the app [dt170g_projekt-1.0-SNAPSHOT]]]
+
+[2023-02-12T21:32:10.476397+01:00] [GlassFish 7.0] [SEVERE] [NCLS-CORE-00026] [jakarta.enterprise.system.core] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 1000] [[
+  Exception during lifecycle processing
+org.glassfish.deployment.common.DeploymentException: JNDI lookup failed for the resource: Name: default, Lookup: jdbc__derby, Type: javax.sql.DataSource -- Lookup failed for jdbc__derby in SerialContext[myEnv={java.naming.factory.state=com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl, java.naming.factory.url.pkgs=com.sun.enterprise.naming}]
+	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:836)
+	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:257)
+	at java.naming/javax.naming.InitialContext.lookup(InitialContext.java:409)
+	at java.naming/javax.naming.InitialContext.lookup(InitialContext.java:409)
+	at java.naming/javax.naming.InitialContext.doLookup(InitialContext.java:282)
+	at com.sun.enterprise.deployment.util.ResourceValidator.validateJNDIRefs(ResourceValidator.java:882)
+	at com.sun.enterprise.deployment.util.ResourceValidator.validateResources(ResourceValidator.java:748)
+	at com.sun.enterprise.deployment.util.ResourceValidator.event(ResourceValidator.java:173)
+	at org.glassfish.kernel.event.EventsImpl.send(EventsImpl.java:107)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.deploy(ApplicationLifecycle.java:458)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.deploy(ApplicationLifecycle.java:259)
+	at org.glassfish.deployment.admin.DeployCommand.execute(DeployCommand.java:467)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:529)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:525)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/javax.security.auth.Subject.doAs(Subject.java:361)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2.execute(CommandRunnerImpl.java:524)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:555)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:547)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/javax.security.auth.Subject.doAs(Subject.java:361)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:546)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:1456)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1825)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1701)
+	at com.sun.enterprise.v3.admin.AdminAdapter.doCommand(AdminAdapter.java:510)
+	at com.sun.enterprise.v3.admin.AdminAdapter.onMissingResource(AdminAdapter.java:200)
+	at org.glassfish.grizzly.http.server.StaticHttpHandlerBase.service(StaticHttpHandlerBase.java:150)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:453)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:145)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:174)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:153)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:196)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:88)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:246)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:178)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:118)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:96)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:51)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:510)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:82)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:83)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:101)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:535)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:515)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+]]
+
+[2023-02-12T21:32:10.488856+01:00] [GlassFish 7.0] [WARNING] [] [jakarta.enterprise.web.util] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 900] [[
+  The web application [unknown] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.]]
+
+[2023-02-12T21:32:10.496166+01:00] [GlassFish 7.0] [SEVERE] [] [jakarta.enterprise.system.core] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 1000] [[
+  Exception while deploying the app [dt170g_projekt-1.0-SNAPSHOT] : JNDI lookup failed for the resource: Name: default, Lookup: jdbc__derby, Type: javax.sql.DataSource -- Lookup failed for jdbc__derby in SerialContext[myEnv={java.naming.factory.state=com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl, java.naming.factory.url.pkgs=com.sun.enterprise.naming}]]]
+
+[2023-02-12T21:32:10.499258+01:00] [GlassFish 7.0] [INFO] [] [org.jboss.weld.Version] [tid: _ThreadID=101 _ThreadName=Thread-18] [levelValue: 800] [[
+  WELD-000900: 5.1.0 (Final)]]
+
+[2023-02-12T21:32:10.713560+01:00] [GlassFish 7.0] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=101 _ThreadName=Thread-18] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] org.glassfish.sse.impl.ServerSentEventCdiExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2023-02-12T21:32:10.721929+01:00] [GlassFish 7.0] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=101 _ThreadName=Thread-18] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jersey.ext.cdi1x.internal.ProcessAllAnnotatedTypes.processAnnotatedType(@Observes ProcessAnnotatedType<?>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2023-02-12T21:32:11.219350+01:00] [GlassFish 7.0] [INFO] [] [org.glassfish.soteria.servlet.SamRegistrationInstaller] [tid: _ThreadID=101 _ThreadName=Thread-18] [levelValue: 800] [[
+  Initializing Soteria 3.0.1 for context '']]
+
+[2023-02-12T21:32:11.242030+01:00] [GlassFish 7.0] [INFO] [faces.config.listener.version] [jakarta.enterprise.resource.webcontainer.faces.config] [tid: _ThreadID=101 _ThreadName=Thread-18] [levelValue: 800] [[
+  Initializing Mojarra 4.0.0 for context '']]
+
+[2023-02-12T21:32:11.606088+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=101 _ThreadName=Thread-18] [levelValue: 800] [[
+  Loading application [__admingui] at [/]]]
+
+[2023-02-12T21:32:11.606881+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00022] [jakarta.enterprise.system.core] [tid: _ThreadID=101 _ThreadName=Thread-18] [levelValue: 800] [[
+  Loading application __admingui done in 1 775 ms]]
+
+[2023-02-12T21:32:12.038707+01:00] [GlassFish 7.0] [WARNING] [] [jakarta.enterprise.system.container.web.com.sun.web.security] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [levelValue: 900] [[
+  Context path from ServletContext:  differs from path from bundle: /]]
+
+[2023-02-12T21:32:12.732796+01:00] [GlassFish 7.0] [INFO] [] [org.glassfish.admingui] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Redirecting to &#x2f;common&#x2f;index.jsf]]
+
+[2023-02-12T21:32:12.771838+01:00] [GlassFish 7.0] [INFO] [] [org.glassfish.admingui] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  Admin Console: Initializing Session Attributes...]]
+
+[2023-02-12T21:32:18.757862+01:00] [GlassFish 7.0] [INFO] [] [org.glassfish.hk2.classmodel] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:32:18.871444+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.resource.resourceadapter.com.sun.enterprise.resource.pool] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Created connection pool and added it to PoolManager: Pool [org.glassfish.resourcebase.resources.api.PoolInfo@c56f757b[jndiName=pool, applicationName=null, moduleName=null]] PoolSize=0  FreeResources=0  QueueSize=0 matching=off validation=off]]
+
+[2023-02-12T21:33:08.726166+01:00] [GlassFish 7.0] [INFO] [NCLS-REST-00001] [jakarta.enterprise.admin.rest] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Listening to REST requests at context: /command/domain.]]
+
+[2023-02-12T21:33:08.742014+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00092] [jakarta.enterprise.system.core] [tid: _ThreadID=170 _ThreadName=Thread-35] [levelValue: 800] [[
+  Server shutdown initiated]]
+
+[2023-02-12T21:33:08.744851+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=170 _ThreadName=Thread-35] [levelValue: 800] [[
+  FileMonitoring shutdown]]
+
+[2023-02-12T21:33:08.747087+01:00] [GlassFish 7.0] [INFO] [NCLS-JMX-00002] [jakarta.enterprise.system.jmx] [tid: _ThreadID=170 _ThreadName=Thread-35] [levelValue: 800] [[
+  JMXStartupService: Stopped JMXConnectorServer: null]]
+
+[2023-02-12T21:33:08.747255+01:00] [GlassFish 7.0] [INFO] [NCLS-JMX-00001] [jakarta.enterprise.system.jmx] [tid: _ThreadID=170 _ThreadName=Thread-35] [levelValue: 800] [[
+  JMXStartupService and JMXConnectors have been shut down.]]
+
+[2023-02-12T21:33:08.796953+01:00] [GlassFish 7.0] [SEVERE] [] [jakarta.enterprise.web.util] [tid: _ThreadID=173 _ThreadName=RunLevelControllerThread-1676233988749] [levelValue: 1000] [[
+  The web application [] created a ThreadLocal with key of type [java.lang.ThreadLocal] (value [java.lang.ThreadLocal@3ea8fefe]) and a value of type [org.glassfish.admingui.theme.AdminguiThemeContext] (value [org.glassfish.admingui.theme.AdminguiThemeContext@7b4afa63]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.]]
+
+[2023-02-12T21:33:08.797343+01:00] [GlassFish 7.0] [SEVERE] [] [jakarta.enterprise.web.util] [tid: _ThreadID=173 _ThreadName=RunLevelControllerThread-1676233988749] [levelValue: 1000] [[
+  The web application [] created a ThreadLocal with key of type [java.lang.ThreadLocal] (value [java.lang.ThreadLocal@3ea8fefe]) and a value of type [org.glassfish.admingui.theme.AdminguiThemeContext] (value [org.glassfish.admingui.theme.AdminguiThemeContext@7b4afa63]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.]]
+
+[2023-02-12T21:33:08.797570+01:00] [GlassFish 7.0] [SEVERE] [] [jakarta.enterprise.web.util] [tid: _ThreadID=173 _ThreadName=RunLevelControllerThread-1676233988749] [levelValue: 1000] [[
+  The web application [] created a ThreadLocal with key of type [java.lang.ThreadLocal] (value [java.lang.ThreadLocal@3ea8fefe]) and a value of type [org.glassfish.admingui.theme.AdminguiThemeContext] (value [org.glassfish.admingui.theme.AdminguiThemeContext@7b4afa63]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.]]
+
+[2023-02-12T21:33:08.797792+01:00] [GlassFish 7.0] [SEVERE] [] [jakarta.enterprise.web.util] [tid: _ThreadID=173 _ThreadName=RunLevelControllerThread-1676233988749] [levelValue: 1000] [[
+  The web application [] created a ThreadLocal with key of type [java.lang.ThreadLocal] (value [java.lang.ThreadLocal@3ea8fefe]) and a value of type [org.glassfish.admingui.theme.AdminguiThemeContext] (value [org.glassfish.admingui.theme.AdminguiThemeContext@7b4afa63]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.]]
+
+[2023-02-12T21:33:08.797994+01:00] [GlassFish 7.0] [SEVERE] [] [jakarta.enterprise.web.util] [tid: _ThreadID=173 _ThreadName=RunLevelControllerThread-1676233988749] [levelValue: 1000] [[
+  The web application [] created a ThreadLocal with key of type [java.lang.ThreadLocal] (value [java.lang.ThreadLocal@3ea8fefe]) and a value of type [org.glassfish.admingui.theme.AdminguiThemeContext] (value [org.glassfish.admingui.theme.AdminguiThemeContext@7b4afa63]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.]]
+
+[2023-02-12T21:33:08.822018+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=173 _ThreadName=RunLevelControllerThread-1676233988749] [levelValue: 800] [[
+  JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource]]]
+
+[2023-02-12T21:33:08.827148+01:00] [GlassFish 7.0] [INFO] [ra.stop-successful] [jakarta.enterprise.resource.resourceadapter.com.sun.enterprise.connectors.service] [tid: _ThreadID=180 _ThreadName=Thread-40] [levelValue: 800] [[
+  RAR7094: __ds_jdbc_ra shutdown successful.]]
+
+[2023-02-12T21:33:08.827992+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00013] [jakarta.enterprise.system.core] [tid: _ThreadID=170 _ThreadName=Thread-35] [levelValue: 800] [[
+  Shutdown procedure finished]]
+
+[2023-02-12T21:33:08.829169+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=14 _ThreadName=GlassFish Shutdown Hook] [levelValue: 800] [[
+  Completed shutdown of GlassFish runtime]]
+
+[2023-02-12T21:33:12.734549+01:00] [] [INFO] [NCLS-GFLAUNCHER-00005] [jakarta.enterprise.launcher] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  JVM invocation command line:
+/Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home/bin/java
+-cp
+/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/modules/glassfish.jar
+-DWALL_CLOCK_START=2023-02-12T20:33:12.518439Z
+-XX:+UnlockDiagnosticVMOptions
+-XX:NewRatio=2
+-Xmx512m
+--add-opens=java.base/java.io=ALL-UNNAMED
+--add-opens=java.base/java.lang=ALL-UNNAMED
+--add-opens=java.base/java.util=ALL-UNNAMED
+--add-opens=java.base/sun.net.www.protocol.jrt=ALL-UNNAMED
+--add-opens=java.naming/javax.naming.spi=ALL-UNNAMED
+--add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+--add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED
+--add-exports=java.naming/com.sun.jndi.ldap=ALL-UNNAMED
+--add-exports=java.base/jdk.internal.vm.annotation=ALL-UNNAMED
+--add-opens=java.base/jdk.internal.vm.annotation=ALL-UNNAMED
+-javaagent:/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/lib/monitor/flashlight-agent.jar
+-Djava.awt.headless=true
+-Djdk.corba.allowOutputStreamSubclass=true
+-Djdk.tls.rejectClientInitiatedRenegotiation=true
+-Djavax.xml.accessExternalSchema=all
+-Djava.security.policy=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1/config/server.policy
+-Djava.security.auth.login.config=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1/config/login.conf
+-Dcom.sun.enterprise.security.httpsOutboundKeyAlias=s1as
+-Djavax.net.ssl.keyStore=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1/config/keystore.jks
+-Djavax.net.ssl.trustStore=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1/config/cacerts.jks
+-Djdbc.drivers=org.apache.derby.jdbc.ClientDriver
+-DANTLR_USE_DIRECT_CLASS_LOADING=true
+-Dcom.sun.enterprise.config.config_environment_factory_class=com.sun.enterprise.config.serverbeans.AppserverConfigEnvironmentFactory
+-Dorg.glassfish.additionalOSGiBundlesToStart=org.apache.felix.shell,org.apache.felix.gogo.runtime,org.apache.felix.gogo.shell,org.apache.felix.gogo.command,org.apache.felix.shell.remote,org.apache.felix.fileinstall
+-Dosgi.shell.telnet.port=6666
+-Dosgi.shell.telnet.maxconn=1
+-Dosgi.shell.telnet.ip=127.0.0.1
+-Dgosh.args=--nointeractive
+-Dfelix.fileinstall.dir=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/modules/autostart/
+-Dfelix.fileinstall.poll=5000
+-Dfelix.fileinstall.log.level=2
+-Dfelix.fileinstall.bundles.new.start=true
+-Dfelix.fileinstall.bundles.startTransient=true
+-Dfelix.fileinstall.disableConfigSave=false
+-Dorg.glassfish.gmbal.no.multipleUpperBoundsException=true
+-Dcom.ctc.wstx.returnNullForDefaultNamespace=true
+-Djdk.attach.allowAttachSelf=true
+-Dcom.sun.aas.instanceRoot=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1
+-Dcom.sun.aas.installRoot=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish
+-Djava.library.path=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/lib:/Users/andreas/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/bin
+com.sun.enterprise.glassfish.bootstrap.ASMain
+-upgrade
+false
+-domaindir
+/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1
+-read-stdin
+true
+-asadmin-args
+--host,,,localhost,,,--port,,,4848,,,--secure=false,,,--terse=false,,,--echo=false,,,--interactive=false,,,start-domain,,,--verbose=false,,,--watchdog=false,,,--debug=false,,,--domaindir,,,/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains,,,domain1
+-domainname
+domain1
+-instancename
+server
+-type
+DAS
+-verbose
+false
+-asadmin-classpath
+/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/lib/client/appserver-cli.jar
+-debug
+false
+-asadmin-classname
+com.sun.enterprise.admin.cli.AdminMain]]
+
+[2023-02-12T21:33:13.992211+01:00] [GlassFish 7.0] [INFO] [] [com.sun.enterprise.server.logging.LogManagerService] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Using property file: /Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1/config/logging.properties]]
+
+[2023-02-12T21:33:14.013166+01:00] [GlassFish 7.0] [INFO] [NCLS-LOGGING-00009] [com.sun.enterprise.server.logging.LogManagerService] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Running GlassFish Version: Eclipse GlassFish  7.0.0  (build master-b1292-g9052d5b 2020-12-19T17:24:00+0000)]]
+
+[2023-02-12T21:33:14.089549+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [admin-realm] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2023-02-12T21:33:14.090495+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [file] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2023-02-12T21:33:14.092804+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [certificate] of classtype [com.sun.enterprise.security.auth.realm.certificate.CertificateRealm] successfully created.]]
+
+[2023-02-12T21:33:14.236878+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 17ms - bound to [/0.0.0.0:8080]]]
+
+[2023-02-12T21:33:14.259732+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 10ms - bound to [/0.0.0.0:8181]]]
+
+[2023-02-12T21:33:14.265417+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 1ms - bound to [/0.0.0.0:4848]]]
+
+[2023-02-12T21:33:14.292082+01:00] [GlassFish 7.0] [INFO] [SEC-SVCS-00100] [jakarta.enterprise.security.services] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Authorization Service has successfully initialized.]]
+
+[2023-02-12T21:33:14.326500+01:00] [GlassFish 7.0] [INFO] [] [org.glassfish.ha.store.spi.BackingStoreFactoryRegistry] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Registered org.glassfish.ha.store.adapter.cache.ShoalBackingStoreProxy for persistence-type = replicated in BackingStoreFactoryRegistry]]
+
+[2023-02-12T21:33:14.345110+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 1ms - bound to [/0.0.0.0:3700]]]
+
+[2023-02-12T21:33:14.369262+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00017] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Eclipse GlassFish  7.0.0  (master-b1292-g9052d5b 2020-12-19T17:24:00+0000) startup time : Embedded (956ms), startup services(404ms), total(1 360ms)]]
+
+[2023-02-12T21:33:14.479447+01:00] [GlassFish 7.0] [INFO] [NCLS-JMX-00005] [jakarta.enterprise.system.jmx] [tid: _ThreadID=60 _ThreadName=Thread-6] [levelValue: 800] [[
+  JMXStartupService has started JMXConnector on JMXService URL service:jmx:rmi://192.168.50.124:8686/jndi/rmi://192.168.50.124:8686/jmxrmi]]
+
+[2023-02-12T21:33:15.506483+01:00] [GlassFish 7.0] [INFO] [NCLS-REST-00001] [jakarta.enterprise.admin.rest] [tid: _ThreadID=48 _ThreadName=admin-listener(3)] [levelValue: 800] [[
+  Listening to REST requests at context: /management/domain.]]
+
+[2023-02-12T21:33:15.700702+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=80 _ThreadName=Thread-10] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:15.895666+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=80 _ThreadName=Thread-10] [levelValue: 800] [[
+  Created HTTP listener http-listener-1 on host/port 0.0.0.0:8080]]
+
+[2023-02-12T21:33:15.897664+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=80 _ThreadName=Thread-10] [levelValue: 800] [[
+  Created HTTP listener http-listener-2 on host/port 0.0.0.0:8181]]
+
+[2023-02-12T21:33:15.898727+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=80 _ThreadName=Thread-10] [levelValue: 800] [[
+  Created HTTP listener admin-listener on host/port 0.0.0.0:4848]]
+
+[2023-02-12T21:33:15.908734+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00200] [jakarta.enterprise.web] [tid: _ThreadID=80 _ThreadName=Thread-10] [levelValue: 800] [[
+  Created virtual server server]]
+
+[2023-02-12T21:33:15.909940+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00200] [jakarta.enterprise.web] [tid: _ThreadID=80 _ThreadName=Thread-10] [levelValue: 800] [[
+  Created virtual server __asadmin]]
+
+[2023-02-12T21:33:16.013362+01:00] [GlassFish 7.0] [INFO] [AS-WEB-CORE-00306] [jakarta.enterprise.web.core] [tid: _ThreadID=80 _ThreadName=Thread-10] [levelValue: 800] [[
+  Setting JAAS app name glassfish-web]]
+
+[2023-02-12T21:33:16.013665+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00201] [jakarta.enterprise.web] [tid: _ThreadID=80 _ThreadName=Thread-10] [levelValue: 800] [[
+  Virtual server server loaded default web module ]]
+
+[2023-02-12T21:33:16.125178+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01002] [jakarta.enterprise.system.core.security] [tid: _ThreadID=80 _ThreadName=Thread-10] [levelValue: 800] [[
+  Java security manager is disabled.]]
+
+[2023-02-12T21:33:16.125503+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01010] [jakarta.enterprise.system.core.security] [tid: _ThreadID=80 _ThreadName=Thread-10] [levelValue: 800] [[
+  Entering Security Startup Service.]]
+
+[2023-02-12T21:33:16.126935+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01143] [jakarta.enterprise.system.core.security] [tid: _ThreadID=80 _ThreadName=Thread-10] [levelValue: 800] [[
+  Loading policy provider org.glassfish.exousia.modules.locked.SimplePolicyProvider.]]
+
+[2023-02-12T21:33:16.137114+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01011] [jakarta.enterprise.system.core.security] [tid: _ThreadID=80 _ThreadName=Thread-10] [levelValue: 800] [[
+  Security Service(s) started successfully.]]
+
+[2023-02-12T21:33:16.231832+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=80 _ThreadName=Thread-10] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:16.242094+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=80 _ThreadName=Thread-10] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:16.242527+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=80 _ThreadName=Thread-10] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:16.242908+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=80 _ThreadName=Thread-10] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:16.287919+01:00] [GlassFish 7.0] [INFO] [] [org.jboss.weld.Version] [tid: _ThreadID=80 _ThreadName=Thread-10] [levelValue: 800] [[
+  WELD-000900: 5.1.0 (Final)]]
+
+[2023-02-12T21:33:16.488363+01:00] [GlassFish 7.0] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=80 _ThreadName=Thread-10] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] org.glassfish.sse.impl.ServerSentEventCdiExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2023-02-12T21:33:16.492700+01:00] [GlassFish 7.0] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=80 _ThreadName=Thread-10] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jersey.ext.cdi1x.internal.ProcessAllAnnotatedTypes.processAnnotatedType(@Observes ProcessAnnotatedType<?>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2023-02-12T21:33:17.013086+01:00] [GlassFish 7.0] [INFO] [] [org.glassfish.soteria.servlet.SamRegistrationInstaller] [tid: _ThreadID=80 _ThreadName=Thread-10] [levelValue: 800] [[
+  Initializing Soteria 3.0.1 for context '']]
+
+[2023-02-12T21:33:17.040578+01:00] [GlassFish 7.0] [INFO] [faces.config.listener.version] [jakarta.enterprise.resource.webcontainer.faces.config] [tid: _ThreadID=80 _ThreadName=Thread-10] [levelValue: 800] [[
+  Initializing Mojarra 4.0.0 for context '']]
+
+[2023-02-12T21:33:17.437637+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=80 _ThreadName=Thread-10] [levelValue: 800] [[
+  Loading application [__admingui] at [/]]]
+
+[2023-02-12T21:33:17.438484+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00022] [jakarta.enterprise.system.core] [tid: _ThreadID=80 _ThreadName=Thread-10] [levelValue: 800] [[
+  Loading application __admingui done in 1 875 ms]]
+
+[2023-02-12T21:33:18.714269+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:18.794626+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:18.809617+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:18.810008+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:18.810242+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:18.810473+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:18.810700+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:18.810931+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:18.811155+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:18.811378+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:18.811598+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:18.811806+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:18.812254+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:18.812520+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:18.812753+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:18.812974+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:18.813196+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:18.813411+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:18.813616+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:18.813821+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:18.814035+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:18.814251+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:18.814519+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:18.830174+01:00] [GlassFish 7.0] [SEVERE] [] [jakarta.enterprise.system.core] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 1000] [[
+  Exception while deploying the app [dt170g_projekt-1.0-SNAPSHOT]]]
+
+[2023-02-12T21:33:18.830377+01:00] [GlassFish 7.0] [SEVERE] [NCLS-CORE-00026] [jakarta.enterprise.system.core] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 1000] [[
+  Exception during lifecycle processing
+org.glassfish.deployment.common.DeploymentException: JNDI lookup failed for the resource: Name: default, Lookup: jdbc__derby, Type: javax.sql.DataSource -- Lookup failed for jdbc__derby in SerialContext[myEnv={java.naming.factory.state=com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl, java.naming.factory.url.pkgs=com.sun.enterprise.naming}]
+	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:836)
+	at com.sun.enterprise.naming.impl.SerialContext.lookup(SerialContext.java:257)
+	at java.naming/javax.naming.InitialContext.lookup(InitialContext.java:409)
+	at java.naming/javax.naming.InitialContext.lookup(InitialContext.java:409)
+	at java.naming/javax.naming.InitialContext.doLookup(InitialContext.java:282)
+	at com.sun.enterprise.deployment.util.ResourceValidator.validateJNDIRefs(ResourceValidator.java:882)
+	at com.sun.enterprise.deployment.util.ResourceValidator.validateResources(ResourceValidator.java:748)
+	at com.sun.enterprise.deployment.util.ResourceValidator.event(ResourceValidator.java:173)
+	at org.glassfish.kernel.event.EventsImpl.send(EventsImpl.java:107)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.deploy(ApplicationLifecycle.java:458)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.deploy(ApplicationLifecycle.java:259)
+	at org.glassfish.deployment.admin.DeployCommand.execute(DeployCommand.java:467)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:529)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:525)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/javax.security.auth.Subject.doAs(Subject.java:361)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2.execute(CommandRunnerImpl.java:524)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:555)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:547)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/javax.security.auth.Subject.doAs(Subject.java:361)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:546)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:1456)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1825)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1701)
+	at com.sun.enterprise.v3.admin.AdminAdapter.doCommand(AdminAdapter.java:510)
+	at com.sun.enterprise.v3.admin.AdminAdapter.onMissingResource(AdminAdapter.java:200)
+	at org.glassfish.grizzly.http.server.StaticHttpHandlerBase.service(StaticHttpHandlerBase.java:150)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:453)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:145)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:174)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:153)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:196)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:88)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:246)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:178)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:118)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:96)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:51)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:510)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:82)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:83)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:101)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:535)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:515)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+]]
+
+[2023-02-12T21:33:18.836922+01:00] [GlassFish 7.0] [SEVERE] [] [jakarta.enterprise.system.core] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 1000] [[
+  Exception while deploying the app [dt170g_projekt-1.0-SNAPSHOT] : JNDI lookup failed for the resource: Name: default, Lookup: jdbc__derby, Type: javax.sql.DataSource -- Lookup failed for jdbc__derby in SerialContext[myEnv={java.naming.factory.state=com.sun.corba.ee.impl.presentation.rmi.JNDIStateFactoryImpl, java.naming.factory.url.pkgs=com.sun.enterprise.naming}]]]
+
+[2023-02-12T21:33:42.708842+01:00] [GlassFish 7.0] [INFO] [NCLS-REST-00001] [jakarta.enterprise.admin.rest] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Listening to REST requests at context: /command/domain.]]
+
+[2023-02-12T21:33:42.733001+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00092] [jakarta.enterprise.system.core] [tid: _ThreadID=137 _ThreadName=Thread-31] [levelValue: 800] [[
+  Server shutdown initiated]]
+
+[2023-02-12T21:33:42.738554+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=137 _ThreadName=Thread-31] [levelValue: 800] [[
+  FileMonitoring shutdown]]
+
+[2023-02-12T21:33:42.741654+01:00] [GlassFish 7.0] [INFO] [NCLS-JMX-00002] [jakarta.enterprise.system.jmx] [tid: _ThreadID=137 _ThreadName=Thread-31] [levelValue: 800] [[
+  JMXStartupService: Stopped JMXConnectorServer: null]]
+
+[2023-02-12T21:33:42.741864+01:00] [GlassFish 7.0] [INFO] [NCLS-JMX-00001] [jakarta.enterprise.system.jmx] [tid: _ThreadID=137 _ThreadName=Thread-31] [levelValue: 800] [[
+  JMXStartupService and JMXConnectors have been shut down.]]
+
+[2023-02-12T21:33:42.815587+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=145 _ThreadName=RunLevelControllerThread-1676234022810] [levelValue: 800] [[
+  JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource]]]
+
+[2023-02-12T21:33:42.822447+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00013] [jakarta.enterprise.system.core] [tid: _ThreadID=137 _ThreadName=Thread-31] [levelValue: 800] [[
+  Shutdown procedure finished]]
+
+[2023-02-12T21:33:42.823909+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.logging.stdout] [tid: _ThreadID=14 _ThreadName=GlassFish Shutdown Hook] [levelValue: 800] [[
+  Completed shutdown of GlassFish runtime]]
+
+[2023-02-12T21:33:44.903819+01:00] [] [INFO] [NCLS-GFLAUNCHER-00005] [jakarta.enterprise.launcher] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  JVM invocation command line:
+/Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home/bin/java
+-cp
+/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/modules/glassfish.jar
+-DWALL_CLOCK_START=2023-02-12T20:33:44.669948Z
+-XX:+UnlockDiagnosticVMOptions
+-XX:NewRatio=2
+-Xmx512m
+--add-opens=java.base/java.io=ALL-UNNAMED
+--add-opens=java.base/java.lang=ALL-UNNAMED
+--add-opens=java.base/java.util=ALL-UNNAMED
+--add-opens=java.base/sun.net.www.protocol.jrt=ALL-UNNAMED
+--add-opens=java.naming/javax.naming.spi=ALL-UNNAMED
+--add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+--add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED
+--add-exports=java.naming/com.sun.jndi.ldap=ALL-UNNAMED
+--add-exports=java.base/jdk.internal.vm.annotation=ALL-UNNAMED
+--add-opens=java.base/jdk.internal.vm.annotation=ALL-UNNAMED
+-javaagent:/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/lib/monitor/flashlight-agent.jar
+-Djava.awt.headless=true
+-Djdk.corba.allowOutputStreamSubclass=true
+-Djdk.tls.rejectClientInitiatedRenegotiation=true
+-Djavax.xml.accessExternalSchema=all
+-Djava.security.policy=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1/config/server.policy
+-Djava.security.auth.login.config=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1/config/login.conf
+-Dcom.sun.enterprise.security.httpsOutboundKeyAlias=s1as
+-Djavax.net.ssl.keyStore=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1/config/keystore.jks
+-Djavax.net.ssl.trustStore=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1/config/cacerts.jks
+-Djdbc.drivers=org.apache.derby.jdbc.ClientDriver
+-DANTLR_USE_DIRECT_CLASS_LOADING=true
+-Dcom.sun.enterprise.config.config_environment_factory_class=com.sun.enterprise.config.serverbeans.AppserverConfigEnvironmentFactory
+-Dorg.glassfish.additionalOSGiBundlesToStart=org.apache.felix.shell,org.apache.felix.gogo.runtime,org.apache.felix.gogo.shell,org.apache.felix.gogo.command,org.apache.felix.shell.remote,org.apache.felix.fileinstall
+-Dosgi.shell.telnet.port=6666
+-Dosgi.shell.telnet.maxconn=1
+-Dosgi.shell.telnet.ip=127.0.0.1
+-Dgosh.args=--nointeractive
+-Dfelix.fileinstall.dir=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/modules/autostart/
+-Dfelix.fileinstall.poll=5000
+-Dfelix.fileinstall.log.level=2
+-Dfelix.fileinstall.bundles.new.start=true
+-Dfelix.fileinstall.bundles.startTransient=true
+-Dfelix.fileinstall.disableConfigSave=false
+-Dorg.glassfish.gmbal.no.multipleUpperBoundsException=true
+-Dcom.ctc.wstx.returnNullForDefaultNamespace=true
+-Djdk.attach.allowAttachSelf=true
+-Dcom.sun.aas.instanceRoot=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1
+-Dcom.sun.aas.installRoot=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish
+-Djava.library.path=/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/lib:/Users/andreas/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/bin
+com.sun.enterprise.glassfish.bootstrap.ASMain
+-upgrade
+false
+-domaindir
+/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1
+-read-stdin
+true
+-asadmin-args
+--host,,,localhost,,,--port,,,4848,,,--secure=false,,,--terse=false,,,--echo=false,,,--interactive=false,,,start-domain,,,--verbose=false,,,--watchdog=false,,,--debug=false,,,--domaindir,,,/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains,,,domain1
+-domainname
+domain1
+-instancename
+server
+-type
+DAS
+-verbose
+false
+-asadmin-classpath
+/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/lib/client/appserver-cli.jar
+-debug
+false
+-asadmin-classname
+com.sun.enterprise.admin.cli.AdminMain]]
+
+[2023-02-12T21:33:46.042265+01:00] [GlassFish 7.0] [INFO] [] [com.sun.enterprise.server.logging.LogManagerService] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Using property file: /Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/glassfish7/glassfish/domains/domain1/config/logging.properties]]
+
+[2023-02-12T21:33:46.062698+01:00] [GlassFish 7.0] [INFO] [NCLS-LOGGING-00009] [com.sun.enterprise.server.logging.LogManagerService] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Running GlassFish Version: Eclipse GlassFish  7.0.0  (build master-b1292-g9052d5b 2020-12-19T17:24:00+0000)]]
+
+[2023-02-12T21:33:46.137710+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [admin-realm] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2023-02-12T21:33:46.139167+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [file] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2023-02-12T21:33:46.142452+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01115] [jakarta.enterprise.system.core.security] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Realm [certificate] of classtype [com.sun.enterprise.security.auth.realm.certificate.CertificateRealm] successfully created.]]
+
+[2023-02-12T21:33:46.282280+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 13ms - bound to [/0.0.0.0:8080]]]
+
+[2023-02-12T21:33:46.293681+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 1ms - bound to [/0.0.0.0:8181]]]
+
+[2023-02-12T21:33:46.296430+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 1ms - bound to [/0.0.0.0:4848]]]
+
+[2023-02-12T21:33:46.322181+01:00] [GlassFish 7.0] [INFO] [SEC-SVCS-00100] [jakarta.enterprise.security.services] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Authorization Service has successfully initialized.]]
+
+[2023-02-12T21:33:46.358501+01:00] [GlassFish 7.0] [INFO] [] [org.glassfish.ha.store.spi.BackingStoreFactoryRegistry] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Registered org.glassfish.ha.store.adapter.cache.ShoalBackingStoreProxy for persistence-type = replicated in BackingStoreFactoryRegistry]]
+
+[2023-02-12T21:33:46.382607+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00087] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Grizzly Framework 4.0.0 started in: 1ms - bound to [/0.0.0.0:3700]]]
+
+[2023-02-12T21:33:46.405366+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00017] [jakarta.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [levelValue: 800] [[
+  Eclipse GlassFish  7.0.0  (master-b1292-g9052d5b 2020-12-19T17:24:00+0000) startup time : Embedded (875ms), startup services(390ms), total(1 265ms)]]
+
+[2023-02-12T21:33:46.540413+01:00] [GlassFish 7.0] [INFO] [NCLS-JMX-00005] [jakarta.enterprise.system.jmx] [tid: _ThreadID=60 _ThreadName=Thread-6] [levelValue: 800] [[
+  JMXStartupService has started JMXConnector on JMXService URL service:jmx:rmi://192.168.50.124:8686/jndi/rmi://192.168.50.124:8686/jmxrmi]]
+
+[2023-02-12T21:33:47.506818+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:47.622829+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01002] [jakarta.enterprise.system.core.security] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Java security manager is disabled.]]
+
+[2023-02-12T21:33:47.623287+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01010] [jakarta.enterprise.system.core.security] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Entering Security Startup Service.]]
+
+[2023-02-12T21:33:47.625445+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01143] [jakarta.enterprise.system.core.security] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Loading policy provider org.glassfish.exousia.modules.locked.SimplePolicyProvider.]]
+
+[2023-02-12T21:33:47.635983+01:00] [GlassFish 7.0] [INFO] [NCLS-SECURITY-01011] [jakarta.enterprise.system.core.security] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Security Service(s) started successfully.]]
+
+[2023-02-12T21:33:47.725521+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Created HTTP listener http-listener-1 on host/port 0.0.0.0:8080]]
+
+[2023-02-12T21:33:47.727359+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Created HTTP listener http-listener-2 on host/port 0.0.0.0:8181]]
+
+[2023-02-12T21:33:47.727966+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00198] [jakarta.enterprise.web] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Created HTTP listener admin-listener on host/port 0.0.0.0:4848]]
+
+[2023-02-12T21:33:47.743345+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00200] [jakarta.enterprise.web] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Created virtual server server]]
+
+[2023-02-12T21:33:47.744655+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00200] [jakarta.enterprise.web] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Created virtual server __asadmin]]
+
+[2023-02-12T21:33:47.827102+01:00] [GlassFish 7.0] [INFO] [NCLS-REST-00001] [jakarta.enterprise.admin.rest] [tid: _ThreadID=47 _ThreadName=admin-listener(2)] [levelValue: 800] [[
+  Listening to REST requests at context: /management/domain.]]
+
+[2023-02-12T21:33:47.831369+01:00] [GlassFish 7.0] [INFO] [AS-WEB-CORE-00306] [jakarta.enterprise.web.core] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Setting JAAS app name glassfish-web]]
+
+[2023-02-12T21:33:47.831750+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00201] [jakarta.enterprise.web] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Virtual server server loaded default web module ]]
+
+[2023-02-12T21:33:47.929132+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=88 _ThreadName=Thread-18] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:48.092297+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:48.097315+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=88 _ThreadName=Thread-18] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:48.108862+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=88 _ThreadName=Thread-18] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:48.109292+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=88 _ThreadName=Thread-18] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:48.109729+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=88 _ThreadName=Thread-18] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:48.110730+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:48.111145+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:48.111487+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:48.111774+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:48.112040+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:48.112296+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:48.112580+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:48.112854+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:48.113145+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:48.113420+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:48.113871+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:48.114169+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:48.114446+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:48.114728+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:48.115013+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:48.115295+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:48.115571+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:48.115845+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:48.116126+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:48.116390+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:48.116729+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.tools.deployment.common] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:48.175615+01:00] [GlassFish 7.0] [INFO] [] [org.jboss.weld.Version] [tid: _ThreadID=88 _ThreadName=Thread-18] [levelValue: 800] [[
+  WELD-000900: 5.1.0 (Final)]]
+
+[2023-02-12T21:33:48.370968+01:00] [GlassFish 7.0] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=88 _ThreadName=Thread-18] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] org.glassfish.sse.impl.ServerSentEventCdiExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2023-02-12T21:33:48.370950+01:00] [GlassFish 7.0] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] org.glassfish.sse.impl.ServerSentEventCdiExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2023-02-12T21:33:48.387295+01:00] [GlassFish 7.0] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=88 _ThreadName=Thread-18] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jersey.ext.cdi1x.internal.ProcessAllAnnotatedTypes.processAnnotatedType(@Observes ProcessAnnotatedType<?>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2023-02-12T21:33:48.391373+01:00] [GlassFish 7.0] [INFO] [] [org.jboss.weld.Event] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jersey.ext.cdi1x.internal.ProcessAllAnnotatedTypes.processAnnotatedType(@Observes ProcessAnnotatedType<?>, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.]]
+
+[2023-02-12T21:33:48.799885+01:00] [GlassFish 7.0] [INFO] [] [org.glassfish.soteria.servlet.SamRegistrationInstaller] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Initializing Soteria 3.0.1 for context '/dt170g_projekt-1.0-SNAPSHOT']]
+
+[2023-02-12T21:33:48.831804+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Loading application [dt170g_projekt-1.0-SNAPSHOT] at [/dt170g_projekt-1.0-SNAPSHOT]]]
+
+[2023-02-12T21:33:48.865213+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.system.core] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  dt170g_projekt-1.0-SNAPSHOT was successfully deployed in 2 047 milliseconds.]]
+
+[2023-02-12T21:33:48.959472+01:00] [GlassFish 7.0] [INFO] [] [org.glassfish.soteria.servlet.SamRegistrationInstaller] [tid: _ThreadID=88 _ThreadName=Thread-18] [levelValue: 800] [[
+  Initializing Soteria 3.0.1 for context '']]
+
+[2023-02-12T21:33:48.978798+01:00] [GlassFish 7.0] [INFO] [faces.config.listener.version] [jakarta.enterprise.resource.webcontainer.faces.config] [tid: _ThreadID=88 _ThreadName=Thread-18] [levelValue: 800] [[
+  Initializing Mojarra 4.0.0 for context '']]
+
+[2023-02-12T21:33:49.372894+01:00] [GlassFish 7.0] [INFO] [AS-WEB-GLUE-00172] [jakarta.enterprise.web] [tid: _ThreadID=88 _ThreadName=Thread-18] [levelValue: 800] [[
+  Loading application [__admingui] at [/]]]
+
+[2023-02-12T21:33:49.373760+01:00] [GlassFish 7.0] [INFO] [NCLS-CORE-00022] [jakarta.enterprise.system.core] [tid: _ThreadID=88 _ThreadName=Thread-18] [levelValue: 800] [[
+  Loading application __admingui done in 1 494 ms]]
+
+[2023-02-12T21:33:54.078810+01:00] [GlassFish 7.0] [WARNING] [] [jakarta.enterprise.system.container.web.com.sun.web.security] [tid: _ThreadID=46 _ThreadName=admin-listener(1)] [levelValue: 900] [[
+  Context path from ServletContext:  differs from path from bundle: /]]
+
+[2023-02-12T21:33:54.730975+01:00] [GlassFish 7.0] [SEVERE] [] [jakarta.enterprise.resource.webcontainer.faces.context] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [levelValue: 1000] [[
+  jakarta.faces.application.ViewExpiredException: viewId:/login.jsf - View /login.jsf could not be restored.
+jakarta.faces.application.ViewExpiredException: viewId:/login.jsf - View /login.jsf could not be restored.
+	at com.sun.faces.lifecycle.RestoreViewPhase.execute(RestoreViewPhase.java:164)
+	at com.sun.faces.lifecycle.Phase.doPhase(Phase.java:72)
+	at com.sun.faces.lifecycle.RestoreViewPhase.doPhase(RestoreViewPhase.java:95)
+	at com.sun.faces.lifecycle.LifecycleImpl.execute(LifecycleImpl.java:159)
+	at jakarta.faces.webapp.FacesServlet.executeLifecyle(FacesServlet.java:691)
+	at jakarta.faces.webapp.FacesServlet.service(FacesServlet.java:449)
+	at org.apache.catalina.core.StandardWrapper.service(StandardWrapper.java:1376)
+	at org.apache.catalina.core.ApplicationDispatcher.doInvoke(ApplicationDispatcher.java:779)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:643)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:479)
+	at org.apache.catalina.core.ApplicationDispatcher.doDispatch(ApplicationDispatcher.java:450)
+	at org.apache.catalina.core.ApplicationDispatcher.dispatch(ApplicationDispatcher.java:332)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:282)
+	at org.glassfish.admingui.common.security.AdminConsoleAuthModule.validateRequest(AdminConsoleAuthModule.java:199)
+	at com.sun.enterprise.security.jmac.config.GFServerConfigProvider$GFServerAuthContext.validateRequest(GFServerConfigProvider.java:1019)
+	at com.sun.web.security.RealmAdapter.validate(RealmAdapter.java:1334)
+	at com.sun.web.security.RealmAdapter.invokeAuthenticateDelegate(RealmAdapter.java:479)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:554)
+	at org.apache.catalina.core.StandardPipeline.doInvoke(StandardPipeline.java:579)
+	at org.apache.catalina.core.StandardPipeline.doChainInvoke(StandardPipeline.java:555)
+	at com.sun.enterprise.web.WebPipeline.invoke(WebPipeline.java:73)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:121)
+	at org.apache.catalina.connector.CoyoteAdapter.doService(CoyoteAdapter.java:295)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:188)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper$HttpHandlerCallable.call(ContainerMapper.java:453)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:145)
+	at org.glassfish.grizzly.http.server.HttpHandler.runService(HttpHandler.java:174)
+	at org.glassfish.grizzly.http.server.HttpHandler.doHandle(HttpHandler.java:153)
+	at org.glassfish.grizzly.http.server.HttpServerFilter.handleRead(HttpServerFilter.java:196)
+	at org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(ExecutorResolver.java:88)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(DefaultFilterChain.java:246)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(DefaultFilterChain.java:178)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(DefaultFilterChain.java:118)
+	at org.glassfish.grizzly.filterchain.DefaultFilterChain.process(DefaultFilterChain.java:96)
+	at org.glassfish.grizzly.ProcessorExecutor.execute(ProcessorExecutor.java:51)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(TCPNIOTransport.java:510)
+	at org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(AbstractIOStrategy.java:82)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy.run0(WorkerThreadIOStrategy.java:83)
+	at org.glassfish.grizzly.strategies.WorkerThreadIOStrategy$WorkerThreadRunnable.run(WorkerThreadIOStrategy.java:101)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:535)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:515)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+]]
+
+[2023-02-12T21:33:54.804617+01:00] [GlassFish 7.0] [INFO] [] [org.glassfish.admingui] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Redirecting to &#x2f;common&#x2f;index.jsf]]
+
+[2023-02-12T21:33:54.839272+01:00] [GlassFish 7.0] [INFO] [] [org.glassfish.admingui] [tid: _ThreadID=50 _ThreadName=admin-listener(5)] [levelValue: 800] [[
+  Admin Console: Initializing Session Attributes...]]
+
+[2023-02-12T21:33:59.836258+01:00] [GlassFish 7.0] [INFO] [] [org.glassfish.hk2.classmodel] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2023-02-12T21:33:59.950409+01:00] [GlassFish 7.0] [INFO] [] [jakarta.enterprise.resource.resourceadapter.com.sun.enterprise.resource.pool] [tid: _ThreadID=49 _ThreadName=admin-listener(4)] [levelValue: 800] [[
+  Created connection pool and added it to PoolManager: Pool [org.glassfish.resourcebase.resources.api.PoolInfo@c56f757b[jndiName=pool, applicationName=null, moduleName=null]] PoolSize=0  FreeResources=0  QueueSize=0 matching=off validation=off]]
+

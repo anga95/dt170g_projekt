@@ -3,8 +3,10 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
              version="3.0">
-    <persistence-unit name="default">
-        <jta-data-source>jdbc/__default</jta-data-source>
-        <class>entity.Employee</class>
+    <persistence-unit name="db">
+        <jta-data-source>db</jta-data-source>
+        <class>app.Employee</class>
     </persistence-unit>
 </persistence>
+
+<!--jdbc/__default-->
