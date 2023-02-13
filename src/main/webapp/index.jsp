@@ -42,7 +42,11 @@
           <div class="card-body">
             <h5 class="card-title">Måndag</h5>
             <p class="card-text">Fatimas köttfärslimpa med brunsås och potatismos.</p>
-          </div>
+            <br/>
+                <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
+                <br/>
+                <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
+            </div>
         `
                     break;
                 case "tisdag":
@@ -50,7 +54,11 @@
           <div class="card-body">
             <h5 class="card-title">Tisdag</h5>
             <p class="card-text">Fatimas köttfärslimpa med brunsås och potatismos.</p>
-          </div>
+            <br/>
+                <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
+                <br/>
+                <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
+            </div>
         `
                     break;
                 case "onsdag":
@@ -58,7 +66,11 @@
           <div class="card-body">
             <h5 class="card-title">Onsdag</h5>
             <p class="card-text">Fatimas köttfärslimpa med brunsås och potatismos.</p>
-          </div>
+            <br/>
+                <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
+                <br/>
+                <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
+            </div>
         `
                     break;
                 case "torsdag":
@@ -76,8 +88,12 @@
                 case "fredag":
                     dayInfo.innerHTML = `
             <div class="card-body">
-              <h5 class="card-title">Fredag</h5>
-              <p class="card-text">Fatimas köttfärslimpa med brunsås och potatismos.</p>
+            <h5 class="card-title">Fredag</h5>
+            <p class="card-text">Fatimas köttfärslimpa med brunsås och potatismos.</p>
+            <br/>
+                <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
+                <br/>
+                <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
             </div>
           `
                 default:
