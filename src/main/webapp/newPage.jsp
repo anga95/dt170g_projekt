@@ -18,7 +18,7 @@
         <img src="css/logo2.png" class="w-50 h-25" alt="Responsive image">
     </div>
 
-    <div class="row d-flex align-items-center justify-content-center">
+    <div class="row d-flex align-items-center justify-content-center mt-5">
         <div class="col-3">
             <ul class="list-group">
                 <li class="list-group-item border-0" id="forratt">

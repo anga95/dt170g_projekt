@@ -1,8 +1,8 @@
 
-<nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container-fluid mt-2">
+<nav class="navbar navbar-expand-lg navbar-light d-flex">
+    <div class="container-fluid mt-2 d-flex">
         <!-- Left Element -->
-        <div class="collapse navbar-collapse ms-3" id="nav">
+        <div class="ms-3" id="nav">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <img src="css/logo2.png" alt="Antons skafferi" width="200" height="50">
@@ -11,7 +11,7 @@
         </div>
         <!-- End Left Element -->
         <!-- Center Element -->
-        <div class="collapse navbar-collapse">
+        <div>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 m-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="index.jsp">Dagens Lunch</a>
@@ -26,7 +26,7 @@
         </div>
         <!-- End Center Element -->
         <!-- Right Element -->
-        <div class="collapse navbar-collapse me-3" id="navbarSupportedContent">
+        <div class="me-3" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link" href="#">Boka Bord</a>
