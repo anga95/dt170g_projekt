@@ -5,7 +5,7 @@
         <div class="collapse navbar-collapse" id="nav">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Antons Skafferi</a>
+                    <img src="css/logo.png" alt="Girl in a jacket" width="150" height="50">
                 </li>
             </ul>
         </div>
@@ -17,7 +17,7 @@
                     <a class="nav-link" href="index.jsp">Dagens Lunch</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="newPage.jsp">A La Carte</a>
+                    <a class="nav-link px-5" href="newPage.jsp">A La Carte</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Om oss</a>
@@ -36,3 +36,6 @@
         <!-- End Right Element -->
     </div>
 </nav>
+
+<hr class="mb-5"/>
+<br/>

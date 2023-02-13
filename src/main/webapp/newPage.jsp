@@ -9,6 +9,7 @@
 <html>
 <%@ include file="head.jsp" %>
 
+
 <%@ include file="navbar.jsp" %>
 <h1 class="display-1 text-center"><%= "A La Carte" %></h1>
 
@@ -47,6 +48,6 @@
     </div>
 
 </div>
-
+<%@include file="footer.jsp"%>
 </body>
 </html>
