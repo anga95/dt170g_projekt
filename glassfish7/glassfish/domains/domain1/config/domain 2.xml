@@ -61,7 +61,6 @@
   <servers>
     <server config-ref="server-config" name="server">
       <application-ref ref="__admingui" virtual-servers="__asadmin"></application-ref>
-      <application-ref ref="dt170g_projekt-1.0-SNAPSHOT" virtual-servers="server"></application-ref>
       <resource-ref ref="jdbc/__TimerPool"></resource-ref>
       <resource-ref ref="jdbc/__default"></resource-ref>
       <resource-ref ref="concurrent/__defaultContextService"></resource-ref>
@@ -469,17 +468,5 @@
     <secure-admin-principal dn="CN=localhost-instance,OU=GlassFish,O=Eclipse.org Foundation Inc,L=Ottawa,ST=Ontario,C=CA"></secure-admin-principal>
   </secure-admin>
   <clusters></clusters>
-  <applications>
-    <application context-root="/dt170g_projekt-1.0-SNAPSHOT" object-type="user" name="dt170g_projekt-1.0-SNAPSHOT" directory-deployed="true" location="file:/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/target/dt170g_projekt-1.0-SNAPSHOT/">
-      <property name="archiveType" value="war"></property>
-      <property name="defaultAppName" value="dt170g_projekt-1.0-SNAPSHOT"></property>
-      <property name="appLocation" value="file:/Users/andreas/Documents/MIUN/appJava/projekt/dt170g_projekt/target/dt170g_projekt-1.0-SNAPSHOT/"></property>
-      <module name="dt170g_projekt-1.0-SNAPSHOT">
-        <engine sniffer="jpa"></engine>
-        <engine sniffer="security"></engine>
-        <engine sniffer="web"></engine>
-        <engine sniffer="weld"></engine>
-      </module>
-    </application>
-  </applications>
+  <applications></applications>
 </domain>
