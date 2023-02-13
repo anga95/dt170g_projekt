@@ -1,11 +1,11 @@
 
 <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container-fluid">
+    <div class="container-fluid mt-2">
         <!-- Left Element -->
-        <div class="collapse navbar-collapse" id="nav">
+        <div class="collapse navbar-collapse ms-3" id="nav">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <img src="css/logo.png" alt="Girl in a jacket" width="150" height="50">
+                    <img src="css/logo2.png" alt="Antons skafferi" width="200" height="50">
                 </li>
             </ul>
         </div>
@@ -26,7 +26,7 @@
         </div>
         <!-- End Center Element -->
         <!-- Right Element -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse me-3" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link" href="#">Boka Bord</a>

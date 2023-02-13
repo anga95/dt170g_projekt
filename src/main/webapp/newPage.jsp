@@ -6,14 +6,17 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
-<html>
+
 <%@ include file="head.jsp" %>
 
 
 <%@ include file="navbar.jsp" %>
-<h1 class="display-1 text-center"><%= "A La Carte" %></h1>
+
 
 <div class ="container-fluid">
+    <div class="row d-flex align-items-center justify-content-center">
+        <img src="css/logo2.png" class="w-50 h-25" alt="Responsive image">
+    </div>
 
     <div class="row d-flex align-items-center justify-content-center">
         <div class="col-3">

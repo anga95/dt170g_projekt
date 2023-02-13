@@ -26,7 +26,33 @@
     font-family: "Julius Sans One", sans-serif;
 
  }
+#forratt{
+    background-color: #fffbf2;
 
+}
+
+#forratt p{
+    font-family: "Cedarville Cursive", sans-serif;
+    font-size: 1.5rem;
+}
+
+#huvudratt{
+    background-color: #fffbf2;
+}
+
+#huvudratt p{
+    font-family: "Cedarville Cursive", sans-serif;
+    font-size: 1.5rem;
+}
+
+#dessert{
+    background-color: #fffbf2;
+}
+
+#dessert p{
+    font-family: "Cedarville Cursive", sans-serif;
+    font-size: 1.5rem;
+}
 
 body{
     background-color: #fffbf2;
@@ -49,6 +75,7 @@ hr{
 .list-group-item{
     font-size: 2rem;
     font-family: "Julius Sans One", sans-serif;
+    background-color: #fffbf2;
 }
 
 .card p{
@@ -70,7 +97,7 @@ footer{
 
 }
 
-h2{
+h2 {
     font-family: "Julius Sans One", sans-serif;
     text-align: center;
 }
