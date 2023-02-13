@@ -35,6 +35,7 @@ body{
 hr{
     margin-left: 35px;
     margin-right: 35px;
+    border: 1px dashed #a0772d;
 }
 
 .navbar {
@@ -74,7 +75,4 @@ h2{
     text-align: center;
 }
 
-hr {
-    border: 1px dashed #a0772d;
-}
 
