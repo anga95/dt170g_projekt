@@ -15,7 +15,7 @@
 
 <div class ="container-fluid">
     <div class="row d-flex align-items-center justify-content-center">
-        <img src="css/logo2.png" class="w-50 h-25" alt="Responsive image">
+        <img src="css/logga.png" class="w-50 h-25" alt="Responsive image">
     </div>
 
     <div class="row d-flex align-items-center justify-content-center mt-5">

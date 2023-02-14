@@ -5,7 +5,7 @@
         <div class="ms-3" id="nav">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <img src="css/logo2.png" alt="Antons skafferi" width="200" height="50">
+                    <img src="css/logga.png" alt="Antons skafferi" width="200" height="50">
                 </li>
             </ul>
         </div>
@@ -17,7 +17,7 @@
                     <a class="nav-link" href="index.jsp">Dagens Lunch</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link px-5" href="newPage.jsp">A La Carte</a>
+                    <a class="nav-link px-5" href="alacarte.jsp">A La Carte</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Om oss</a>
