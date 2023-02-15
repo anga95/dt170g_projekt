@@ -4,8 +4,14 @@
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
              version="3.0">
     <persistence-unit name="db">
-<!--        <jta-data-source>db</jta-data-source>-->
+        <jta-data-source>db</jta-data-source>
         <class>entity.EmployeeEntity</class>
+        <class>entity.RestaurantEntity</class>
+        <class>entity.DessertEntity</class>
+        <class>entity.DrinksEntity</class>
+        <class>entity.MainEntity</class>
+        <class>entity.MenuEntity</class>
+        <class>entity.StarterEntity</class>
         <properties>
             <property name="toplink.jdbc.url" value="jdbc:derby://localhost:1527/db;create=true"/>
             <property name="toplink.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
