@@ -15,4 +15,13 @@
     <string name="table_8">Table 8</string>
     <string name="a_la_carte">A La Carte</string>
     <string name="table_x">Table X</string>
+    <string name="r_tt">Rätt</string>
+    <string name="v_lj_vilken_r_tt">Välj vilken rätt</string>
+    <string-array name="courses">
+        <item>Hamburgare</item>
+        <item>Pizza</item>
+        <item>Sallad</item>
+        <item>Köttbullar</item>
+        <item>Sushi</item>
+    </string-array>
 </resources>
