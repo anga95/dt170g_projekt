@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tableNum"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -44,10 +44,11 @@
         android:backgroundTint="#FFFFFF"
         android:text="@string/table_1"
         android:textColor="@color/black"
+        android:onClick="helpB"
         app:layout_constraintEnd_toStartOf="@+id/table2Btn"
         app:layout_constraintHorizontal_bias="0.438"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/tableNum" />
 
     <Button
         android:id="@+id/table2Btn"
@@ -59,9 +60,10 @@
         android:backgroundTint="#FFFFFF"
         android:text="@string/table_2"
         android:textColor="@color/black"
+        android:onClick="helpB"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/table1Btn"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/tableNum" />
 
     <Button
         android:id="@+id/table3Btn"
@@ -73,6 +75,7 @@
         android:backgroundTint="#FFFFFF"
         android:text="@string/table_3"
         android:textColor="@color/black"
+        android:onClick="helpB"
         app:layout_constraintEnd_toStartOf="@+id/table4Btn"
         app:layout_constraintHorizontal_bias="0.412"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,6 +91,7 @@
         android:backgroundTint="#FFFFFF"
         android:text="@string/table_4"
         android:textColor="@color/black"
+        android:onClick="helpB"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/table3Btn"
         app:layout_constraintTop_toBottomOf="@+id/table2Btn" />
@@ -102,6 +106,7 @@
         android:backgroundTint="#FFFFFF"
         android:text="@string/table_5"
         android:textColor="@color/black"
+        android:onClick="helpB"
         app:layout_constraintEnd_toStartOf="@+id/table6Btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/table3Btn" />
@@ -116,6 +121,7 @@
         android:backgroundTint="#FFFFFF"
         android:text="@string/table_6"
         android:textColor="@color/black"
+        android:onClick="helpB"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/table5Btn"
         app:layout_constraintTop_toBottomOf="@+id/table4Btn" />
@@ -130,6 +136,7 @@
         android:backgroundTint="#FFFFFF"
         android:text="@string/table_7"
         android:textColor="@color/black"
+        android:onClick="helpB"
         app:layout_constraintEnd_toStartOf="@+id/table8Btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/table5Btn" />
@@ -144,6 +151,7 @@
         android:backgroundTint="#FFFFFF"
         android:text="@string/table_8"
         android:textColor="@color/black"
+        android:onClick="helpB"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.572"
         app:layout_constraintStart_toEndOf="@+id/table7Btn"
