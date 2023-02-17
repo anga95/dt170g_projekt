@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DdlMappings">
-    <mapping uuid="34811703-0c2d-47e3-95c5-8060fe1c0cb1" name="db@localhost Mapping">
-      <data-sources db="2cd95a2a-7ff6-4608-86a4-cef3c8f00fa3" ddl="08728f7e-295a-4a10-b88a-22ada5b7435f" />
+    <mapping uuid="430d1bae-c316-46d1-b093-9dc634945753" name="db@localhost Mapping">
+      <data-sources db="3e84b52f-bc82-496e-b6d0-5f300825b5b3" ddl="e6ca49f1-8f70-42a2-8ad3-0ed62fdbc690" />
       <scope>
         <node negative="1">
-          <node kind="schema">
-            <name qname="APP" />
-            <name qname="MENU" />
-          </node>
           <node kind="database" negative="1" />
+          <node kind="schema" qname="APP" />
         </node>
       </scope>
     </mapping>
+  </component>
+  <component name="SqlDataSourceStorage">
+    <option name="dataSources">
+      <list>
+        <State>
+          <option name="id" value="e6ca49f1-8f70-42a2-8ad3-0ed62fdbc690" />
+          <option name="name" value="db@localhost (DDL)" />
+          <option name="dbmsName" value="DERBY" />
+          <option name="urls">
+            <array>
+              <option value="file://$PROJECT_DIR$/src/main/java/database" />
+            </array>
+          </option>
+          <option name="outLayout" value="File per object by schema.groovy" />
+        </State>
+      </list>
+    </option>
   </component>
 </project>
