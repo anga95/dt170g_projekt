@@ -9,7 +9,7 @@
 <%@ include file="head.jsp" %>
 <%@ include file="navbar.jsp" %>
 
-<h1 class="display-1 text-center mt-3"><%= "Bokning" %></h1>
+<h1 class="display-1 text-center mt-3"><%= "Boka ditt bord" %></h1>
 
 <section class="h-100 h-custom" >
   <div class="container py-5 h-100">
@@ -28,24 +28,24 @@
                   </div>
                 </div>
                 <div class="col-md-6 mb-4">
-
-                  <div class="form-outline timepicker-inline-12">
-                    <input type="text" class="form-control" id="form4" />
-                    <label class="form-label" for="form4">Välj Tid</label>
+                  <div class="form-outline mb-4">
+                    <input type="time" id="bokning-tid" class="form-control"
+                           name="bokning-tid" value="17:00"
+                           min="16:00" max="20:00" required>
+                    <label for="bokning-tid">Välj Tid</label>
                   </div>
-
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6 mb-4">
                   <div class="form-outline mb-4">
-                    <input type="text" id="form3fnamn" class="form-control" />
+                    <input type="text" id="form3fnamn" class="form-control" required/>
                     <label class="form-label" for="form3fnamn">Förnamn</label>
                   </div>
                 </div>
                 <div class="col-md-6 mb-4">
                   <div class="form-outline mb-4">
-                    <input type="text" id="form3enamn" class="form-control" />
+                    <input type="text" id="form3enamn" class="form-control" required/>
                     <label class="form-label" for="form3enamn">Efternamn</label>
                   </div>
                 </div>
@@ -55,7 +55,7 @@
                 <div class="col-md-6 mb-4">
 
                   <div class="form-outline mb-4">
-                    <input type="text" id="form3tel" class="form-control" />
+                    <input type="text" id="form3tel" class="form-control" required/>
                     <label class="form-label" for="form3tel">Telefonnummer</label>
                   </div>
 
@@ -63,11 +63,33 @@
                 <div class="col-md-6 mb-4">
 
                   <div class="form-outline mb-4">
-                    <input type="text" id="form3mail" class="form-control" />
+                    <input type="text" id="form3mail" class="form-control" required/>
                     <label class="form-label" for="form3mail">Mail</label>
                   </div>
 
                 </div>
+              </div>
+
+              <div class="row">
+
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline mb-5">
+                    <input type="number" id="form3num" class="form-control" min="1" max="6" required/>
+                    <label class="form-label" for="form3num">Antal personer</label>
+                  </div>
+
+                </div>
+
+                <div class="col-md-6 md-4">
+
+                  <div class="form-outline mb-5">
+                    <textarea type="text" id="form3extra" class="form-control"></textarea>
+                    <label class="form-label" for="form3extra">Extra</label>
+                  </div>
+
+                </div>
+
               </div>
 
               <button type="submit" class="btn btn-success btn-lg mb-1">Boka</button>
