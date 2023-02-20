@@ -23,7 +23,7 @@
               <div class="row">
                 <div class="col-md-6 mb-4">
                   <div class="form-outline mb-4">
-                    <input type="date" id="checkin-date" name="checkin" class="form-control" required>
+                    <input type="date" id="checkin-date" name="checkin" class="form-control" value="" required>
                     <label class="form-label" for="checkin-date">Välj Dag</label>
                   </div>
                 </div>
@@ -31,7 +31,7 @@
                   <div class="form-outline mb-4">
                     <input type="time" id="bokning-tid" class="form-control"
                            name="bokning-tid" value="17:00"
-                           min="16:00" max="20:00" required>
+                           min="16:00" max="20:00" step="900"  required>
                     <label for="bokning-tid">Välj Tid</label>
                   </div>
                 </div>
@@ -75,7 +75,7 @@
                 <div class="col-md-6 mb-4">
 
                   <div class="form-outline mb-5">
-                    <input type="number" id="form3num" class="form-control" min="1" max="6" required/>
+                    <input type="number" id="form3num" class="form-control" value="2" min="1" max="6" required/>
                     <label class="form-label" for="form3num">Antal personer</label>
                   </div>
 
@@ -104,6 +104,6 @@
 </section>
 
 <%@include file="footer.jsp"%>
-<script src="js/script.js"></script>
+<script src="js/currDate.js"></script>
 </body>
 </html>

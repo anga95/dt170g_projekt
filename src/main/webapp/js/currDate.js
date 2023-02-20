@@ -14,4 +14,5 @@ var dateTomorrow = year + "-" + month + "-" + date;
 var checkinElem = document.querySelector("#checkin-date");
 
 checkinElem.setAttribute("min", dateTomorrow);
+checkinElem.setAttribute("value", dateTomorrow);
 
