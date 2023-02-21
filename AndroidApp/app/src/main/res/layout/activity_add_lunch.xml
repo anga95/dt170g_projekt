@@ -7,6 +7,101 @@
     tools:context=".addLunch">
 
     <TextView
+        android:id="@+id/lunchOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/best_llning"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/drinkThree" />
+
+    <Button
+        android:id="@+id/addDrinkThreeBtn"
+        android:layout_width="64dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#DEBE5A"
+        android:text="@string/plus"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/drinkThree"
+        app:layout_constraintTop_toBottomOf="@+id/addDrinkTwoBtn"
+        android:onClick="pressedButton"/>
+
+    <Button
+        android:id="@+id/addDrinkTwoBtn"
+        android:layout_width="64dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#DEBE5A"
+        android:text="@string/plus"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/drinkTwo"
+        app:layout_constraintTop_toBottomOf="@+id/addDrinkOneBtn"
+        android:onClick="pressedButton"/>
+
+    <TextView
+        android:id="@+id/drinkThree"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/dricka"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/addDrinkThreeBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/drinkTwo" />
+
+    <Button
+        android:id="@+id/addLunchThreeBtn"
+        android:layout_width="64dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#DEBE5A"
+        android:text="@string/plus"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lunchOne"
+        app:layout_constraintTop_toBottomOf="@+id/addLunchTwoBtn"
+        android:onClick="pressedButton"/>
+
+    <Button
+        android:id="@+id/addLunchTwoBtn"
+        android:layout_width="64dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#DEBE5A"
+        android:text="@string/plus"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lunchTwo"
+        app:layout_constraintTop_toBottomOf="@+id/addLunchOneBtn"
+        android:onClick="pressedButton"/>
+
+    <TextView
+        android:id="@+id/lunchThree"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/dagens_lunch"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/addLunchThreeBtn"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lunchTwo" />
+
+    <TextView
         android:id="@+id/personalHeader"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -34,28 +129,133 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/personalHeader" />
 
-    <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="32dp"
-        android:touchscreenBlocksFocus="false"
-        android:contentDescription="@string/v_lj_vilken_r_tt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/tableNum" />
-
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/lunchMeal"
         android:layout_width="80dp"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:text="@string/r_tt"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/spinner2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableNum" />
+
+    <TextView
+        android:id="@+id/lunchDrink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/dricka"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lunchThree" />
+
+    <TextView
+        android:id="@+id/lunchOne"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/dagens_lunch"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/addLunchOneBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lunchMeal" />
+
+    <TextView
+        android:id="@+id/lunchTwo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/dagens_lunch"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/addLunchTwoBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lunchOne" />
+
+    <Button
+        android:id="@+id/addLunchOneBtn"
+        android:layout_width="64dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#DEBE5A"
+        android:text="@string/plus"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lunchOne"
+        app:layout_constraintTop_toBottomOf="@+id/lunchMeal"
+        android:onClick="pressedButton"/>
+
+    <TextView
+        android:id="@+id/drinkOne"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/dricka"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/addDrinkOneBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lunchDrink" />
+
+    <TextView
+        android:id="@+id/drinkTwo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/dricka"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/addDrinkTwoBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/drinkOne" />
+
+    <Button
+        android:id="@+id/addDrinkOneBtn"
+        android:layout_width="64dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#DEBE5A"
+        android:text="@string/plus"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/drinkOne"
+        app:layout_constraintTop_toBottomOf="@+id/lunchDrink"
+        android:onClick="pressedButton"/>
+
+    <ListView
+        android:id="@+id/totalOrder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lunchOrder"
+        app:layout_constraintVertical_bias="1.0"/>
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalOrder" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

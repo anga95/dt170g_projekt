@@ -17,11 +17,28 @@
     <string name="table_x">Table X</string>
     <string name="r_tt">Rätt</string>
     <string name="v_lj_vilken_r_tt">Välj vilken rätt</string>
+    <string name="dricka">Dricka</string>
+    <string name="l_gg_till_anteckningar">Lägg till anteckningar</string>
+    <string name="anteckningar">Anteckningar</string>
+    <string name="v_ljd_dricka">Väljd dricka</string>
+    <string name="l_gg_till">Lägg till</string>
+    <string name="hamburgare" />
+    <string name="plus">+</string>
+    <string name="best_llning">Beställning</string>
+    <string name="decrement">-</string>
+    <string name="zero">0</string>
     <string-array name="courses">
         <item>Hamburgare</item>
         <item>Pizza</item>
         <item>Sallad</item>
         <item>Köttbullar</item>
         <item>Sushi</item>
+    </string-array>
+    <string-array name="drinks">
+        <item>Coca-Cola</item>
+        <item>Fanta</item>
+        <item>Sprite</item>
+        <item>Zingo</item>
+        <item>Vatten</item>
     </string-array>
 </resources>
