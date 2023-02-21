@@ -24,6 +24,18 @@ public class EmployeeEntity {
     @Column(name = "RESTAURANT_ID")
     private Integer restaurantId;
 
+    @Column(name = "EMAIL", nullable = false)
+    private String email;
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+
+
     public int getId() {
         return id;
     }
