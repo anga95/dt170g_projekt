@@ -4,6 +4,8 @@ import androidx.annotation.IdRes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -11,13 +13,15 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class addLunch extends AppCompatActivity {
     TextView placeholder;
     ArrayList<String> listItems = new ArrayList<String>();
     ArrayAdapter<String> adapter;
-    ListView list;
+
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -42,9 +46,20 @@ public class addLunch extends AppCompatActivity {
         placeholder = (TextView)findViewById(R.id.drinkThree);
         placeholder.setText("Fanta");
 
-        list = (ListView) findViewById(R.id.totalOrder);
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listItems);
-        list.setAdapter(adapter);
+        ListView listView = findViewById(R.id.totalOrder);
+        //ArrayList<String> items = new ArrayList<>();
+        //items.add("Item 1");
+        //CustomListAdapter adapter = new CustomListAdapter(this,items);
+        //listView.setAdapter(adapter);
+
+        ArrayList<String> list = new ArrayList<String>(Arrays.asList("111,222,333,444".split(",")));
+        listView.setAdapter(new CustomListAdapter(list,context));
+
+        //list = (ListView) findViewById(R.id.totalOrder);
+        //list.setAdapter(new CustomListAdapter(list, context));
+        //adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listItems);
+        //list.setAdapter(adapter);
+
 
     }
 
@@ -65,8 +80,13 @@ public class addLunch extends AppCompatActivity {
             case R.id.addLunchTwoBtn:
                 updateTotal(R.id.lunchTwo);
                 break;
+            case R.id.addOrderBtn:
+                addToCart();
         }
     }
 
+    private void addToCart(){
+
+    }
 
 }
