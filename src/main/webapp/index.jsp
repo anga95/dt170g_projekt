@@ -5,6 +5,7 @@
 
  <%@ include file="navbar.jsp" %>
 
+
 <h1 class="display-1 text-center mt-3"><%= "Dagens lunch" %></h1>
 <br/>
 <div class="container-fluid d-flex justify-content-center mt-3 mb-5">

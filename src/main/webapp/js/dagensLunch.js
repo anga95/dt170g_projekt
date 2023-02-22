@@ -7,6 +7,13 @@ const currentDayElement = document.getElementById(currentDay);
 
 days.forEach(day => {
     day.addEventListener("click", function() {
+        // Remove the "selected" class from all list items
+        days.forEach(d => d.classList.remove("selected"));
+
+        // Add the "selected" class to the clicked item
+        day.classList.add("selected");
+
+        // Update the card content
         switch (day.id) {
             case "måndag":
                 dayInfo.innerHTML = `
@@ -76,3 +83,4 @@ days.forEach(day => {
 if (currentDayElement) {
     currentDayElement.click();
 }
+
