@@ -26,6 +26,9 @@ public class EmployeeEntity {
 
     @Column(name = "EMAIL", nullable = false)
     private String email;
+
+    @Column(name = "SHIFT", nullable = false)
+    private String shift;
     public String getEmail() {
         return email;
     }
@@ -33,8 +36,6 @@ public class EmployeeEntity {
     public void setEmail(String email) {
         this.email = email;
     }
-
-
 
     public int getId() {
         return id;
@@ -76,6 +77,13 @@ public class EmployeeEntity {
         this.restaurantId = restaurantId;
     }
 
+    public String getShift() {
+        return shift;
+    }
+
+    public void setShift(String shift) {
+        this.shift = shift;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
