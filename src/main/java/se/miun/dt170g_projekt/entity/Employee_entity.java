@@ -41,6 +41,14 @@ public class Employee_entity {
     public Employee_entity() {
     }
 
+    public Employee_entity(String email, String firstName, String lastName, Integer restaurantId, String telephone) {
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.restaurantId = restaurantId;
+        this.telephone = telephone;
+    }
+
     public int getId() {
         return id;
     }

@@ -41,5 +41,23 @@ List<Employee_entity> employees = employee_pm.getAllEmployees();
     <% } %>
     </tbody>
   </table>
+<!-- Create new employee form -->
+<h2>Create New Employee</h2>
+<form action="${pageContext.request.contextPath}/addEmployee" method="post">
+  <label for="email">Email:</label>
+  <input type="text" id="email" name="email"><br>
+
+  <label for="firstName">First Name:</label>
+  <input type="text" id="firstName" name="firstName"><br>
+
+  <label for="lastName">Last Name:</label>
+  <input type="text" id="lastName" name="lastName"><br>
+
+  <label for="telephone">Telephone:</label>
+  <input type="text" id="telephone" name="telephone"><br>
+
+  <input type="submit" name="submit" value="Submit" />
+</form>
+
 </body>
 </html>
