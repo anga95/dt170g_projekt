@@ -18,6 +18,9 @@
             android:name=".ChefPage"
             android:exported="false" />
         <activity
+            android:name=".addALaCarte"
+            android:exported="false" />
+        <activity
             android:name=".addLunch"
             android:exported="false" />
         <activity

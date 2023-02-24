@@ -19,10 +19,6 @@ import java.util.Set;
 
 public class addLunch extends AppCompatActivity {
     TextView placeholder;
-    String[] foods = {"Hamburger", "Fisk med pinnar", "Lasagne med ädelostsås och ruccola"};
-    String[] drinks = {"Vatten", "Coca-Cola", "Fanta"};
-    ListView listView;
-    Button addButton;
 
     private final Set<String> selectedItems = new HashSet<>();
 

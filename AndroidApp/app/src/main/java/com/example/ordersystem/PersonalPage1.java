@@ -14,13 +14,13 @@ public class PersonalPage1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_page1);
 
-        button1 = (Button)findViewById(R.id.dagensLunchBtn);
+        button1 = findViewById(R.id.dagensLunchBtn);
         button1.setOnClickListener(view -> {
             Intent intent = new Intent(PersonalPage1.this, TablesLunch.class);
             startActivity(intent);
         });
 
-        button1 = (Button)findViewById(R.id.aLaCarteBtn);
+        button1 = findViewById(R.id.aLaCarteBtn);
         button1.setOnClickListener(view -> {
             Intent intent = new Intent(PersonalPage1.this, TablesALaCarte.class);
             startActivity(intent);

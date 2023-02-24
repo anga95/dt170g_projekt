@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,9 +24,11 @@ public class ChefPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chef_page);
+        setContentView(R.layout.customchefpageadapter);
 
-        orderlist = findViewById(R.id.order_list);
+        LinearLayout oneOrder = findViewById(R.id.mainRecylcler);
+        OrderAdapter orderAdapter1 = new OrderAdapter(this, getOrderSample());
+        //orderlist = findViewById(R.id.order_list);
 
         orderAdapter = new OrderAdapter(this, getOrderSample());
         }
