@@ -1,4 +1,4 @@
-package entity;
+package se.miun.dt170g_projekt.entity;
 
 import jakarta.persistence.*;
 
