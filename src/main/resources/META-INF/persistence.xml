@@ -6,9 +6,6 @@
     <persistence-unit name="dbPU">
 <!--        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>-->
         <jta-data-source>jdbc/__antonsRes</jta-data-source>
-        <class>se.miun.dt170g_projekt.entities.Employee</class>
-        <class>se.miun.dt170g_projekt.entities.Shift</class>
-        <class>se.miun.dt170g_projekt.entities.EmployeeSchedule</class>
         <class>se.miun.dt170g_projekt.entity.Employee_entity</class>
         <class>se.miun.dt170g_projekt.entity.PersonalSchedule_entity</class>
         <class>se.miun.dt170g_projekt.entity.Restaurant_entity</class>
@@ -23,12 +20,12 @@
 <!--
 
             <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>-->
-            <!-- jakarta ee 10 persistence derby setup -->
-            <!--            <property name="jakarta.persistence.schema-generation.create-source" value="metadata"/>-->
-            <!--            <property name="jakarta.persistence.schema-generation.create-script-source" value="META-INF/create.sql"/>-->
-<!--            <property name="jakarta.persistence.schema-generation.drop-source" value="metadata"/>
+<!-- jakarta ee 10 persistence derby setup -->
+<!--            <property name="jakarta.persistence.schema-generation.create-source" value="metadata"/>
+            <property name="jakarta.persistence.schema-generation.create-script-source" value="META-INF/create.sql"/>
+           <property name="jakarta.persistence.schema-generation.drop-source" value="metadata"/>
             <property name="jakarta.persistence.schema-generation.drop-script-source" value="META-INF/drop.sql"/>
-            <property name="jakarta.persistence.sql-load-script-source" value="META-INF/data.sql"/>
+            <property name="jakarta.persistence.sql-load-script-source" value="META-INF/data.sql"/>-->
 
         </properties>
     </persistence-unit>

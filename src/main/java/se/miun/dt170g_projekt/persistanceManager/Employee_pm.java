@@ -3,7 +3,10 @@ package se.miun.dt170g_projekt.persistanceManager;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
+import jakarta.persistence.TypedQuery;
 import se.miun.dt170g_projekt.entity.Employee_entity;
+
+import java.util.List;
 
 public class Employee_pm {
     private EntityManagerFactory emf;
@@ -24,5 +27,12 @@ public class Employee_pm {
         Employee_entity employee = em.find(Employee_entity.class, id);
         em.close();
         return employee;
+    }
+    public List<Employee_entity> getAllEmployees() {
+        EntityManager em = emf.createEntityManager();
+        TypedQuery<Employee_entity> query = em.createQuery("SELECT e FROM Employee_entity e", Employee_entity.class);
+        List<Employee_entity> employees = query.getResultList();
+        em.close();
+        return employees;
     }
 }

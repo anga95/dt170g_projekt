@@ -23,6 +23,17 @@ public class Employee_entity {
     @Basic
     @Column(name = "RESTAURANT_ID")
     private Integer restaurantId;
+
+    public Employee_entity(int id, String email, String firstName, String lastName,
+                           Integer restaurantId, String telephone) {
+        this.id = id;
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.restaurantId = restaurantId;
+        this.telephone = telephone;
+    }
+
     @Basic
     @Column(name = "TELEPHONE")
     private String telephone;
