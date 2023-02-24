@@ -15,6 +15,9 @@
         android:theme="@style/Theme.OrderSystem"
         tools:targetApi="31">
         <activity
+            android:name=".ChefPage"
+            android:exported="false" />
+        <activity
             android:name=".addLunch"
             android:exported="false" />
         <activity
