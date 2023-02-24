@@ -4,25 +4,30 @@
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
              version="3.0">
     <persistence-unit name="dbPU">
+<!--        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>-->
         <jta-data-source>jdbc/__antonsRes</jta-data-source>
-        <class>database.EmployeeEntity</class>
-        <class>database.PersonalScheduleEntity</class>
-        <class>database.RestaurantEntity</class>
-        <class>database.ScheduleEntity</class>
+        <class>se.miun.dt170g_projekt.entities.Employee</class>
+        <class>se.miun.dt170g_projekt.entities.Shift</class>
+        <class>se.miun.dt170g_projekt.entities.EmployeeSchedule</class>
         <properties>
-            <!-- jakarta ee 10 persistence derby setup -->
-            <property name="jakarta.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:derby://localhost:1527/db;create=true"/>
-            <property name="jakarta.persistence.jdbc.user" value="admin" />
+<!--            <property name="eclipselink.target-database" value="Derby"/>-->
+            <!--            driver, url and connection credentials-->
+            <property name="jakarta.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:derby://localhost:1527/db"/>
+            <property name="jakarta.persistence.jdbc.user" value="admin"/>
             <property name="jakarta.persistence.jdbc.password" value="dt170g"/>
-            <!-- jakarta ee drop create -->
+
+
             <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
             <!-- jakarta ee 10 persistence derby setup -->
-            <property name="jakarta.persistence.schema-generation.create-source" value="metadata"/>
-<!--            <property name="jakarta.persistence.schema-generation.create-script-source" value="META-INF/create.sql"/>-->
+            <!--            <property name="jakarta.persistence.schema-generation.create-source" value="metadata"/>-->
+            <!--            <property name="jakarta.persistence.schema-generation.create-script-source" value="META-INF/create.sql"/>-->
             <property name="jakarta.persistence.schema-generation.drop-source" value="metadata"/>
-<!--            <property name="jakarta.persistence.schema-generation.drop-script-source" value="META-INF/drop.sql"/>-->
-            <property name="jakarta.persistence.sql-load-script-source" value="META-INF/defaultdata.sql"/>
+            <property name="jakarta.persistence.schema-generation.drop-script-source" value="META-INF/drop.sql"/>
+            <property name="jakarta.persistence.sql-load-script-source" value="META-INF/data.sql"/>
+
+            <property name="eclipselink.logging.level" value="FINEST"/>
+
 
         </properties>
     </persistence-unit>
