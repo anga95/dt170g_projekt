@@ -28,6 +28,8 @@
     <string name="decrement">-</string>
     <string name="zero">0</string>
     <string name="l_gg_till_order">Lägg till order</string>
+    <string name="varmr_tt">Varmrätt</string>
+    <string name="note">Note</string>
     <string-array name="courses">
         <item>Hamburgare</item>
         <item>Pizza</item>
