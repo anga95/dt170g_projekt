@@ -2,6 +2,7 @@ package com.example.ordersystem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
@@ -18,7 +19,7 @@ import java.util.List;
 public class ChefPage extends AppCompatActivity {
 
     private RecyclerView orderlist;
-    private OrderAdapter orderAdapter;
+    private ChefPageAdapter chefpageadapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +28,9 @@ public class ChefPage extends AppCompatActivity {
 
         orderlist = findViewById(R.id.order_list);
 
-        orderAdapter = new OrderAdapter(this, getOrderSample());
+        chefpageadapter = new ChefPageAdapter(getOrderSample());
+        orderlist.setAdapter(chefpageadapter);
+        orderlist.setLayoutManager(new LinearLayoutManager(this));
         }
 
         private List<Order> getOrderSample() {
@@ -41,45 +44,6 @@ public class ChefPage extends AppCompatActivity {
             ordersamples.add(ordernr1);
 
 
-
             return ordersamples;
         }
-
-
-
-
-
-    private class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHolder> {
-
-        private final Context context;
-        private final List<Order> orders;
-
-        public OrderAdapter(Context context, List<Order> orders) {
-            this.context = context;
-            this.orders = orders;
-        }
-
-        public OrderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
-            View view1 = LayoutInflater.from(context).inflate(R.layout.order_item, parent, false);
-            return new OrderViewHolder(view1);
-        }
-
-        @Override
-        public void onBindViewHolder(@NonNull OrderAdapter.OrderViewHolder holder, int position) {
-
-        }
-
-        @Override
-        public int getItemCount() {
-            return orders.size();
-        }
-
-        public class OrderViewHolder extends RecyclerView.ViewHolder{
-
-
-            public OrderViewHolder(View viewItem){
-                super(viewItem);
-            }
-        }
-    }
 }
