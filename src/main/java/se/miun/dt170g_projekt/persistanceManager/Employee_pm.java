@@ -1,38 +1,32 @@
 package se.miun.dt170g_projekt.persistanceManager;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
-import jakarta.persistence.TypedQuery;
+import jakarta.annotation.Resource;
+import jakarta.persistence.*;
 import jakarta.transaction.UserTransaction;
 import se.miun.dt170g_projekt.entity.Employee_entity;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import java.io.Serializable;
 import java.util.List;
 
-public class Employee_pm {
+public class Employee_pm implements Serializable {
+    @PersistenceUnit
     private EntityManagerFactory emf;
+
+    @Resource
     private UserTransaction utx;
+
+    @PersistenceContext
+    private EntityManager em;
 
     public Employee_pm() throws NamingException {
         emf = Persistence.createEntityManagerFactory("dbPU");
         utx = (UserTransaction) new InitialContext().lookup("java:comp/UserTransaction");
-
+        em = emf.createEntityManager();
     }
     public void saveEmployee(Employee_entity employee) {
-        try (EntityManager em = emf.createEntityManager()) {
-            utx.begin();
-            em.persist(employee);
-            utx.commit();
-        } catch (Exception e) {
-            try {
-                utx.rollback();
-            } catch (Exception ex) {
-                throw new RuntimeException(ex);
-            }
-            throw new RuntimeException(e);
-        }
+        em.persist(employee);
     }
 
     public Employee_entity getEmployeeById(int id) {
@@ -42,10 +36,12 @@ public class Employee_pm {
         return employee;
     }
     public List<Employee_entity> getAllEmployees() {
-        EntityManager em = emf.createEntityManager();
+/* EntityManager em = emf.createEntityManager(); */
         TypedQuery<Employee_entity> query = em.createQuery("SELECT e FROM Employee_entity e", Employee_entity.class);
         List<Employee_entity> employees = query.getResultList();
         em.close();
+        emf.close();
+
         return employees;
     }
 }
