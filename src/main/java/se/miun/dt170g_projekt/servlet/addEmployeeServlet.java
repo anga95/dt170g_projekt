@@ -33,6 +33,7 @@ public class addEmployeeServlet extends HttpServlet {
         } catch (NamingException e) {
             throw new RuntimeException(e);
         }
+
         employee_pm.saveEmployee(employee);
 
         // Redirect to employee list page

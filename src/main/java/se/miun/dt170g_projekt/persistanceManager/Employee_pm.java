@@ -16,23 +16,18 @@ public class Employee_pm {
     private UserTransaction utx;
 
     public Employee_pm() throws NamingException {
-        emf = Persistence.createEntityManagerFactory("dbPU");
-        utx = (UserTransaction) new InitialContext().lookup("java:comp/UserTransaction");
+/*        emf = Persistence.createEntityManagerFactory("dbPU");
+        utx = (UserTransaction) new InitialContext().lookup("java:comp/UserTransaction");*/
 
     }
     public void saveEmployee(Employee_entity employee) {
-        try (EntityManager em = emf.createEntityManager()) {
-            utx.begin();
-            em.persist(employee);
-            utx.commit();
-        } catch (Exception e) {
-            try {
-                utx.rollback();
-            } catch (Exception ex) {
-                throw new RuntimeException(ex);
-            }
-            throw new RuntimeException(e);
-        }
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("dbPU");
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        em.persist(employee);
+        em.getTransaction().commit();
+        em.close();
+        emf.close();
     }
 
     public Employee_entity getEmployeeById(int id) {
@@ -42,10 +37,12 @@ public class Employee_pm {
         return employee;
     }
     public List<Employee_entity> getAllEmployees() {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("dbPU");
         EntityManager em = emf.createEntityManager();
         TypedQuery<Employee_entity> query = em.createQuery("SELECT e FROM Employee_entity e", Employee_entity.class);
         List<Employee_entity> employees = query.getResultList();
         em.close();
+        emf.close();
         return employees;
     }
 }

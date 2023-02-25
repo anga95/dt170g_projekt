@@ -13,10 +13,10 @@
         <properties>
 <!--            <property name="eclipselink.target-database" value="Derby"/>-->
             <!--            driver, url and connection credentials-->
-            <property name="jakarta.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+<!--            <property name="jakarta.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:derby://localhost:1527/db"/>
             <property name="jakarta.persistence.jdbc.user" value="admin"/>
-            <property name="jakarta.persistence.jdbc.password" value="dt170g"/>
+            <property name="jakarta.persistence.jdbc.password" value="dt170g"/>-->
 <!--
 
             <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>-->
