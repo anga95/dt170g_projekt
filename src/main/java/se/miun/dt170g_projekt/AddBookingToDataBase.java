@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.rmi.ServerException;
-@WebServlet(name = "TestServlet", value = "/test")
+@WebServlet(name = "BookingPage", value = "/bookingPage")
 public class AddBookingToDataBase extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServerException, IOException, ServletException {
