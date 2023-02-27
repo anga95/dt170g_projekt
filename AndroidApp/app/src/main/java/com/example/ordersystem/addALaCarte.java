@@ -6,44 +6,52 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
-public class addLunch extends AppCompatActivity {
+public class addALaCarte extends AppCompatActivity {
+
     TextView placeholder;
-
     private RecyclerView mFoodsRecyclerView;
     private RecyclerView mSelectedFoodsRecyclerView;
     private SourceRecyclerAdapter mFoodsAdapter;
     private DestinationRecyclerAdapter mSelectedFoodsAdapter;
-    private List<String> foods;
+
+    private List<String> appertizers;
+    private List<String> mainCourse;
+    private List<String> desserts;
     private List<String> drinks;
 
-    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_lunch);
+        setContentView(R.layout.activity_add_ala_carte);
 
         placeholder = findViewById(R.id.tableNum);
         placeholder.setText(getIntent().getStringExtra("message"));
 
-        foods = new ArrayList<>();
-        foods.add("Pizza");
-        foods.add("Burger");
-        foods.add("Taco");
-        foods.add("Sushi");
+        appertizers = new ArrayList<>();
+        appertizers.add("Tiramisu");
+        appertizers.add("Bruchetta");
+        appertizers.add("Scampi");
+        appertizers.add("Kaffe");
+
+        mainCourse = new ArrayList<>();
+        mainCourse.add("Pizza med extra allt av alla toppingar och paprika");
+        mainCourse.add("Burger");
+        mainCourse.add("Taco");
+        mainCourse.add("Sushi");
+
+        desserts = new ArrayList<>();
+        desserts.add("Glass");
+        desserts.add("Bulle");
+        desserts.add("Kaka");
+        desserts.add("Svensson");
 
         drinks = new ArrayList<>();
         drinks.add("Vatten");
@@ -56,8 +64,18 @@ public class addLunch extends AppCompatActivity {
         mSelectedFoodsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mSelectedFoodsRecyclerView.setAdapter(mSelectedFoodsAdapter);
 
-        mFoodsAdapter = new SourceRecyclerAdapter(foods, mSelectedFoodsAdapter);
+        mFoodsAdapter = new SourceRecyclerAdapter(appertizers, mSelectedFoodsAdapter);
+        mFoodsRecyclerView = findViewById(R.id.appertizerRecyclerView);
+        mFoodsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mFoodsRecyclerView.setAdapter(mFoodsAdapter);
+
+        mFoodsAdapter = new SourceRecyclerAdapter(mainCourse, mSelectedFoodsAdapter);
         mFoodsRecyclerView = findViewById(R.id.mainCourseRecyclerView);
+        mFoodsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mFoodsRecyclerView.setAdapter(mFoodsAdapter);
+
+        mFoodsAdapter = new SourceRecyclerAdapter(desserts, mSelectedFoodsAdapter);
+        mFoodsRecyclerView = findViewById(R.id.dessertRecyclerView);
         mFoodsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mFoodsRecyclerView.setAdapter(mFoodsAdapter);
 
@@ -65,7 +83,6 @@ public class addLunch extends AppCompatActivity {
         mFoodsRecyclerView = findViewById(R.id.drinkRecyclerView);
         mFoodsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mFoodsRecyclerView.setAdapter(mFoodsAdapter);
-
 
     }
 
