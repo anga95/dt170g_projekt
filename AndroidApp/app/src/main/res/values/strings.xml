@@ -32,6 +32,7 @@
     <string name="note">Note</string>
     <string name="f_rr_tt">Förrätt</string>
     <string name="efterr_tt">Efterrätt</string>
+    <string name="skicka_till_k_k">Skicka till kök</string>
     <string-array name="courses">
         <item>Hamburgare</item>
         <item>Pizza</item>

@@ -67,16 +67,10 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tableNum" />
 
-            <ListView
-                android:id="@+id/appertizerList"
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="1dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="1dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:id="@+id/appertizerRecyclerView"/>
 
             <TextView
                 android:id="@+id/mainCourse"
@@ -90,16 +84,10 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tableNum" />
 
-            <ListView
-                android:id="@+id/mainCourseList"
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="1dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="1dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:id="@+id/mainCourseRecyclerView"/>
 
             <TextView
                 android:id="@+id/dessert"
@@ -113,16 +101,10 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tableNum" />
 
-            <ListView
-                android:id="@+id/dessertList"
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="1dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="1dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:id="@+id/dessertRecyclerView"/>
 
             <TextView
                 android:id="@+id/drink"
@@ -136,16 +118,38 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tableNum" />
 
-            <ListView
-                android:id="@+id/drinksList"
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="1dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="1dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:id="@+id/drinkRecyclerView"/>
+
+            <TextView
+                android:id="@+id/totalOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:text="@string/best_llning"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tableNum" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/orderRecyclerView"/>
+
+            <Button
+                android:id="@+id/sendToKitchen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#DEBE5A"
+                android:text="@string/skicka_till_k_k"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginStart="200sp"
+                android:layout_marginTop="16dp"/>
 
         </LinearLayout>
 

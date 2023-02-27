@@ -1,6 +1,8 @@
 package com.example.ordersystem;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -13,6 +15,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -20,7 +23,12 @@ import java.util.Set;
 public class addLunch extends AppCompatActivity {
     TextView placeholder;
 
-    private final Set<String> selectedItems = new HashSet<>();
+    private RecyclerView mFoodsRecyclerView;
+    private RecyclerView mSelectedFoodsRecyclerView;
+    private SourceRecyclerAdapter mFoodsAdapter;
+    private DestinationRecyclerAdapter mSelectedFoodsAdapter;
+    private List<String> foods;
+    private List<String> drinks;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -31,21 +39,32 @@ public class addLunch extends AppCompatActivity {
         placeholder = findViewById(R.id.tableNum);
         placeholder.setText(getIntent().getStringExtra("message"));
 
-        List<String> wholeMenu = Arrays.asList("Hamburgare", "Fisk med pinnar", "Lasagne med ädelostsås och ruccola", "Vatten", "Coca-Cola", "Fanta");
-        List<String> drinks = Arrays.asList("Vatten", "Coca-Cola", "Fanta");
-        List<String> foods = Arrays.asList("Hamburgare", "Fisk med pinnar", "Lasagne med ädelostsås och ruccola");
+        foods = new ArrayList<>();
+        foods.add("Pizza");
+        foods.add("Burger");
+        foods.add("Taco");
+        foods.add("Sushi");
 
-        ListView destinationList = findViewById(R.id.totalOrderList);
-        DestinationListAdapter destinationListAdapter = new DestinationListAdapter(this, R.layout.totalorder_listview, wholeMenu, selectedItems);
-        destinationList.setAdapter(destinationListAdapter);
+        drinks = new ArrayList<>();
+        drinks.add("Vatten");
+        drinks.add("Fanta");
+        drinks.add("Cola");
+        drinks.add("Ramlösa");
 
-        ListView sourceList = findViewById(R.id.foodsList);
-        SourceListAdapter sourceListAdapter = new SourceListAdapter(this, R.layout.custom_listview, foods, destinationListAdapter);
-        sourceList.setAdapter(sourceListAdapter);
+        mSelectedFoodsAdapter = new DestinationRecyclerAdapter(new HashMap<>());
+        mSelectedFoodsRecyclerView = findViewById(R.id.orderRecyclerView);
+        mSelectedFoodsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mSelectedFoodsRecyclerView.setAdapter(mSelectedFoodsAdapter);
 
-        sourceList = findViewById(R.id.drinksList);
-        sourceListAdapter = new SourceListAdapter(this, R.layout.custom_listview, drinks, destinationListAdapter);
-        sourceList.setAdapter(sourceListAdapter);
+        mFoodsAdapter = new SourceRecyclerAdapter(foods, mSelectedFoodsAdapter);
+        mFoodsRecyclerView = findViewById(R.id.mainCourseRecyclerView);
+        mFoodsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mFoodsRecyclerView.setAdapter(mFoodsAdapter);
+
+        mFoodsAdapter = new SourceRecyclerAdapter(drinks, mSelectedFoodsAdapter);
+        mFoodsRecyclerView = findViewById(R.id.drinkRecyclerView);
+        mFoodsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mFoodsRecyclerView.setAdapter(mFoodsAdapter);
 
 
     }

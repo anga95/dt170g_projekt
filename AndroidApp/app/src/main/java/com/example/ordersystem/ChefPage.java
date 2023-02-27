@@ -2,16 +2,20 @@ package com.example.ordersystem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.Placeholder;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,11 +24,15 @@ public class ChefPage extends AppCompatActivity {
 
     private RecyclerView orderlist;
     private OrderAdapter orderAdapter;
+    TextView placeholder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.customchefpageadapter);
+
+        placeholder = findViewById(R.id.textView8);
+        placeholder.setText(getIntent().getStringExtra("message"));
 
         LinearLayout oneOrder = findViewById(R.id.mainRecylcler);
         OrderAdapter orderAdapter1 = new OrderAdapter(this, getOrderSample());
