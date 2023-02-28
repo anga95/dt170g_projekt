@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.chefapp'
+    namespace 'se.miun.dt170g.chefapp'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.chefapp"
+        applicationId 'se.miun.dt170g.chefapp'
         minSdk 25
         targetSdk 33
         versionCode 1

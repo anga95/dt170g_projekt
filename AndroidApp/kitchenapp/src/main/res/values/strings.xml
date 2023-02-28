@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">KitchenApp</string>
+    <string name="personal" />
+    <string name="table_x" />
+    <string name="prio_3" />
+    <string name="f_rr_tt" />
+    <string name="checkbox3" />
+</resources>

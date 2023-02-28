@@ -14,14 +14,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        button1 = (Button)findViewById(R.id.personalBtn);
-
-
-        button2 = (Button)findViewById(R.id.kockBtn);
-        button2.setOnClickListener(view -> {
-            Intent intent2 = new Intent(MainActivity.this, ChefPage.class);
-            startActivity(intent2);
-        });
     }
 }
