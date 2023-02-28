@@ -8,22 +8,28 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.rmi.ServerException;
+import java.util.ArrayList;
+import java.util.Enumeration;
+
 @WebServlet(name = "BookingPage", value = "/bookingPage")
 public class AddBookingToDataBase extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServerException, IOException, ServletException {
 
-        System.out.println("BookingServlet");
-        // read form fields
-        String username = request.getParameter("fname");
-
-        String savedValues = "username: " + username;
-        System.out.println(savedValues); // Print the saved values to the console for debugging purposes
-
-        // Set the saved values as an attribute in the request object
+        Enumeration paramNames = request.getParameterNames();
+        ArrayList<String> paramValue = new ArrayList<String>();
+        String savedValues = "";
+        // read all param names and request value for each param
+        while(paramNames.hasMoreElements()) {
+            String paramName = (String)paramNames.nextElement();
+            String[] paramValues = request.getParameterValues(paramName);
+            if (paramValues.length == 1) {
+                // Add the param name and value to the savedValues string
+                paramValue.add(paramValues[0]);
+                savedValues += " " +  paramName + ": " + paramValues[0];
+            }
+        }
         request.setAttribute("savedValues2", savedValues);
-
-        // Forward the request to a JSP page to display the saved values
         RequestDispatcher dispatcher = request.getRequestDispatcher("/savedValues.jsp");
         dispatcher.forward(request, response);
 

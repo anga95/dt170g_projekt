@@ -28,6 +28,7 @@
 </div>
 <br/>
 <script src="js/dagensLunch.js"></script>
+<%@ include file="event.jsp" %>
 <%@ include file="footer.jsp" %>
 </body>
 </html>

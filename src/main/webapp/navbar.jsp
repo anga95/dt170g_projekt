@@ -20,9 +20,6 @@
                 <li class="nav-item">
                     <a class="nav-link px-5" href="alacarte.jsp">A La Carte</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Om oss</a>
-                </li>
             </ul>
         </div>
         <!-- End Center Element -->
