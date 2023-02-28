@@ -7,10 +7,19 @@ import java.util.Objects;
 @Entity
 @Table(name = "EMPLOYEE", schema = "APP", catalog = "")
 public class Employee_entity {
+/*    public Employee_entity(Integer id, String email, String firstName, String lastName, int restaurantId, String telephone) {
+        this.id = id;
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.restaurantId = restaurantId;
+        this.telephone = telephone;
+    }*/
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "ID")
-    private int id;
+    private Integer id;
     @Basic
     @Column(name = "EMAIL")
     private String email;
@@ -21,33 +30,22 @@ public class Employee_entity {
     @Column(name = "LAST_NAME")
     private String lastName;
     @Basic
-    @Column(name = "RESTAURANT_ID")
-    private Integer restaurantId;
-
-    public Employee_entity(int id, String email, String firstName, String lastName,
-                           Integer restaurantId, String telephone) {
-        this.id = id;
-        this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.restaurantId = restaurantId;
-        this.telephone = telephone;
-    }
-
+    @Column(name = "REST_ID_FK")
+    private int restaurantId;
     @Basic
     @Column(name = "TELEPHONE")
     private String telephone;
 
-    public Employee_entity() {
-    }
+/*    public Employee_entity() {
+    }*/
 
-    public Employee_entity(String email, String firstName, String lastName, Integer restaurantId, String telephone) {
+/*    public Employee_entity(String email, String firstName, String lastName, int restaurantId, String telephone) {
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
         this.restaurantId = restaurantId;
         this.telephone = telephone;
-    }
+    }*/
 
     public int getId() {
         return id;
@@ -81,11 +79,11 @@ public class Employee_entity {
         this.lastName = lastName;
     }
 
-    public Integer getRestaurantId() {
+    public int getRestaurantId() {
         return restaurantId;
     }
 
-    public void setRestaurantId(Integer restaurantId) {
+    public void setRestaurantId(int restaurantId) {
         this.restaurantId = restaurantId;
     }
 

@@ -3,8 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
          version="6.0">
-    <persistence-context-ref>
+<!--    <persistence-context-ref>
         <persistence-context-ref-name>dbPU</persistence-context-ref-name>
         <persistence-unit-name>dbPU</persistence-unit-name>
-    </persistence-context-ref>
+    </persistence-context-ref>-->
 </web-app>
