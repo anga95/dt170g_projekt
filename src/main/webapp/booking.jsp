@@ -23,30 +23,30 @@
               <div class="row">
                 <div class="col-md-6 mb-4">
                   <div class="form-outline mb-4">
-                    <input type="date" id="checkin-date" name="checkin" class="form-control" value="" required>
                     <label class="form-label" for="checkin-date">Välj Dag</label>
+                    <input type="date" id="checkin-date" name="checkin" class="form-control" value="" required>
                   </div>
                 </div>
                 <div class="col-md-6 mb-4">
                   <div class="form-outline mb-4">
+                    <label for="bokning-tid" class="mb-2">Välj Tid</label>
                     <input type="time" id="bokning-tid" class="form-control"
                            name="bokning-tid" value="17:00"
                            min="16:00" max="20:00" step="900"  required>
-                    <label for="bokning-tid">Välj Tid</label>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6 mb-4">
                   <div class="form-outline mb-4">
-                    <input type="text" id="form3fnamn" name="fname" class="form-control" required/>
                     <label class="form-label" for="form3fnamn">Förnamn</label>
+                    <input type="text" id="form3fnamn" name="fname" class="form-control" required/>
                   </div>
                 </div>
                 <div class="col-md-6 mb-4">
                   <div class="form-outline mb-4">
-                    <input type="text" id="form3enamn" name="ename" class="form-control" required/>
                     <label class="form-label" for="form3enamn">Efternamn</label>
+                    <input type="text" id="form3enamn" name="ename" class="form-control" required/>
                   </div>
                 </div>
               </div>
@@ -55,18 +55,17 @@
                 <div class="col-md-6 mb-4">
 
                   <div class="form-outline mb-4">
-                    <input type="text" id="form3tel" name="telnum" class="form-control" required/>
                     <label class="form-label" for="form3tel">Telefonnummer</label>
+                    <input type="text" id="form3tel" name="telnum" class="form-control" required/>
                   </div>
 
                 </div>
                 <div class="col-md-6 mb-4">
 
                   <div class="form-outline mb-4">
-                    <input type="text" id="form3mail" name="mail" class="form-control" required/>
                     <label class="form-label" for="form3mail">Mail</label>
+                    <input type="text" id="form3mail" name="mail" class="form-control" required/>
                   </div>
-
                 </div>
               </div>
 
@@ -75,8 +74,8 @@
                 <div class="col-md-6 mb-4">
 
                   <div class="form-outline mb-5">
-                    <input type="number" id="form3num" name="numpeople" class="form-control" value="2" min="1" max="6" required/>
                     <label class="form-label" for="form3num">Antal personer</label>
+                    <input type="number" id="form3num" name="numpeople" class="form-control" value="2" min="1" max="6" required/>
                   </div>
 
                 </div>
@@ -84,15 +83,17 @@
                 <div class="col-md-6 md-4">
 
                   <div class="form-outline mb-5">
-                    <textarea type="text" id="form3extra" name="extra" class="form-control"></textarea>
                     <label class="form-label" for="form3extra">Extra</label>
+                    <textarea type="text" id="form3extra" name="extra" class="form-control"></textarea>
                   </div>
 
                 </div>
 
               </div>
+              <div class="row d-flex justify-content-center align-items-center">
+                <button type="submit" class="btn btn-warning mb-1">Boka</button>
+              </div>
 
-              <button type="submit" class="btn btn-success btn-lg mb-1">Boka</button>
 
             </form>
             <form action="">

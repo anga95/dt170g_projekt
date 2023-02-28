@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 
+<hr class="mb-5"/>
+
 <h1 class="display-1 text-center mt-3"><%= "Events" %></h1>
 
 <div class ="container-fluid">
