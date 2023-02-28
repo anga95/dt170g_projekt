@@ -1,4 +1,4 @@
-package com.example.chefapp;
+package com.example.kitchenapp;
 
 import org.junit.Test;
 
