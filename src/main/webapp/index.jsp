@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"  %>
 
 <%@ include file="head.jsp" %>
 
@@ -12,19 +12,75 @@
     <div class="row">
         <div class="col-6 d-flex align-items-center">
             <ul>
-                <li class="list-group-item border-0 mb-2" id="måndag">Måndag</li>
-                <li class="list-group-item border-0 mb-2" id="tisdag">Tisdag</li>
-                <li class="list-group-item border-0 mb-2" id="onsdag">Onsdag</li>
-                <li class="list-group-item border-0 mb-2" id="torsdag">Torsdag</li>
-                <li class="list-group-item border-0" id="fredag">Fredag</li>
+                <li class="list-group-item border-0 mb-2" id="måndag" onclick="showDayInfo('måndag')">Måndag</li>
+                <li class="list-group-item border-0 mb-2" id="tisdag" onclick="showDayInfo('tisdag')">Tisdag</li>
+                <li class="list-group-item border-0 mb-2" id="onsdag" onclick="showDayInfo('onsdag')">Onsdag</li>
+                <li class="list-group-item border-0 mb-2" id="torsdag" onclick="showDayInfo('torsdag')">Torsdag</li>
+                <li class="list-group-item border-0" id="fredag" onclick="showDayInfo('fredag')">Fredag</li>
             </ul>
         </div>
         <div class="col-6">
-            <div class="card mt-3 pb-5" style="width: 20rem;" id="day-info">
-                <!-- Add information about the selected day here -->
+            <div class="card mt-3 pb-5" style="width: 20rem;">
+                <div class="day-info" id="måndag-info">
+                    <div class="card-body">
+                        <h5 class="card-title">Måndag</h5>
+                        <p class="card-text"><%= request.getAttribute("dish1Mon") %></p>
+                        <br/>
+                        <p class="card-text"><%= request.getAttribute("dish2Mon") %></p>
+                        <br/>
+                        <p class="card-text"><%= request.getAttribute("dish3Mon") %></p>
+                    </div>
+                </div>
+
+
+                <div class="day-info" id="tisdag-info">
+                    <div class="card-body">
+                        <h5 class="card-title">Tisdag</h5>
+                        <p class="card-text">Fatimas köttfärslimpa med brunsås och potatismos.</p>
+                        <br/>
+                        <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
+                        <br/>
+                        <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
+                    </div>
+                </div>
+
+                <div class="day-info" id="onsdag-info">
+                    <div class="card-body">
+                        <h5 class="card-title">Onsdag</h5>
+                        <p class="card-text">Fatimas köttfärslimpa med brunsås och potatismos.</p>
+                        <br/>
+                        <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
+                        <br/>
+                        <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
+                    </div>
+                </div>
+
+                <div class="day-info" id="torsdag-info">
+                    <div class="card-body">
+                        <h5 class="card-title">Torsdag</h5>
+                        <p class="card-text">Fatimas köttfärslimpa med brunsås och potatismos.</p>
+                        <br/>
+                        <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
+                        <br/>
+                        <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
+                    </div>
+                </div>
+
+                <div class="day-info" id="fredag-info">
+                    <div class="card-body">
+                        <h5 class="card-title">Fredag</h5>
+                        <p class="card-text">Fatimas köttfärslimpa med brunsås och potatismos.</p>
+                        <br/>
+                        <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
+                        <br/>
+                        <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
+    <a href="AdminAddFood">Add Food</a>
 </div>
 <br/>
 <script src="js/dagensLunch.js"></script>

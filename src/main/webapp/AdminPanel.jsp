@@ -5,7 +5,7 @@
   Time: 10:07
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ include file="head.jsp" %>
 <%@ include file="navbar.jsp" %>
 <h1 class="display-1 text-center mt-3"><%= "VECKOMENY" %></h1>
@@ -14,7 +14,7 @@
     <div class="row">
         <div class="card mt-3 pb-5 bg-gradient d-flex align-items-center" style="width: 20rem;">
             <div class="card-body">
-                <form action="${pageContext.request.contextPath}/AdminPage" method="post">
+                <form accept-charset="UTF-8" action="${pageContext.request.contextPath}/AdminPage" method="post">
                     <input type="hidden" id="selectedDay" name="selectedDay" value="Måndag">
                     <div class="form-group">
                         <h3 class="text-center mb-4" id="day">Måndag</h3>

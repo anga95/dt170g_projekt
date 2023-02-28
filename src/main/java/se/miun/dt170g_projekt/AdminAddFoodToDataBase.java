@@ -13,6 +13,7 @@ import java.rmi.ServerException;
 public class AdminAddFoodToDataBase extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServerException, IOException, ServletException {
+        request.setCharacterEncoding("UTF-8");
         String day = request.getParameter("selectedDay");
         String dish1 = request.getParameter("dish1");
         String dish2 = request.getParameter("dish2");

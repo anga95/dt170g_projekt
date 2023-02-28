@@ -1,5 +1,5 @@
 const days = document.querySelectorAll(".list-group-item");
-const dayInfo = document.getElementById("day-info");
+const dayInfos = document.querySelectorAll(".day-info");
 
 const currentDay = new Date().toLocaleString('default', { weekday: 'long' });
 console.log(currentDay);
@@ -7,80 +7,25 @@ const currentDayElement = document.getElementById(currentDay);
 
 days.forEach(day => {
     day.addEventListener("click", function() {
-        // Remove the "selected" class from all list items
+// Remove the "selected" class from all list items
         days.forEach(d => d.classList.remove("selected"));
-
         // Add the "selected" class to the clicked item
         day.classList.add("selected");
 
-        // Update the card content
-        switch (day.id) {
-            case "måndag":
-                dayInfo.innerHTML = `
-          <div class="card-body">
-            <h5 class="card-title">Måndag</h5>
-            <p class="card-text">Fatimas köttfärslimpa med brunsås och potatismos.</p>
-            <br/>
-                <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
-                <br/>
-                <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
-            </div>
-        `
-                break;
-            case "tisdag":
-                dayInfo.innerHTML = `
-          <div class="card-body">
-            <h5 class="card-title">Tisdag</h5>
-            <p class="card-text">Fatimas köttfärslimpa med brunsås och potatismos.</p>
-            <br/>
-                <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
-                <br/>
-                <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
-            </div>
-        `
-                break;
-            case "onsdag":
-                dayInfo.innerHTML = `
-          <div class="card-body">
-            <h5 class="card-title">Onsdag</h5>
-            <p class="card-text">Fatimas köttfärslimpa med brunsås och potatismos.</p>
-            <br/>
-                <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
-                <br/>
-                <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
-            </div>
-        `
-                break;
-            case "torsdag":
-                dayInfo.innerHTML = `
-          <div class="card-body">
-            <h5 class="card-title">Torsdag</h5>
-            <p class="card-text">Fatimas köttfärslimpa med brunsås och potatismos.</p>
-            <br/>
-                <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
-                <br/>
-                <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
-            </div>
-          `
-                break;
-            case "fredag":
-                dayInfo.innerHTML = `
-            <div class="card-body">
-            <h5 class="card-title">Fredag</h5>
-            <p class="card-text">Fatimas köttfärslimpa med brunsås och potatismos.</p>
-            <br/>
-                <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
-                <br/>
-                <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
-            </div>
-          `
-            default:
-                break;
-        }
+        // Show the selected day's information
+        showDayInfo(day.id);
     });
 });
 
+function showDayInfo(dayId) {
+// Hide all the day-info divs
+    dayInfos.forEach(dayInfo => {
+        dayInfo.style.display = "none";
+    });
+    // Show the selected day's information
+    const dayInfo = document.getElementById(`${dayId}-info`);
+    dayInfo.style.display = "block";
+}
 if (currentDayElement) {
     currentDayElement.click();
 }
-
