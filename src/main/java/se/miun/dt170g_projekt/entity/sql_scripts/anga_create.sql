@@ -1,16 +1,9 @@
 CREATE TABLE APP.RESTAURANT (
-                                ID INT PRIMARY KEY,
-                                NAME VARCHAR(255)
+    ID INT PRIMARY KEY,
+    NAME VARCHAR(255)
 );
+INSERT INTO APP.RESTAURANT (ID, NAME) VALUES (1, 'antons skafferi');
 
-/*CREATE TABLE APP.EMPLOYEE (
-                              ID INT PRIMARY KEY,
-                              EMAIL VARCHAR(255),
-                              FIRST_NAME VARCHAR(255),
-                              LAST_NAME VARCHAR(255),
-                              RESTAURANT_ID INT,
-                              TELEPHONE VARCHAR(20)
-);*/
 create table APP.employee
 (
     id         INTEGER generated always as identity
@@ -24,8 +17,6 @@ create table APP.employee
         constraint "employee_RESTAURANT_ID_fk"
             references RESTAURANT
 );
-
-INSERT INTO APP.RESTAURANT (ID, NAME) VALUES (1, 'antons skafferi');
 
 INSERT INTO APP.EMPLOYEE (EMAIL, FIRST_NAME, LAST_NAME, rest_id_fk, TELEPHONE)
 VALUES ('kalle@gmail.com', 'kalle', 'nilsson', 1, '11111'),
