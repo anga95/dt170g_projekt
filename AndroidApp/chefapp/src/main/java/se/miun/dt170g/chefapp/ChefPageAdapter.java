@@ -39,11 +39,18 @@ public class ChefPageAdapter extends RecyclerView.Adapter<ChefPageAdapter.ViewHo
         return new ViewHolder(view);
     }
 
+
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+
+
         Order order = orders.get(position);
+
         holder.textView.setText("Table" + order.getTableNr());
-        holder.textView2.setText(order.getPriority());
+        String priority = String.valueOf(order.getPriority());
+        if (priority != null) {
+            holder.textView2.setText(priority);
+        }
         holder.textView8.setText(order.getCourse());
         holder.checkBox.setChecked(order.OrderReady());
 
