@@ -37,6 +37,10 @@ public class Order {
         return tableNr;
     }
 
+
+    public void setStarter(List<String> starter) {
+        this.starter = starter;
+    }
     public List<String> getStarter() {
         return starter;
     }
@@ -49,6 +53,10 @@ public class Order {
         this.starterready = starterready;
     }
 
+
+    public void setMainCourse(List<String> mainCourse) {
+        this.mainCourse = mainCourse;
+    }
     public List<String> getMainCourse(){
         return mainCourse;
     }
@@ -61,6 +69,9 @@ public class Order {
         this.mainCourseready = mainCourseready;
     }
 
+    public void setDessert(List<String> dessert) {
+        this.dessert = dessert;
+    }
     public List<String> getDessert(){
         return dessert;
     }
