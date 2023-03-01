@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewSchduleActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/previous_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:background="@null"
+            android:contentDescription=" "
+            android:hint=" "
+            android:rotation="180"
+            android:text="@string/previous_month"
+            android:textColor="@color/tan"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:icon="@android:drawable/ic_media_play" />
+
+        <TextView
+            android:id="@+id/month_year_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Month Year"
+            android:textColor="@color/brown"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/next_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:background="@null"
+            android:contentDescription=" "
+            android:hint=" "
+            android:text="@string/next_month"
+            android:textColor="@color/tan"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:icon="@android:drawable/ic_media_play" />
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/schedule_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:contentDescription="Employees schedule"
+        android:fadeScrollbars="true"
+        tools:layout_editor_absoluteY="50dp">
+
+        <TableLayout
+            android:id="@+id/schedule_table"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white" />
+
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
