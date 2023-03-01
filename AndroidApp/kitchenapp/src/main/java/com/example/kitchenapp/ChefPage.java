@@ -1,6 +1,11 @@
 package com.example.kitchenapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,9 +29,10 @@ public class ChefPage extends AppCompatActivity {
 
     private List<OrderItem> getOrderSample() {
         List<OrderItem> ordersamples = new ArrayList<>();
+        int value = getIntent().getIntExtra("key", 0);
 
         OrderItem ordernr1 = new OrderItem(1,1, new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), false, false, false);
-        ordernr1.setTableNr(1);
+        ordernr1.setTableNr(value);
         ordernr1.getStarter().add("Tomatsoppa");
         ordernr1.getMainCourse().add("Köttbullar");
         ordernr1.getDessert().add("Bakelse");
