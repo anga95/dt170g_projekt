@@ -24,7 +24,7 @@ List<Employee> employees = employee_pm.getAllEmployees();
 
 
 %>
-#{employee_pm.}
+
 <table>
   <thead>
   <tr>
