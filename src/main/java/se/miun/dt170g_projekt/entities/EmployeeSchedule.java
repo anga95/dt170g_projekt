@@ -3,7 +3,7 @@ package se.miun.dt170g_projekt.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "employee_schedule", schema = "APP")
+@Table(name = "employee_schedule")
 public class EmployeeSchedule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
