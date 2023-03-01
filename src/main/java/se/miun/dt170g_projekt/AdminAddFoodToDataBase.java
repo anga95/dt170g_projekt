@@ -6,6 +6,9 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import se.miun.dt170g_projekt.entites.DailyLunchEntity;
+import se.miun.dt170g_projekt.persistanceManager.dailyLunch;
+//import se.miun.dt170g_projekt.persistanceManager.dailyLunch;
 
 import java.io.IOException;
 import java.rmi.ServerException;
@@ -28,6 +31,26 @@ public class AdminAddFoodToDataBase extends HttpServlet {
         // Forward the request to a JSP page to display the saved values
         RequestDispatcher dispatcher = request.getRequestDispatcher("/savedValues.jsp");
         dispatcher.forward(request, response);
+
+        DailyLunchEntity Daily = new DailyLunchEntity();
+
+        Daily.setWeekday(day);
+        Daily.setLunch1(dish1);
+        Daily.setLunch2(dish2);
+        Daily.setLunch3(dish3);
+
+        dailyLunch dailyLunch = null;
+
+        try {
+            dailyLunch = new dailyLunch();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        dailyLunch.saveDaily(Daily);
+
+        // Redirect to employee list page
+        response.sendRedirect("index.jsp");
     }
 }
 
