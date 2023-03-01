@@ -1,0 +1,1441 @@
+Index: app/src/main/java/com/example/ordersystem/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ordersystem;\n\nimport androidx.appcompat.app.AppCompatActivity;\n\nimport android.content.Intent;\nimport android.os.Bundle;\nimport android.widget.Button;\n\npublic class MainActivity extends AppCompatActivity {\n    //test\n    Button button1;\n    Button button2;\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n        setContentView(R.layout.activity_main);\n\n        button1 = (Button)findViewById(R.id.personalBtn);\n        button1.setOnClickListener(view -> {\n            Intent intent = new Intent(MainActivity.this, PersonalPage1.class);\n            startActivity(intent);\n        });\n\n        button2 = (Button)findViewById(R.id.kockBtn);\n        button2.setOnClickListener(view -> {\n            Intent intent2 = new Intent(MainActivity.this, ChefPage.class);\n            startActivity(intent2);\n        });\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/ordersystem/MainActivity.java b/app/src/main/java/com/example/ordersystem/MainActivity.java
+--- a/app/src/main/java/com/example/ordersystem/MainActivity.java	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/app/src/main/java/com/example/ordersystem/MainActivity.java	(date 1677506121567)
+@@ -1,30 +1,0 @@
+-package com.example.ordersystem;
+-
+-import androidx.appcompat.app.AppCompatActivity;
+-
+-import android.content.Intent;
+-import android.os.Bundle;
+-import android.widget.Button;
+-
+-public class MainActivity extends AppCompatActivity {
+-    //test
+-    Button button1;
+-    Button button2;
+-    @Override
+-    protected void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        setContentView(R.layout.activity_main);
+-
+-        button1 = (Button)findViewById(R.id.personalBtn);
+-        button1.setOnClickListener(view -> {
+-            Intent intent = new Intent(MainActivity.this, PersonalPage1.class);
+-            startActivity(intent);
+-        });
+-
+-        button2 = (Button)findViewById(R.id.kockBtn);
+-        button2.setOnClickListener(view -> {
+-            Intent intent2 = new Intent(MainActivity.this, ChefPage.class);
+-            startActivity(intent2);
+-        });
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/java/com/example/ordersystem/TablesLunch.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ordersystem;\n\nimport androidx.appcompat.app.AppCompatActivity;\n\nimport android.annotation.SuppressLint;\nimport android.content.Intent;\nimport android.os.Bundle;\nimport android.view.View;\nimport android.widget.Button;\n\npublic class TablesLunch extends AppCompatActivity {\n\n    //Button button1;\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n        setContentView(R.layout.activity_tables_lunch);\n\n    }\n\n    public void nextWindow(String value){\n        Intent intent = new Intent(TablesLunch.this, addLunch.class);\n        intent.putExtra(\"message\", value);\n        startActivity(intent);\n    }\n\n    @SuppressLint(\"NonConstantResourceId\")\n    public void helpB(View view) {\n        Button clickedButton = (Button) view;\n        switch(clickedButton.getId()){\n            case R.id.table1Btn:\n                nextWindow(\"Table 1\");\n                break;\n            case R.id.table2Btn:\n                nextWindow(\"Table 2\");\n                break;\n            case R.id.table3Btn:\n                nextWindow(\"Table 3\");\n                break;\n            case R.id.table4Btn:\n                nextWindow(\"Table 4\");\n                break;\n            case R.id.table5Btn:\n                nextWindow(\"Table 5\");\n                break;\n            case R.id.table6Btn:\n                nextWindow(\"Table 6\");\n                break;\n            case R.id.table7Btn:\n                nextWindow(\"Table 7\");\n                break;\n            case R.id.table8Btn:\n                nextWindow(\"Table 8\");\n                break;\n        }\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/ordersystem/TablesLunch.java b/app/src/main/java/com/example/ordersystem/TablesLunch.java
+--- a/app/src/main/java/com/example/ordersystem/TablesLunch.java	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/app/src/main/java/com/example/ordersystem/TablesLunch.java	(date 1677506121564)
+@@ -1,57 +1,0 @@
+-package com.example.ordersystem;
+-
+-import androidx.appcompat.app.AppCompatActivity;
+-
+-import android.annotation.SuppressLint;
+-import android.content.Intent;
+-import android.os.Bundle;
+-import android.view.View;
+-import android.widget.Button;
+-
+-public class TablesLunch extends AppCompatActivity {
+-
+-    //Button button1;
+-    @Override
+-    protected void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        setContentView(R.layout.activity_tables_lunch);
+-
+-    }
+-
+-    public void nextWindow(String value){
+-        Intent intent = new Intent(TablesLunch.this, addLunch.class);
+-        intent.putExtra("message", value);
+-        startActivity(intent);
+-    }
+-
+-    @SuppressLint("NonConstantResourceId")
+-    public void helpB(View view) {
+-        Button clickedButton = (Button) view;
+-        switch(clickedButton.getId()){
+-            case R.id.table1Btn:
+-                nextWindow("Table 1");
+-                break;
+-            case R.id.table2Btn:
+-                nextWindow("Table 2");
+-                break;
+-            case R.id.table3Btn:
+-                nextWindow("Table 3");
+-                break;
+-            case R.id.table4Btn:
+-                nextWindow("Table 4");
+-                break;
+-            case R.id.table5Btn:
+-                nextWindow("Table 5");
+-                break;
+-            case R.id.table6Btn:
+-                nextWindow("Table 6");
+-                break;
+-            case R.id.table7Btn:
+-                nextWindow("Table 7");
+-                break;
+-            case R.id.table8Btn:
+-                nextWindow("Table 8");
+-                break;
+-        }
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/java/com/example/ordersystem/PersonalPage1.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ordersystem;\n\nimport androidx.appcompat.app.AppCompatActivity;\n\nimport android.content.Intent;\nimport android.os.Bundle;\nimport android.widget.Button;\n\npublic class PersonalPage1 extends AppCompatActivity {\n\n    Button button1;\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n        setContentView(R.layout.activity_personal_page1);\n\n        button1 = (Button)findViewById(R.id.dagensLunchBtn);\n        button1.setOnClickListener(view -> {\n            Intent intent = new Intent(PersonalPage1.this, TablesLunch.class);\n            startActivity(intent);\n        });\n\n        button1 = (Button)findViewById(R.id.aLaCarteBtn);\n        button1.setOnClickListener(view -> {\n            Intent intent = new Intent(PersonalPage1.this, TablesALaCarte.class);\n            startActivity(intent);\n        });\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/ordersystem/PersonalPage1.java b/app/src/main/java/com/example/ordersystem/PersonalPage1.java
+--- a/app/src/main/java/com/example/ordersystem/PersonalPage1.java	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/app/src/main/java/com/example/ordersystem/PersonalPage1.java	(date 1677506121566)
+@@ -1,29 +1,0 @@
+-package com.example.ordersystem;
+-
+-import androidx.appcompat.app.AppCompatActivity;
+-
+-import android.content.Intent;
+-import android.os.Bundle;
+-import android.widget.Button;
+-
+-public class PersonalPage1 extends AppCompatActivity {
+-
+-    Button button1;
+-    @Override
+-    protected void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        setContentView(R.layout.activity_personal_page1);
+-
+-        button1 = (Button)findViewById(R.id.dagensLunchBtn);
+-        button1.setOnClickListener(view -> {
+-            Intent intent = new Intent(PersonalPage1.this, TablesLunch.class);
+-            startActivity(intent);
+-        });
+-
+-        button1 = (Button)findViewById(R.id.aLaCarteBtn);
+-        button1.setOnClickListener(view -> {
+-            Intent intent = new Intent(PersonalPage1.this, TablesALaCarte.class);
+-            startActivity(intent);
+-        });
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/java/com/example/ordersystem/addLunch.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ordersystem;\n\nimport androidx.appcompat.app.AppCompatActivity;\n\nimport android.os.Bundle;\nimport android.widget.TextView;\n\npublic class addLunch extends AppCompatActivity {\n    TextView placeholder;\n\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n        setContentView(R.layout.activity_add_lunch);\n        placeholder = (TextView)findViewById(R.id.tableNum);\n        placeholder.setText(getIntent().getStringExtra(\"message\"));\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/ordersystem/addLunch.java b/app/src/main/java/com/example/ordersystem/addLunch.java
+--- a/app/src/main/java/com/example/ordersystem/addLunch.java	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/app/src/main/java/com/example/ordersystem/addLunch.java	(date 1677506121565)
+@@ -1,18 +1,0 @@
+-package com.example.ordersystem;
+-
+-import androidx.appcompat.app.AppCompatActivity;
+-
+-import android.os.Bundle;
+-import android.widget.TextView;
+-
+-public class addLunch extends AppCompatActivity {
+-    TextView placeholder;
+-
+-    @Override
+-    protected void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        setContentView(R.layout.activity_add_lunch);
+-        placeholder = (TextView)findViewById(R.id.tableNum);
+-        placeholder.setText(getIntent().getStringExtra("message"));
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_tables_ala_carte.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    tools:context=\".TablesALaCarte\">\n\n    <TextView\n        android:id=\"@+id/personalHeader\"\n        android:layout_width=\"0dp\"\n        android:layout_height=\"wrap_content\"\n        android:background=\"#DADADA\"\n        android:text=\"@string/personal\"\n        android:textAlignment=\"center\"\n        android:textAllCaps=\"true\"\n        android:textSize=\"28sp\"\n        android:textStyle=\"bold\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintHorizontal_bias=\"0.0\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\" />\n\n    <TextView\n        android:id=\"@+id/tableNum\"\n        android:layout_width=\"0dp\"\n        android:layout_height=\"wrap_content\"\n        android:layout_marginTop=\"24dp\"\n        android:text=\"@string/a_la_carte\"\n        android:textAlignment=\"center\"\n        android:textSize=\"20sp\"\n        android:textStyle=\"bold\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toBottomOf=\"@+id/personalHeader\" />\n\n    <Button\n        android:id=\"@+id/table1Btn\"\n        android:layout_width=\"0dp\"\n        android:layout_height=\"80dp\"\n        android:layout_marginStart=\"85dp\"\n        android:layout_marginTop=\"67dp\"\n        android:layout_marginEnd=\"60dp\"\n        android:backgroundTint=\"#FFFFFF\"\n        android:text=\"@string/table_1\"\n        android:textColor=\"@color/black\"\n        app:layout_constraintEnd_toStartOf=\"@+id/table2Btn\"\n        app:layout_constraintHorizontal_bias=\"0.438\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toBottomOf=\"@+id/tableNum\" />\n\n    <Button\n        android:id=\"@+id/table2Btn\"\n        android:layout_width=\"0dp\"\n        android:layout_height=\"80dp\"\n        android:layout_marginStart=\"60dp\"\n        android:layout_marginTop=\"67dp\"\n        android:layout_marginEnd=\"85dp\"\n        android:backgroundTint=\"#FFFFFF\"\n        android:text=\"@string/table_2\"\n        android:textColor=\"@color/black\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toEndOf=\"@+id/table1Btn\"\n        app:layout_constraintTop_toBottomOf=\"@+id/tableNum\" />\n\n    <Button\n        android:id=\"@+id/table3Btn\"\n        android:layout_width=\"0dp\"\n        android:layout_height=\"80dp\"\n        android:layout_marginStart=\"85dp\"\n        android:layout_marginTop=\"48dp\"\n        android:layout_marginEnd=\"60dp\"\n        android:backgroundTint=\"#FFFFFF\"\n        android:text=\"@string/table_3\"\n        android:textColor=\"@color/black\"\n        app:layout_constraintEnd_toStartOf=\"@+id/table4Btn\"\n        app:layout_constraintHorizontal_bias=\"0.412\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toBottomOf=\"@+id/table1Btn\" />\n\n    <Button\n        android:id=\"@+id/table4Btn\"\n        android:layout_width=\"0dp\"\n        android:layout_height=\"80dp\"\n        android:layout_marginStart=\"60dp\"\n        android:layout_marginTop=\"48dp\"\n        android:layout_marginEnd=\"85dp\"\n        android:backgroundTint=\"#FFFFFF\"\n        android:text=\"@string/table_4\"\n        android:textColor=\"@color/black\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toEndOf=\"@+id/table3Btn\"\n        app:layout_constraintTop_toBottomOf=\"@+id/table2Btn\" />\n\n    <Button\n        android:id=\"@+id/table5Btn\"\n        android:layout_width=\"0dp\"\n        android:layout_height=\"80dp\"\n        android:layout_marginStart=\"85dp\"\n        android:layout_marginTop=\"48dp\"\n        android:layout_marginEnd=\"60dp\"\n        android:backgroundTint=\"#FFFFFF\"\n        android:text=\"@string/table_5\"\n        android:textColor=\"@color/black\"\n        app:layout_constraintEnd_toStartOf=\"@+id/table6Btn\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toBottomOf=\"@+id/table3Btn\" />\n\n    <Button\n        android:id=\"@+id/table6Btn\"\n        android:layout_width=\"0dp\"\n        android:layout_height=\"80dp\"\n        android:layout_marginStart=\"60dp\"\n        android:layout_marginTop=\"48dp\"\n        android:layout_marginEnd=\"85dp\"\n        android:backgroundTint=\"#FFFFFF\"\n        android:text=\"@string/table_6\"\n        android:textColor=\"@color/black\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toEndOf=\"@+id/table5Btn\"\n        app:layout_constraintTop_toBottomOf=\"@+id/table4Btn\" />\n\n    <Button\n        android:id=\"@+id/table7Btn\"\n        android:layout_width=\"0dp\"\n        android:layout_height=\"80dp\"\n        android:layout_marginStart=\"85dp\"\n        android:layout_marginTop=\"48dp\"\n        android:layout_marginEnd=\"60dp\"\n        android:backgroundTint=\"#FFFFFF\"\n        android:text=\"@string/table_7\"\n        android:textColor=\"@color/black\"\n        app:layout_constraintEnd_toStartOf=\"@+id/table8Btn\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toBottomOf=\"@+id/table5Btn\" />\n\n    <Button\n        android:id=\"@+id/table8Btn\"\n        android:layout_width=\"0dp\"\n        android:layout_height=\"80dp\"\n        android:layout_marginStart=\"60dp\"\n        android:layout_marginTop=\"48dp\"\n        android:layout_marginEnd=\"85dp\"\n        android:backgroundTint=\"#FFFFFF\"\n        android:text=\"@string/table_8\"\n        android:textColor=\"@color/black\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintHorizontal_bias=\"0.572\"\n        app:layout_constraintStart_toEndOf=\"@+id/table7Btn\"\n        app:layout_constraintTop_toBottomOf=\"@+id/table6Btn\" />\n\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_tables_ala_carte.xml b/app/src/main/res/layout/activity_tables_ala_carte.xml
+--- a/app/src/main/res/layout/activity_tables_ala_carte.xml	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/app/src/main/res/layout/activity_tables_ala_carte.xml	(date 1677506121596)
+@@ -1,152 +1,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".TablesALaCarte">
+-
+-    <TextView
+-        android:id="@+id/personalHeader"
+-        android:layout_width="0dp"
+-        android:layout_height="wrap_content"
+-        android:background="#DADADA"
+-        android:text="@string/personal"
+-        android:textAlignment="center"
+-        android:textAllCaps="true"
+-        android:textSize="28sp"
+-        android:textStyle="bold"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.0"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toTopOf="parent" />
+-
+-    <TextView
+-        android:id="@+id/tableNum"
+-        android:layout_width="0dp"
+-        android:layout_height="wrap_content"
+-        android:layout_marginTop="24dp"
+-        android:text="@string/a_la_carte"
+-        android:textAlignment="center"
+-        android:textSize="20sp"
+-        android:textStyle="bold"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/personalHeader" />
+-
+-    <Button
+-        android:id="@+id/table1Btn"
+-        android:layout_width="0dp"
+-        android:layout_height="80dp"
+-        android:layout_marginStart="85dp"
+-        android:layout_marginTop="67dp"
+-        android:layout_marginEnd="60dp"
+-        android:backgroundTint="#FFFFFF"
+-        android:text="@string/table_1"
+-        android:textColor="@color/black"
+-        app:layout_constraintEnd_toStartOf="@+id/table2Btn"
+-        app:layout_constraintHorizontal_bias="0.438"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/tableNum" />
+-
+-    <Button
+-        android:id="@+id/table2Btn"
+-        android:layout_width="0dp"
+-        android:layout_height="80dp"
+-        android:layout_marginStart="60dp"
+-        android:layout_marginTop="67dp"
+-        android:layout_marginEnd="85dp"
+-        android:backgroundTint="#FFFFFF"
+-        android:text="@string/table_2"
+-        android:textColor="@color/black"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toEndOf="@+id/table1Btn"
+-        app:layout_constraintTop_toBottomOf="@+id/tableNum" />
+-
+-    <Button
+-        android:id="@+id/table3Btn"
+-        android:layout_width="0dp"
+-        android:layout_height="80dp"
+-        android:layout_marginStart="85dp"
+-        android:layout_marginTop="48dp"
+-        android:layout_marginEnd="60dp"
+-        android:backgroundTint="#FFFFFF"
+-        android:text="@string/table_3"
+-        android:textColor="@color/black"
+-        app:layout_constraintEnd_toStartOf="@+id/table4Btn"
+-        app:layout_constraintHorizontal_bias="0.412"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/table1Btn" />
+-
+-    <Button
+-        android:id="@+id/table4Btn"
+-        android:layout_width="0dp"
+-        android:layout_height="80dp"
+-        android:layout_marginStart="60dp"
+-        android:layout_marginTop="48dp"
+-        android:layout_marginEnd="85dp"
+-        android:backgroundTint="#FFFFFF"
+-        android:text="@string/table_4"
+-        android:textColor="@color/black"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toEndOf="@+id/table3Btn"
+-        app:layout_constraintTop_toBottomOf="@+id/table2Btn" />
+-
+-    <Button
+-        android:id="@+id/table5Btn"
+-        android:layout_width="0dp"
+-        android:layout_height="80dp"
+-        android:layout_marginStart="85dp"
+-        android:layout_marginTop="48dp"
+-        android:layout_marginEnd="60dp"
+-        android:backgroundTint="#FFFFFF"
+-        android:text="@string/table_5"
+-        android:textColor="@color/black"
+-        app:layout_constraintEnd_toStartOf="@+id/table6Btn"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/table3Btn" />
+-
+-    <Button
+-        android:id="@+id/table6Btn"
+-        android:layout_width="0dp"
+-        android:layout_height="80dp"
+-        android:layout_marginStart="60dp"
+-        android:layout_marginTop="48dp"
+-        android:layout_marginEnd="85dp"
+-        android:backgroundTint="#FFFFFF"
+-        android:text="@string/table_6"
+-        android:textColor="@color/black"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toEndOf="@+id/table5Btn"
+-        app:layout_constraintTop_toBottomOf="@+id/table4Btn" />
+-
+-    <Button
+-        android:id="@+id/table7Btn"
+-        android:layout_width="0dp"
+-        android:layout_height="80dp"
+-        android:layout_marginStart="85dp"
+-        android:layout_marginTop="48dp"
+-        android:layout_marginEnd="60dp"
+-        android:backgroundTint="#FFFFFF"
+-        android:text="@string/table_7"
+-        android:textColor="@color/black"
+-        app:layout_constraintEnd_toStartOf="@+id/table8Btn"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/table5Btn" />
+-
+-    <Button
+-        android:id="@+id/table8Btn"
+-        android:layout_width="0dp"
+-        android:layout_height="80dp"
+-        android:layout_marginStart="60dp"
+-        android:layout_marginTop="48dp"
+-        android:layout_marginEnd="85dp"
+-        android:backgroundTint="#FFFFFF"
+-        android:text="@string/table_8"
+-        android:textColor="@color/black"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.572"
+-        app:layout_constraintStart_toEndOf="@+id/table7Btn"
+-        app:layout_constraintTop_toBottomOf="@+id/table6Btn" />
+-
+-</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_personal_page1.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    android:background=\"#FFFFFF\"\n    tools:context=\".PersonalPage1\">\n\n    <Button\n        android:id=\"@+id/dagensLunchBtn\"\n        android:layout_width=\"160dp\"\n        android:layout_height=\"80dp\"\n        android:layout_marginStart=\"120dp\"\n        android:layout_marginEnd=\"120dp\"\n        android:backgroundTint=\"#DEBE5A\"\n        android:text=\"@string/dagens_lunch\"\n        android:textColor=\"@color/black\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\" />\n\n    <Button\n        android:id=\"@+id/aLaCarteBtn\"\n        android:layout_width=\"160dp\"\n        android:layout_height=\"80dp\"\n        android:layout_marginStart=\"120dp\"\n        android:layout_marginTop=\"24dp\"\n        android:layout_marginEnd=\"120dp\"\n        android:layout_marginBottom=\"180dp\"\n        android:backgroundTint=\"#DEBE5A\"\n        android:text=\"@string/a_la_cart\"\n        android:textColor=\"@color/black\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toBottomOf=\"@+id/dagensLunchBtn\" />\n\n    <ImageView\n        android:id=\"@+id/imageView\"\n        android:layout_width=\"0dp\"\n        android:layout_height=\"wrap_content\"\n        android:contentDescription=\"@string/app_name\"\n        app:layout_constraintBottom_toTopOf=\"@+id/dagensLunchBtn\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\"\n        app:srcCompat=\"@drawable/logga\" />\n\n    <TextView\n        android:id=\"@+id/personalHeader\"\n        android:layout_width=\"0dp\"\n        android:layout_height=\"0dp\"\n        android:layout_marginBottom=\"90dp\"\n        android:background=\"#DADADA\"\n        android:text=\"@string/personal\"\n        android:textAlignment=\"center\"\n        android:textAllCaps=\"true\"\n        android:textSize=\"28sp\"\n        android:textStyle=\"bold\"\n        app:layout_constraintBottom_toTopOf=\"@+id/imageView\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintHorizontal_bias=\"0.0\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\" />\n\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_personal_page1.xml b/app/src/main/res/layout/activity_personal_page1.xml
+--- a/app/src/main/res/layout/activity_personal_page1.xml	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/app/src/main/res/layout/activity_personal_page1.xml	(date 1677506121595)
+@@ -1,68 +1,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    android:background="#FFFFFF"
+-    tools:context=".PersonalPage1">
+-
+-    <Button
+-        android:id="@+id/dagensLunchBtn"
+-        android:layout_width="160dp"
+-        android:layout_height="80dp"
+-        android:layout_marginStart="120dp"
+-        android:layout_marginEnd="120dp"
+-        android:backgroundTint="#DEBE5A"
+-        android:text="@string/dagens_lunch"
+-        android:textColor="@color/black"
+-        app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toTopOf="parent" />
+-
+-    <Button
+-        android:id="@+id/aLaCarteBtn"
+-        android:layout_width="160dp"
+-        android:layout_height="80dp"
+-        android:layout_marginStart="120dp"
+-        android:layout_marginTop="24dp"
+-        android:layout_marginEnd="120dp"
+-        android:layout_marginBottom="180dp"
+-        android:backgroundTint="#DEBE5A"
+-        android:text="@string/a_la_cart"
+-        android:textColor="@color/black"
+-        app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/dagensLunchBtn" />
+-
+-    <ImageView
+-        android:id="@+id/imageView"
+-        android:layout_width="0dp"
+-        android:layout_height="wrap_content"
+-        android:contentDescription="@string/app_name"
+-        app:layout_constraintBottom_toTopOf="@+id/dagensLunchBtn"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toTopOf="parent"
+-        app:srcCompat="@drawable/logga" />
+-
+-    <TextView
+-        android:id="@+id/personalHeader"
+-        android:layout_width="0dp"
+-        android:layout_height="0dp"
+-        android:layout_marginBottom="90dp"
+-        android:background="#DADADA"
+-        android:text="@string/personal"
+-        android:textAlignment="center"
+-        android:textAllCaps="true"
+-        android:textSize="28sp"
+-        android:textStyle="bold"
+-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.0"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toTopOf="parent" />
+-
+-</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/xml/data_extraction_rules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?><!--\n   Sample data extraction rules file; uncomment and customize as necessary.\n   See https://developer.android.com/about/versions/12/backup-restore#xml-changes\n   for details.\n-->\n<data-extraction-rules>\n    <cloud-backup>\n        <!-- TODO: Use <include> and <exclude> to control what is backed up.\n        <include .../>\n        <exclude .../>\n        -->\n    </cloud-backup>\n    <!--\n    <device-transfer>\n        <include .../>\n        <exclude .../>\n    </device-transfer>\n    -->\n</data-extraction-rules>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/xml/data_extraction_rules.xml b/app/src/main/res/xml/data_extraction_rules.xml
+--- a/app/src/main/res/xml/data_extraction_rules.xml	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/app/src/main/res/xml/data_extraction_rules.xml	(date 1677506121599)
+@@ -1,19 +1,0 @@
+-<?xml version="1.0" encoding="utf-8"?><!--
+-   Sample data extraction rules file; uncomment and customize as necessary.
+-   See https://developer.android.com/about/versions/12/backup-restore#xml-changes
+-   for details.
+--->
+-<data-extraction-rules>
+-    <cloud-backup>
+-        <!-- TODO: Use <include> and <exclude> to control what is backed up.
+-        <include .../>
+-        <exclude .../>
+-        -->
+-    </cloud-backup>
+-    <!--
+-    <device-transfer>
+-        <include .../>
+-        <exclude .../>
+-    </device-transfer>
+-    -->
+-</data-extraction-rules>
+\ No newline at end of file
+Index: app/src/main/res/xml/backup_rules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?><!--\n   Sample backup rules file; uncomment and customize as necessary.\n   See https://developer.android.com/guide/topics/data/autobackup\n   for details.\n   Note: This file is ignored for devices older that API 31\n   See https://developer.android.com/about/versions/12/backup-restore\n-->\n<full-backup-content>\n    <!--\n   <include domain=\"sharedpref\" path=\".\"/>\n   <exclude domain=\"sharedpref\" path=\"device.xml\"/>\n-->\n</full-backup-content>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/xml/backup_rules.xml b/app/src/main/res/xml/backup_rules.xml
+--- a/app/src/main/res/xml/backup_rules.xml	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/app/src/main/res/xml/backup_rules.xml	(date 1677506121598)
+@@ -1,13 +1,0 @@
+-<?xml version="1.0" encoding="utf-8"?><!--
+-   Sample backup rules file; uncomment and customize as necessary.
+-   See https://developer.android.com/guide/topics/data/autobackup
+-   for details.
+-   Note: This file is ignored for devices older that API 31
+-   See https://developer.android.com/about/versions/12/backup-restore
+--->
+-<full-backup-content>
+-    <!--
+-   <include domain="sharedpref" path="."/>
+-   <exclude domain="sharedpref" path="device.xml"/>
+--->
+-</full-backup-content>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_add_lunch.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    tools:context=\".addLunch\">\n\n    <TextView\n        android:id=\"@+id/personalHeader\"\n        android:layout_width=\"0dp\"\n        android:layout_height=\"wrap_content\"\n        android:background=\"#DADADA\"\n        android:text=\"@string/personal\"\n        android:textAlignment=\"center\"\n        android:textAllCaps=\"true\"\n        android:textSize=\"28sp\"\n        android:textStyle=\"bold\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintHorizontal_bias=\"0.0\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\" />\n\n    <TextView\n        android:id=\"@+id/tableNum\"\n        android:layout_width=\"0dp\"\n        android:layout_height=\"wrap_content\"\n        android:layout_marginTop=\"24dp\"\n        android:text=\"@string/table_x\"\n        android:textAlignment=\"center\"\n        android:textSize=\"20sp\"\n        android:textStyle=\"bold\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toBottomOf=\"@+id/personalHeader\" />\n\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_add_lunch.xml b/app/src/main/res/layout/activity_add_lunch.xml
+--- a/app/src/main/res/layout/activity_add_lunch.xml	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/app/src/main/res/layout/activity_add_lunch.xml	(date 1677506121591)
+@@ -1,37 +1,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".addLunch">
+-
+-    <TextView
+-        android:id="@+id/personalHeader"
+-        android:layout_width="0dp"
+-        android:layout_height="wrap_content"
+-        android:background="#DADADA"
+-        android:text="@string/personal"
+-        android:textAlignment="center"
+-        android:textAllCaps="true"
+-        android:textSize="28sp"
+-        android:textStyle="bold"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.0"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toTopOf="parent" />
+-
+-    <TextView
+-        android:id="@+id/tableNum"
+-        android:layout_width="0dp"
+-        android:layout_height="wrap_content"
+-        android:layout_marginTop="24dp"
+-        android:text="@string/table_x"
+-        android:textAlignment="center"
+-        android:textSize="20sp"
+-        android:textStyle="bold"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/personalHeader" />
+-
+-</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\n    <string name=\"app_name\">OrderSystem</string>\n    <string name=\"personal\">Personal</string>\n    <string name=\"kock\">Kock</string>\n    <string name=\"new_activity\">New activity</string>\n    <string name=\"dagens_lunch\">Dagens lunch</string>\n    <string name=\"a_la_cart\">A La Carté</string>\n    <string name=\"table_1\">Table 1</string>\n    <string name=\"table_2\">Table 2</string>\n    <string name=\"table_3\">Table 3</string>\n    <string name=\"table_4\">Table 4</string>\n    <string name=\"table_5\">Table 5</string>\n    <string name=\"table_6\">Table 6</string>\n    <string name=\"table_7\">Table 7</string>\n    <string name=\"table_8\">Table 8</string>\n    <string name=\"a_la_carte\">A La Carte</string>\n    <string name=\"table_x\">Table X</string>\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+--- a/app/src/main/res/values/strings.xml	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/app/src/main/res/values/strings.xml	(date 1677506121590)
+@@ -1,18 +1,0 @@
+-<resources>
+-    <string name="app_name">OrderSystem</string>
+-    <string name="personal">Personal</string>
+-    <string name="kock">Kock</string>
+-    <string name="new_activity">New activity</string>
+-    <string name="dagens_lunch">Dagens lunch</string>
+-    <string name="a_la_cart">A La Carté</string>
+-    <string name="table_1">Table 1</string>
+-    <string name="table_2">Table 2</string>
+-    <string name="table_3">Table 3</string>
+-    <string name="table_4">Table 4</string>
+-    <string name="table_5">Table 5</string>
+-    <string name="table_6">Table 6</string>
+-    <string name="table_7">Table 7</string>
+-    <string name="table_8">Table 8</string>
+-    <string name="a_la_carte">A La Carte</string>
+-    <string name="table_x">Table X</string>
+-</resources>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_tables_lunch.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    tools:context=\".TablesLunch\">\n\n    <TextView\n        android:id=\"@+id/personalHeader\"\n        android:layout_width=\"0dp\"\n        android:layout_height=\"wrap_content\"\n        android:background=\"#DADADA\"\n        android:text=\"@string/personal\"\n        android:textAlignment=\"center\"\n        android:textAllCaps=\"true\"\n        android:textSize=\"28sp\"\n        android:textStyle=\"bold\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintHorizontal_bias=\"0.0\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\" />\n\n    <TextView\n        android:id=\"@+id/tableNum\"\n        android:layout_width=\"0dp\"\n        android:layout_height=\"wrap_content\"\n        android:layout_marginTop=\"24dp\"\n        android:text=\"@string/dagens_lunch\"\n        android:textAlignment=\"center\"\n        android:textSize=\"20sp\"\n        android:textStyle=\"bold\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toBottomOf=\"@+id/personalHeader\" />\n\n    <Button\n        android:id=\"@+id/table1Btn\"\n        android:layout_width=\"0dp\"\n        android:layout_height=\"80dp\"\n        android:layout_marginStart=\"85dp\"\n        android:layout_marginTop=\"67dp\"\n        android:layout_marginEnd=\"60dp\"\n        android:backgroundTint=\"#FFFFFF\"\n        android:text=\"@string/table_1\"\n        android:textColor=\"@color/black\"\n        android:onClick=\"helpB\"\n        app:layout_constraintEnd_toStartOf=\"@+id/table2Btn\"\n        app:layout_constraintHorizontal_bias=\"0.438\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toBottomOf=\"@+id/tableNum\" />\n\n    <Button\n        android:id=\"@+id/table2Btn\"\n        android:layout_width=\"0dp\"\n        android:layout_height=\"80dp\"\n        android:layout_marginStart=\"60dp\"\n        android:layout_marginTop=\"67dp\"\n        android:layout_marginEnd=\"85dp\"\n        android:backgroundTint=\"#FFFFFF\"\n        android:text=\"@string/table_2\"\n        android:textColor=\"@color/black\"\n        android:onClick=\"helpB\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toEndOf=\"@+id/table1Btn\"\n        app:layout_constraintTop_toBottomOf=\"@+id/tableNum\" />\n\n    <Button\n        android:id=\"@+id/table3Btn\"\n        android:layout_width=\"0dp\"\n        android:layout_height=\"80dp\"\n        android:layout_marginStart=\"85dp\"\n        android:layout_marginTop=\"48dp\"\n        android:layout_marginEnd=\"60dp\"\n        android:backgroundTint=\"#FFFFFF\"\n        android:text=\"@string/table_3\"\n        android:textColor=\"@color/black\"\n        android:onClick=\"helpB\"\n        app:layout_constraintEnd_toStartOf=\"@+id/table4Btn\"\n        app:layout_constraintHorizontal_bias=\"0.412\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toBottomOf=\"@+id/table1Btn\" />\n\n    <Button\n        android:id=\"@+id/table4Btn\"\n        android:layout_width=\"0dp\"\n        android:layout_height=\"80dp\"\n        android:layout_marginStart=\"60dp\"\n        android:layout_marginTop=\"48dp\"\n        android:layout_marginEnd=\"85dp\"\n        android:backgroundTint=\"#FFFFFF\"\n        android:text=\"@string/table_4\"\n        android:textColor=\"@color/black\"\n        android:onClick=\"helpB\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toEndOf=\"@+id/table3Btn\"\n        app:layout_constraintTop_toBottomOf=\"@+id/table2Btn\" />\n\n    <Button\n        android:id=\"@+id/table5Btn\"\n        android:layout_width=\"0dp\"\n        android:layout_height=\"80dp\"\n        android:layout_marginStart=\"85dp\"\n        android:layout_marginTop=\"48dp\"\n        android:layout_marginEnd=\"60dp\"\n        android:backgroundTint=\"#FFFFFF\"\n        android:text=\"@string/table_5\"\n        android:textColor=\"@color/black\"\n        android:onClick=\"helpB\"\n        app:layout_constraintEnd_toStartOf=\"@+id/table6Btn\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toBottomOf=\"@+id/table3Btn\" />\n\n    <Button\n        android:id=\"@+id/table6Btn\"\n        android:layout_width=\"0dp\"\n        android:layout_height=\"80dp\"\n        android:layout_marginStart=\"60dp\"\n        android:layout_marginTop=\"48dp\"\n        android:layout_marginEnd=\"85dp\"\n        android:backgroundTint=\"#FFFFFF\"\n        android:text=\"@string/table_6\"\n        android:textColor=\"@color/black\"\n        android:onClick=\"helpB\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toEndOf=\"@+id/table5Btn\"\n        app:layout_constraintTop_toBottomOf=\"@+id/table4Btn\" />\n\n    <Button\n        android:id=\"@+id/table7Btn\"\n        android:layout_width=\"0dp\"\n        android:layout_height=\"80dp\"\n        android:layout_marginStart=\"85dp\"\n        android:layout_marginTop=\"48dp\"\n        android:layout_marginEnd=\"60dp\"\n        android:backgroundTint=\"#FFFFFF\"\n        android:text=\"@string/table_7\"\n        android:textColor=\"@color/black\"\n        android:onClick=\"helpB\"\n        app:layout_constraintEnd_toStartOf=\"@+id/table8Btn\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toBottomOf=\"@+id/table5Btn\" />\n\n    <Button\n        android:id=\"@+id/table8Btn\"\n        android:layout_width=\"0dp\"\n        android:layout_height=\"80dp\"\n        android:layout_marginStart=\"60dp\"\n        android:layout_marginTop=\"48dp\"\n        android:layout_marginEnd=\"85dp\"\n        android:backgroundTint=\"#FFFFFF\"\n        android:text=\"@string/table_8\"\n        android:textColor=\"@color/black\"\n        android:onClick=\"helpB\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintHorizontal_bias=\"0.572\"\n        app:layout_constraintStart_toEndOf=\"@+id/table7Btn\"\n        app:layout_constraintTop_toBottomOf=\"@+id/table6Btn\" />\n\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_tables_lunch.xml b/app/src/main/res/layout/activity_tables_lunch.xml
+--- a/app/src/main/res/layout/activity_tables_lunch.xml	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/app/src/main/res/layout/activity_tables_lunch.xml	(date 1677506121594)
+@@ -1,160 +1,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".TablesLunch">
+-
+-    <TextView
+-        android:id="@+id/personalHeader"
+-        android:layout_width="0dp"
+-        android:layout_height="wrap_content"
+-        android:background="#DADADA"
+-        android:text="@string/personal"
+-        android:textAlignment="center"
+-        android:textAllCaps="true"
+-        android:textSize="28sp"
+-        android:textStyle="bold"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.0"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toTopOf="parent" />
+-
+-    <TextView
+-        android:id="@+id/tableNum"
+-        android:layout_width="0dp"
+-        android:layout_height="wrap_content"
+-        android:layout_marginTop="24dp"
+-        android:text="@string/dagens_lunch"
+-        android:textAlignment="center"
+-        android:textSize="20sp"
+-        android:textStyle="bold"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/personalHeader" />
+-
+-    <Button
+-        android:id="@+id/table1Btn"
+-        android:layout_width="0dp"
+-        android:layout_height="80dp"
+-        android:layout_marginStart="85dp"
+-        android:layout_marginTop="67dp"
+-        android:layout_marginEnd="60dp"
+-        android:backgroundTint="#FFFFFF"
+-        android:text="@string/table_1"
+-        android:textColor="@color/black"
+-        android:onClick="helpB"
+-        app:layout_constraintEnd_toStartOf="@+id/table2Btn"
+-        app:layout_constraintHorizontal_bias="0.438"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/tableNum" />
+-
+-    <Button
+-        android:id="@+id/table2Btn"
+-        android:layout_width="0dp"
+-        android:layout_height="80dp"
+-        android:layout_marginStart="60dp"
+-        android:layout_marginTop="67dp"
+-        android:layout_marginEnd="85dp"
+-        android:backgroundTint="#FFFFFF"
+-        android:text="@string/table_2"
+-        android:textColor="@color/black"
+-        android:onClick="helpB"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toEndOf="@+id/table1Btn"
+-        app:layout_constraintTop_toBottomOf="@+id/tableNum" />
+-
+-    <Button
+-        android:id="@+id/table3Btn"
+-        android:layout_width="0dp"
+-        android:layout_height="80dp"
+-        android:layout_marginStart="85dp"
+-        android:layout_marginTop="48dp"
+-        android:layout_marginEnd="60dp"
+-        android:backgroundTint="#FFFFFF"
+-        android:text="@string/table_3"
+-        android:textColor="@color/black"
+-        android:onClick="helpB"
+-        app:layout_constraintEnd_toStartOf="@+id/table4Btn"
+-        app:layout_constraintHorizontal_bias="0.412"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/table1Btn" />
+-
+-    <Button
+-        android:id="@+id/table4Btn"
+-        android:layout_width="0dp"
+-        android:layout_height="80dp"
+-        android:layout_marginStart="60dp"
+-        android:layout_marginTop="48dp"
+-        android:layout_marginEnd="85dp"
+-        android:backgroundTint="#FFFFFF"
+-        android:text="@string/table_4"
+-        android:textColor="@color/black"
+-        android:onClick="helpB"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toEndOf="@+id/table3Btn"
+-        app:layout_constraintTop_toBottomOf="@+id/table2Btn" />
+-
+-    <Button
+-        android:id="@+id/table5Btn"
+-        android:layout_width="0dp"
+-        android:layout_height="80dp"
+-        android:layout_marginStart="85dp"
+-        android:layout_marginTop="48dp"
+-        android:layout_marginEnd="60dp"
+-        android:backgroundTint="#FFFFFF"
+-        android:text="@string/table_5"
+-        android:textColor="@color/black"
+-        android:onClick="helpB"
+-        app:layout_constraintEnd_toStartOf="@+id/table6Btn"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/table3Btn" />
+-
+-    <Button
+-        android:id="@+id/table6Btn"
+-        android:layout_width="0dp"
+-        android:layout_height="80dp"
+-        android:layout_marginStart="60dp"
+-        android:layout_marginTop="48dp"
+-        android:layout_marginEnd="85dp"
+-        android:backgroundTint="#FFFFFF"
+-        android:text="@string/table_6"
+-        android:textColor="@color/black"
+-        android:onClick="helpB"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toEndOf="@+id/table5Btn"
+-        app:layout_constraintTop_toBottomOf="@+id/table4Btn" />
+-
+-    <Button
+-        android:id="@+id/table7Btn"
+-        android:layout_width="0dp"
+-        android:layout_height="80dp"
+-        android:layout_marginStart="85dp"
+-        android:layout_marginTop="48dp"
+-        android:layout_marginEnd="60dp"
+-        android:backgroundTint="#FFFFFF"
+-        android:text="@string/table_7"
+-        android:textColor="@color/black"
+-        android:onClick="helpB"
+-        app:layout_constraintEnd_toStartOf="@+id/table8Btn"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/table5Btn" />
+-
+-    <Button
+-        android:id="@+id/table8Btn"
+-        android:layout_width="0dp"
+-        android:layout_height="80dp"
+-        android:layout_marginStart="60dp"
+-        android:layout_marginTop="48dp"
+-        android:layout_marginEnd="85dp"
+-        android:backgroundTint="#FFFFFF"
+-        android:text="@string/table_8"
+-        android:textColor="@color/black"
+-        android:onClick="helpB"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.572"
+-        app:layout_constraintStart_toEndOf="@+id/table7Btn"
+-        app:layout_constraintTop_toBottomOf="@+id/table6Btn" />
+-
+-</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    tools:context=\".MainActivity\">\n\n    <Button\n        android:id=\"@+id/kockBtn\"\n        android:layout_width=\"160dp\"\n        android:layout_height=\"80dp\"\n        android:layout_marginStart=\"120dp\"\n        android:layout_marginEnd=\"120dp\"\n        android:backgroundTint=\"#DEBE5A\"\n        android:text=\"@string/kock\"\n        android:textColor=\"@color/black\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\" />\n\n    <Button\n        android:id=\"@+id/personalBtn\"\n        android:layout_width=\"160dp\"\n        android:layout_height=\"80dp\"\n        android:layout_marginStart=\"120dp\"\n        android:layout_marginTop=\"24dp\"\n        android:layout_marginEnd=\"120dp\"\n        android:layout_marginBottom=\"180dp\"\n        android:backgroundTint=\"#DEBE5A\"\n        android:text=\"@string/personal\"\n        android:textColor=\"@color/black\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toBottomOf=\"@+id/kockBtn\" />\n\n    <ImageView\n        android:id=\"@+id/imageView\"\n        android:layout_width=\"wrap_content\"\n        android:layout_height=\"wrap_content\"\n        android:contentDescription=\"@string/app_name\"\n        app:layout_constraintBottom_toTopOf=\"@+id/kockBtn\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\"\n        app:srcCompat=\"@drawable/logga\" />\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_main.xml b/app/src/main/res/layout/activity_main.xml
+--- a/app/src/main/res/layout/activity_main.xml	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/app/src/main/res/layout/activity_main.xml	(date 1677506121592)
+@@ -1,49 +1,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    tools:context=".MainActivity">
+-
+-    <Button
+-        android:id="@+id/kockBtn"
+-        android:layout_width="160dp"
+-        android:layout_height="80dp"
+-        android:layout_marginStart="120dp"
+-        android:layout_marginEnd="120dp"
+-        android:backgroundTint="#DEBE5A"
+-        android:text="@string/kock"
+-        android:textColor="@color/black"
+-        app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toTopOf="parent" />
+-
+-    <Button
+-        android:id="@+id/personalBtn"
+-        android:layout_width="160dp"
+-        android:layout_height="80dp"
+-        android:layout_marginStart="120dp"
+-        android:layout_marginTop="24dp"
+-        android:layout_marginEnd="120dp"
+-        android:layout_marginBottom="180dp"
+-        android:backgroundTint="#DEBE5A"
+-        android:text="@string/personal"
+-        android:textColor="@color/black"
+-        app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/kockBtn" />
+-
+-    <ImageView
+-        android:id="@+id/imageView"
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:contentDescription="@string/app_name"
+-        app:layout_constraintBottom_toTopOf="@+id/kockBtn"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toTopOf="parent"
+-        app:srcCompat="@drawable/logga" />
+-</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/drawable/ic_launcher_background.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<vector xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    android:width=\"108dp\"\n    android:height=\"108dp\"\n    android:viewportWidth=\"108\"\n    android:viewportHeight=\"108\">\n    <path\n        android:fillColor=\"#3DDC84\"\n        android:pathData=\"M0,0h108v108h-108z\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M9,0L9,108\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M19,0L19,108\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M29,0L29,108\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M39,0L39,108\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M49,0L49,108\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M59,0L59,108\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M69,0L69,108\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M79,0L79,108\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M89,0L89,108\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M99,0L99,108\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M0,9L108,9\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M0,19L108,19\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M0,29L108,29\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M0,39L108,39\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M0,49L108,49\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M0,59L108,59\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M0,69L108,69\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M0,79L108,79\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M0,89L108,89\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M0,99L108,99\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M19,29L89,29\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M19,39L89,39\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M19,49L89,49\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M19,59L89,59\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M19,69L89,69\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M19,79L89,79\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M29,19L29,89\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M39,19L39,89\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M49,19L49,89\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M59,19L59,89\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M69,19L69,89\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n    <path\n        android:fillColor=\"#00000000\"\n        android:pathData=\"M79,19L79,89\"\n        android:strokeWidth=\"0.8\"\n        android:strokeColor=\"#33FFFFFF\" />\n</vector>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_launcher_background.xml b/app/src/main/res/drawable/ic_launcher_background.xml
+--- a/app/src/main/res/drawable/ic_launcher_background.xml	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/app/src/main/res/drawable/ic_launcher_background.xml	(date 1677506121585)
+@@ -1,170 +1,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<vector xmlns:android="http://schemas.android.com/apk/res/android"
+-    android:width="108dp"
+-    android:height="108dp"
+-    android:viewportWidth="108"
+-    android:viewportHeight="108">
+-    <path
+-        android:fillColor="#3DDC84"
+-        android:pathData="M0,0h108v108h-108z" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M9,0L9,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M19,0L19,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M29,0L29,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M39,0L39,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M49,0L49,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M59,0L59,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M69,0L69,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M79,0L79,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M89,0L89,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M99,0L99,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,9L108,9"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,19L108,19"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,29L108,29"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,39L108,39"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,49L108,49"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,59L108,59"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,69L108,69"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,79L108,79"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,89L108,89"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,99L108,99"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M19,29L89,29"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M19,39L89,39"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M19,49L89,49"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M19,59L89,59"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M19,69L89,69"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M19,79L89,79"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M29,19L29,89"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M39,19L39,89"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M49,19L49,89"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M59,19L59,89"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M69,19L69,89"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M79,19L79,89"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-</vector>
+Index: app/src/main/res/values/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<resources>\n    <color name=\"purple_200\">#FFBB86FC</color>\n    <color name=\"purple_500\">#FF6200EE</color>\n    <color name=\"purple_700\">#FF3700B3</color>\n    <color name=\"teal_200\">#FF03DAC5</color>\n    <color name=\"teal_700\">#FF018786</color>\n    <color name=\"black\">#FF000000</color>\n    <color name=\"white\">#FFFFFFFF</color>\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/colors.xml b/app/src/main/res/values/colors.xml
+--- a/app/src/main/res/values/colors.xml	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/app/src/main/res/values/colors.xml	(date 1677506121588)
+@@ -1,10 +1,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<resources>
+-    <color name="purple_200">#FFBB86FC</color>
+-    <color name="purple_500">#FF6200EE</color>
+-    <color name="purple_700">#FF3700B3</color>
+-    <color name="teal_200">#FF03DAC5</color>
+-    <color name="teal_700">#FF018786</color>
+-    <color name="black">#FF000000</color>
+-    <color name="white">#FFFFFFFF</color>
+-</resources>
+\ No newline at end of file
+Index: app/src/main/res/values/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources xmlns:tools=\"http://schemas.android.com/tools\">\n    <!-- Base application theme. -->\n    <style name=\"Theme.OrderSystem\" parent=\"Theme.MaterialComponents.DayNight.DarkActionBar\">\n        <!-- Primary brand color. -->\n        <item name=\"colorPrimary\">@color/purple_500</item>\n        <item name=\"colorPrimaryVariant\">@color/purple_700</item>\n        <item name=\"colorOnPrimary\">@color/white</item>\n        <!-- Secondary brand color. -->\n        <item name=\"colorSecondary\">@color/teal_200</item>\n        <item name=\"colorSecondaryVariant\">@color/teal_700</item>\n        <item name=\"colorOnSecondary\">@color/black</item>\n        <!-- Status bar color. -->\n        <item name=\"android:statusBarColor\">?attr/colorPrimaryVariant</item>\n        <!-- Customize your theme here. -->\n    </style>\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/themes.xml b/app/src/main/res/values/themes.xml
+--- a/app/src/main/res/values/themes.xml	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/app/src/main/res/values/themes.xml	(date 1677506121587)
+@@ -1,16 +1,0 @@
+-<resources xmlns:tools="http://schemas.android.com/tools">
+-    <!-- Base application theme. -->
+-    <style name="Theme.OrderSystem" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+-        <!-- Primary brand color. -->
+-        <item name="colorPrimary">@color/purple_500</item>
+-        <item name="colorPrimaryVariant">@color/purple_700</item>
+-        <item name="colorOnPrimary">@color/white</item>
+-        <!-- Secondary brand color. -->
+-        <item name="colorSecondary">@color/teal_200</item>
+-        <item name="colorSecondaryVariant">@color/teal_700</item>
+-        <item name="colorOnSecondary">@color/black</item>
+-        <!-- Status bar color. -->
+-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+-        <!-- Customize your theme here. -->
+-    </style>
+-</resources>
+\ No newline at end of file
+Index: app/src/main/res/values-night/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources xmlns:tools=\"http://schemas.android.com/tools\">\n    <!-- Base application theme. -->\n    <style name=\"Theme.OrderSystem\" parent=\"Theme.MaterialComponents.DayNight.DarkActionBar\">\n        <!-- Primary brand color. -->\n        <item name=\"colorPrimary\">@color/purple_200</item>\n        <item name=\"colorPrimaryVariant\">@color/purple_700</item>\n        <item name=\"colorOnPrimary\">@color/black</item>\n        <!-- Secondary brand color. -->\n        <item name=\"colorSecondary\">@color/teal_200</item>\n        <item name=\"colorSecondaryVariant\">@color/teal_200</item>\n        <item name=\"colorOnSecondary\">@color/black</item>\n        <!-- Status bar color. -->\n        <item name=\"android:statusBarColor\">?attr/colorPrimaryVariant</item>\n        <!-- Customize your theme here. -->\n    </style>\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-night/themes.xml b/app/src/main/res/values-night/themes.xml
+--- a/app/src/main/res/values-night/themes.xml	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/app/src/main/res/values-night/themes.xml	(date 1677506121576)
+@@ -1,16 +1,0 @@
+-<resources xmlns:tools="http://schemas.android.com/tools">
+-    <!-- Base application theme. -->
+-    <style name="Theme.OrderSystem" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+-        <!-- Primary brand color. -->
+-        <item name="colorPrimary">@color/purple_200</item>
+-        <item name="colorPrimaryVariant">@color/purple_700</item>
+-        <item name="colorOnPrimary">@color/black</item>
+-        <!-- Secondary brand color. -->
+-        <item name="colorSecondary">@color/teal_200</item>
+-        <item name="colorSecondaryVariant">@color/teal_200</item>
+-        <item name="colorOnSecondary">@color/black</item>
+-        <!-- Status bar color. -->
+-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+-        <!-- Customize your theme here. -->
+-    </style>
+-</resources>
+\ No newline at end of file
+Index: app/src/main/res/drawable-v24/ic_launcher_foreground.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><vector xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:aapt=\"http://schemas.android.com/aapt\"\n    android:width=\"108dp\"\n    android:height=\"108dp\"\n    android:viewportWidth=\"108\"\n    android:viewportHeight=\"108\">\n    <path android:pathData=\"M31,63.928c0,0 6.4,-11 12.1,-13.1c7.2,-2.6 26,-1.4 26,-1.4l38.1,38.1L107,108.928l-32,-1L31,63.928z\">\n        <aapt:attr name=\"android:fillColor\">\n            <gradient\n                android:endX=\"85.84757\"\n                android:endY=\"92.4963\"\n                android:startX=\"42.9492\"\n                android:startY=\"49.59793\"\n                android:type=\"linear\">\n                <item\n                    android:color=\"#44000000\"\n                    android:offset=\"0.0\" />\n                <item\n                    android:color=\"#00000000\"\n                    android:offset=\"1.0\" />\n            </gradient>\n        </aapt:attr>\n    </path>\n    <path\n        android:fillColor=\"#FFFFFF\"\n        android:fillType=\"nonZero\"\n        android:pathData=\"M65.3,45.828l3.8,-6.6c0.2,-0.4 0.1,-0.9 -0.3,-1.1c-0.4,-0.2 -0.9,-0.1 -1.1,0.3l-3.9,6.7c-6.3,-2.8 -13.4,-2.8 -19.7,0l-3.9,-6.7c-0.2,-0.4 -0.7,-0.5 -1.1,-0.3C38.8,38.328 38.7,38.828 38.9,39.228l3.8,6.6C36.2,49.428 31.7,56.028 31,63.928h46C76.3,56.028 71.8,49.428 65.3,45.828zM43.4,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2c-0.3,-0.7 -0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C45.3,56.528 44.5,57.328 43.4,57.328L43.4,57.328zM64.6,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2s-0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C66.5,56.528 65.6,57.328 64.6,57.328L64.6,57.328z\"\n        android:strokeWidth=\"1\"\n        android:strokeColor=\"#00000000\" />\n</vector>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable-v24/ic_launcher_foreground.xml b/app/src/main/res/drawable-v24/ic_launcher_foreground.xml
+--- a/app/src/main/res/drawable-v24/ic_launcher_foreground.xml	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/app/src/main/res/drawable-v24/ic_launcher_foreground.xml	(date 1677506121580)
+@@ -1,30 +1,0 @@
+-<vector xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:aapt="http://schemas.android.com/aapt"
+-    android:width="108dp"
+-    android:height="108dp"
+-    android:viewportWidth="108"
+-    android:viewportHeight="108">
+-    <path android:pathData="M31,63.928c0,0 6.4,-11 12.1,-13.1c7.2,-2.6 26,-1.4 26,-1.4l38.1,38.1L107,108.928l-32,-1L31,63.928z">
+-        <aapt:attr name="android:fillColor">
+-            <gradient
+-                android:endX="85.84757"
+-                android:endY="92.4963"
+-                android:startX="42.9492"
+-                android:startY="49.59793"
+-                android:type="linear">
+-                <item
+-                    android:color="#44000000"
+-                    android:offset="0.0" />
+-                <item
+-                    android:color="#00000000"
+-                    android:offset="1.0" />
+-            </gradient>
+-        </aapt:attr>
+-    </path>
+-    <path
+-        android:fillColor="#FFFFFF"
+-        android:fillType="nonZero"
+-        android:pathData="M65.3,45.828l3.8,-6.6c0.2,-0.4 0.1,-0.9 -0.3,-1.1c-0.4,-0.2 -0.9,-0.1 -1.1,0.3l-3.9,6.7c-6.3,-2.8 -13.4,-2.8 -19.7,0l-3.9,-6.7c-0.2,-0.4 -0.7,-0.5 -1.1,-0.3C38.8,38.328 38.7,38.828 38.9,39.228l3.8,6.6C36.2,49.428 31.7,56.028 31,63.928h46C76.3,56.028 71.8,49.428 65.3,45.828zM43.4,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2c-0.3,-0.7 -0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C45.3,56.528 44.5,57.328 43.4,57.328L43.4,57.328zM64.6,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2s-0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C66.5,56.528 65.6,57.328 64.6,57.328L64.6,57.328z"
+-        android:strokeWidth="1"
+-        android:strokeColor="#00000000" />
+-</vector>
+\ No newline at end of file
+Index: app/src/main/res/mipmap-anydpi-v33/ic_launcher.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<adaptive-icon xmlns:android=\"http://schemas.android.com/apk/res/android\">\n    <background android:drawable=\"@drawable/ic_launcher_background\" />\n    <foreground android:drawable=\"@drawable/ic_launcher_foreground\" />\n    <monochrome android:drawable=\"@drawable/ic_launcher_foreground\" />\n</adaptive-icon>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/mipmap-anydpi-v33/ic_launcher.xml b/app/src/main/res/mipmap-anydpi-v33/ic_launcher.xml
+--- a/app/src/main/res/mipmap-anydpi-v33/ic_launcher.xml	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/app/src/main/res/mipmap-anydpi-v33/ic_launcher.xml	(date 1677506121568)
+@@ -1,6 +1,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+-    <background android:drawable="@drawable/ic_launcher_background" />
+-    <foreground android:drawable="@drawable/ic_launcher_foreground" />
+-    <monochrome android:drawable="@drawable/ic_launcher_foreground" />
+-</adaptive-icon>
+\ No newline at end of file
+Index: app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<adaptive-icon xmlns:android=\"http://schemas.android.com/apk/res/android\">\n    <background android:drawable=\"@drawable/ic_launcher_background\" />\n    <foreground android:drawable=\"@drawable/ic_launcher_foreground\" />\n</adaptive-icon>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml b/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+--- a/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml	(date 1677506121570)
+@@ -1,5 +1,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+-    <background android:drawable="@drawable/ic_launcher_background" />
+-    <foreground android:drawable="@drawable/ic_launcher_foreground" />
+-</adaptive-icon>
+\ No newline at end of file
+Index: app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<adaptive-icon xmlns:android=\"http://schemas.android.com/apk/res/android\">\n    <background android:drawable=\"@drawable/ic_launcher_background\" />\n    <foreground android:drawable=\"@drawable/ic_launcher_foreground\" />\n</adaptive-icon>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml b/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+--- a/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml	(date 1677506121569)
+@@ -1,5 +1,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+-    <background android:drawable="@drawable/ic_launcher_background" />
+-    <foreground android:drawable="@drawable/ic_launcher_foreground" />
+-</adaptive-icon>
+\ No newline at end of file
+Index: app/src/main/java/com/example/ordersystem/TablesALaCarte.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ordersystem;\n\nimport androidx.appcompat.app.AppCompatActivity;\n\nimport android.os.Bundle;\n\npublic class TablesALaCarte extends AppCompatActivity {\n\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n        setContentView(R.layout.activity_tables_ala_carte);\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/ordersystem/TablesALaCarte.java b/app/src/main/java/com/example/ordersystem/TablesALaCarte.java
+--- a/app/src/main/java/com/example/ordersystem/TablesALaCarte.java	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/app/src/main/java/com/example/ordersystem/TablesALaCarte.java	(date 1677506121563)
+@@ -1,14 +1,0 @@
+-package com.example.ordersystem;
+-
+-import androidx.appcompat.app.AppCompatActivity;
+-
+-import android.os.Bundle;
+-
+-public class TablesALaCarte extends AppCompatActivity {
+-
+-    @Override
+-    protected void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        setContentView(R.layout.activity_tables_ala_carte);
+-    }
+-}
+\ No newline at end of file
+Index: app/src/androidTest/java/com/example/ordersystem/ExampleInstrumentedTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ordersystem;\n\nimport android.content.Context;\n\nimport androidx.test.platform.app.InstrumentationRegistry;\nimport androidx.test.ext.junit.runners.AndroidJUnit4;\n\nimport org.junit.Test;\nimport org.junit.runner.RunWith;\n\nimport static org.junit.Assert.*;\n\n/**\n * Instrumented test, which will execute on an Android device.\n *\n * @see <a href=\"http://d.android.com/tools/testing\">Testing documentation</a>\n */\n@RunWith(AndroidJUnit4.class)\npublic class ExampleInstrumentedTest {\n    @Test\n    public void useAppContext() {\n        // Context of the app under test.\n        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();\n        assertEquals(\"com.example.ordersystem\", appContext.getPackageName());\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/androidTest/java/com/example/ordersystem/ExampleInstrumentedTest.java b/app/src/androidTest/java/com/example/ordersystem/ExampleInstrumentedTest.java
+--- a/app/src/androidTest/java/com/example/ordersystem/ExampleInstrumentedTest.java	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/app/src/androidTest/java/com/example/ordersystem/ExampleInstrumentedTest.java	(date 1677506121560)
+@@ -1,26 +1,0 @@
+-package com.example.ordersystem;
+-
+-import android.content.Context;
+-
+-import androidx.test.platform.app.InstrumentationRegistry;
+-import androidx.test.ext.junit.runners.AndroidJUnit4;
+-
+-import org.junit.Test;
+-import org.junit.runner.RunWith;
+-
+-import static org.junit.Assert.*;
+-
+-/**
+- * Instrumented test, which will execute on an Android device.
+- *
+- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
+- */
+-@RunWith(AndroidJUnit4.class)
+-public class ExampleInstrumentedTest {
+-    @Test
+-    public void useAppContext() {
+-        // Context of the app under test.
+-        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+-        assertEquals("com.example.ordersystem", appContext.getPackageName());
+-    }
+-}
+\ No newline at end of file
+Index: app/proguard-rules.pro
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Add project specific ProGuard rules here.\n# You can control the set of applied configuration files using the\n# proguardFiles setting in build.gradle.\n#\n# For more details, see\n#   http://developer.android.com/guide/developing/tools/proguard.html\n\n# If your project uses WebView with JS, uncomment the following\n# and specify the fully qualified class name to the JavaScript interface\n# class:\n#-keepclassmembers class fqcn.of.javascript.interface.for.webview {\n#   public *;\n#}\n\n# Uncomment this to preserve the line number information for\n# debugging stack traces.\n#-keepattributes SourceFile,LineNumberTable\n\n# If you keep the line number information, uncomment this to\n# hide the original source file name.\n#-renamesourcefileattribute SourceFile
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/proguard-rules.pro b/app/proguard-rules.pro
+--- a/app/proguard-rules.pro	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/app/proguard-rules.pro	(date 1677506121558)
+@@ -1,21 +1,0 @@
+-# Add project specific ProGuard rules here.
+-# You can control the set of applied configuration files using the
+-# proguardFiles setting in build.gradle.
+-#
+-# For more details, see
+-#   http://developer.android.com/guide/developing/tools/proguard.html
+-
+-# If your project uses WebView with JS, uncomment the following
+-# and specify the fully qualified class name to the JavaScript interface
+-# class:
+-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+-#   public *;
+-#}
+-
+-# Uncomment this to preserve the line number information for
+-# debugging stack traces.
+-#-keepattributes SourceFile,LineNumberTable
+-
+-# If you keep the line number information, uncomment this to
+-# hide the original source file name.
+-#-renamesourcefileattribute SourceFile
+\ No newline at end of file
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:tools=\"http://schemas.android.com/tools\">\n\n    <uses-permission android:name=\"android.permission.INTERNET\" />\n    <uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />\n\n    <application\n        android:allowBackup=\"true\"\n        android:dataExtractionRules=\"@xml/data_extraction_rules\"\n        android:fullBackupContent=\"@xml/backup_rules\"\n        android:icon=\"@mipmap/ic_launcher\"\n        android:label=\"@string/app_name\"\n        android:supportsRtl=\"true\"\n        android:theme=\"@style/Theme.OrderSystem\"\n        tools:targetApi=\"31\">\n        <activity\n            android:name=\".ChefPage\"\n            android:exported=\"false\" />\n        <activity\n            android:name=\".addLunch\"\n            android:exported=\"false\" />\n        <activity\n            android:name=\".TablesALaCarte\"\n            android:exported=\"false\" />\n        <activity\n            android:name=\".TablesLunch\"\n            android:exported=\"false\" />\n        <activity\n            android:name=\".PersonalPage1\"\n            android:exported=\"false\" />\n        <activity\n            android:name=\".MainActivity\"\n            android:exported=\"true\">\n            <intent-filter>\n                <action android:name=\"android.intent.action.MAIN\" />\n\n                <category android:name=\"android.intent.category.LAUNCHER\" />\n            </intent-filter>\n        </activity>\n    </application>\n\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/app/src/main/AndroidManifest.xml	(date 1677506121562)
+@@ -1,43 +1,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:tools="http://schemas.android.com/tools">
+-
+-    <uses-permission android:name="android.permission.INTERNET" />
+-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+-
+-    <application
+-        android:allowBackup="true"
+-        android:dataExtractionRules="@xml/data_extraction_rules"
+-        android:fullBackupContent="@xml/backup_rules"
+-        android:icon="@mipmap/ic_launcher"
+-        android:label="@string/app_name"
+-        android:supportsRtl="true"
+-        android:theme="@style/Theme.OrderSystem"
+-        tools:targetApi="31">
+-        <activity
+-            android:name=".ChefPage"
+-            android:exported="false" />
+-        <activity
+-            android:name=".addLunch"
+-            android:exported="false" />
+-        <activity
+-            android:name=".TablesALaCarte"
+-            android:exported="false" />
+-        <activity
+-            android:name=".TablesLunch"
+-            android:exported="false" />
+-        <activity
+-            android:name=".PersonalPage1"
+-            android:exported="false" />
+-        <activity
+-            android:name=".MainActivity"
+-            android:exported="true">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity>
+-    </application>
+-
+-</manifest>
+\ No newline at end of file
+Index: settings.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>pluginManagement {\n    repositories {\n        google()\n        mavenCentral()\n        gradlePluginPortal()\n    }\n}\ndependencyResolutionManagement {\n    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)\n    repositories {\n        google()\n        mavenCentral()\n    }\n}\nrootProject.name = \"OrderSystem\"\ninclude ':app'\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/settings.gradle b/settings.gradle
+--- a/settings.gradle	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/settings.gradle	(date 1677506121443)
+@@ -3,6 +3,7 @@
+         google()
+         mavenCentral()
+         gradlePluginPortal()
++
+     }
+ }
+ dependencyResolutionManagement {
+@@ -10,7 +11,9 @@
+     repositories {
+         google()
+         mavenCentral()
++        maven { url 'https://jitpack.io'}
+     }
+ }
+ rootProject.name = "OrderSystem"
+-include ':app'
++include ':PersonalApp'
++include ':chefapp'
+Index: app/src/test/java/com/example/ordersystem/ExampleUnitTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.ordersystem;\n\nimport org.junit.Test;\n\nimport static org.junit.Assert.*;\n\n/**\n * Example local unit test, which will execute on the development machine (host).\n *\n * @see <a href=\"http://d.android.com/tools/testing\">Testing documentation</a>\n */\npublic class ExampleUnitTest {\n    @Test\n    public void addition_isCorrect() {\n        assertEquals(4, 2 + 2);\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/test/java/com/example/ordersystem/ExampleUnitTest.java b/app/src/test/java/com/example/ordersystem/ExampleUnitTest.java
+--- a/app/src/test/java/com/example/ordersystem/ExampleUnitTest.java	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/app/src/test/java/com/example/ordersystem/ExampleUnitTest.java	(date 1677506121561)
+@@ -1,17 +1,0 @@
+-package com.example.ordersystem;
+-
+-import org.junit.Test;
+-
+-import static org.junit.Assert.*;
+-
+-/**
+- * Example local unit test, which will execute on the development machine (host).
+- *
+- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
+- */
+-public class ExampleUnitTest {
+-    @Test
+-    public void addition_isCorrect() {
+-        assertEquals(4, 2 + 2);
+-    }
+-}
+\ No newline at end of file
+Index: app/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/build
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/.gitignore b/app/.gitignore
+--- a/app/.gitignore	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/app/.gitignore	(date 1677506121557)
+@@ -1,1 +1,0 @@
+-/build
+\ No newline at end of file
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\n    id 'com.android.application'\n}\n\nandroid {\n    namespace 'com.example.ordersystem'\n    compileSdk 33\n\n    defaultConfig {\n        applicationId \"com.example.ordersystem\"\n        minSdk 25\n        targetSdk 33\n        versionCode 1\n        versionName \"1.0\"\n\n        testInstrumentationRunner \"androidx.test.runner.AndroidJUnitRunner\"\n    }\n\n    buildTypes {\n        release {\n            minifyEnabled false\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\n        }\n    }\n    compileOptions {\n        sourceCompatibility JavaVersion.VERSION_1_8\n        targetCompatibility JavaVersion.VERSION_1_8\n    }\n}\n\ndependencies {\n\n    implementation 'androidx.appcompat:appcompat:1.6.0'\n    implementation 'com.google.android.material:material:1.8.0'\n    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'\n    testImplementation 'junit:junit:4.13.2'\n    androidTestImplementation 'androidx.test.ext:junit:1.1.5'\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle b/app/build.gradle
+--- a/app/build.gradle	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/app/build.gradle	(date 1677506121556)
+@@ -1,39 +1,0 @@
+-plugins {
+-    id 'com.android.application'
+-}
+-
+-android {
+-    namespace 'com.example.ordersystem'
+-    compileSdk 33
+-
+-    defaultConfig {
+-        applicationId "com.example.ordersystem"
+-        minSdk 25
+-        targetSdk 33
+-        versionCode 1
+-        versionName "1.0"
+-
+-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+-    }
+-
+-    buildTypes {
+-        release {
+-            minifyEnabled false
+-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+-        }
+-    }
+-    compileOptions {
+-        sourceCompatibility JavaVersion.VERSION_1_8
+-        targetCompatibility JavaVersion.VERSION_1_8
+-    }
+-}
+-
+-dependencies {
+-
+-    implementation 'androidx.appcompat:appcompat:1.6.0'
+-    implementation 'com.google.android.material:material:1.8.0'
+-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+-    testImplementation 'junit:junit:4.13.2'
+-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+-}
+\ No newline at end of file
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"GradleMigrationSettings\" migrationVersion=\"1\" />\n  <component name=\"GradleSettings\">\n    <option name=\"linkedExternalProjectsSettings\">\n      <GradleProjectSettings>\n        <option name=\"testRunner\" value=\"GRADLE\" />\n        <option name=\"distributionType\" value=\"DEFAULT_WRAPPED\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"modules\">\n          <set>\n            <option value=\"$PROJECT_DIR$\" />\n            <option value=\"$PROJECT_DIR$/app\" />\n          </set>\n        </option>\n      </GradleProjectSettings>\n    </option>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+--- a/.idea/gradle.xml	(revision 6f2ea82540289d1503286c87af1812fc5ee0c8eb)
++++ b/.idea/gradle.xml	(date 1677506121553)
+@@ -10,7 +10,8 @@
+         <option name="modules">
+           <set>
+             <option value="$PROJECT_DIR$" />
+-            <option value="$PROJECT_DIR$/app" />
++            <option value="$PROJECT_DIR$/PersonalApp" />
++            <option value="$PROJECT_DIR$/chefapp" />
+           </set>
+         </option>
+       </GradleProjectSettings>

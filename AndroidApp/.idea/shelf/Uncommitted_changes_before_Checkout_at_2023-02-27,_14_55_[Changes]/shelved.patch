@@ -1,0 +1,18 @@
+diff --git a/app/src/main/java/com/example/ordersystem/addALaCarte.java b/PersonalApp/src/main/java/com/example/ordersystem/addALaCarte.java
+rename from app/src/main/java/com/example/ordersystem/addALaCarte.java
+rename to PersonalApp/src/main/java/com/example/ordersystem/addALaCarte.java
+diff --git a/app/src/main/java/com/example/ordersystem/SourceRecyclerAdapter.java b/PersonalApp/src/main/java/com/example/ordersystem/SourceRecyclerAdapter.java
+rename from app/src/main/java/com/example/ordersystem/SourceRecyclerAdapter.java
+rename to PersonalApp/src/main/java/com/example/ordersystem/SourceRecyclerAdapter.java
+diff --git a/app/src/main/res/layout/activity_add_ala_carte.xml b/PersonalApp/src/main/res/layout/activity_add_ala_carte.xml
+rename from app/src/main/res/layout/activity_add_ala_carte.xml
+rename to PersonalApp/src/main/res/layout/activity_add_ala_carte.xml
+diff --git a/app/src/main/java/com/example/ordersystem/DestinationRecyclerAdapter.java b/PersonalApp/src/main/java/com/example/ordersystem/DestinationRecyclerAdapter.java
+rename from app/src/main/java/com/example/ordersystem/DestinationRecyclerAdapter.java
+rename to PersonalApp/src/main/java/com/example/ordersystem/DestinationRecyclerAdapter.java
+diff --git a/app/src/main/res/layout/totalorder_listview.xml b/PersonalApp/src/main/res/layout/totalorder_listview.xml
+rename from app/src/main/res/layout/totalorder_listview.xml
+rename to PersonalApp/src/main/res/layout/totalorder_listview.xml
+diff --git a/app/src/main/res/layout/custom_listview.xml b/PersonalApp/src/main/res/layout/custom_listview.xml
+rename from app/src/main/res/layout/custom_listview.xml
+rename to PersonalApp/src/main/res/layout/custom_listview.xml

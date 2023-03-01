@@ -1,0 +1,117 @@
+Index: settings.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>pluginManagement {\n    repositories {\n        google()\n        mavenCentral()\n        gradlePluginPortal()\n\n    }\n}\ndependencyResolutionManagement {\n    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)\n    repositories {\n        google()\n        mavenCentral()\n        maven { url 'https://jitpack.io'}\n    }\n}\nrootProject.name = \"OrderSystem\"\ninclude ':app'\ninclude ':chefapp'\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/settings.gradle b/settings.gradle
+--- a/settings.gradle	
++++ b/settings.gradle	
+@@ -15,5 +15,5 @@
+     }
+ }
+ rootProject.name = "OrderSystem"
+-include ':app'
++include ':PersonalApp'
+ include ':chefapp'
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"GradleMigrationSettings\" migrationVersion=\"1\" />\n  <component name=\"GradleSettings\">\n    <option name=\"linkedExternalProjectsSettings\">\n      <GradleProjectSettings>\n        <option name=\"testRunner\" value=\"GRADLE\" />\n        <option name=\"distributionType\" value=\"DEFAULT_WRAPPED\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"modules\">\n          <set>\n            <option value=\"$PROJECT_DIR$\" />\n            <option value=\"$PROJECT_DIR$/app\" />\n            <option value=\"$PROJECT_DIR$/chefapp\" />\n          </set>\n        </option>\n      </GradleProjectSettings>\n    </option>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+--- a/.idea/gradle.xml	
++++ b/.idea/gradle.xml	
+@@ -10,7 +10,7 @@
+         <option name="modules">
+           <set>
+             <option value="$PROJECT_DIR$" />
+-            <option value="$PROJECT_DIR$/app" />
++            <option value="$PROJECT_DIR$/PersonalApp" />
+             <option value="$PROJECT_DIR$/chefapp" />
+           </set>
+         </option>
+diff --git a/app/src/main/res/layout/activity_add_lunch.xml b/PersonalApp/src/main/res/layout/activity_add_lunch.xml
+rename from app/src/main/res/layout/activity_add_lunch.xml
+rename to PersonalApp/src/main/res/layout/activity_add_lunch.xml
+diff --git a/app/src/main/res/layout/activity_main.xml b/PersonalApp/src/main/res/layout/activity_main.xml
+rename from app/src/main/res/layout/activity_main.xml
+rename to PersonalApp/src/main/res/layout/activity_main.xml
+diff --git a/app/src/main/res/values/themes.xml b/PersonalApp/src/main/res/values/themes.xml
+rename from app/src/main/res/values/themes.xml
+rename to PersonalApp/src/main/res/values/themes.xml
+diff --git a/app/src/main/res/values/colors.xml b/PersonalApp/src/main/res/values/colors.xml
+rename from app/src/main/res/values/colors.xml
+rename to PersonalApp/src/main/res/values/colors.xml
+diff --git a/app/src/main/res/layout/activity_tables_lunch.xml b/PersonalApp/src/main/res/layout/activity_tables_lunch.xml
+rename from app/src/main/res/layout/activity_tables_lunch.xml
+rename to PersonalApp/src/main/res/layout/activity_tables_lunch.xml
+diff --git a/app/src/main/res/layout/activity_personal_page1.xml b/PersonalApp/src/main/res/layout/activity_personal_page1.xml
+rename from app/src/main/res/layout/activity_personal_page1.xml
+rename to PersonalApp/src/main/res/layout/activity_personal_page1.xml
+diff --git a/app/src/main/res/xml/backup_rules.xml b/PersonalApp/src/main/res/xml/backup_rules.xml
+rename from app/src/main/res/xml/backup_rules.xml
+rename to PersonalApp/src/main/res/xml/backup_rules.xml
+diff --git a/app/src/main/res/layout/activity_tables_ala_carte.xml b/PersonalApp/src/main/res/layout/activity_tables_ala_carte.xml
+rename from app/src/main/res/layout/activity_tables_ala_carte.xml
+rename to PersonalApp/src/main/res/layout/activity_tables_ala_carte.xml
+diff --git a/app/src/main/res/xml/data_extraction_rules.xml b/PersonalApp/src/main/res/xml/data_extraction_rules.xml
+rename from app/src/main/res/xml/data_extraction_rules.xml
+rename to PersonalApp/src/main/res/xml/data_extraction_rules.xml
+diff --git a/app/src/main/AndroidManifest.xml b/PersonalApp/src/main/AndroidManifest.xml
+rename from app/src/main/AndroidManifest.xml
+rename to PersonalApp/src/main/AndroidManifest.xml
+diff --git a/app/src/androidTest/java/com/example/ordersystem/ExampleInstrumentedTest.java b/PersonalApp/src/androidTest/java/com/example/ordersystem/ExampleInstrumentedTest.java
+rename from app/src/androidTest/java/com/example/ordersystem/ExampleInstrumentedTest.java
+rename to PersonalApp/src/androidTest/java/com/example/ordersystem/ExampleInstrumentedTest.java
+diff --git a/app/src/test/java/com/example/ordersystem/ExampleUnitTest.java b/PersonalApp/src/test/java/com/example/ordersystem/ExampleUnitTest.java
+rename from app/src/test/java/com/example/ordersystem/ExampleUnitTest.java
+rename to PersonalApp/src/test/java/com/example/ordersystem/ExampleUnitTest.java
+diff --git a/app/src/main/java/com/example/ordersystem/TablesALaCarte.java b/PersonalApp/src/main/java/com/example/ordersystem/TablesALaCarte.java
+rename from app/src/main/java/com/example/ordersystem/TablesALaCarte.java
+rename to PersonalApp/src/main/java/com/example/ordersystem/TablesALaCarte.java
+diff --git a/app/build.gradle b/PersonalApp/build.gradle
+rename from app/build.gradle
+rename to PersonalApp/build.gradle
+diff --git a/app/src/main/java/com/example/ordersystem/TablesLunch.java b/PersonalApp/src/main/java/com/example/ordersystem/TablesLunch.java
+rename from app/src/main/java/com/example/ordersystem/TablesLunch.java
+rename to PersonalApp/src/main/java/com/example/ordersystem/TablesLunch.java
+diff --git a/app/src/main/java/com/example/ordersystem/addLunch.java b/PersonalApp/src/main/java/com/example/ordersystem/addLunch.java
+rename from app/src/main/java/com/example/ordersystem/addLunch.java
+rename to PersonalApp/src/main/java/com/example/ordersystem/addLunch.java
+diff --git a/app/.gitignore b/PersonalApp/.gitignore
+rename from app/.gitignore
+rename to PersonalApp/.gitignore
+diff --git a/app/src/main/java/com/example/ordersystem/PersonalPage1.java b/PersonalApp/src/main/java/com/example/ordersystem/PersonalPage1.java
+rename from app/src/main/java/com/example/ordersystem/PersonalPage1.java
+rename to PersonalApp/src/main/java/com/example/ordersystem/PersonalPage1.java
+diff --git a/app/proguard-rules.pro b/PersonalApp/proguard-rules.pro
+rename from app/proguard-rules.pro
+rename to PersonalApp/proguard-rules.pro
+diff --git a/app/src/main/java/com/example/ordersystem/MainActivity.java b/PersonalApp/src/main/java/com/example/ordersystem/MainActivity.java
+rename from app/src/main/java/com/example/ordersystem/MainActivity.java
+rename to PersonalApp/src/main/java/com/example/ordersystem/MainActivity.java
+diff --git a/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml b/PersonalApp/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+rename from app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+rename to PersonalApp/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+diff --git a/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml b/PersonalApp/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+rename from app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+rename to PersonalApp/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+diff --git a/app/src/main/res/mipmap-anydpi-v33/ic_launcher.xml b/PersonalApp/src/main/res/mipmap-anydpi-v33/ic_launcher.xml
+rename from app/src/main/res/mipmap-anydpi-v33/ic_launcher.xml
+rename to PersonalApp/src/main/res/mipmap-anydpi-v33/ic_launcher.xml
+diff --git a/app/src/main/res/drawable-v24/ic_launcher_foreground.xml b/PersonalApp/src/main/res/drawable-v24/ic_launcher_foreground.xml
+rename from app/src/main/res/drawable-v24/ic_launcher_foreground.xml
+rename to PersonalApp/src/main/res/drawable-v24/ic_launcher_foreground.xml
+diff --git a/app/src/main/res/values-night/themes.xml b/PersonalApp/src/main/res/values-night/themes.xml
+rename from app/src/main/res/values-night/themes.xml
+rename to PersonalApp/src/main/res/values-night/themes.xml
+diff --git a/app/src/main/res/values/strings.xml b/PersonalApp/src/main/res/values/strings.xml
+rename from app/src/main/res/values/strings.xml
+rename to PersonalApp/src/main/res/values/strings.xml
+diff --git a/app/src/main/res/drawable/ic_launcher_background.xml b/PersonalApp/src/main/res/drawable/ic_launcher_background.xml
+rename from app/src/main/res/drawable/ic_launcher_background.xml
+rename to PersonalApp/src/main/res/drawable/ic_launcher_background.xml

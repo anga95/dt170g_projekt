@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/OrderSystem.iml" filepath="$PROJECT_DIR$/.idea/modules/OrderSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/OrderSystem.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/OrderSystem.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/OrderSystem.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/OrderSystem.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/OrderSystem.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/OrderSystem.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/OrderSystem.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/OrderSystem.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kitchenapp/OrderSystem.kitchenapp.iml" filepath="$PROJECT_DIR$/.idea/modules/kitchenapp/OrderSystem.kitchenapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kitchenapp/OrderSystem.kitchenapp.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/kitchenapp/OrderSystem.kitchenapp.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kitchenapp/OrderSystem.kitchenapp.main.iml" filepath="$PROJECT_DIR$/.idea/modules/kitchenapp/OrderSystem.kitchenapp.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kitchenapp/OrderSystem.kitchenapp.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/kitchenapp/OrderSystem.kitchenapp.unitTest.iml" />
+    </modules>
+  </component>
+</project>

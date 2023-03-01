@@ -1,0 +1,24 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_2023-02-27,_14_55_[Changes]1" date="1677506121751" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-02-27,_14_55_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 2023-02-27, 14:55 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="app/src/main/res/drawable/noteicon.png" />
+    <option name="AFTER_PATH" value="PersonalApp/src/main/res/drawable/noteicon.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-02-27,_14_55_[Changes]1/noteicon.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" />
+    <option name="AFTER_PATH" value="PersonalApp/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-02-27,_14_55_[Changes]1/ic_launcher_round.webp" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/src/main/res/mipmap-xhdpi/ic_launcher.webp" />
+    <option name="AFTER_PATH" value="PersonalApp/src/main/res/mipmap-xhdpi/ic_launcher.webp" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-02-27,_14_55_[Changes]1/ic_launcher.webp" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/src/main/res/drawable/logga.png" />
+    <option name="AFTER_PATH" value="PersonalApp/src/main/res/drawable/logga.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-02-27,_14_55_[Changes]1/logga.png" />
+  </binary>
+</changelist>
