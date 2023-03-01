@@ -25,3 +25,30 @@ function nextDay() {
     // Update the hidden input field with the current day value
     document.getElementById("selectedDay").value = days[currentDayIndex];
 }
+
+const choices = document.querySelectorAll(".list-group-item");
+const choiceInfos =document.querySelectorAll(".choice-info");
+const veckomeny = document.getElementById("veckomeny");
+
+choices.forEach(choice => {
+    choice.addEventListener("click", function() {
+// Remove the "selected" class from all list items
+        choices.forEach(d => d.classList.remove("selected"));
+        // Add the "selected" class to the clicked item
+        choice.classList.add("selected");
+
+
+        // Show the selected day's information
+        console.log(choice.id);
+        showChoiceInfo(choice.id);
+    });
+});
+function showChoiceInfo(choiceId){
+    choiceInfos.forEach(choiceInfo =>{
+        choiceInfo.style.display = "none";
+    });
+    //Show the selected choice information
+    const choiceInfo = document.getElementById(`${choiceId}-info`);
+    choiceInfo.style.display = "block";
+}
+veckomeny.click();
