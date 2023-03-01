@@ -1,11 +1,11 @@
-package se.miun.dt170g_projekt.entity;
+package se.miun.dt170g_projekt.entities;
 
 import jakarta.persistence.*;
 
 import java.util.Objects;
 
 @Entity
-@Table(name = "RESTAURANT", schema = "APP", catalog = "")
+@Table(name = "RESTAURANT", schema = "APP")
 public class Restaurant_entity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

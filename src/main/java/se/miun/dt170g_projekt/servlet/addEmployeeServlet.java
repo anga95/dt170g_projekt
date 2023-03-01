@@ -3,7 +3,7 @@ package se.miun.dt170g_projekt.servlet;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-import se.miun.dt170g_projekt.entity.Employee_entity;
+import se.miun.dt170g_projekt.entities.Employee;
 import se.miun.dt170g_projekt.persistanceManager.Employee_pm;
 
 import javax.naming.NamingException;
@@ -29,13 +29,13 @@ public class addEmployeeServlet extends HttpServlet {
 /*
         Employee_entity employee = new Employee_entity(id, email, firstName, lastName, restaurantId, telephone);
 */
-        Employee_entity employee = new Employee_entity();
-        employee.setId(10);
-        employee.setEmail(email);
+        Employee employee = new Employee();
         employee.setFirstName(firstName);
         employee.setLastName(lastName);
-        employee.setRestaurantId(1);
-        employee.setTelephone(telephone);
+        employee.setEmail(email);
+        employee.setPhone(telephone);
+        employee.setHourlyRate(100);
+        employee.setStartDate(new java.util.Date());
 
 
         Employee_pm employee_pm = null;
