@@ -20,7 +20,16 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.GET;
+
 public class addLunch extends AppCompatActivity {
+
+    Retrofit retrofit = new Retrofit.Builder()
+            .baseUrl("jdbc:derby://localhost:1527/DB;create=true")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build();
     TextView placeholder;
 
     private RecyclerView mFoodsRecyclerView;
