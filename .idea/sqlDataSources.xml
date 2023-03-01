@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="SqlDataSourceStorage">
-    <option name="dataSources">
-      <list>
-        <State>
-          <option name="id" value="08728f7e-295a-4a10-b88a-22ada5b7435f" />
-          <option name="name" value="db@localhost (DDL)" />
-          <option name="dbmsName" value="DERBY" />
-          <option name="urls">
-            <array>
-              <option value="file://$PROJECT_DIR$/DDL" />
-            </array>
-          </option>
-          <option name="outLayout" value="File per object by schema.groovy" />
-        </State>
-      </list>
-    </option>
+  <component name="DdlMappings">
+    <mapping uuid="20c0f564-5560-4e66-b751-f6f5b28232e7" name="DB@localhost Mapping">
+      <data-sources db="62bcc681-e924-409c-a995-fce019e1b661" ddl="13373f79-d316-4864-9772-64eb5b55d276" />
+      <scope>
+        <node negative="1">
+          <node kind="schema" qname="APP" />
+          <node kind="database" qname="@" />
+        </node>
+      </scope>
+    </mapping>
   </component>
 </project>
