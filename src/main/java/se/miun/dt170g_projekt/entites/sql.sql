@@ -79,10 +79,17 @@ create table TEST.daily_lunch
     lunch_2 varchar(250),
     lunch_3 varchar(250)
 );
-INSERT INTO TEST.daily_lunch (weekday, lunch_1, lunch_2, lunch_3)
-VALUES
-    ('Måndag', 'Köttbullar med lingonsås och potatismos', 'Gravad lax med dillsås och kokt potatis', 'Vegetarisk ärtsoppa med krutonger'),
-    ('Tisdag', 'Pyttipanna (stekt potatis med lök och kött)', 'Fish and chips med remouladesås', 'Vegetarisk lasagne'),
-    ('Onsdag', 'Grillad kyckling med rostade rotfrukter', 'Stekt strömming med potatismos och lingon', 'Vegetarisk quinoasallad med fetaost och rödbetor'),
-    ('Torsdag', 'Svenska köttbullar med gräddsås och potatismos', 'Räksallad med kokt ägg och avokado', 'Vegetarisk linssoppa'),
-    ('Fredag', 'Janssons frestelse (potatisgratäng med ansjovis)', 'Gryta med nötkött och rotfrukter', 'Vegetarisk svamp risotto');
+create table TEST.booking
+(
+    id      INTEGER generated always as identity
+        constraint booking_pk
+            primary key,
+    date date,
+    time time,
+    fname varchar(25),
+    lname varchar(25),
+    telnumber varchar(25),
+    email varchar(25),
+    number_of_people varchar(25),
+    extra varchar(25)
+);

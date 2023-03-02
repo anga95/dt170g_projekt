@@ -64,7 +64,7 @@
 
                   <div class="form-outline mb-4">
                     <label class="form-label" for="form3mail">Mail</label>
-                    <input type="text" id="form3mail" name="mail" class="form-control" required/>
+                    <input type="" id="form3mail" name="mail" class="form-control" required/>
                   </div>
                 </div>
               </div>
