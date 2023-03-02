@@ -8,19 +8,20 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ include file="head.jsp" %>
 <%@ include file="navbar.jsp" %>
-<h1 class="display-1 text-center mt-3"><%= "VECKOMENY" %></h1>
+<h1 class="display-1 text-center mt-3"><%= "ADMIN PANEL" %></h1>
 <br/>
 <div class="container-fluid d-flex justify-content-center">
     <div class="row">
-        <div class="col-6 d-flex align-items-center">
+        <div class="col d-flex align-items-center me-5">
             <ul>
-                <li class="list-group-item border-0 mb-2" id="veckomeny" onclick="showChoiceInfo('veckomeny')">Veckomeny</li>
-                <li class="list-group-item border-0 mb-2" id="anställda" onclick="showChoiceInfo('anställda')">Anställda</li>
-                <li class="list-group-item border-0 mb-2" id="schema" >Schema</li>
-                <li class="list-group-item border-0 mb-2" id="carte" >A la carte</li>
+                <li class="list-group-item border-0 mb-2" id="veckomeny" onclick="showChoiceInfo('veckomeny'); showSecondCard()">Veckomeny</li>
+                <li class="list-group-item border-0 mb-2" id="carte" onclick="showChoiceInfo('carte'); showSecondCard()">A la carte</li>
+                <li class="list-group-item border-0 mb-2" id="anställda" onclick="showChoiceInfo('anställda'); displaySecondCard()">Anställda</li>
+                <li class="list-group-item border-0 mb-2" id="schema" onclick="showChoiceInfo('schema'); showSecondCard()" >Schema</li>
+
             </ul>
         </div>
-        <div class="col-6">
+        <div class="col">
             <div class="card mt-3 pb-5 bg-gradient d-flex align-items-center" style="width: 20rem;">
 
                 <div class="choice-info" id="veckomeny-info">
@@ -45,11 +46,46 @@
                 </div>
 
                 <div class="choice-info" id="anställda-info">
+                        <div class="card-body">
+                            <form accept-charset="UTF-8" action="${pageContext.request.contextPath}/AddEmp" method="post">
+                                <div class="form-group">
+                                    <h3 class="text-center mb-4">Lägg till Anställd</h3>
+                                    <label class="form-label" for="fname">Förnamn</label>
+                                    <input class="form-control mb-2" type="text" id="fname">
+
+                                    <label class="form-label" for="ename">Efternamn</label>
+                                    <input class="form-control mb-2" type="text" id="ename">
+
+                                    <label class="form-label" for="email">E-post</label>
+                                    <input class="form-control mb-2" type="text" id="email">
+
+                                    <label class="form-label" for="telnr">Telefonnummer</label>
+                                    <input class="form-control mb-5" type="text" id="telnr">
+                                    <div class="d-flex justify-content-center">
+                                        <button type="submit" class="btn btn-success justify-content-center">Lägg till</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                </div>
+                <div class="choice-info" id="schema-info">
                     <div class="card-body">
-                        <p>HEJSAN ALLA</p>
+                        <form accept-charset="UTF-8" action="#" method="post">
+                            <div class="form-group">
+
+                            </div>
+                        </form>
                     </div>
                 </div>
-
+             //slutet av kortet på adminsidan
+            </div>
+        </div>
+        <div class="col card mt-3 pb-5 bg-gradient d-flex align-items-center d-none ms-3" style="width: 20rem;" id="listaEMP">
+            <div class="card-body">
+                <h3 class="text-center mb-4">Lista över anställda</h3>
+                <ul>
+                    <li class="list-group-item">Pelle Karlsson</li>
+                </ul>
             </div>
         </div>
     </div>
