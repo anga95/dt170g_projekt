@@ -40,6 +40,7 @@ choices.forEach(choice => {
 
         // Show the selected day's information
         console.log(choice.id);
+
         showChoiceInfo(choice.id);
     });
 });
@@ -51,4 +52,15 @@ function showChoiceInfo(choiceId){
     const choiceInfo = document.getElementById(`${choiceId}-info`);
     choiceInfo.style.display = "block";
 }
+function displaySecondCard(){
+    const card = document.getElementById("listaEMP");
+    card.classList.remove("d-none");
+}
+
+function showSecondCard(){
+    const card = document.getElementById("listaEMP");
+    card.classList.add("d-none");
+}
+
 veckomeny.click();
+
