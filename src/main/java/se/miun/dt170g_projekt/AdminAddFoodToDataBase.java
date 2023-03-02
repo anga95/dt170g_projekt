@@ -29,8 +29,6 @@ public class AdminAddFoodToDataBase extends HttpServlet {
         request.setAttribute("savedValues", savedValues);
 
         // Forward the request to a JSP page to display the saved values
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/savedValues.jsp");
-        dispatcher.forward(request, response);
 
         DailyLunchEntity Daily = new DailyLunchEntity();
 
@@ -50,7 +48,8 @@ public class AdminAddFoodToDataBase extends HttpServlet {
         dailyLunch.saveDaily(Daily);
 
         // Redirect to employee list page
-        response.sendRedirect("index.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/savedValues.jsp");
+        dispatcher.forward(request, response);
     }
 }
 
