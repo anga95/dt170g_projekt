@@ -84,7 +84,6 @@ public class ViewSchduleActivity extends AppCompatActivity {
         // array of days size is numDaysInMonth
         String[] daysOfMonth = new String[numDaysInMonth];
 
-
         // Loop through each day of the month and add its day of the week to the array
         SimpleDateFormat dateFormat = new SimpleDateFormat("EEE", Locale.getDefault());
         for (int i = 1; i <= numDaysInMonth; i++) {
@@ -102,7 +101,7 @@ public class ViewSchduleActivity extends AppCompatActivity {
         TableRow headerRow = new TableRow(ViewSchduleActivity.this);
         headerRow.setLayoutParams(new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT, TableLayout.LayoutParams.WRAP_CONTENT));
 
-        // Add a TextView for employee name
+        // Add a TextView column for employee title
         TextView empHeaderTitle = new TextView(ViewSchduleActivity.this);
         empHeaderTitle.setText("Employees");
         empHeaderTitle.setGravity(Gravity.CENTER_VERTICAL);
@@ -117,7 +116,7 @@ public class ViewSchduleActivity extends AppCompatActivity {
         // Add TextViews for each day of the month to the header row
         for (int i = 1; i <= numDaysInMonth; i++) {
             TextView dayOfMonthTitle = new TextView(ViewSchduleActivity.this);
-            dayOfMonthTitle.setText(String.format("%s %s", Integer.toString(i), daysOfMonth[i - 1]));
+            dayOfMonthTitle.setText(String.format("%s %s", i, daysOfMonth[i - 1]));
             dayOfMonthTitle.setGravity(Gravity.CENTER_VERTICAL);
             dayOfMonthTitle.setTextAppearance(this, android.R.style.TextAppearance_Medium);
             dayOfMonthTitle.setBackgroundColor(ContextCompat.getColor(this, R.color.brown));
@@ -127,13 +126,11 @@ public class ViewSchduleActivity extends AppCompatActivity {
 
             headerRow.addView(dayOfMonthTitle, new TableRow.LayoutParams(COLUMN_WIDTH_PX, TableRow.LayoutParams.WRAP_CONTENT, 1));
         }
-
         // Add the header row to the TableLayout
         tableLayout.addView(headerRow);
 
 
-        // loop through empRollingWeeksObj and add a row for each employee
-        // get list of employees from empRollingWeeksObj
+        // get list of employee rolling week shifts from empRollingWeeksObj
         JSONArray employees = null;
         try {
             employees = empRollingWeeksObj.getJSONArray("employees");
@@ -141,7 +138,7 @@ public class ViewSchduleActivity extends AppCompatActivity {
             throw new RuntimeException(e);
         }
 
-// iterate over employees and add schedule to table
+        // iterate over employees and add their schedule to the layout table
         for (int i = 0; i < employees.length(); i++) {
             // get employee object
             JSONObject employee = null;
@@ -154,7 +151,6 @@ public class ViewSchduleActivity extends AppCompatActivity {
             // create new row
             TableRow row = new TableRow(this);
             // set minimum height of row
-//            row.setMinimumHeight(200);
             row.setPadding(2, 2, 2, 2);
             row.setDividerDrawable(ContextCompat.getDrawable(this, android.R.drawable.status_bar_item_app_background));
             row.setShowDividers(TableRow.SHOW_DIVIDER_MIDDLE);
@@ -171,7 +167,7 @@ public class ViewSchduleActivity extends AppCompatActivity {
             }
             row.addView(nameView);
 
-            // get schedule for first day of the month
+            // get current emp schedule
             JSONArray schedule = null;
             try {
                 schedule = employee.getJSONArray("schedule");

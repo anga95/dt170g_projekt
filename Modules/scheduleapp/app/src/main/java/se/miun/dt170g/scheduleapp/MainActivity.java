@@ -2,13 +2,13 @@ package se.miun.dt170g.scheduleapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import com.jakewharton.threetenabp.AndroidThreeTen;
-
-import se.miun.dt170g.scheduleapp.ui.login.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,8 +26,23 @@ public class MainActivity extends AppCompatActivity {
         View view = inflator.inflate(R.layout.custom_title, null);
         actionBar.setCustomView(view);
 
-        // change view to LoginAcitvity
-        Intent myIntent = new Intent(this, ViewSchduleActivity.class);
-        startActivity(myIntent);
+
+
+        SharedPreferences sharedPref = getSharedPreferences("appPrefs", Context.MODE_PRIVATE);
+        String myValue = sharedPref.getString("userIdentified", "");
+        if (myValue.equals("")){
+            // change view to LoginAcitvity
+            Intent myIntent = new Intent(this, LoginActivity.class);
+            startActivity(myIntent);
+        } else {
+            // change view to LoginAcitvity
+            Intent myIntent = new Intent(this, ViewSchduleActivity.class);
+            startActivity(myIntent);
+        }
+
+
+//        // change view to LoginAcitvity
+//        Intent myIntent = new Intent(this, ViewSchduleActivity.class);
+//        startActivity(myIntent);
     }
 }

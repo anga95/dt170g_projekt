@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
+    xmlns:tools="http://schemas.android.com/tools" package="se.miun.dt170g.scheduleapp" >
 
     <application
         android:allowBackup="true"
@@ -12,9 +12,8 @@
         android:theme="@style/Theme.ScheduleApp"
         tools:targetApi="31" >
         <activity
-            android:name=".ui.login.LoginActivity"
-            android:exported="false"
-            android:label="@string/title_activity_identify_user" />
+            android:name=".LoginActivity"
+            android:exported="false" />
         <activity
             android:name=".ViewSchduleActivity"
             android:exported="false" />
