@@ -50,7 +50,7 @@ public class addALaCarte extends AppCompatActivity {
         drinks.add("Cola");
         drinks.add("Ramlösa");
 
-        DestinationRecyclerAdapter mSelectedFoodsAdapter = new DestinationRecyclerAdapter(new HashMap<>());
+        /*DestinationRecyclerAdapter mSelectedFoodsAdapter = new DestinationRecyclerAdapter(new HashMap<>());
         RecyclerView mSelectedFoodsRecyclerView = findViewById(R.id.orderRecyclerView);
         mSelectedFoodsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mSelectedFoodsRecyclerView.setAdapter(mSelectedFoodsAdapter);
@@ -73,7 +73,7 @@ public class addALaCarte extends AppCompatActivity {
         mFoodsAdapter = new SourceRecyclerAdapter(drinks, mSelectedFoodsAdapter);
         mFoodsRecyclerView = findViewById(R.id.drinkRecyclerView);
         mFoodsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mFoodsRecyclerView.setAdapter(mFoodsAdapter);
+        mFoodsRecyclerView.setAdapter(mFoodsAdapter);*/
 
     }
 

@@ -46,8 +46,6 @@ public class MainActivity extends AppCompatActivity {
             }*/
             Intent intent = new Intent(MainActivity.this, PersonalPage1.class);
             startActivity(intent);
-            //MyAsyncTasks myAsyncTasks = new MyAsyncTasks();
-            //myAsyncTasks.execute();
         });
     }
 }
