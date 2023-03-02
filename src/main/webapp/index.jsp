@@ -36,44 +36,44 @@
                 <div class="day-info" id="tisdag-info">
                     <div class="card-body">
                         <h5 class="card-title">Tisdag</h5>
-                        <p class="card-text">Fatimas köttfärslimpa med brunsås och potatismos.</p>
+                        <p class="card-text"><%= request.getAttribute("dish1Tis") %></p>
                         <br/>
-                        <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
+                        <p class="card-text"><%= request.getAttribute("dish2Tis") %></p>
                         <br/>
-                        <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
+                        <p class="card-text"><%= request.getAttribute("dish3Tis") %></p>
                     </div>
                 </div>
 
                 <div class="day-info" id="onsdag-info">
                     <div class="card-body">
                         <h5 class="card-title">Onsdag</h5>
-                        <p class="card-text">Fatimas köttfärslimpa med brunsås och potatismos.</p>
+                        <p class="card-text"><%= request.getAttribute("dish1Ons") %></p>
                         <br/>
-                        <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
+                        <p class="card-text"><%= request.getAttribute("dish2Ons") %></p>
                         <br/>
-                        <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
+                        <p class="card-text"><%= request.getAttribute("dish3Ons") %></p>
                     </div>
                 </div>
 
                 <div class="day-info" id="torsdag-info">
                     <div class="card-body">
                         <h5 class="card-title">Torsdag</h5>
-                        <p class="card-text">Fatimas köttfärslimpa med brunsås och potatismos.</p>
+                        <p class="card-text"><%= request.getAttribute("dish1Tor") %></p>
                         <br/>
-                        <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
+                        <p class="card-text"><%= request.getAttribute("dish2Tor") %></p>
                         <br/>
-                        <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
+                        <p class="card-text"><%= request.getAttribute("dish3Tor") %></p>
                     </div>
                 </div>
 
                 <div class="day-info" id="fredag-info">
                     <div class="card-body">
                         <h5 class="card-title">Fredag</h5>
-                        <p class="card-text">Fatimas köttfärslimpa med brunsås och potatismos.</p>
+                        <p class="card-text"><%= request.getAttribute("dish1Fre") %></p>
                         <br/>
-                        <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
+                        <p class="card-text"><%= request.getAttribute("dish2Fre") %></p>
                         <br/>
-                        <p class="card-text">Vegetariskt: Vegetarisk köttfärslimpa med brunsås och potatismos.</p>
+                        <p class="card-text"><%= request.getAttribute("dish3Fre") %></p>
                     </div>
                 </div>
 
