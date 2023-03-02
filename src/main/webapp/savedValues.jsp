@@ -14,4 +14,7 @@
 <div class="container mt-5">
   <p><%= request.getAttribute("savedValues2") %></p>
 </div>
+<div class="container mt-5">
+  <p><%= request.getAttribute("savedValues3") %></p>
+</div>
 <%@ include file="footer.jsp" %>

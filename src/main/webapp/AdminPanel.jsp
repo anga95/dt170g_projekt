@@ -1,4 +1,9 @@
-<%--
+<%@ page import="java.util.Iterator" %>
+<%@ page import="java.util.List" %>
+<%@ page import="se.miun.dt170g_projekt.entites.EmployeeEntity" %>
+<%@ page import="se.miun.dt170g_projekt.AdminGetEmployeeFromDatabase" %>
+<%@ page import="se.miun.dt170g_projekt.persistanceManager.EmployeeManager" %><%--
+<%@ page import="se.miun.dt170g_projekt.persistanceManager.EmployeeManager" %>
   Created by IntelliJ IDEA.
   User: Engma
   Date: 2023-02-14
@@ -92,6 +97,23 @@
                         <li class="list-group-item">Pelle Karlsson</li>
                     </ul>
                 </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col card mt-3 pb-5 bg-gradient d-flex align-items-center d-none ms-3" style="width: 20rem;" id="listaEMP">
+            <div class="card-body">
+                <h3 class="text-center mb-4">Lista över anställda</h3>
+                <ul>
+                    <%
+                        List<EmployeeEntity> list = EmployeeManager.getAllEmployee();
+                        for (EmployeeEntity obj : list) {
+                    %>
+                    <li><%= obj.getFirstName() + " " + obj.getLastName() %></li>
+                    <% } %>
+                </ul>
             </div>
         </div>
     </div>

@@ -6,11 +6,11 @@ import javax.naming.NamingException;
 import java.util.List;
 
 @Stateless
-public class dailyLunch {
+public class dailyLunchManager {
 
     private final EntityManager em;
 
-    public dailyLunch() throws NamingException {
+    public dailyLunchManager() throws NamingException {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("DB");
         em = emf.createEntityManager();
     }
