@@ -80,7 +80,6 @@
             </div>
         </div>
     </div>
-    <a href="AdminAddFood">Add Food</a>
 </div>
 <br/>
 <script src="js/dagensLunch.js"></script>

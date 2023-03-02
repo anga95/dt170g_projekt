@@ -27,25 +27,12 @@ public class AdminGetFoodFromDatabase extends HttpServlet{
         Query query = em.createQuery("SELECT d FROM DailyLunchEntity d");
         List<DailyLunchEntity> resultList = query.getResultList();
 
-        request.setAttribute("dish1Mon", resultList.get(0).getLunch1());
-        request.setAttribute("dish2Mon", resultList.get(0).getLunch2());
-        request.setAttribute("dish3Mon", resultList.get(0).getLunch3());
-
-        request.setAttribute("dish1Tis", resultList.get(1).getLunch1());
-        request.setAttribute("dish2Tis", resultList.get(1).getLunch2());
-        request.setAttribute("dish3Tis", resultList.get(1).getLunch3());
-
-        request.setAttribute("dish1Ons", resultList.get(2).getLunch1());
-        request.setAttribute("dish2Ons", resultList.get(2).getLunch2());
-        request.setAttribute("dish3Ons", resultList.get(2).getLunch3());
-
-        request.setAttribute("dish1Tor", resultList.get(3).getLunch1());
-        request.setAttribute("dish2Tor", resultList.get(3).getLunch2());
-        request.setAttribute("dish3Tor", resultList.get(3).getLunch3());
-
-        request.setAttribute("dish1Fre", resultList.get(4).getLunch1());
-        request.setAttribute("dish2Fre", resultList.get(4).getLunch2());
-        request.setAttribute("dish3Fre", resultList.get(4).getLunch3());
+        String[] days = {"Mon", "Tis", "Ons", "Tor", "Fre"};
+        for (int i = 0; i < days.length; i++) {
+            request.setAttribute("dish1" + days[i], resultList.get(i).getLunch1());
+            request.setAttribute("dish2" + days[i], resultList.get(i).getLunch2());
+            request.setAttribute("dish3" + days[i], resultList.get(i).getLunch3());
+        }
 
 
 
