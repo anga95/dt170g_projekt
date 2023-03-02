@@ -77,7 +77,6 @@
                         </form>
                     </div>
                 </div>
-             //slutet av kortet på adminsidan
             </div>
         </div>
         <div class="col card mt-3 pb-5 bg-gradient d-flex align-items-center d-none ms-3" style="width: 20rem;" id="listaEMP">
