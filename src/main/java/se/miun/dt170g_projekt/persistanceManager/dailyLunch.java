@@ -19,6 +19,16 @@ public class dailyLunch {
         em.persist(Daily);
         em.getTransaction().commit();
     }
+    public void changeLunch(DailyLunchEntity Daily) {
+        em.getTransaction().begin();
+        em.createQuery("UPDATE DailyLunchEntity SET lunch1 = :lunch1, lunch2 = :lunch2, lunch3 = :lunch3 WHERE weekday = :weekday")
+                .setParameter("lunch1", Daily.getLunch1())
+                .setParameter("lunch2", Daily.getLunch2())
+                .setParameter("lunch3", Daily.getLunch3())
+                .setParameter("weekday", Daily.getWeekday())
+                .executeUpdate();
+        em.getTransaction().commit();
+    }
     public DailyLunchEntity getDailyById(int id) {
         DailyLunchEntity Daily = em.find(DailyLunchEntity.class, id);
         em.close();

@@ -45,7 +45,7 @@ public class AdminAddFoodToDataBase extends HttpServlet {
             e.printStackTrace();
         }
 
-        dailyLunch.saveDaily(Daily);
+        dailyLunch.changeLunch(Daily);
 
         // Redirect to employee list page
         RequestDispatcher dispatcher = request.getRequestDispatcher("/savedValues.jsp");
