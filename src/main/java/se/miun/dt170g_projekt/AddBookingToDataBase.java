@@ -6,13 +6,10 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import se.miun.dt170g_projekt.entites.BookingEntity;
-import se.miun.dt170g_projekt.persistanceManager.Booking;
+import se.miun.dt170g_projekt.persistanceManager.BookingManager;
 
-import java.io.FileWriter;
 import java.io.IOException;
 import java.rmi.ServerException;
-import java.sql.Date;
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Enumeration;
 
@@ -48,10 +45,10 @@ public class AddBookingToDataBase extends HttpServlet {
         booking.setNumberOfPeople(paramValue.get(6));
         booking.setExtra(paramValue.get(7));
 
-        Booking newBooking = null;
+        BookingManager newBooking = null;
 
         try {
-            newBooking = new Booking();
+            newBooking = new BookingManager();
         } catch (Exception e) {
             e.printStackTrace();
         }

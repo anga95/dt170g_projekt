@@ -1,4 +1,9 @@
-<%--
+<%@ page import="java.util.Iterator" %>
+<%@ page import="java.util.List" %>
+<%@ page import="se.miun.dt170g_projekt.entites.EmployeeEntity" %>
+<%@ page import="se.miun.dt170g_projekt.AdminGetEmployeeFromDatabase" %>
+<%@ page import="se.miun.dt170g_projekt.persistanceManager.EmployeeManager" %><%--
+<%@ page import="se.miun.dt170g_projekt.persistanceManager.EmployeeManager" %>
   Created by IntelliJ IDEA.
   User: Engma
   Date: 2023-02-14
@@ -50,17 +55,17 @@
                             <form accept-charset="UTF-8" action="${pageContext.request.contextPath}/AddEmp" method="post">
                                 <div class="form-group">
                                     <h3 class="text-center mb-4">Lägg till Anställd</h3>
-                                    <label class="form-label" for="fname">Förnamn</label>
-                                    <input class="form-control mb-2" type="text" id="fname">
+                                    <label class="form-label"  for="fname">Förnamn</label>
+                                    <input class="form-control mb-2" name="fname" type="text" id="fname">
 
                                     <label class="form-label" for="ename">Efternamn</label>
-                                    <input class="form-control mb-2" type="text" id="ename">
+                                    <input class="form-control mb-2" name="ename" type="text" id="ename">
 
                                     <label class="form-label" for="email">E-post</label>
-                                    <input class="form-control mb-2" type="text" id="email">
+                                    <input class="form-control mb-2" name="email" type="text" id="email">
 
                                     <label class="form-label" for="telnr">Telefonnummer</label>
-                                    <input class="form-control mb-5" type="text" id="telnr">
+                                    <input class="form-control mb-5" name="telnr" type="text" id="telnr">
                                     <div class="d-flex justify-content-center">
                                         <button type="submit" class="btn btn-success justify-content-center">Lägg till</button>
                                     </div>
@@ -83,7 +88,12 @@
             <div class="card-body">
                 <h3 class="text-center mb-4">Lista över anställda</h3>
                 <ul>
-                    <li class="list-group-item">Pelle Karlsson</li>
+                    <%
+                        List<EmployeeEntity> list = EmployeeManager.getAllEmployee();
+                        for (EmployeeEntity obj : list) {
+                    %>
+                    <li><%= obj.getFirstName() + " " + obj.getLastName() %></li>
+                    <% } %>
                 </ul>
             </div>
         </div>
@@ -91,7 +101,9 @@
 </div>
 
 
-<script src="js/adminPageJS.js"></script>
+<script src="js/adminPageJS.js">
+
+</script>
 
 
 <%@include file="footer.jsp"%>

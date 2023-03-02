@@ -11,9 +11,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import se.miun.dt170g_projekt.entites.DailyLunchEntity;
-import se.miun.dt170g_projekt.persistanceManager.dailyLunch;
+
 import java.io.IOException;
-import java.rmi.ServerException;
 import java.util.List;
 
 @WebServlet(name = "AdminAddFood", value = "/AdminAddFood")

@@ -84,8 +84,8 @@ create table TEST.booking
     id      INTEGER generated always as identity
         constraint booking_pk
             primary key,
-    date date,
-    time time,
+    date varchar(25),
+    time varchar(25),
     fname varchar(25),
     lname varchar(25),
     telnumber varchar(25),
