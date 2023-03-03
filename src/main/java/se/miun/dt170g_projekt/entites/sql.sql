@@ -93,3 +93,24 @@ create table TEST.booking
     number_of_people varchar(25),
     extra varchar(25)
 );
+create table TEST.prefood
+(
+    id      INTEGER generated always as identity
+        constraint prefood_pk
+            primary key,
+    name varchar(255)
+);
+create table TEST.mainfood
+(
+    id      INTEGER generated always as identity
+        constraint mainfood_pk
+            primary key,
+    name varchar(255)
+);
+create table TEST.afterfood
+(
+    id      INTEGER generated always as identity
+        constraint afterfood_pk
+            primary key,
+    name varchar(255)
+);
