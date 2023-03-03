@@ -7,7 +7,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import se.miun.dt170g_projekt.entites.EmployeeEntity;
-import se.miun.dt170g_projekt.persistanceManager.EmployeeManager;
+import se.miun.dt170g_projekt.persistanceManager.Manager;
 
 import java.io.IOException;
 import java.rmi.ServerException;
@@ -29,15 +29,15 @@ public class AddEmployeeToDataBase extends HttpServlet {
         employee.setEmail(email);
         employee.setPhone(telnumber);
 
-        EmployeeManager newEmployee = null;
+        Manager newEmployee = null;
         try {
-            newEmployee = new EmployeeManager();
+            newEmployee = new Manager();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        newEmployee.saveEmployee(employee);
+        newEmployee.saveData(employee);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/savedValues.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/AdminPanel.jsp");
         dispatcher.forward(request, response);
 
     }
