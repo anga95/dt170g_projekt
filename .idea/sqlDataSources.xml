@@ -4,10 +4,7 @@
     <mapping uuid="20c0f564-5560-4e66-b751-f6f5b28232e7" name="DB@localhost Mapping">
       <data-sources db="62bcc681-e924-409c-a995-fce019e1b661" ddl="13373f79-d316-4864-9772-64eb5b55d276" />
       <scope>
-        <node negative="1">
-          <node kind="schema" qname="APP" />
-          <node kind="database" qname="@" />
-        </node>
+        <node kind="database" qname="@" />
       </scope>
     </mapping>
   </component>
