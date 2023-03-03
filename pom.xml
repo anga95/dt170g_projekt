@@ -43,7 +43,7 @@
         </dependency>
 
 
-        <!--USED FOR DATABASE CONNECTIONS, TOTAL 5 DEPENDENCIES-->
+        <!--START ### USED FOR DATABASE CONNECTIONS, TOTAL 5 DEPENDENCIES ### START-->
         <dependency>
             <groupId>jakarta.persistence</groupId>
             <artifactId>jakarta.persistence-api</artifactId>
@@ -69,7 +69,7 @@
             <artifactId>eclipselink</artifactId>
             <version>3.0.0</version>
         </dependency>
-        <!--USED FOR DATABASE CONNECTIONS, TOTAL 5 DEPENDENCIES-->
+        <!--END ### USED FOR DATABASE CONNECTIONS, TOTAL 5 DEPENDENCIES ### END-->
 
     </dependencies>
     <build>
