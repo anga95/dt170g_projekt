@@ -13,7 +13,7 @@ import se.miun.dt170g_projekt.persistanceManager.Manager;
 import java.io.IOException;
 import java.rmi.ServerException;
 @WebServlet(name = "AdminPage", value = "/AdminPage")
-public class AdminAddFoodToDataBase extends HttpServlet {
+public class AdminAddDailyFoodToDataBase extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServerException, IOException, ServletException {
         request.setCharacterEncoding("UTF-8");

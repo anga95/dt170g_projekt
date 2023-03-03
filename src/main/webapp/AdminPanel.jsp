@@ -43,7 +43,7 @@
                                     <button type="button" class="btn btn-secondary" onclick="nextDay()">Nästa dag</button>
                                 </div>
                                 <div class="mt-5 d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-primary">Spara</button>
+                                    <button type="submit" class="btn btn-success">Spara</button>
                                 </div>
                             </form>
                         </div>
@@ -77,6 +77,28 @@
                             <form accept-charset="UTF-8" action="#" method="post">
                                 <div class="form-group">
 
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="choice-info" id="carte-info">
+                        <div class="card-body">
+                            <form accept-charset="UTF-8" action="#" method="post">
+                                <div class="form-group">
+                                    <h3 class="text-center mb-4">Måltider</h3>
+                                    <textarea type="text" class="form-control" id="preFood" name="pre" placeholder="Förrätt"></textarea>
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <button type="submit" class="btn btn-success justify-content-center">Lägg till</button>
+                                        </div>
+                                    <textarea type="text" class="form-control mt-3 " id="mainFood" name="main" placeholder="Huvudrätt"></textarea>
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <button type="submit" class="btn btn-success justify-content-center">Lägg till</button>
+                                        </div>
+                                    <textarea type="text" class="form-control mt-3" id="afterFood" name="after" placeholder="Efterrätt"></textarea>
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <button type="submit" class="btn btn-success justify-content-center">Lägg till</button>
+                                        </div>
                                 </div>
                             </form>
                         </div>
