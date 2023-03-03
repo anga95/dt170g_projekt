@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import se.miun.dt170g_projekt.entites.BookingEntity;
 import se.miun.dt170g_projekt.entites.DailyLunchEntity;
 import se.miun.dt170g_projekt.entites.EmployeeEntity;
+import se.miun.dt170g_projekt.entites.PrefoodEntity;
 
 import javax.naming.NamingException;
 import java.util.List;
@@ -58,5 +59,11 @@ public class Manager {
         TypedQuery<DailyLunchEntity> query = em.createQuery("SELECT e FROM DailyLunchEntity  e", DailyLunchEntity.class);
         List<DailyLunchEntity> Daily = query.getResultList();
         return Daily;
+    }
+
+    public List<PrefoodEntity> getAllPrefood() {
+        TypedQuery<PrefoodEntity> query = em.createQuery("SELECT e FROM PrefoodEntity  e", PrefoodEntity.class);
+        List<PrefoodEntity> prefood = query.getResultList();
+        return prefood;
     }
 }
