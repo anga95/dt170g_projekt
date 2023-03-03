@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.rmi.ServerException;
 
 @WebServlet(name = "AdminAddALaCarte", value = "/AdminAddALaCarte")
-public class AdminAddALaCarteToDatabase {
+public class AdminAddALaCarteToDatabase extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServerException, IOException, ServletException {
         request.setCharacterEncoding("UTF-8");
@@ -26,24 +26,28 @@ public class AdminAddALaCarteToDatabase {
         String main = request.getParameter("main");
         String after = request.getParameter("after");
 
-        // Forward the request to a JSP page to display the saved values
-
-        PrefoodEntity prefood = new PrefoodEntity();
-        MainfoodEntity mainfood = new MainfoodEntity();
-        AfterfoodEntity afterfood = new AfterfoodEntity();
-
         Manager addALaCarte = null;
-
         try {
             addALaCarte = new Manager();
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        addALaCarte.saveData(prefood);
-        addALaCarte.saveData(mainfood);
-        addALaCarte.saveData(afterfood);
-
+        // Forward the request to a JSP page to display the saved values
+        if(pre != null){
+            PrefoodEntity Pre = new PrefoodEntity();
+            Pre.setName(pre);
+            addALaCarte.saveData(Pre);
+        }
+        if(main != null){
+            MainfoodEntity Main = new MainfoodEntity();
+            Main.setName(main);
+            addALaCarte.saveData(Main);
+        }
+        if(after != null){
+            AfterfoodEntity After = new AfterfoodEntity();
+            After.setName(after);
+            addALaCarte.saveData(After);
+        }
         // Redirect to employee list page
         RequestDispatcher dispatcher = request.getRequestDispatcher("/AdminPanel.jsp");
         dispatcher.forward(request, response);
