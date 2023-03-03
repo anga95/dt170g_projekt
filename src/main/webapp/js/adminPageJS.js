@@ -29,6 +29,7 @@ function nextDay() {
 const choices = document.querySelectorAll(".list-group-item");
 const choiceInfos =document.querySelectorAll(".choice-info");
 const veckomeny = document.getElementById("veckomeny");
+const carte = document.getElementById("carte");
 
 choices.forEach(choice => {
     choice.addEventListener("click", function() {
@@ -63,4 +64,8 @@ function showSecondCard(){
 }
 
 veckomeny.click();
+
+function showCarte(){
+    carte.click();
+}
 

@@ -6,6 +6,7 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ include file="head.jsp" %>
 
+
  <div class="container-fluid">
     <h1 class="display-1 mt-3 text-center"><%= "ADMIN PANEL" %></h1>
   <div class="row">
@@ -84,20 +85,20 @@
 
                     <div class="choice-info" id="carte-info">
                         <div class="card-body">
-                            <form accept-charset="UTF-8" action="#" method="post">
+                            <form accept-charset="UTF-8" action="${pageContext.request.contextPath}/AdminAddALaCarte" method="post">
                                 <div class="form-group">
                                     <h3 class="text-center mb-4">Måltider</h3>
                                     <textarea type="text" class="form-control" id="preFood" name="pre" placeholder="Förrätt"></textarea>
                                         <div class="d-flex justify-content-center mt-3">
-                                            <button type="submit" class="btn btn-success justify-content-center">Lägg till</button>
+                                            <button type="submit" class="btn btn-success justify-content-center" onclick="showCarte()">Lägg till</button>
                                         </div>
                                     <textarea type="text" class="form-control mt-3 " id="mainFood" name="main" placeholder="Huvudrätt"></textarea>
                                         <div class="d-flex justify-content-center mt-3">
-                                            <button type="submit" class="btn btn-success justify-content-center">Lägg till</button>
+                                            <button type="submit" class="btn btn-success justify-content-center" onclick="showCarte()">Lägg till</button>
                                         </div>
                                     <textarea type="text" class="form-control mt-3" id="afterFood" name="after" placeholder="Efterrätt"></textarea>
                                         <div class="d-flex justify-content-center mt-3">
-                                            <button type="submit" class="btn btn-success justify-content-center">Lägg till</button>
+                                            <button type="submit" class="btn btn-success justify-content-center" onclick="showCarte()">Lägg till</button>
                                         </div>
                                 </div>
                             </form>

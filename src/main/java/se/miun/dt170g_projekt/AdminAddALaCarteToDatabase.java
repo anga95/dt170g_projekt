@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.rmi.ServerException;
 
 @WebServlet(name = "AdminAddALaCarte", value = "/AdminAddALaCarte")
-public class AdminAddALaCarteToDatabase {
+public class AdminAddALaCarteToDatabase extends HttpServlet{
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServerException, IOException, ServletException {
         request.setCharacterEncoding("UTF-8");
@@ -31,6 +31,10 @@ public class AdminAddALaCarteToDatabase {
         PrefoodEntity prefood = new PrefoodEntity();
         MainfoodEntity mainfood = new MainfoodEntity();
         AfterfoodEntity afterfood = new AfterfoodEntity();
+
+        prefood.setName(pre);
+        mainfood.setName(main);
+        afterfood.setName(after);
 
         Manager addALaCarte = null;
 
