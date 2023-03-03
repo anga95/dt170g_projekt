@@ -2,33 +2,26 @@
 <%@ page import="java.util.List" %>
 <%@ page import="se.miun.dt170g_projekt.entites.EmployeeEntity" %>
 <%@ page import="se.miun.dt170g_projekt.AdminGetEmployeeFromDatabase" %>
-<%@ page import="se.miun.dt170g_projekt.persistanceManager.Manager" %><%--
-<%@ page import="se.miun.dt170g_projekt.persistanceManager.EmployeeManager" %>
-  Created by IntelliJ IDEA.
-  User: Engma
-  Date: 2023-02-14
-  Time: 10:07
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="se.miun.dt170g_projekt.persistanceManager.Manager" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ include file="head.jsp" %>
 
-
+ <div class="container-fluid">
     <h1 class="display-1 mt-3 text-center"><%= "ADMIN PANEL" %></h1>
-    <div class="row">
-    <nav class="navbar navbar-dark col-sm-2 position-fixed ms-5">
-        <div class="container-fluid">
-            <div class="sidebar">
-                <ul class="list-group">
-                    <li class="list-group-item border-0 mb-2" id="veckomeny" onclick="showChoiceInfo('veckomeny'); showSecondCard()">Veckomeny</li>
-                    <li class="list-group-item border-0 mb-2" id="carte" onclick="showChoiceInfo('carte'); showSecondCard()">A la carte</li>
-                    <li class="list-group-item border-0 mb-2" id="anställda" onclick="showChoiceInfo('anställda'); displaySecondCard()">Anställda</li>
-                    <li class="list-group-item border-0 mb-2" id="schema" onclick="showChoiceInfo('schema'); showSecondCard()">Schema</li>
-                </ul>
+  <div class="row">
+        <nav class="col-sm-2 navbar navbar-dark position-fixed ms-5">
+            <div class="container-fluid">
+                <div class="sidebar">
+                    <ul class="list-group">
+                        <li class="list-group-item border-0 mb-2" id="veckomeny" onclick="showChoiceInfo('veckomeny'); showSecondCard()">Veckomeny</li>
+                        <li class="list-group-item border-0 mb-2" id="carte" onclick="showChoiceInfo('carte'); showSecondCard()">A la carte</li>
+                        <li class="list-group-item border-0 mb-2" id="anställda" onclick="showChoiceInfo('anställda'); displaySecondCard()">Anställda</li>
+                        <li class="list-group-item border-0 mb-2" id="schema" onclick="showChoiceInfo('schema'); showSecondCard()">Schema</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-    <div class="container-fluid d-flex justify-content-center col-sm-10">
+        </nav>
+    <div class="col-5 container-fluid d-flex justify-content-center">
 
 
         <div class="row">
@@ -91,7 +84,7 @@
                 </div>
             </div>
         </div>
-        <div class="col card mt-3 pb-5 bg-gradient align-items-center d-none ms-3" style="width:  5rem;" id="listaEMP">
+        <div class="col card mt-3 bg-gradient d-flex align-items-center ms-3" style="width:  5rem;" id="listaEMP">
             <div class="card-body">
                 <h3 class="text-center mb-4">Lista över anställda</h3>
                 <ul>
@@ -105,8 +98,8 @@
             </div>
         </div>
     </div>
-    </div>
-
+   </div>
+ </div>
 
     <script src="js/adminPageJS.js"></script>
 
