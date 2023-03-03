@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewSchduleActivity">
+    tools:context=".ui.ViewSchduleActivity">
 
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="40dp"
         android:orientation="horizontal"
         tools:ignore="MissingConstraints">
 
@@ -37,10 +36,10 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Month Year"
-            android:textColor="@color/brown"
-            android:textStyle="bold"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textColor="@color/brown"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/next_month"
@@ -75,4 +74,27 @@
 
     </HorizontalScrollView>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/schedule_scroll"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/forget_user_button"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:background="@null"
+            android:contentDescription=" "
+            android:hint=" "
+            android:text="@string/empty"
+            android:textColor="@color/tan"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:icon="@android:drawable/ic_secure" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

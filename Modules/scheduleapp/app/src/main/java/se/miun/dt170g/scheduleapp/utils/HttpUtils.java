@@ -1,4 +1,4 @@
-package se.miun.dt170g.scheduleapp;
+package se.miun.dt170g.scheduleapp.utils;
 
 import android.os.AsyncTask;
 import android.util.Log;
@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
+import se.miun.dt170g.scheduleapp.ui.MainActivity;
 
 public class HttpUtils extends AsyncTask<String, String, String> {
     private static final String TAG = MainActivity.class.getSimpleName();

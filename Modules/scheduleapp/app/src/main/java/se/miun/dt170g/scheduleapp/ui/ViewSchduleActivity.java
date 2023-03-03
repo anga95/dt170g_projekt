@@ -1,14 +1,18 @@
-package se.miun.dt170g.scheduleapp;
+package se.miun.dt170g.scheduleapp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -20,6 +24,8 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+
+import se.miun.dt170g.scheduleapp.R;
 
 
 public class ViewSchduleActivity extends AppCompatActivity {
@@ -41,13 +47,13 @@ public class ViewSchduleActivity extends AppCompatActivity {
         // no API yet strings
         String empRollingWeeks = "" +
                 "{ \"employees\": [ " +
-                "{ \"id\": 1, \"name\": \"Nordin Suleimani\", \"schedule\": [ " +
+                "{ \"id\": 1, \"name\": \"John Doe\", \"schedule\": [ " +
                 "{ \"day\": \"Monday\", \"startTime\": \"08:01\", \"endTime\": \"16:00\" }, { \"day\": \"Tuesday\", \"startTime\": \"08:02\", \"endTime\": \"16:00\" }, { \"day\": \"Wednesday\", \"startTime\": \"OFF\", \"endTime\": \"OFF\" }, { \"day\": \"Thursday\", \"startTime\": \"08:04\", \"endTime\": \"16:00\" }, { \"day\": \"Friday\", \"startTime\": \"08:05\", \"endTime\": \"16:00\" }, { \"day\": \"Saturday\", \"startTime\": \"08:06\", \"endTime\": \"16:00\" } , { \"day\": \"Sunday\", \"startTime\": \"OFF\", \"endTime\": \"OFF\" } ] }, " +
-                "{ \"id\": 2, \"name\": \"Jane Smith\", \"schedule\": " +
+                "{ \"id\": 2, \"name\": \"Jane Doe\", \"schedule\": " +
                 "[ { \"day\": \"Monday\", \"startTime\": \"10:01\", \"endTime\": \"18:00\" }, { \"day\": \"Tuesday\", \"startTime\": \"10:02\", \"endTime\": \"18:00\" }, { \"day\": \"Wednesday\", \"startTime\": \"08:33\", \"endTime\": \"18:00\" }, { \"day\": \"Thursday\", \"startTime\": \"OFF\", \"endTime\": \"OFF\" }, { \"day\": \"Friday\", \"startTime\": \"10:05\", \"endTime\": \"18:00\" }, { \"day\": \"Saturday\", \"startTime\": \"OFF\", \"endTime\": \"OFF\" }  , { \"day\": \"Sunday\", \"startTime\": \"OFF\", \"endTime\": \"OFF\" } ]  }" +
                 "] }";
-        String empLeaves = "{ \"employees\": [ { \"id\": 1, \"name\": \"Nordin Suleimani\", \"leaves\": [ { \"date\": \"2023-03-07\", \"startTime\": \"08:00\", \"endTime\": \"16:00\" }, { \"date\": \"2023-03-14\", \"startTime\": \"12:00\", \"endTime\": \"20:00\" }, { \"date\": \"2023-03-21\", \"startTime\": \"08:00\", \"endTime\": \"20:00\" } ] }, { \"id\": 2, \"name\": \"Jane Smith\", \"leaves\": [ { \"date\": \"2023-03-14\", \"startTime\": \"08:00\", \"endTime\": \"16:00\" }, { \"date\": \"2023-03-19\", \"startTime\": \"08:00\", \"endTime\": \"18:00\" } ] } ] }";
-        String empExtraDays = "{ \"employees\": [ { \"id\": 1, \"name\": \"Nordin Suleimani\", \"extra\": [ { \"date\": \"2023-03-08\", \"startTime\": \"10:00\", \"endTime\": \"18:00\" }, { \"date\": \"2023-03-16\", \"startTime\": \"10:00\", \"endTime\": \"18:00\" }, { \"date\": \"2023-03-25\", \"startTime\": \"08:00\", \"endTime\": \"16:00\" } ] }, { \"id\": 2, \"name\": \"Jane Smith\", \"extra\": [ { \"date\": \"2023-03-07\", \"startTime\": \"12:00\", \"endTime\": \"20:00\" }, { \"date\": \"2023-03-15\", \"startTime\": \"08:00\", \"endTime\": \"16:00\" } ] } ] }";
+        String empLeaves = "{ \"employees\": [ { \"id\": 1, \"name\": \"John Doe\", \"leaves\": [ { \"date\": \"2023-03-07\", \"startTime\": \"08:00\", \"endTime\": \"16:00\" }, { \"date\": \"2023-03-14\", \"startTime\": \"12:00\", \"endTime\": \"20:00\" }, { \"date\": \"2023-03-21\", \"startTime\": \"08:00\", \"endTime\": \"20:00\" } ] }, { \"id\": 2, \"name\": \"Jane Doe\", \"leaves\": [ { \"date\": \"2023-03-14\", \"startTime\": \"08:00\", \"endTime\": \"16:00\" }, { \"date\": \"2023-03-19\", \"startTime\": \"08:00\", \"endTime\": \"18:00\" } ] } ] }";
+        String empExtraDays = "{ \"employees\": [ { \"id\": 1, \"name\": \"John Doe\", \"extra\": [ { \"date\": \"2023-03-08\", \"startTime\": \"10:00\", \"endTime\": \"18:00\" }, { \"date\": \"2023-03-16\", \"startTime\": \"10:00\", \"endTime\": \"18:00\" }, { \"date\": \"2023-03-25\", \"startTime\": \"08:00\", \"endTime\": \"16:00\" } ] }, { \"id\": 2, \"name\": \"Jane Doe\", \"extra\": [ { \"date\": \"2023-03-07\", \"startTime\": \"12:00\", \"endTime\": \"20:00\" }, { \"date\": \"2023-03-15\", \"startTime\": \"08:00\", \"endTime\": \"16:00\" } ] } ] }";
 
         JSONObject empRollingWeeksObj = null;
         JSONObject empLeavesObj = null;
@@ -307,5 +313,19 @@ public class ViewSchduleActivity extends AppCompatActivity {
             tableLayout.addView(row);
         }
 
+        Button forgetUser = findViewById(R.id.forget_user_button);
+        forgetUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences sharedPref = getSharedPreferences("appPrefs", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putString("empId", ""); //userInfo.getUsername()
+                editor.apply();
+
+                Intent intent = new Intent(ViewSchduleActivity.this, MainActivity.class);
+                // Change view to ViewScheduleActivity
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -1,4 +1,4 @@
-package se.miun.dt170g.scheduleapp;
+package se.miun.dt170g.scheduleapp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import com.jakewharton.threetenabp.AndroidThreeTen;
+
+import se.miun.dt170g.scheduleapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,21 +30,17 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        // Save the user info in shared preferences
         SharedPreferences sharedPref = getSharedPreferences("appPrefs", Context.MODE_PRIVATE);
-        String myValue = sharedPref.getString("userIdentified", "");
-        if (myValue.equals("")){
+        String myValue = sharedPref.getString("empId", "");
+        if (!myValue.equals("")){
             // change view to LoginAcitvity
             Intent myIntent = new Intent(this, LoginActivity.class);
             startActivity(myIntent);
         } else {
             // change view to LoginAcitvity
-            Intent myIntent = new Intent(this, ViewSchduleActivity.class);
+            Intent myIntent = new Intent(this, ViewEmpSchedulesActivity.class);
             startActivity(myIntent);
         }
-
-
-//        // change view to LoginAcitvity
-//        Intent myIntent = new Intent(this, ViewSchduleActivity.class);
-//        startActivity(myIntent);
     }
 }

@@ -1,4 +1,4 @@
-package se.miun.dt170g.scheduleapp;
+package se.miun.dt170g.scheduleapp.ui;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +14,9 @@ import android.view.View;
 import android.widget.Button;
 
 import java.util.concurrent.ExecutionException;
+
+import se.miun.dt170g.scheduleapp.R;
+import se.miun.dt170g.scheduleapp.utils.HttpUtils;
 
 public class LoginActivity extends AppCompatActivity {
 
