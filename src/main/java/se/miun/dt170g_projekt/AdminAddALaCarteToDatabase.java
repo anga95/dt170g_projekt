@@ -26,16 +26,6 @@ public class AdminAddALaCarteToDatabase extends HttpServlet{
         String main = request.getParameter("main");
         String after = request.getParameter("after");
 
-        // Forward the request to a JSP page to display the saved values
-
-        PrefoodEntity prefood = new PrefoodEntity();
-        MainfoodEntity mainfood = new MainfoodEntity();
-        AfterfoodEntity afterfood = new AfterfoodEntity();
-
-        prefood.setName(pre);
-        mainfood.setName(main);
-        afterfood.setName(after);
-
         Manager addALaCarte = null;
 
         try {
@@ -43,11 +33,22 @@ public class AdminAddALaCarteToDatabase extends HttpServlet{
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        addALaCarte.saveData(prefood);
-        addALaCarte.saveData(mainfood);
-        addALaCarte.saveData(afterfood);
-
+        // Forward the request to a JSP page to display the saved values
+        if(pre != null){
+            PrefoodEntity Pre = new PrefoodEntity();
+            Pre.setName(pre);
+            addALaCarte.saveData(Pre);
+        }
+        if(main != null){
+            MainfoodEntity Main = new MainfoodEntity();
+            Main.setName(main);
+            addALaCarte.saveData(Main);
+        }
+        if(after != null){
+            AfterfoodEntity After = new AfterfoodEntity();
+            After.setName(after);
+            addALaCarte.saveData(After);
+        }
         // Redirect to employee list page
         RequestDispatcher dispatcher = request.getRequestDispatcher("/AdminPanel.jsp");
         dispatcher.forward(request, response);
