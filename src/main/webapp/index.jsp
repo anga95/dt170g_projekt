@@ -1,3 +1,4 @@
+<%--
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="jakarta.persistence.EntityManagerFactory, jakarta.persistence.Persistence, java.util.List" %>
 <%@ page import="se.miun.dt170g_projekt.persistanceManager.*" %>
@@ -70,4 +71,4 @@ List<Employee> employees = employee_pm.getAllEmployees();
 </form>
 
 </body>
-</html>
+</html>--%>

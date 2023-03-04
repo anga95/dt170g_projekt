@@ -1,3 +1,4 @@
+/*
 package se.miun.dt170g_projekt.servlet;
 
 import jakarta.servlet.*;
@@ -26,9 +27,11 @@ public class addEmployeeServlet extends HttpServlet {
         String telephone = request.getParameter("telephone");
 
         // Create new employee
+*/
 /*
         Employee_entity employee = new Employee_entity(id, email, firstName, lastName, restaurantId, telephone);
-*/
+*//*
+
         Employee employee = new Employee();
         employee.setFirstName(firstName);
         employee.setLastName(lastName);
@@ -51,3 +54,4 @@ public class addEmployeeServlet extends HttpServlet {
         response.sendRedirect("index.jsp");
     }
 }
+*/

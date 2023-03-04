@@ -1,3 +1,4 @@
+/*
 package se.miun.dt170g_projekt.entities;
 
 import jakarta.persistence.*;
@@ -97,4 +98,4 @@ public class Employee {
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
-}
+}*/

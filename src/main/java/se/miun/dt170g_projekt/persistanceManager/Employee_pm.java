@@ -1,3 +1,4 @@
+/*
 package se.miun.dt170g_projekt.persistanceManager;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.*;
@@ -11,7 +12,7 @@ public class Employee_pm {
     private final EntityManager em;
 
     public Employee_pm() throws NamingException {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("DB");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
         em = emf.createEntityManager();
     }
     public void saveEmployee(Employee employee) {
@@ -30,3 +31,4 @@ public class Employee_pm {
         return employees;
     }
 }
+*/

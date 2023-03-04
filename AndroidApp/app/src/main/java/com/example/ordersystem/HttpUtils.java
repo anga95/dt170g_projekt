@@ -3,8 +3,13 @@ package com.example.ordersystem;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -13,32 +18,43 @@ public class HttpUtils extends AsyncTask<String,String,String> {
     private static final String TAG = MainActivity.class.getSimpleName();
     @Override
     protected String doInBackground(String... urls) {
-        String urlString = urls[0];
+
+        String jsonString = "";
         try {
-            URL url = new URL(urlString);
-            HttpURLConnection con = (HttpURLConnection) url.openConnection();
-            con.setRequestMethod("GET");
-
-            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-            String inputLine;
-            StringBuilder response = new StringBuilder();
-
-            while ((inputLine = in.readLine()) != null) {
-                response.append(inputLine);
+            URL url = new URL(urls[0]);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("GET");
+            connection.connect();
+            InputStream inputStream = connection.getInputStream();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                jsonString += line;
             }
-
-            in.close();
-            return response.toString();
+            reader.close();
+            inputStream.close();
+            connection.disconnect();
         } catch (IOException e) {
-            Log.e(TAG, "Error getting response from URL: " + e.getMessage());
-            return null;
+            e.printStackTrace();
         }
+        return jsonString;
     }
 
     @Override
-    protected void onPostExecute(String response) {
-        if (response != null) {
-            Log.d(TAG, "Response: " + response);
+    protected void onPostExecute(String result) {
+        // Parse JSON data and extract the items you need
+        try {
+            JSONArray jsonArray = new JSONArray(result); // assuming 'response' is the string containing the JSON array
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                int id = jsonObject.getInt("id");
+                String status = jsonObject.getString("status");
+                int tableNr = jsonObject.getInt("tableNr");
+                // do something with the extracted values
+                //MainActivity.setStatus(status);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
     }
 }

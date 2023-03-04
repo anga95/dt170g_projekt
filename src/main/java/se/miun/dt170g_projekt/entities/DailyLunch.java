@@ -1,3 +1,4 @@
+/*
 package se.miun.dt170g_projekt.entities;
 
 import jakarta.persistence.*;
@@ -77,3 +78,4 @@ public class DailyLunch {
         return Objects.hash(id, weekday, lunch1, lunch2, lunch3);
     }
 }
+*/

@@ -1,4 +1,4 @@
-package se.miun.dt170g_projekt.api_resources;
+/*package se.miun.dt170g_projekt.api_resources;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
@@ -14,4 +14,4 @@ public class TestResource {
     public String test() {
         return "Hello World";
     }
-}
+}*/

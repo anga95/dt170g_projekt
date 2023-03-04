@@ -1,3 +1,4 @@
+/*
 package se.miun.dt170g_projekt.servlet;
 
 import jakarta.persistence.EntityManager;
@@ -43,8 +44,11 @@ public class LunchListServlet extends HttpServlet {
         emf.close();
         return lunchList;
     }
+*/
 /*    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-    }*/
+    }*//*
+
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package se.miun.dt170g_projekt.entities;
 
 import jakarta.persistence.*;
@@ -63,4 +64,4 @@ public class Shift {
         this.endTime = endTime;
     }
 
-}
+}*/

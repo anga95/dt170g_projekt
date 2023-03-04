@@ -1,3 +1,4 @@
+/*
 package se.miun.dt170g_projekt;
 
 import java.io.*;
@@ -26,4 +27,4 @@ public class HelloServlet extends HttpServlet {
 
     public void destroy() {
     }
-}
+}*/

@@ -10,6 +10,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -20,7 +29,7 @@ public class addLunch extends AppCompatActivity {
     private OrderItemAdapter orderItemAdapter;
     private TextView tableNumber;
 
-    @SuppressLint({"SetTextI18n", "NotifyDataSetChanged"})
+    @SuppressLint({"SetTextI18n", "NotifyDataSetChanged", "StaticFieldLeak"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,20 +61,32 @@ public class addLunch extends AppCompatActivity {
         orderRecyclerView.setAdapter(orderItemAdapter);
         orderRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Populate source item list with dummy data
-        foodsItemList.add(new SourceItem("Pizza", 1.99, "lunchItem"));
-        foodsItemList.add(new SourceItem("Hamburgare", 2.99, "lunchItem"));
-        foodsItemList.add(new SourceItem("Sushi", 3.99, "lunchItem"));
-        foodsItemList.add(new SourceItem("Fläskytterfilé", 4.99, "lunchItem"));
-        foodsItemList.add(new SourceItem("Lammstek med rostad potatis", 5.99, "lunchItem"));
-        foodsRecyclerAdapter.notifyDataSetChanged();
-
-        drinksItemList.add(new SourceItem("Vatten", 1.99, "drinkItem"));
-        drinksItemList.add(new SourceItem("Fanta", 2.99, "drinkItem"));
-        drinksItemList.add(new SourceItem("Cola", 3.99, "drinkItem"));
-        drinksItemList.add(new SourceItem("Pepsi", 4.99, "drinkItem"));
-        drinksItemList.add(new SourceItem("Hallonsodia", 5.99, "drinkItem"));
-        drinksRecyclerAdapter.notifyDataSetChanged();
+        new HttpUtils() {
+            @Override
+            protected void onPostExecute(String result) {
+                // Parse JSON data and extract the items you need
+                try {
+                    JSONArray jsonArray = new JSONArray(result);
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject jsonObject = jsonArray.getJSONObject(i);
+                        String itemName = jsonObject.getString("name");
+                        double itemPrice = jsonObject.getDouble("price");
+                        String category = jsonObject.getString("category");
+                        SourceItem item = new SourceItem(itemName, itemPrice, category);
+                        if (category.equals("Lunch")) {
+                            foodsItemList.add(item);
+                        } else if (category.equals("Drinks")) {
+                            drinksItemList.add(item);
+                        }
+                    }
+                    // Notify adapter that data has changed
+                    foodsRecyclerAdapter.notifyDataSetChanged();
+                    drinksRecyclerAdapter.notifyDataSetChanged();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }.execute("http://10.0.2.2:8080/antons-skafferi/api/MenuItems/Json");
 
     }
 

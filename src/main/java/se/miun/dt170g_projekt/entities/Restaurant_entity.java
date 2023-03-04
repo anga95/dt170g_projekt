@@ -1,3 +1,4 @@
+/*
 package se.miun.dt170g_projekt.entities;
 
 import jakarta.persistence.*;
@@ -44,3 +45,4 @@ public class Restaurant_entity {
         return Objects.hash(id, name);
     }
 }
+*/
