@@ -80,11 +80,11 @@ public class addALaCarte extends AppCompatActivity {
         appertizerList.add(new SourceItem("Tartar", 5.99, "StarterItem"));
         appertizerAdapter.notifyDataSetChanged();
 
-        mainCourseList.add(new SourceItem("Pizza", 1.99, "LunchItem"));
-        mainCourseList.add(new SourceItem("Hamburgare", 2.99, "LunchItem"));
-        mainCourseList.add(new SourceItem("Sushi", 3.99, "LunchItem"));
-        mainCourseList.add(new SourceItem("Fläskytterfilé", 4.99, "LunchItem"));
-        mainCourseList.add(new SourceItem("Lammstek med rostad potatis", 5.99, "LunchItem"));
+        mainCourseList.add(new SourceItem("Pizza", 1.99, "mainCourseItem"));
+        mainCourseList.add(new SourceItem("Hamburgare", 2.99, "mainCourseItem"));
+        mainCourseList.add(new SourceItem("Sushi", 3.99, "mainCourseItem"));
+        mainCourseList.add(new SourceItem("Fläskytterfilé", 4.99, "mainCourseItem"));
+        mainCourseList.add(new SourceItem("Lammstek med rostad potatis", 5.99, "mainCourseItem"));
         mainCourseAdapter.notifyDataSetChanged();
 
         dessertList.add(new SourceItem("Glass", 1.99, "DessertItem"));
