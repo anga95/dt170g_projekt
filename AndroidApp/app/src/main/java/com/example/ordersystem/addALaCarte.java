@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,11 +15,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class addALaCarte extends AppCompatActivity {
 
-    TextView placeholder;
     private OrderItemAdapter orderItemAdapter;
+    private TextView tableNumber;
 
     @SuppressLint("NotifyDataSetChanged")
     @Override
@@ -27,7 +30,11 @@ public class addALaCarte extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_ala_carte);
 
-        Button button = findViewById(R.id.sendToKitchen);
+        tableNumber = findViewById(R.id.tableNum);
+
+        Intent intent = getIntent();
+        String message = intent.getStringExtra("message");
+        tableNumber.setText(message);
 
         // Initialize source and order recycler views and adapters
         RecyclerView appertizerRecylerView = findViewById(R.id.appertizerRecyclerView);
@@ -93,12 +100,21 @@ public class addALaCarte extends AppCompatActivity {
         drinksItemList.add(new SourceItem("Pepsi", 4.99, "DrinkItem"));
         drinksItemList.add(new SourceItem("Hallonsodia", 5.99, "DrinkItem"));
         drinksRecyclerAdapter.notifyDataSetChanged();
-        button.setOnClickListener(view -> {
-            List<OrderItem> orderItems = orderItemAdapter.getOrderItemList();
-            for(OrderItem order: orderItems){
-                System.out.println(order);
-            }
-        });
+    }
+
+    public void sendToKitchen(View view) {
+        String tableText = tableNumber.getText().toString();
+
+        String regex = "\\d+";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(tableText);
+        if(matcher.find()){
+            String numberString = matcher.group();
+            int tableNum = Integer.parseInt(numberString);
+            List<OrderItem> orderItemList = orderItemAdapter.getOrderItemList();
+            Order order = new Order(tableNum, orderItemList);
+        }
+
     }
 
 }

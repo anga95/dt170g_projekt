@@ -148,7 +148,8 @@
                 android:backgroundTint="#DEBE5A"
                 android:text="@string/skicka_till_k_k"
                 android:textColor="@color/black"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:onClick="sendToKitchen"/>
 
         </LinearLayout>
 
