@@ -1,16 +1,18 @@
 package com.example.ordersystem;
 
 public class SourceItem {
-    private String name;
+    private String foodName;
     private double price;
+    private String category;
 
-    public SourceItem(String name, double price) {
-        this.name = name;
+    public SourceItem(String name, double price, String category) {
+        this.foodName = name;
         this.price = price;
+        this.category = category;
     }
 
     public String getName() {
-        return name;
+        return foodName;
     }
 
     public double getPrice() {
@@ -18,10 +20,18 @@ public class SourceItem {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.foodName = name;
     }
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

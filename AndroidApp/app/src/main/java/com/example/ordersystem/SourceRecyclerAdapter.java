@@ -14,12 +14,9 @@ import java.util.List;
 
 public class SourceRecyclerAdapter extends RecyclerView.Adapter<SourceRecyclerAdapter.ViewHolder> {
 
-    //private final List<String> foods;
-    //private final OnFoodClickListener listener;
-    //private DestinationRecyclerAdapter destinationRecyclerAdapter;
     private final List<SourceItem> foodsList;
     //private final OrderItemAdapter orderItemAdapter;
-    private SourceItemClickListener listener;
+    private final SourceItemClickListener listener;
     public interface SourceItemClickListener{
         void onItemAdded(SourceItem sourceItem);
     }
@@ -49,10 +46,6 @@ public class SourceRecyclerAdapter extends RecyclerView.Adapter<SourceRecyclerAd
         return foodsList.size();
     }
 
-    /*public void addItemToOrder(String name, int quantity, String note){
-        OrderItem orderItem = new OrderItem(name, quantity, note);
-        orderItemAdapter.addItem(orderItem);
-    }*/
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView foodNameTextView;
@@ -64,31 +57,12 @@ public class SourceRecyclerAdapter extends RecyclerView.Adapter<SourceRecyclerAd
             foodNameTextView = itemView.findViewById(R.id.item_name);
             priceTextView = itemView.findViewById(R.id.item_price);
             addButton = itemView.findViewById(R.id.add_button);
-            addButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    int position = getAdapterPosition();
-                    SourceItem sourceItem = foodsList.get(position);
-                    listener.onItemAdded(sourceItem);
-                }
+            addButton.setOnClickListener(view -> {
+                int position = getAdapterPosition();
+                SourceItem sourceItem = foodsList.get(position);
+                listener.onItemAdded(sourceItem);
             });
         }
     }
-
-    //@Override
-    /*public void onBindViewHolder(SourceRecyclerAdapter.ViewHolder holder, int position) {
-
-        String food = foods.get(position);
-        holder.foodNameTextView.setText(food);
-        holder.addButton.setOnClickListener(view ->
-                addItemToOrder(food,1,"")
-
-        );
-    }*/
-
-    /*@Override
-    public int getItemCount() {
-        return foods.size();
-    }*/
 
 }

@@ -1,16 +1,18 @@
 package com.example.ordersystem;
 
 public class OrderItem {
-    private String name;
+    private final String name;
     private int quantity;
-    private double price;
+    private final double price;
     private String note;
+    private String category;
 
-    public OrderItem(String name, int quantity, double price, String note) {
+    public OrderItem(String name, int quantity, double price, String note, String category) {
         this.name = name;
         this.quantity = quantity;
         this.price = price;
         this.note = note;
+        this.category = category;
     }
 
     public String getName() {
@@ -39,5 +41,13 @@ public class OrderItem {
 
     public double getTotalPrice() {
         return price * quantity;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }
