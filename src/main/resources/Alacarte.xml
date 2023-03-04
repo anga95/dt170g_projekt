@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                 version="3.0">
+
+    <entity class="martin_test.deeper.entities.AlaCarte">
+        <table name="ALACARTE" schema="APP" catalog=""/>
+        <attributes>
+            <id name="id">
+                <column name="ID" precision="-1"/>
+            </id>
+            <basic name="price">
+                <column name="PRICE" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="description">
+                <column name="DESCRIPTION" nullable="false" length="50"/>
+            </basic>
+            <basic name="time">
+                <column name="TIME" nullable="false" precision="-1"/>
+            </basic>
+        </attributes>
+    </entity>
+    <entity class="martin_test.deeper.entities.MenuItems">
+        <table name="MENU_ITEMS" schema="APP" catalog=""/>
+        <attributes>
+            <id name="id">
+                <column name="ID" precision="-1"/>
+            </id>
+            <basic name="price">
+                <column name="PRICE" precision="-1"/>
+            </basic>
+            <basic name="name">
+                <column name="NAME" nullable="false" length="100"/>
+            </basic>
+            <basic name="description">
+                <column name="DESCRIPTION" nullable="false" length="100"/>
+            </basic>
+            <basic name="time">
+                <column name="TIME" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="category">
+                <column name="CATEGORY" nullable="false" length="50"/>
+            </basic>
+        </attributes>
+    </entity>
+    <entity class="martin_test.deeper.entities.Orders">
+        <table name="ORDERS" schema="APP" catalog=""/>
+        <attributes>
+            <id name="id">
+                <column name="ID" precision="-1"/>
+            </id>
+            <basic name="tableNr">
+                <column name="TABLE_NR" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="status">
+                <column name="STATUS" nullable="false" precision="-1"/>
+            </basic>
+        </attributes>
+    </entity>
+    <entity class="martin_test.deeper.entities.OrderItems">
+        <table name="ORDER_ITEMS" schema="APP" catalog=""/>
+        <attributes>
+            <id name="id">
+                <column name="ID" precision="-1"/>
+            </id>
+            <basic name="orderId">
+                <column name="ORDER_ID" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="menuItemId">
+                <column name="MENU_ITEM_ID" nullable="false" precision="-1"/>
+            </basic>
+        </attributes>
+    </entity>
+    <entity class="martin_test.deeper.entities.MenuItems">
+        <table name="MENU_ITEMS" schema="APP" catalog=""/>
+        <attributes>
+            <id name="id">
+                <column name="ID" precision="-1"/>
+            </id>
+            <basic name="price">
+                <column name="PRICE" precision="-1"/>
+            </basic>
+            <basic name="name">
+                <column name="NAME" nullable="false" length="100"/>
+            </basic>
+            <basic name="description">
+                <column name="DESCRIPTION" nullable="false" length="100"/>
+            </basic>
+            <basic name="time">
+                <column name="TIME" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="category">
+                <column name="CATEGORY" nullable="false" length="50"/>
+            </basic>
+        </attributes>
+    </entity>
+    <entity class="martin_test.deeper.entities.Orders">
+        <table name="ORDERS" schema="APP" catalog=""/>
+        <attributes>
+            <id name="id">
+                <column name="ID" precision="-1"/>
+            </id>
+            <basic name="tableNr">
+                <column name="TABLE_NR" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="status">
+                <column name="STATUS" nullable="false" precision="-1"/>
+            </basic>
+        </attributes>
+    </entity>
+    <entity class="martin_test.deeper.entities.OrderItems">
+        <table name="ORDER_ITEMS" schema="APP" catalog=""/>
+        <attributes>
+            <id name="id">
+                <column name="ID" precision="-1"/>
+            </id>
+            <basic name="orderId">
+                <column name="ORDER_ID" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="menuItemId">
+                <column name="MENU_ITEM_ID" nullable="false" precision="-1"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>

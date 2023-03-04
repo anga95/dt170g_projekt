@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="7701c0ba-eae6-4e5c-9c9b-66eb1bfb29a4" name="DB@localhost Mapping">
+      <data-sources db="55b5b5ee-8d02-4be0-af41-c5bcaacf8352" ddl="98726ec3-452e-4a5e-a8da-1094bba60be1" />
+      <scope>
+        <node kind="schema" qname="APP" />
+      </scope>
+    </mapping>
+  </component>
   <component name="SqlDataSourceStorage">
     <option name="dataSources">
       <list>
         <State>
-          <option name="id" value="08728f7e-295a-4a10-b88a-22ada5b7435f" />
-          <option name="name" value="db@localhost (DDL)" />
-          <option name="dbmsName" value="DERBY" />
+          <option name="id" value="98726ec3-452e-4a5e-a8da-1094bba60be1" />
+          <option name="name" value="DB@localhost (DDL)" />
+          <option name="languageId" value="Derby" />
           <option name="urls">
             <array>
-              <option value="file://$PROJECT_DIR$/DDL" />
+              <option value="file://$PROJECT_DIR$/src/main/java/database/SQLkod" />
             </array>
           </option>
-          <option name="outLayout" value="File per object by schema.groovy" />
         </State>
       </list>
     </option>
