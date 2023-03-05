@@ -1,6 +1,9 @@
+/*
 package se.miun.dt170g_projekt;
 
 import java.io.*;
+import java.sql.SQLException;
+
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
@@ -24,4 +27,4 @@ public class HelloServlet extends HttpServlet {
 
     public void destroy() {
     }
-}
+}*/
