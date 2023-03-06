@@ -14,10 +14,10 @@
             <div class="container-fluid">
                 <div class="sidebar">
                     <ul class="list-group">
-                        <li class="lista list-group-item border-0 mb-2" id="veckomeny" onclick="showChoiceInfo('veckomeny'); showSecondCard()">Veckomeny</li>
-                        <li class="lista list-group-item border-0 mb-2" id="carte" onclick="showChoiceInfo('carte'); showSecondCard()">A la carte</li>
-                        <li class="lista list-group-item border-0 mb-2" id="anställda" onclick="showChoiceInfo('anställda'); displaySecondCard()">Anställda</li>
-                        <li class="lista list-group-item border-0 mb-2" id="schema" onclick="showChoiceInfo('schema'); showSecondCard()">Schema</li>
+                        <li class="lista list-group-item border-0 mb-2" id="veckomeny" onclick="showChoiceInfo('veckomeny'); hideSecondCard(); hideAddCarteCard()">Veckomeny</li>
+                        <li class="lista list-group-item border-0 mb-2" id="carte" onclick="showChoiceInfo('carte'); hideSecondCard(); displayAddCarteCard()">A la carte</li>
+                        <li class="lista list-group-item border-0 mb-2" id="anställda" onclick="showChoiceInfo('anställda'); displaySecondCard(); hideAddCarteCard()">Anställda</li>
+                        <li class="lista list-group-item border-0 mb-2" id="schema" onclick="showChoiceInfo('schema'); hideSecondCard(); hideAddCarteCard()">Schema</li>
                     </ul>
                 </div>
             </div>
@@ -88,18 +88,20 @@
                             <form accept-charset="UTF-8" action="${pageContext.request.contextPath}/AdminAddALaCarte" method="post">
                                 <div class="form-group">
                                     <h3 class="text-center mb-4">Måltider</h3>
-                                    <textarea type="text" class="form-control" id="preFood" name="pre" placeholder="Förrätt"></textarea>
-                                        <div class="d-flex justify-content-center mt-3">
-                                            <button type="submit" class="btn btn-success justify-content-center" onclick="showCarte()">Lägg till</button>
-                                        </div>
-                                    <textarea type="text" class="form-control mt-3 " id="mainFood" name="main" placeholder="Huvudrätt"></textarea>
-                                        <div class="d-flex justify-content-center mt-3">
-                                            <button type="submit" class="btn btn-success justify-content-center" onclick="showCarte()">Lägg till</button>
-                                        </div>
-                                    <textarea type="text" class="form-control mt-3" id="afterFood" name="after" placeholder="Efterrätt"></textarea>
-                                        <div class="d-flex justify-content-center mt-3">
-                                            <button type="submit" class="btn btn-success justify-content-center" onclick="showCarte()">Lägg till</button>
-                                        </div>
+                                    <label for="category">Kategori</label>
+                                    <select id="category" class="form-control">
+                                        <option selected>Välj...</option>
+                                        <option>...</option>
+                                    </select>
+                                    <label for="namn">Namn</label>
+                                    <input class="form-control" name="name" type="text" id="namn">
+                                    <label for="description">Beskrivning</label>
+                                    <textarea class="form-control" name="description" type="text" id="description"></textarea>
+                                    <label for="price">Pris</label>
+                                    <input class="form-control" name="price" type="number" id="price">
+                                    <div class="mt-5 d-flex justify-content-center">
+                                        <button type="submit" class="btn btn-success">Lägg till</button>
+                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -131,6 +133,14 @@
 
                 </ul>
             </div>
+        </div>
+        <div class="col card mt-3 bg-gradient d-flex align-items-center ms-3" style="width:  5rem;" id="addCarte">
+            <div class="card-body">
+                <h3 class="text-center mb-4">Ändra A la carte på sidan</h3>
+
+
+            </div>
+
         </div>
     </div>
    </div>
