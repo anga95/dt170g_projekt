@@ -121,17 +121,12 @@
                             List<EmployeeEntity> list = Manager.getAllEmployee();
                             for (EmployeeEntity obj : list) {
                         %>
-                    <div class="row mb-2">
-                        <div class="col">
-                            <li class="list-group-item"><strong><%= obj.getFirstName() + " " + obj.getLastName() %></strong></li>
-                        </div>
-                        <div class="col-sm-5">
+
+                    <li class="list-group-item d-flex justify-content-between"><%= obj.getFirstName() + " " + obj.getLastName() %>
+                        <div>
                             <buttton type="button" class="btn btn-sm btn-danger" onclick="deleteEmployee(<%=obj.getId()%>)">Ta bort</buttton>
-
                         </div>
-
-                    </div>
-
+                    </li>
                         <% } %>
 
                 </ul>
