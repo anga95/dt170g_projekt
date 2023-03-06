@@ -16,11 +16,11 @@
     <div class="row">
         <div class="col-6 d-flex align-items-center">
             <ul>
-                <li class="list-group-item border-0 mb-2" id="måndag" onclick="showDayInfo('måndag')">Måndag</li>
-                <li class="list-group-item border-0 mb-2" id="tisdag" onclick="showDayInfo('tisdag')">Tisdag</li>
-                <li class="list-group-item border-0 mb-2" id="onsdag" onclick="showDayInfo('onsdag')">Onsdag</li>
-                <li class="list-group-item border-0 mb-2" id="torsdag" onclick="showDayInfo('torsdag')">Torsdag</li>
-                <li class="list-group-item border-0" id="fredag" onclick="showDayInfo('fredag')">Fredag</li>
+                <li class="lista list-group-item border-0 mb-2" id="måndag" onclick="showDayInfo('måndag')">Måndag</li>
+                <li class="lista list-group-item border-0 mb-2" id="tisdag" onclick="showDayInfo('tisdag')">Tisdag</li>
+                <li class="lista list-group-item border-0 mb-2" id="onsdag" onclick="showDayInfo('onsdag')">Onsdag</li>
+                <li class="lista list-group-item border-0 mb-2" id="torsdag" onclick="showDayInfo('torsdag')">Torsdag</li>
+                <li class="lista list-group-item border-0" id="fredag" onclick="showDayInfo('fredag')">Fredag</li>
             </ul>
         </div>
         <div class="col-6">

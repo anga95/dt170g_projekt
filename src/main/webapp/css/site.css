@@ -76,16 +76,16 @@ hr{
 .list-group{
     background-color: #fffbf2;
 }
-.list-group-item{
+.lista{
     font-size: 2rem;
     font-family: "Julius Sans One", sans-serif;
     background-color: #fffbf2;
 }
 
-.list-group-item:hover{
+.lista:hover{
     cursor: pointer;
 }
-.list-group-item.selected {
+.lista.selected {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .card p{

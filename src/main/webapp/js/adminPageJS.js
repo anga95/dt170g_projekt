@@ -69,3 +69,18 @@ function showCarte(){
     carte.click();
 }
 
+function deleteEmployee(id) {
+    if (confirm("Är du säker på att du vill ta bort denna anställda?")) {
+        $.ajax({
+            url: "deleteEmployee",
+            type: "POST",
+            data: { id: id },
+            success: function() {
+                // Reload the page after the employee is deleted
+                location.reload();
+            }
+        });
+    }
+}
+
+

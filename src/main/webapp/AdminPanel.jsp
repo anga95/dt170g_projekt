@@ -14,10 +14,10 @@
             <div class="container-fluid">
                 <div class="sidebar">
                     <ul class="list-group">
-                        <li class="list-group-item border-0 mb-2" id="veckomeny" onclick="showChoiceInfo('veckomeny'); showSecondCard()">Veckomeny</li>
-                        <li class="list-group-item border-0 mb-2" id="carte" onclick="showChoiceInfo('carte'); showSecondCard()">A la carte</li>
-                        <li class="list-group-item border-0 mb-2" id="anställda" onclick="showChoiceInfo('anställda'); displaySecondCard()">Anställda</li>
-                        <li class="list-group-item border-0 mb-2" id="schema" onclick="showChoiceInfo('schema'); showSecondCard()">Schema</li>
+                        <li class="lista list-group-item border-0 mb-2" id="veckomeny" onclick="showChoiceInfo('veckomeny'); showSecondCard()">Veckomeny</li>
+                        <li class="lista list-group-item border-0 mb-2" id="carte" onclick="showChoiceInfo('carte'); showSecondCard()">A la carte</li>
+                        <li class="lista list-group-item border-0 mb-2" id="anställda" onclick="showChoiceInfo('anställda'); displaySecondCard()">Anställda</li>
+                        <li class="lista list-group-item border-0 mb-2" id="schema" onclick="showChoiceInfo('schema'); showSecondCard()">Schema</li>
                     </ul>
                 </div>
             </div>
@@ -110,13 +110,25 @@
         <div class="col card mt-3 bg-gradient d-flex align-items-center ms-3" style="width:  5rem;" id="listaEMP">
             <div class="card-body">
                 <h3 class="text-center mb-4">Lista över anställda</h3>
-                <ul>
-                    <%
-                        List<EmployeeEntity> list = Manager.getAllEmployee();
-                        for (EmployeeEntity obj : list) {
-                    %>
-                    <li><%= obj.getFirstName() + " " + obj.getLastName() %></li>
-                    <% } %>
+                <ul class="list-group">
+
+                        <%
+                            List<EmployeeEntity> list = Manager.getAllEmployee();
+                            for (EmployeeEntity obj : list) {
+                        %>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <li class="list-group-item"><strong><%= obj.getFirstName() + " " + obj.getLastName() %></strong></li>
+                        </div>
+                        <div class="col-sm-5">
+                            <buttton type="button" class="btn btn-sm btn-danger" onclick="deleteEmployee(<%=obj.getId()%>)">Ta bort</buttton>
+
+                        </div>
+
+                    </div>
+
+                        <% } %>
+
                 </ul>
             </div>
         </div>

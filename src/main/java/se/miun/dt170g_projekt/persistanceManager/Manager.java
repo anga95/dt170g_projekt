@@ -34,6 +34,14 @@ public class Manager {
                 .executeUpdate();
         em.getTransaction().commit();
     }
+
+    public static void removeEmployee(int id) {
+        em.getTransaction().begin();
+        em.createQuery("DELETE FROM EmployeeEntity WHERE id = :id")
+                .setParameter("id", id)
+                .executeUpdate();
+        em.getTransaction().commit();
+    }
     public BookingEntity getBookingById(int id) {
         BookingEntity booking = em.find(BookingEntity.class, id);
         em.close();
