@@ -66,11 +66,6 @@ public class Manager {
         return Daily;
     }
 
-    public List<PrefoodEntity> getAllPrefood() {
-        TypedQuery<PrefoodEntity> query = em.createQuery("SELECT e FROM PrefoodEntity  e", PrefoodEntity.class);
-        List<PrefoodEntity> prefood = query.getResultList();
-        return prefood;
-    }
 
     public static List<MenuItemsEntity> getAllMENY() {
         TypedQuery<MenuItemsEntity> query = em.createQuery("SELECT e FROM MenuItemsEntity  e", MenuItemsEntity.class);

@@ -136,9 +136,22 @@
         </div>
         <div class="col card mt-3 bg-gradient d-flex align-items-center ms-3" style="width:  5rem;" id="addCarte">
             <div class="card-body">
-                <h3 class="text-center mb-4">Ändra A la carte på sidan</h3>
-
-
+                <h3 class="mb-4">Måltider på sidan nu</h3>
+                <h5 class="mb-2">Förrätter</h5>
+                <ul class="list-group mb-2">
+                    <li class="list-group-item">Varmrökt lax med dillmajonnäs</li>
+                    <li class="list-group-item">Varmrökt lax med dillmajonnäs</li>
+                </ul>
+                <h5 class="mb-2">Huvudrätter</h5>
+                <ul class="list-group mb-2">
+                    <li class="list-group-item">Köttbiffar med potatis</li>
+                    <li class="list-group-item">Köttbiffar med potatis</li>
+                </ul>
+                <h5 class="mb-2">Efterrätter</h5>
+                <ul class="list-group mb-2">
+                    <li class="list-group-item">Pannacotta med hallon</li>
+                    <li class="list-group-item">Pannacotta med hallon</li>
+                </ul>
             </div>
 
         </div>
