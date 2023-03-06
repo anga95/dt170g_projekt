@@ -55,7 +55,7 @@ public class Manager {
         return employee;
     }
 
-    public List<DailyLunchEntity> getAllDaily() {
+    public static List<DailyLunchEntity> getAllDaily() {
         TypedQuery<DailyLunchEntity> query = em.createQuery("SELECT e FROM DailyLunchEntity  e", DailyLunchEntity.class);
         List<DailyLunchEntity> Daily = query.getResultList();
         return Daily;

@@ -1,3 +1,7 @@
+<%@ page import="se.miun.dt170g_projekt.entites.EmployeeEntity" %>
+<%@ page import="java.util.List" %>
+<%@ page import="se.miun.dt170g_projekt.persistanceManager.Manager" %>
+<%@ page import="se.miun.dt170g_projekt.entites.DailyLunchEntity" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"  %>
 
 <%@ include file="head.jsp" %>
@@ -24,11 +28,17 @@
                 <div class="day-info" id="måndag-info">
                     <div class="card-body">
                         <h5 class="card-title">Måndag</h5>
-                        <p class="card-text"><%= request.getAttribute("dish1Mon") %></p>
+                        <%
+                            List<DailyLunchEntity> list = Manager.getAllDaily();
+                            for (DailyLunchEntity obj : list) {
+                                if (obj.getWeekday().equals("Måndag")) {
+                        %>
+                        <p class="card-text"><%= obj.getLunch1() %></p>
                         <br/>
-                        <p class="card-text"><%= request.getAttribute("dish2Mon") %></p>
+                        <p class="card-text"><%= obj.getLunch2() %></p>
                         <br/>
-                        <p class="card-text"><%= request.getAttribute("dish3Mon") %></p>
+                        <p class="card-text"><%= obj.getLunch3() %></p>
+                        <% }} %>
                     </div>
                 </div>
 
@@ -36,44 +46,64 @@
                 <div class="day-info" id="tisdag-info">
                     <div class="card-body">
                         <h5 class="card-title">Tisdag</h5>
-                        <p class="card-text"><%= request.getAttribute("dish1Tis") %></p>
+                        <%
+                            for (DailyLunchEntity obj : list) {
+                                if (obj.getWeekday().equals("Tisdag")) {
+                        %>
+                        <p class="card-text"><%= obj.getLunch1() %></p>
                         <br/>
-                        <p class="card-text"><%= request.getAttribute("dish2Tis") %></p>
+                        <p class="card-text"><%= obj.getLunch2() %></p>
                         <br/>
-                        <p class="card-text"><%= request.getAttribute("dish3Tis") %></p>
+                        <p class="card-text"><%= obj.getLunch3() %></p>
+                        <% }} %>
                     </div>
                 </div>
 
                 <div class="day-info" id="onsdag-info">
                     <div class="card-body">
                         <h5 class="card-title">Onsdag</h5>
-                        <p class="card-text"><%= request.getAttribute("dish1Ons") %></p>
+                        <%
+                            for (DailyLunchEntity obj : list) {
+                                if (obj.getWeekday().equals("Onsdag")) {
+                        %>
+                        <p class="card-text"><%= obj.getLunch1() %></p>
                         <br/>
-                        <p class="card-text"><%= request.getAttribute("dish2Ons") %></p>
+                        <p class="card-text"><%= obj.getLunch2() %></p>
                         <br/>
-                        <p class="card-text"><%= request.getAttribute("dish3Ons") %></p>
+                        <p class="card-text"><%= obj.getLunch3() %></p>
+                        <% }} %>
                     </div>
                 </div>
 
                 <div class="day-info" id="torsdag-info">
                     <div class="card-body">
                         <h5 class="card-title">Torsdag</h5>
-                        <p class="card-text"><%= request.getAttribute("dish1Tor") %></p>
+                        <%
+                            for (DailyLunchEntity obj : list) {
+                                if (obj.getWeekday().equals("Torsdag")) {
+                        %>
+                        <p class="card-text"><%= obj.getLunch1() %></p>
                         <br/>
-                        <p class="card-text"><%= request.getAttribute("dish2Tor") %></p>
+                        <p class="card-text"><%= obj.getLunch2() %></p>
                         <br/>
-                        <p class="card-text"><%= request.getAttribute("dish3Tor") %></p>
+                        <p class="card-text"><%= obj.getLunch3() %></p>
+                        <% }} %>
                     </div>
                 </div>
 
                 <div class="day-info" id="fredag-info">
                     <div class="card-body">
                         <h5 class="card-title">Fredag</h5>
-                        <p class="card-text"><%= request.getAttribute("dish1Fre") %></p>
+                        <%
+                            for (DailyLunchEntity obj : list) {
+                                if (obj.getWeekday().equals("Fredag")) {
+                        %>
+                        <p class="card-text"><%= obj.getLunch1() %></p>
                         <br/>
-                        <p class="card-text"><%= request.getAttribute("dish2Fre") %></p>
+                        <p class="card-text"><%= obj.getLunch2() %></p>
                         <br/>
-                        <p class="card-text"><%= request.getAttribute("dish3Fre") %></p>
+                        <p class="card-text"><%= obj.getLunch3() %></p>
+                        <% }} %>
                     </div>
                 </div>
 
