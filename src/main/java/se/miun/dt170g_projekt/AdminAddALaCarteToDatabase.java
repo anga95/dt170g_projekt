@@ -19,7 +19,7 @@ public class AdminAddALaCarteToDatabase extends HttpServlet{
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServerException, IOException, ServletException {
         request.setCharacterEncoding("UTF-8");
 
-        String kategori = request.getParameter("kategori");
+        String kategori = request.getParameter("Kategori");
         String price = request.getParameter("price");
         String name = request.getParameter("name");
         String desc = request.getParameter("desc");

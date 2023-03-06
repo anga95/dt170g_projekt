@@ -91,6 +91,7 @@
                                     <h3 class="text-center mb-4">Måltider</h3>
                                     <label for="category">Kategori</label>
                                     <select name="Kategori" id="category" class="form-control">
+                                        <option selected>Välj...</option>
                                         <option value="Starters">Förrätt</option>
                                         <option value="MainCourse">Huvudrätt</option>
                                         <option value="Dessert">Efterrätt</option>
