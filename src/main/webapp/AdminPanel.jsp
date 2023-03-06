@@ -3,6 +3,7 @@
 <%@ page import="se.miun.dt170g_projekt.entites.EmployeeEntity" %>
 <%@ page import="se.miun.dt170g_projekt.AdminGetEmployeeFromDatabase" %>
 <%@ page import="se.miun.dt170g_projekt.persistanceManager.Manager" %>
+<%@ page import="se.miun.dt170g_projekt.entites.MenuItemsEntity" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ include file="head.jsp" %>
 
@@ -91,7 +92,9 @@
                                     <label for="category">Kategori</label>
                                     <select id="category" class="form-control">
                                         <option selected>Välj...</option>
-                                        <option>...</option>
+                                        <option value="Starters">Förrätt</option>
+                                        <option value="MainCourse">Huvudrätt</option>
+                                        <option value="Dessert">Efterrätt</option>
                                     </select>
                                     <label for="namn">Namn</label>
                                     <input class="form-control" name="name" type="text" id="namn">
@@ -139,18 +142,46 @@
                 <h3 class="mb-4">Måltider på sidan nu</h3>
                 <h5 class="mb-2">Förrätter</h5>
                 <ul class="list-group mb-2">
-                    <li class="list-group-item">Varmrökt lax med dillmajonnäs</li>
-                    <li class="list-group-item">Varmrökt lax med dillmajonnäs</li>
+                    <%
+                        List<MenuItemsEntity> list2 = Manager.getAllMENY();
+                        for (MenuItemsEntity obj : list2) { %>
+                    <%
+                        if (obj.getCategory().equals("Starters")) {%>
+                    <li class="list-group-item">
+                               <% out.println(obj.getName()); %>
+
+                    </li>
+                        <% }
+                        }
+                        %>
                 </ul>
                 <h5 class="mb-2">Huvudrätter</h5>
                 <ul class="list-group mb-2">
-                    <li class="list-group-item">Köttbiffar med potatis</li>
-                    <li class="list-group-item">Köttbiffar med potatis</li>
+                    <%
+                        for (MenuItemsEntity obj : list2) { %>
+                    <%
+                        if (obj.getCategory().equals("MainCourse")) {%>
+                    <li class="list-group-item">
+                        <% out.println(obj.getName()); %>
+
+                    </li>
+                    <% }
+                    }
+                    %>
                 </ul>
                 <h5 class="mb-2">Efterrätter</h5>
                 <ul class="list-group mb-2">
-                    <li class="list-group-item">Pannacotta med hallon</li>
-                    <li class="list-group-item">Pannacotta med hallon</li>
+                    <%
+                        for (MenuItemsEntity obj : list2) { %>
+                    <%
+                        if (obj.getCategory().equals("Dessert")) {%>
+                    <li class="list-group-item">
+                        <% out.println(obj.getName()); %>
+
+                    </li>
+                    <% }
+                    }
+                    %>
                 </ul>
             </div>
 
