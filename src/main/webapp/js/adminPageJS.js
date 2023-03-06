@@ -57,8 +57,16 @@ function displaySecondCard(){
     const card = document.getElementById("listaEMP");
     card.classList.remove("d-none");
 }
+function displayAddCarteCard(){
+    const card = document.getElementById("addCarte");
+    card.classList.remove("d-none");
+}
+function hideAddCarteCard(){
+    const card = document.getElementById("addCarte");
+    card.classList.add("d-none");
+}
 
-function showSecondCard(){
+function hideSecondCard(){
     const card = document.getElementById("listaEMP");
     card.classList.add("d-none");
 }
