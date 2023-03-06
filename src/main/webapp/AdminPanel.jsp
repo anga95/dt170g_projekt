@@ -137,6 +137,19 @@
  </div>
 
     <script src="js/adminPageJS.js"></script>
+<script>
+
+    var functionName = '<%= request.getParameter("functionName") %>';
+    if (functionName === 'myFunction') {
+        showEmp();
+    }
+
+    function showEmp() {
+        const emp = document.getElementById("anställda");
+        emp.click();
+    }
+
+</script>
 
 
 
