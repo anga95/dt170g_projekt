@@ -41,8 +41,8 @@
                                     <textarea type="text" class="form-control mt-3" id="exampleFormControlInput3" name="dish3" placeholder="Maträtt 3"></textarea>
                                 </div>
                                 <div class="mt-5 d-flex justify-content-between">
-                                    <button type="button" class="btn btn-secondary me-2" onclick="previousDay()">Föregående dag</button>
-                                    <button type="button" class="btn btn-secondary" onclick="nextDay()">Nästa dag</button>
+                                    <button type="button" class="btn btn-secondary me-2" onclick="previousDay()"><-Föregående dag</button>
+                                    <button type="button" class="btn btn-secondary" onclick="nextDay()">Nästa dag-></button>
                                 </div>
                                 <div class="mt-5 d-flex justify-content-center">
                                     <button type="submit" class="btn btn-success">Spara</button>
