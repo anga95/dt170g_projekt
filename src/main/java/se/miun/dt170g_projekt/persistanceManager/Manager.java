@@ -72,7 +72,7 @@ public class Manager {
         return prefood;
     }
 
-    public List<MenuItemsEntity> getAllMENY() {
+    public static List<MenuItemsEntity> getAllMENY() {
         TypedQuery<MenuItemsEntity> query = em.createQuery("SELECT e FROM MenuItemsEntity  e", MenuItemsEntity.class);
         List<MenuItemsEntity> meny = query.getResultList();
         return meny;

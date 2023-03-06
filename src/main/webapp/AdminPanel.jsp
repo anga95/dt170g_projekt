@@ -143,10 +143,17 @@
     if (functionName === 'myFunction') {
         showEmp();
     }
-
+    var functionCarte = '<%= request.getParameter("functionCarte") %>';
+    if(functionCarte === 'showCarte'){
+        showCarte();
+    }
     function showEmp() {
         const emp = document.getElementById("anställda");
         emp.click();
+    }
+    function showCarte() {
+        const carte = document.getElementById("carte");
+        carte.click();
     }
 
 </script>

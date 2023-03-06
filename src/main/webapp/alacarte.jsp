@@ -1,4 +1,7 @@
-<%--
+<%@ page import="se.miun.dt170g_projekt.entites.MenuItemsEntity" %>
+<%@ page import="se.miun.dt170g_projekt.persistanceManager.Manager" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.awt.*" %><%--
   Created by IntelliJ IDEA.
   User: Engma
   Date: 2023-02-03
@@ -22,13 +25,12 @@
         <div class="col-3">
             <ul class="list-group">
                 <li class="list-group-item border-0" id="forratt">
-                    <h2>FÖRRÄTT</h2><hr>
-                    <p>Pellentesque habitant morbi tristique senectus
-                        et netus et malesuada fames ac turpis egestas.
-                        Vestibulum tortor quam, feugiat vitae, ultricies
-                        eget, tempor sit amet, ante. Donec eu libero sit
-                        amet quam egestas semper. Aenean ultricies mi
-                        vitae est. Mauris placerat eleifend leo.</p></li>
+                    <h2>FÖRRÄTT</h2><hr><p>
+                    <%
+                        List<MenuItemsEntity> list = Manager.getAllMENY();
+                        for (MenuItemsEntity obj : list) {
+                            %></p></li>
+                    <% } %>
                 <li class="list-group-item border-0" id="huvudratt">
                     <h2>HUVUDRÄTT</h2><hr>
                     <p>Pellentesque habitant morbi tristique senectus

@@ -6,10 +6,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import se.miun.dt170g_projekt.entites.AfterfoodEntity;
-import se.miun.dt170g_projekt.entites.DailyLunchEntity;
-import se.miun.dt170g_projekt.entites.MainfoodEntity;
-import se.miun.dt170g_projekt.entites.PrefoodEntity;
+import se.miun.dt170g_projekt.entites.*;
 import se.miun.dt170g_projekt.persistanceManager.Manager;
 //import se.miun.dt170g_projekt.persistanceManager.dailyLunch;
 
@@ -22,9 +19,10 @@ public class AdminAddALaCarteToDatabase extends HttpServlet{
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServerException, IOException, ServletException {
         request.setCharacterEncoding("UTF-8");
 
-        String pre = request.getParameter("pre");
-        String main = request.getParameter("main");
-        String after = request.getParameter("after");
+        String kategori = request.getParameter("kategori");
+        String price = request.getParameter("pris");
+        String name = request.getParameter("name");
+        String desc = request.getParameter("desc");
 
         Manager addALaCarte = null;
 
@@ -34,23 +32,31 @@ public class AdminAddALaCarteToDatabase extends HttpServlet{
             e.printStackTrace();
         }
         // Forward the request to a JSP page to display the saved values
-        if(pre != null){
-            PrefoodEntity Pre = new PrefoodEntity();
-            Pre.setName(pre);
-            addALaCarte.saveData(Pre);
+        MenuItemsEntity newFood = new MenuItemsEntity();
+        if(kategori.equals("Starters")){
+            newFood.setName(name);
+            newFood.setPrice(Integer.parseInt(price));
+            newFood.setDescription(desc);
+            newFood.setCategory(kategori);
         }
-        if(main != null){
-            MainfoodEntity Main = new MainfoodEntity();
-            Main.setName(main);
-            addALaCarte.saveData(Main);
+        else if(kategori.equals("MainCourse")){
+            newFood.setName(name);
+            newFood.setPrice(Integer.parseInt(price));
+            newFood.setDescription(desc);
+            newFood.setCategory(kategori);
         }
-        if(after != null){
-            AfterfoodEntity After = new AfterfoodEntity();
-            After.setName(after);
-            addALaCarte.saveData(After);
+        else if(kategori.equals("Dessert")){
+            newFood.setName(name);
+            newFood.setPrice(Integer.parseInt(price));
+            newFood.setDescription(desc);
+            newFood.setCategory(kategori);
         }
+
+        addALaCarte.saveData(newFood);
+
         // Redirect to employee list page
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/AdminPanel.jsp");
+        String redirectUrl = "/AdminPanel.jsp?functionCarte=showCarte";
+        RequestDispatcher dispatcher = request.getRequestDispatcher(redirectUrl);
         dispatcher.forward(request, response);
     }
 }
