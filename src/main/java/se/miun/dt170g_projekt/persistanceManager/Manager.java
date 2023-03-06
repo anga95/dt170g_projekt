@@ -1,10 +1,7 @@
 package se.miun.dt170g_projekt.persistanceManager;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.*;
-import se.miun.dt170g_projekt.entites.BookingEntity;
-import se.miun.dt170g_projekt.entites.DailyLunchEntity;
-import se.miun.dt170g_projekt.entites.EmployeeEntity;
-import se.miun.dt170g_projekt.entites.PrefoodEntity;
+import se.miun.dt170g_projekt.entites.*;
 
 import javax.naming.NamingException;
 import java.util.List;
@@ -65,5 +62,11 @@ public class Manager {
         TypedQuery<PrefoodEntity> query = em.createQuery("SELECT e FROM PrefoodEntity  e", PrefoodEntity.class);
         List<PrefoodEntity> prefood = query.getResultList();
         return prefood;
+    }
+
+    public List<MenuItemsEntity> getAllMENY() {
+        TypedQuery<MenuItemsEntity> query = em.createQuery("SELECT e FROM MenuItemsEntity  e", MenuItemsEntity.class);
+        List<MenuItemsEntity> meny = query.getResultList();
+        return meny;
     }
 }

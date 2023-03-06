@@ -10,6 +10,7 @@ import se.miun.dt170g_projekt.entites.EmployeeEntity;
 import se.miun.dt170g_projekt.persistanceManager.Manager;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.rmi.ServerException;
 
 @WebServlet(name = "AdminPage", value = "/AddEmp")
@@ -37,8 +38,10 @@ public class AddEmployeeToDataBase extends HttpServlet {
         }
         newEmployee.saveData(employee);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/AdminPanel.jsp");
+        String redirectUrl = "/AdminPanel.jsp?functionName=myFunction";
+        RequestDispatcher dispatcher = request.getRequestDispatcher(redirectUrl);
         dispatcher.forward(request, response);
+
 
     }
 }
