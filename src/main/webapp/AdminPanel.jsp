@@ -144,26 +144,32 @@
                 <ul class="list-group mb-2">
                     <%
                         List<MenuItemsEntity> list2 = Manager.getAllMENY();
-                        for (MenuItemsEntity obj : list2) { %>
-                    <%
-                        if (obj.getCategory().equals("Starters")) {%>
-                    <li class="list-group-item">
-                               <% out.println(obj.getName()); %>
-
+                        for (MenuItemsEntity obj : list2) {
+                            if (obj.getCategory().equals("Starters")) {
+                    %>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <%= obj.getName() %>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-danger" onclick="">Delete</button>
+                        </div>
                     </li>
-                        <% }
+                    <%
+                            }
                         }
-                        %>
+                    %>
                 </ul>
+
                 <h5 class="mb-2">Huvudrätter</h5>
                 <ul class="list-group mb-2">
                     <%
                         for (MenuItemsEntity obj : list2) { %>
                     <%
                         if (obj.getCategory().equals("MainCourse")) {%>
-                    <li class="list-group-item">
-                        <% out.println(obj.getName()); %>
-
+                    <li class="list-group-item d-flex justify-content-between">
+                        <%= obj.getName() %>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-danger" onclick="">Delete</button>
+                        </div>
                     </li>
                     <% }
                     }
@@ -175,9 +181,11 @@
                         for (MenuItemsEntity obj : list2) { %>
                     <%
                         if (obj.getCategory().equals("Dessert")) {%>
-                    <li class="list-group-item">
-                        <% out.println(obj.getName()); %>
-
+                    <li class="list-group-item d-flex justify-content-between">
+                        <%= obj.getName() %>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-danger" onclick="">Delete</button>
+                        </div>
                     </li>
                     <% }
                     }
