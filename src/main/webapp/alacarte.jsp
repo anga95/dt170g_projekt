@@ -25,28 +25,41 @@
         <div class="col-3">
             <ul class="list-group">
                 <li class="list-group-item border-0" id="forratt">
-                    <h2>FÖRRÄTT</h2><hr><p>
-                    <%
-                        List<MenuItemsEntity> list = Manager.getAllMENY();
-                        for (MenuItemsEntity obj : list) {
-                            %></p></li>
-                    <% } %>
+                    <h2>FÖRRÄTT</h2><hr><%
+                    List<MenuItemsEntity> list = Manager.getAllMENY();
+                    for (MenuItemsEntity obj : list) { %>
+                    <h3 class="text-center"><%
+                        if (obj.getCategory().equals("Starters")) {
+                            out.println(obj.getName() + " " + obj.getPrice() + ":-");
+                            out.println("<br>"); %>
+                    </h3><p> <%= obj.getDescription() %> </p>
+                    <% }
+                    }
+                    %></li>
+
                 <li class="list-group-item border-0" id="huvudratt">
-                    <h2>HUVUDRÄTT</h2><hr>
-                    <p>Pellentesque habitant morbi tristique senectus
-                        et netus et malesuada fames ac turpis egestas.
-                        Vestibulum tortor quam, feugiat vitae, ultricies
-                        eget, tempor sit amet, ante. Donec eu libero sit
-                        amet quam egestas semper. Aenean ultricies mi
-                        vitae est. Mauris placerat eleifend leo.</p></li>
+                    <h2>HUVUDRÄTT</h2><hr><%
+                        for (MenuItemsEntity obj : list) { %>
+                    <h3 class="text-center"><%
+                            if (obj.getCategory().equals("MainCourse")) {
+                                out.println(obj.getName() + " " + obj.getPrice() + ":-");
+                                out.println("<br>"); %>
+                                </h3><p> <%= obj.getDescription() %> </p>
+                                <% }
+                        }
+                    %></li>
                 <li class="list-group-item border-0" id="dessert">
                     <h2>DESSERT</h2><hr>
-                    <p>Pellentesque habitant morbi tristique senectus
-                        et netus et malesuada fames ac turpis egestas.
-                        Vestibulum tortor quam, feugiat vitae, ultricies
-                        eget, tempor sit amet, ante. Donec eu libero sit
-                        amet quam egestas semper. Aenean ultricies mi
-                        vitae est. Mauris placerat eleifend leo.</p></li>
+                    <%
+                        for (MenuItemsEntity obj : list) { %>
+                    <h3 class="text-center"><%
+                        if (obj.getCategory().equals("Dessert")) {
+                        out.println(obj.getName() + " " + obj.getPrice() + ":-");
+                        out.println("<br>"); %>
+                    </h3><p> <%= obj.getDescription() %> </p>
+                    <% }
+                        }
+                    %></li>
             </ul>
 
         </div>
