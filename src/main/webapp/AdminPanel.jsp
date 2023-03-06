@@ -90,8 +90,7 @@
                                 <div class="form-group">
                                     <h3 class="text-center mb-4">Måltider</h3>
                                     <label for="category">Kategori</label>
-                                    <select id="category" class="form-control">
-                                        <option selected>Välj...</option>
+                                    <select name="Kategori" id="category" class="form-control">
                                         <option value="Starters">Förrätt</option>
                                         <option value="MainCourse">Huvudrätt</option>
                                         <option value="Dessert">Efterrätt</option>
@@ -99,7 +98,7 @@
                                     <label for="namn">Namn</label>
                                     <input class="form-control" name="name" type="text" id="namn">
                                     <label for="description">Beskrivning</label>
-                                    <textarea class="form-control" name="description" type="text" id="description"></textarea>
+                                    <textarea class="form-control" name="desc" type="text" id="description"></textarea>
                                     <label for="price">Pris</label>
                                     <input class="form-control" name="price" type="number" id="price">
                                     <div class="mt-5 d-flex justify-content-center">

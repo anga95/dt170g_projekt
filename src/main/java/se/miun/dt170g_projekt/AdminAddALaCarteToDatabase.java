@@ -20,9 +20,14 @@ public class AdminAddALaCarteToDatabase extends HttpServlet{
         request.setCharacterEncoding("UTF-8");
 
         String kategori = request.getParameter("kategori");
-        String price = request.getParameter("pris");
+        String price = request.getParameter("price");
         String name = request.getParameter("name");
         String desc = request.getParameter("desc");
+
+        System.out.println(kategori);
+        System.out.println(price);
+        System.out.println(name);
+        System.out.println(desc);
 
         Manager addALaCarte = null;
 
@@ -55,7 +60,7 @@ public class AdminAddALaCarteToDatabase extends HttpServlet{
         addALaCarte.saveData(newFood);
 
         // Redirect to employee list page
-        String redirectUrl = "/AdminPanel.jsp?functionCarte=showCarte";
+        String redirectUrl = "/AdminPanel.jsp";
         RequestDispatcher dispatcher = request.getRequestDispatcher(redirectUrl);
         dispatcher.forward(request, response);
     }
