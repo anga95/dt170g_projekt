@@ -25,6 +25,12 @@ public class OrderItems {
     @Column(name = "STATUS")
     private Boolean status;
 
+    @Basic
+    @Column(name = "QUANTITY")
+    private Integer quantity;
+
+
+
     public int getId() {
         return id;
     }
@@ -51,6 +57,14 @@ public class OrderItems {
     }
     public void setStatus(Boolean status) {
         this.status = status;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 
     @Override

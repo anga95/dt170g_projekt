@@ -4,23 +4,59 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:outputLabel value="Hello, world"/>
-    <h:dataTable value="#{kanonbasBean.kanonbas}" var="row">
-        <h:column>
-            <f:facet name="id">ID</f:facet>
-            #{row.id}
-        </h:column>
-        <h:column>
-            <f:facet name="radius">radius</f:facet>
-            #{row.radius}
-        </h:column>
-        <h:column>
-            <f:facet name="name">Name</f:facet>
-            #{row.name}
-        </h:column>
-    </h:dataTable>
-    This example uses
-</f:view>
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<h:head>
+    <title>Menu Items</title>
+</h:head>
+<h:body>
+<!--    <h:form>-->
+<!--        <h:panelGrid columns="2" cellpadding="5">-->
+<!--            <h:outputLabel for="name">Nameeee:</h:outputLabel>-->
+<!--            <h:inputText id="name" value="#{menuItemsBean.menuItems}" />-->
+
+<!--            <h:outputLabel for="price">Price:</h:outputLabel>-->
+<!--            <h:inputText id="price" value="#{menuItemsBean.menuItems}" />-->
+
+<!--            <h:outputLabel for="description">Description:</h:outputLabel>-->
+<!--            <h:inputText id="description" value="#{menuItemsBean.menuItems}" />-->
+
+<!--            <h:outputLabel for="time">Time:</h:outputLabel>-->
+<!--            <h:inputText id="time" value="#{menuItemsBean.menuItems}" />-->
+
+<!--            <h:outputLabel for="category">Category:</h:outputLabel>-->
+<!--            <h:inputText id="category" value="#{menuItemsBean.menuItems}" />-->
+
+<!--            <f:facet name="footer">-->
+<!--                <h:commandButton value="Add" action="#{menuItemsBean.create}" />-->
+<!--            </f:facet>-->
+<!--        </h:panelGrid>-->
+<!--    </h:form>-->
+<!--&lt;!&ndash;    <c:set var="mi" value="#{menuItemsBean.skapa}" />&ndash;&gt;-->
+<!--&lt;!&ndash;    #{menuItemsBean.create(mi)}&ndash;&gt;-->
+
+
+<!--    <h:dataTable value="#{menuItemsBean.menuItems}" var="menuItem">-->
+<!--        <h:column>-->
+<!--            <f:facet name="header">Name</f:facet>-->
+<!--            #{menuItem.name}-->
+<!--        </h:column>-->
+<!--        <h:column>-->
+<!--            <f:facet name="header">Price</f:facet>-->
+<!--            #{menuItem.price}-->
+<!--        </h:column>-->
+<!--        <h:column>-->
+<!--            <f:facet name="header">Description</f:facet>-->
+<!--            #{menuItem.description}-->
+<!--        </h:column>-->
+<!--        <h:column>-->
+<!--            <f:facet name="header">Time</f:facet>-->
+<!--            #{menuItem.time}-->
+<!--        </h:column>-->
+<!--        <h:column>-->
+<!--            <f:facet name="header">Categorey</f:facet>-->
+<!--            #{menuItem.category}-->
+<!--        </h:column>-->
+<!--    </h:dataTable>-->
+</h:body>
 </html>

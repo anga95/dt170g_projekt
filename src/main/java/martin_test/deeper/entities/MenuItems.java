@@ -31,10 +31,26 @@ public class MenuItems {
     @Column(name = "CATEGORY", nullable = true, length = 50)
     private String category;
 
+    public MenuItems() {}
+    public MenuItems(int id, int price, String name, String description, Integer time, String category) {
+        this.id = id;
+        this.price = price;
+        this.name = name;
+        this.description = description;
+        this.time = time;
+        this.category = category;
+    }
+    public MenuItems(int price, String name, String description, Integer time, String category) {
+        this.price = price;
+        this.name = name;
+        this.description = description;
+        this.time = time;
+        this.category = category;
+    }
+
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
@@ -42,7 +58,6 @@ public class MenuItems {
     public int getPrice() {
         return price;
     }
-
     public void setPrice(int price) {
         this.price = price;
     }
@@ -50,7 +65,6 @@ public class MenuItems {
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -58,7 +72,6 @@ public class MenuItems {
     public String getDescription() {
         return description;
     }
-
     public void setDescription(String description) {
         this.description = description;
     }
@@ -66,7 +79,6 @@ public class MenuItems {
     public Integer getTime() {
         return time;
     }
-
     public void setTime(Integer time) {
         this.time = time;
     }
@@ -74,7 +86,6 @@ public class MenuItems {
     public String getCategory() {
         return category;
     }
-
     public void setCategory(String category) {
         this.category = category;
     }

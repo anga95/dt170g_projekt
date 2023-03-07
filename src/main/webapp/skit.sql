@@ -2,15 +2,14 @@ drop table ORDER_ITEMS;
 drop table MENU_ITEMS;
 drop table ORDERS;
 
-create table ORDERS
+create table APP.ORDERS
 (
     ID       INTEGER GENERATED ALWAYS AS IDENTITY
         constraint "ORDERS_pk" primary key,
-    TABLE_NR INTEGER,
-    STATUS   BOOLEAN default FALSE
+    TABLE_NR INTEGER
 );
 
-CREATE TABLE MENU_ITEMS (
+CREATE TABLE APP.MENU_ITEMS (
     ID INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     PRICE INTEGER NOT NULL,
     NAME VARCHAR(100),
@@ -19,20 +18,23 @@ CREATE TABLE MENU_ITEMS (
     CATEGORY VARCHAR(50) CHECK(CATEGORY IN ('Drinks', 'Dessert', 'Starters', 'MainCourse', 'Lunch'))
 );
 
-create table ORDER_ITEMS (
+create table APP.ORDER_ITEMS
+(
     ID           INTEGER GENERATED ALWAYS AS IDENTITY
         constraint "ORDER_ITEMS_pk" primary key,
     ORDER_ID     INTEGER
         constraint ORDER_ID references ORDERS,
     MENU_ITEM_ID INTEGER
-        constraint MENU_ITEM_ID references MENU_ITEMS
+        constraint MENU_ITEM_ID references MENU_ITEMS,
+    STATUS       BOOLEAN default FALSE
 );
 
-INSERT INTO ORDERS (TABLE_NR)
+
+INSERT INTO APP.ORDERS (TABLE_NR)
 VALUES (1), (2), (3);
 
 
-INSERT INTO MENU_ITEMS (PRICE, NAME, DESCRIPTION, TIME, CATEGORY) VALUES
+INSERT INTO APP.MENU_ITEMS (PRICE, NAME, DESCRIPTION, TIME, CATEGORY) VALUES
     (30, 'French fries', 'Crispy fries with classic ketchup', 10, 'Starters'),
     (40, 'Grilled asparagus', 'Tender asparagus with a zesty lemon butter', 15, 'Starters'),
     (20, 'Mashed potatoes', 'Smooth and buttery mashed potatoes', 15, 'Starters'),
@@ -55,7 +57,7 @@ INSERT INTO MENU_ITEMS (PRICE, NAME, DESCRIPTION, TIME, CATEGORY) VALUES
     (30, 'Tomato soup', 'Comforting soup with crunchy croutons', 10, 'Starters');
 
 
-INSERT INTO ORDER_ITEMS (ORDER_ID, MENU_ITEM_ID)
+INSERT INTO APP.ORDER_ITEMS (ORDER_ID, MENU_ITEM_ID)
 VALUES
     (1, 1),
     (1, 3),

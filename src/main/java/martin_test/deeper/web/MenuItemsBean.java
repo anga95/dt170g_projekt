@@ -7,11 +7,13 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 import martin_test.deeper.entities.MenuItems;
 
+import java.awt.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Named
 @RequestScoped
-public class MenuItemsBean {
+public class MenuItemsBean implements Serializable {
     @PersistenceContext(unitName = "default")
     EntityManager em;
 
@@ -19,6 +21,7 @@ public class MenuItemsBean {
         TypedQuery<MenuItems> MenuItemsList = em.createNamedQuery("menuItems.selectAll", MenuItems.class);
         return MenuItemsList.getResultList();
     }
+
 
     public MenuItems create(MenuItems mi) {
         em.persist(mi);

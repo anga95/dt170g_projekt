@@ -17,6 +17,9 @@
             <basic name="status">
                 <column name="STATUS" precision="-1"/>
             </basic>
+            <basic name="quantity">
+                <column name="QUANTITY" precision="-1"/>
+            </basic>
         </attributes>
     </entity>
 </entity-mappings>
