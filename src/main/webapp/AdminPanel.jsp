@@ -139,13 +139,13 @@
                 <ul class="list-group mb-2">
                     <%
                         List<MenuItemsEntity> list2 = Manager.getAllMENY();
-                        for (MenuItemsEntity obj : list2) {
-                            if (obj.getCategory().equals("Starters")) {
+                        for (MenuItemsEntity obj2 : list2) {
+                            if (obj2.getCategory().equals("Starters")) {
                     %>
                     <li class="list-group-item d-flex justify-content-between">
-                        <%= obj.getName() %>
+                        <%= obj2.getName() %>
                         <div>
-                            <button type="button" class="btn btn-sm btn-danger" onclick="deleteMenuItem(<%=obj.getId()%>)">Delete</button>
+                            <button type="button" class="btn btn-sm btn-danger" onclick="deleteMenuItem(<%=obj2.getId()%>);showCarte()">Delete</button>
                         </div>
                     </li>
                     <%
@@ -157,11 +157,11 @@
                 <h5 class="mb-2">Huvudrätter</h5>
                 <ul class="list-group mb-2">
                     <%
-                        for (MenuItemsEntity obj : list2) { %>
+                        for (MenuItemsEntity obj2 : list2) { %>
                     <%
-                        if (obj.getCategory().equals("MainCourse")) {%>
+                        if (obj2.getCategory().equals("MainCourse")) {%>
                     <li class="list-group-item d-flex justify-content-between">
-                        <%= obj.getName() %>
+                        <%= obj2.getName() %>
                         <div>
                             <button type="button" class="btn btn-sm btn-danger" onclick="">Delete</button>
                         </div>
@@ -173,11 +173,11 @@
                 <h5 class="mb-2">Efterrätter</h5>
                 <ul class="list-group mb-2">
                     <%
-                        for (MenuItemsEntity obj : list2) { %>
+                        for (MenuItemsEntity obj2 : list2) { %>
                     <%
-                        if (obj.getCategory().equals("Dessert")) {%>
+                        if (obj2.getCategory().equals("Dessert")) {%>
                     <li class="list-group-item d-flex justify-content-between">
-                        <%= obj.getName() %>
+                        <%= obj2.getName() %>
                         <div>
                             <button type="button" class="btn btn-sm btn-danger" onclick="">Delete</button>
                         </div>

@@ -93,27 +93,6 @@ create table TEST.booking
     number_of_people varchar(25),
     extra varchar(25)
 );
-create table TEST.prefood
-(
-    id      INTEGER generated always as identity
-        constraint prefood_pk
-            primary key,
-    name varchar(255)
-);
-create table TEST.mainfood
-(
-    id      INTEGER generated always as identity
-        constraint mainfood_pk
-            primary key,
-    name varchar(255)
-);
-create table TEST.afterfood
-(
-    id      INTEGER generated always as identity
-        constraint afterfood_pk
-            primary key,
-    name varchar(255)
-);
 
 create table TEST.ORDERS
 (
@@ -123,7 +102,7 @@ create table TEST.ORDERS
 );
 
 CREATE TABLE TEST.MENU_ITEMS (
-                                ID INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+                                id INTEGER GENERATED ALWAYS AS IDENTITY constraint menuItems_pk PRIMARY KEY,
                                 PRICE INTEGER NOT NULL,
                                 NAME VARCHAR(100),
                                 DESCRIPTION VARCHAR(100),
