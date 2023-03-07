@@ -1,11 +1,3 @@
-
-CREATE TABLE APP.RESTAURANT (
-    ID INT PRIMARY KEY,
-    NAME VARCHAR(255)
-);
-INSERT INTO APP.RESTAURANT (ID, NAME)
-VALUES (1, 'antons skafferi');
-
 CREATE TABLE APP.employee (
       id INTEGER GENERATED ALWAYS AS IDENTITY constraint employee_pk PRIMARY KEY,
       first_name VARCHAR(255) NOT NULL,
@@ -67,83 +59,6 @@ CREATE TABLE APP.EMPLOYEE_SCHEDULE (
        FOREIGN KEY (V_TWO_SUNDAY) REFERENCES APP.SHIFT (ID)
 );
 
-create table APP.orders
-(
-    ID           INTEGER generated always as identity
-        constraint orders_pk
-            primary key,
-    TABLE_NUMBER INTEGER not null,
-    NOTES       VARCHAR(255)
-);
-
-create table APP.DRINKS
-(
-    ID             INTEGER generated always as identity
-        constraint "DRINKS_pk"
-            primary key,
-    ORDER_ID       INTEGER
-        constraint "DRINKS_ORDERS_ID_fk"
-            references ORDERS,
-    TABLE_NUMBER   INTEGER
-    constraint "DRINKS_ORDERS_TABLE_NUMBER_fk"
-            references ORDERS,
-    QUANTITY       INTEGER,
-    DESCRIPTION    VARCHAR(255),
-    READY_TO_SERVE BOOLEAN default FALSE
-);
-INSERT INTO APP.DRINKS (ORDER_ID, TABLE_NUMBER, QUANTITY, DESCRIPTION)
-VALUES (1, 1, 2, 'Coca-Cola'),
-       (1, 1, 1, 'Sprite'),
-       (1, 1, 2, 'Mango Lassi'),
-        (1, 1, 1, 'Iced Tea');
-
-
-create table APP.STARTERS
-(
-    ID             INTEGER generated always as identity
-        constraint "STARTERS_pk"
-            primary key,
-    ORDER_ID       INTEGER
-        constraint "STARTERS_ORDERS_ID_fk"
-            references ORDERS,
-    TABLE_NUMBER   INTEGER
-    constraint "STARTERS_ORDERS_TABLE_NUMBER_fk"
-            references ORDERS,
-    QUANTITY       INTEGER,
-    DESCRIPTION    VARCHAR(255),
-    READY_TO_SERVE BOOLEAN default FALSE
-);
-create table APP.MAIN_COURSES
-(
-    ID             INTEGER generated always as identity
-        constraint "MAIN_COURSES_pk"
-            primary key,
-    ORDER_ID       INTEGER
-        constraint "MAIN_COURSES_ORDERS_ID_fk"
-            references ORDERS,
-    TABLE_NUMBER   INTEGER
-    constraint "MAIN_COURSES_ORDERS_TABLE_NUMBER_fk"
-            references ORDERS,
-    QUANTITY       INTEGER,
-    DESCRIPTION    VARCHAR(255),
-    READY_TO_SERVE BOOLEAN default FALSE
-);
-create table APP.DESSERTS
-(
-    ID             INTEGER generated always as identity
-        constraint "DESSERTS_pk"
-            primary key,
-    ORDER_ID       INTEGER
-        constraint "DESSERTS_ORDERS_ID_fk"
-            references ORDERS,
-    TABLE_NUMBER   INTEGER
-    constraint "DESSERTS_ORDERS_TABLE_NUMBER_fk"
-            references ORDERS,
-    QUANTITY       INTEGER,
-    DESCRIPTION    VARCHAR(255),
-    READY_TO_SERVE BOOLEAN default FALSE
-);
-
 create table APP.DAILY_LUNCH
 (
     id      INTEGER generated always as identity
@@ -163,132 +78,71 @@ VALUES
     ('Fredag', 'Janssons frestelse (potatisgratäng med ansjovis)', 'Gryta med nötkött och rotfrukter', 'Vegetarisk svamp risotto');
 
 
-
-
-/*CREATE TABLE APP.Starters
+create table APP.ORDERS
 (
-    ID INTEGER GENERATED ALWAYS AS IDENTITY,
-    "Price" INTEGER,
-    "Description" VARCHAR(50),
-    CONSTRAINT "Starters_pk" PRIMARY KEY (ID)
-);
-INSERT INTO APP.Starters ("Price", "Description")
-VALUES
-    (7, 'Garlic bread'),
-    (4, 'Tomato soup'),
-    (5, 'Mixed salad'),
-
-    (6, 'Potato wedges'),
-    (3, 'Breaded mushrooms');
-*/
-/*create table APP.maincourse
-(
-    id          INTEGER generated always as identity
-        constraint maincourse_pk
-            primary key,
-    price       INTEGER,
-    "Time" INTEGER,
-    description varchar(255)
-);
-INSERT INTO APP.maincourse (price, description)
-VALUES
-    (15, 'Grilled salmon'),
-    (12, 'Ribeye steak'),
-    (9, 'Chicken alfredo'),
-    (8, 'Vegetable stir-fry'),
-    (14, 'Seafood paella');
-*//*
-CREATE TABLE APP.Dessert
-(
-    ID INTEGER GENERATED ALWAYS AS IDENTITY,
-    "Price" INTEGER,
-    "Description" VARCHAR(50),
-    CONSTRAINT "Dessert_pk" PRIMARY KEY (ID)
-);
-INSERT INTO APP.Dessert ("Price", "Description")
-VALUES
-    (5, 'Chocolate cake'),
-    (4, 'Cheesecake'),
-    (6, 'Tiramisu'),
-    (3, 'Fruit salad');
-*/
-
-/*CREATE TABLE APP.Drinks
-(
-    ID INTEGER GENERATED ALWAYS AS IDENTITY,
-    ORDER_ID INTEGER,
-    QUANTITY INTEGER,
-    Price INTEGER,
-    Description VARCHAR(50),
-    CONSTRAINT "Drinks_pk" PRIMARY KEY (ID)
-);*/
-/*CREATE TABLE APP.alaCarte
-(
-    ID INTEGER GENERATED ALWAYS AS IDENTITY,
-    "Price" INTEGER,
-    "Description" VARCHAR(50),
-    "Time" INTEGER,
-    CONSTRAINT "alaCarte_pk" PRIMARY KEY (ID)
+    ID       INTEGER GENERATED ALWAYS AS IDENTITY
+        constraint "ORDERS_pk" primary key,
+    TABLE_NR INTEGER
 );
 
-INSERT INTO APP.alaCarte ("Price", "Description", "Time")
-VALUES
-    (15, 'Grilled salmon', 20),
-    (12, 'Ribeye steak', 30),
-    (9, 'Chicken alfredo', 25),
-    (8, 'Vegetable stir-fry', 15),
-    (14, 'Seafood paella', 35);*/
-/*INSERT INTO APP.Drinks ("Price", "Description")
-VALUES
-    (2, 'Coca Cola'),
-    (3, 'Orange Juice'),
-    (4, 'Green Tea'),
-    (2, 'Coffee'),
-    (3, 'Milk');*/
-/*create table serving_table
-(
-    ID INTEGER not null
-        constraint serving_table_pk
-            primary key
-);*/
+CREATE TABLE APP.MENU_ITEMS (
+            ID INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+            PRICE INTEGER NOT NULL,
+            NAME VARCHAR(100),
+            DESCRIPTION VARCHAR(100),
+            TIME INTEGER,
+            CATEGORY VARCHAR(50) CHECK(CATEGORY IN ('Drinks', 'Dessert', 'Starters', 'MainCourse', 'Lunch'))
+);
 
-/*create table APP.orders
+create table APP.ORDER_ITEMS
 (
-    order_id      INTEGER generated always as identity
-        constraint orders_pk
-            primary key,
-    starter_id    INTEGER
-        constraint "orders_STARTERS_ID_fk"
-            references STARTERS,
-    maincourse_id INTEGER
-        constraint "orders_MAINCOURSE_ID_fk"
-            references MAINCOURSE,
-    dessert_id    INTEGER
-        constraint "orders_DESSERT_ID_fk"
-            references DESSERT,
-    serving_table      INTEGER
-        constraint "orders_SERVING_TABLE_fk"
-            references SERVING_TABLE,
-    drinks_id     INTEGER
-        constraint "orders_DRINKS_ID_fk"
-            references DRINKS,
-    notes         varchar(255)
+    ID           INTEGER GENERATED ALWAYS AS IDENTITY
+        constraint "ORDER_ITEMS_pk" primary key,
+    ORDER_ID     INTEGER
+        constraint ORDER_ID references ORDERS,
+    MENU_ITEM_ID INTEGER
+        constraint MENU_ITEM_ID references MENU_ITEMS,
+    STATUS       BOOLEAN default FALSE
 );
 
 
-INSERT INTO orders ("alaCarte_ID", "Dessert_ID", "Drinks_ID", "Starters_ID")
+INSERT INTO APP.ORDERS (TABLE_NR)
+VALUES (1), (2), (3);
+
+
+INSERT INTO APP.MENU_ITEMS (PRICE, NAME, DESCRIPTION, TIME, CATEGORY)
 VALUES
-    (1, 2, 3, 4);*/
-/*CREATE TABLE orders
-(
-    ID INTEGER GENERATED ALWAYS AS IDENTITY,
-    "alaCarte_ID" INTEGER,
-    "Dessert_ID" INTEGER,
-    "Drinks_ID" INTEGER,
-    "Starters_ID" INTEGER,
-    CONSTRAINT "Order_pk" PRIMARY KEY (ID),
-    CONSTRAINT "alaCarte_ID" FOREIGN KEY ("alaCarte_ID") REFERENCES APP.alaCarte (ID),
-    CONSTRAINT "Dessert_ID" FOREIGN KEY ("Dessert_ID") REFERENCES APP.Dessert (ID),
-    CONSTRAINT "Drinks_ID" FOREIGN KEY ("Drinks_ID") REFERENCES APP.Drinks (ID),
-    CONSTRAINT "Starters_ID" FOREIGN KEY ("Starters_ID") REFERENCES APP.Starters (ID)
-);*/
+      (30, 'French fries', 'Crispy fries with classic ketchup', 10, 'Starters'),
+      (40, 'Grilled asparagus', 'Tender asparagus with a zesty lemon butter', 15, 'Starters'),
+      (20, 'Mashed potatoes', 'Smooth and buttery mashed potatoes', 15, 'Starters'),
+      (100, 'Chicken', 'Juicy chicken with a side of vegetables', 30, 'MainCourse'),
+      (80, 'Spaghetti', 'Traditional pasta dish with rich tomato sauce', 25, 'MainCourse'),
+      (120, 'Tenderloin steak', 'Tender steak with creamy mushroom sauce', 35, 'MainCourse'),
+      (40, 'Chocolate chip cookie', 'Classic cookie with melty chocolate chips', 10, 'Dessert'),
+      (60, 'Vanilla ice cream', 'Rich and creamy vanilla ice cream', 10, 'Dessert'),
+      (30, 'Soda', 'Refreshing soda with unlimited refills', 5, 'Drinks'),
+      (40, 'Orange juice', 'Fresh and tangy orange juice', 10, 'Drinks'),
+      (50, 'Beer', 'Cold and refreshing beer', 15, 'Drinks'),
+      (60, 'Red wine', 'Rich and bold red wine', 20, 'Drinks'),
+      (70, 'White wine', 'Crisp and refreshing white wine', 20, 'Drinks'),
+      (80, 'Margarita', 'Classic tequila cocktail with a salted rim', 10, 'Drinks'),
+      (50, 'Caesar salad', 'Fresh greens and tender chicken in a tangy dressing', 15, 'Lunch'),
+      (70, 'Mixed greens', 'Light and refreshing salad with a balsamic twist', 10, 'Lunch'),
+      (100, 'Club sandwich', 'Hearty sandwich with turkey, bacon, and all the fixings', 20, 'Lunch'),
+      (90, 'Cheeseburger', 'Juicy burger with melty cheese and crispy fries', 15, 'Lunch'),
+      (60, 'Margherita pizza', 'Traditional pizza with fresh mozzarella and tomato sauce', 25, 'Lunch'),
+      (30, 'Tomato soup', 'Comforting soup with crunchy croutons', 10, 'Starters');
+
+
+INSERT INTO APP.ORDER_ITEMS (ORDER_ID, MENU_ITEM_ID)
+VALUES
+    (1, 1),
+    (1, 3),
+    (1, 6),
+    (2, 2),
+    (2, 5),
+    (2, 9),
+    (3, 4),
+    (3, 7),
+    (3, 10);
+

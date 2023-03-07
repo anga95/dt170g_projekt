@@ -70,7 +70,6 @@
             <version>3.0.0</version>
         </dependency>
         <!--END ### USED FOR DATABASE CONNECTIONS, TOTAL 5 DEPENDENCIES ### END-->
-
     </dependencies>
     <build>
         <finalName>antons-skafferi</finalName>
