@@ -91,4 +91,18 @@ function deleteEmployee(id) {
     }
 }
 
+function deleteMenuItem(id) {
+    if (confirm("Är du säker på att du vill ta bort denna maträtt?")) {
+        $.ajax({
+            url: "deleteMenuItem",
+            type: "POST",
+            data: { id: id },
+            success: function() {
+                // Reload the page after the employee is deleted
+                location.reload();
+            }
+        });
+    }
+}
+
 
