@@ -26,7 +26,7 @@ function nextDay() {
     document.getElementById("selectedDay").value = days[currentDayIndex];
 }
 
-const choices = document.querySelectorAll(".list-group-item");
+const choices = document.querySelectorAll(".lista");
 const choiceInfos =document.querySelectorAll(".choice-info");
 const veckomeny = document.getElementById("veckomeny");
 const carte = document.getElementById("carte");
