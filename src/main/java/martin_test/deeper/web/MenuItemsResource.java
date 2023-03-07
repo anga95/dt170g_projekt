@@ -13,6 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 import martin_test.deeper.entities.MenuItems;
 import martin_test.deeper.entities.OrderItems;
 import org.eclipse.persistence.exceptions.JSONException;
@@ -54,6 +55,15 @@ public class MenuItemsResource {
 
     @POST
     @Path("/Insert")
+    public Response insertMenuItem(MenuItems menuItem) {
+        MenuItems createdMenuItem = menuItemsBean.create(menuItem);
+        return Response.status(Response.Status.CREATED)
+                .entity(createdMenuItem)
+                .build();
+    }
+
+    /*@POST
+    @Path("/Insert")
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     public MenuItems create(@FormParam("price") int price,
                             @FormParam("name") String name,
@@ -62,7 +72,7 @@ public class MenuItemsResource {
                             @FormParam("category") String category){
         MenuItems menuItems = new MenuItems(price, name, description, time, category);
         return menuItemsBean.create(menuItems);
-    }
+    }*/
 
     /*@POST
    @Consumes(MediaType.APPLICATION_JSON)

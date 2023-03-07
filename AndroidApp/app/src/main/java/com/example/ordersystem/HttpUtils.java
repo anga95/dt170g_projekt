@@ -13,10 +13,11 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 
 public class HttpUtils extends AsyncTask<String,String,String> {
     private static final String TAG = MainActivity.class.getSimpleName();
-    private String method;
+    private final String method;
 
     public HttpUtils(String method){
         this.method = method;
@@ -33,11 +34,9 @@ public class HttpUtils extends AsyncTask<String,String,String> {
 
             if(method.equals("POST")){
                 connection.setDoOutput(true);
+                connection.setRequestProperty("Content-Type", "application/json");
                 OutputStream os = connection.getOutputStream();
-                BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
-                writer.write(urls[1]);
-                writer.flush();
-                writer.close();
+                os.write(urls[1].getBytes(StandardCharsets.UTF_8));
                 os.close();
             }
 

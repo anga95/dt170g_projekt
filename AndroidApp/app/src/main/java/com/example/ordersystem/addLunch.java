@@ -10,15 +10,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -91,6 +87,7 @@ public class addLunch extends AppCompatActivity {
 
     }
 
+    @SuppressLint("StaticFieldLeak")
     public void sendToKitchen(View view) {
         String tableText = tableNumber.getText().toString();
 
@@ -102,6 +99,18 @@ public class addLunch extends AppCompatActivity {
             int tableNum = Integer.parseInt(numberString);
             List<OrderItem> orderItemList = orderItemAdapter.getOrderItemList();
             Order order = new Order(tableNum, orderItemList);
+
+            // Convert the order to a JSON string
+            Gson gson = new Gson();
+            String jsonOrder = gson.toJson(order);
+
+            // Send a POST request to add the order to the database table
+            new HttpUtils("POST") {
+                @Override
+                protected void onPostExecute(String result) {
+                    // Do something with the result, if needed
+                }
+            }.execute("http://10.0.2.2:8080/antons-skafferi/api/MenuItems/Insert", jsonOrder);
 
         }
 
