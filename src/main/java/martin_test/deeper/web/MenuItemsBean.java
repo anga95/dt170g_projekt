@@ -2,9 +2,12 @@ package martin_test.deeper.web;
 
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Named;
+import jakarta.json.JsonObject;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
+import jakarta.transaction.Transactional;
+import jakarta.ws.rs.core.Response;
 import martin_test.deeper.entities.MenuItems;
 
 import java.util.List;
@@ -20,6 +23,7 @@ public class MenuItemsBean {
         return MenuItemsList.getResultList();
     }
 
+    @Transactional
     public MenuItems create(MenuItems mi) {
         em.persist(mi);
         return mi;
@@ -30,4 +34,5 @@ public class MenuItemsBean {
         MenuItemsList.setParameter("id", id);
         MenuItemsList.executeUpdate();
     }
+
 }

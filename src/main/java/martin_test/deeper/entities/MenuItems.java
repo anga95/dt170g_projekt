@@ -31,6 +31,18 @@ public class MenuItems {
     @Column(name = "CATEGORY", nullable = true, length = 50)
     private String category;
 
+    public MenuItems(int price, String name, String description, Integer time, String category) {
+        this.price = price;
+        this.name = name;
+        this.description = description;
+        this.time = time;
+        this.category = category;
+    }
+
+    public MenuItems() {
+
+    }
+
     public int getId() {
         return id;
     }

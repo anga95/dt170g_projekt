@@ -18,6 +18,7 @@ import martin_test.deeper.entities.OrderItems;
 import org.eclipse.persistence.exceptions.JSONException;
 
 
+import java.awt.*;
 import java.io.IOException;
 import java.io.StringReader;
 import java.sql.Connection;
@@ -51,11 +52,17 @@ public class MenuItemsResource {
         return result;
     }
 
-    /*@POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    public MenuItems create(MenuItems menuItem){
-        return menuItemsBean.create(menuItem);
-    }*/
+    @POST
+    @Path("/Insert")
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    public MenuItems create(@FormParam("price") int price,
+                            @FormParam("name") String name,
+                            @FormParam("description") String description,
+                            @FormParam("time") int time,
+                            @FormParam("category") String category){
+        MenuItems menuItems = new MenuItems(price, name, description, time, category);
+        return menuItemsBean.create(menuItems);
+    }
 
     /*@POST
    @Consumes(MediaType.APPLICATION_JSON)
@@ -85,7 +92,7 @@ public class MenuItemsResource {
         em.getTransaction().commit();
     }*/
 
-    @POST
+    /*@POST
     @Path("/Insert")
     @Consumes({MediaType.APPLICATION_FORM_URLENCODED,MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public void postData(@FormParam("id") int id,
@@ -105,7 +112,7 @@ public class MenuItemsResource {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
 
 }

@@ -1,53 +1,14 @@
 package com.example.ordersystem;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
-import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+import okhttp3.*;
 
-import com.google.gson.Gson;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
-import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.List;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executor;
-
-import okhttp3.MediaType;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.Body;
-import retrofit2.http.GET;
-import retrofit2.http.POST;
 
 public class MainActivity extends AppCompatActivity {
     //test
@@ -55,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
 
     HttpUtils httpUtilsPost = new HttpUtils("POST");
-    String postData = "id=200&category=Drinks&price=3222";
+    String postData = "price=10&name=Spaghetti&description=Delicious+spaghetti&time=30&category=Drinks";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +24,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        httpUtilsPost.execute("http://10.0.2.2:8080/antons-skafferi/api/MenuItems/Insert", postData);
+        sendPostRequest();
+
+        //httpUtilsPost.execute("http://10.0.2.2:8080/antons-skafferi/api/MenuItems/Insert", postData);
 
         button1 = findViewById(R.id.personalBtn);
         textView = findViewById(R.id.textView);
@@ -82,6 +45,43 @@ public class MainActivity extends AppCompatActivity {
             }*/
             Intent intent = new Intent(MainActivity.this, PersonalPage1.class);
             startActivity(intent);
+        });
+    }
+
+    private void sendPostRequest() {
+        // create an OkHttpClient instance
+        OkHttpClient client = new OkHttpClient();
+
+        // build the request body using FormBody
+        RequestBody requestBody = new FormBody.Builder()
+                .add("price", "10")
+                .add("name", "Pizza")
+                .add("description", "Delicious pizza")
+                .add("time", "30")
+                .add("category", "Italian")
+                .build();
+
+        // create a new request with the endpoint and request body
+        Request request = new Request.Builder()
+                .url("http://10.0.2.2:8080/antons-skafferi/api/MenuItems/Insert")
+                .post(requestBody)
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                if(!response.isSuccessful()){
+                    throw new IOException("Unexpected code " + response);
+                }
+
+                String responseBody = response.body().string();
+                Log.d("RESPONSE", responseBody);
+            }
         });
     }
 }
