@@ -3,6 +3,7 @@ package martin_test.deeper.web;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 import martin_test.deeper.entities.Employee;
 
 import java.util.List;
@@ -55,20 +56,23 @@ public class EmployeeResource {
     }
 
     @POST
-    @Path("/verify/{email}/{deviceId}")
+    @Path("/verify")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Employee verify(@PathParam("email") String email, @PathParam("deviceId") String deviceId) {
+    @Produces(MediaType.MULTIPART_FORM_DATA)
+    public Response verify(@FormParam("email") String email, @FormParam("device-id") String deviceId) {
         // is employee with email and deviceId in database?
         Employee empInDB = employeeBean.getEmployeeByEmail(email);
         if (empInDB != null) {
-            if (!empInDB.getDeviceId().equals(deviceId)) {
+            if (empInDB.getDeviceId().equals(deviceId)) {
+                // status code 200
+                return Response.ok(empInDB).build();
+            } else if (empInDB.getDeviceId().equals("")) {
                 empInDB.setDeviceId(deviceId);
                 employeeBean.updateEmployeeById((int)empInDB.getId(), empInDB.getName(), empInDB.getDeviceId(), empInDB.getEmail(), empInDB.getPhone());
+                return Response.ok(empInDB).build();
             }
-            return empInDB;
-        } else {
-            // update with device id
-            return null;
         }
+        // status code 404
+        return Response.status(Response.Status.NOT_FOUND).build();
     }
 }
