@@ -135,8 +135,6 @@ employeeForm.addEventListener('submit', (event) => {
     let email = document.querySelector('#email').value;
     let telnr = document.querySelector('#telnr').value;
 
-    alert(fname);
-    alert(ename);
 
     $.ajax({
         type: 'POST', // set the HTTP method
