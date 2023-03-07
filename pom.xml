@@ -71,6 +71,12 @@
         </dependency>
         <!--USED FOR DATABASE CONNECTIONS, TOTAL 5 DEPENDENCIES-->
 
+        <dependency>
+            <groupId>jakarta.json</groupId>
+            <artifactId>jakarta.json-api</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+
     </dependencies>
     <build>
         <finalName>antons-skafferi</finalName>

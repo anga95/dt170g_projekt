@@ -12,24 +12,50 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
+
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.Body;
+import retrofit2.http.GET;
+import retrofit2.http.POST;
 
 public class MainActivity extends AppCompatActivity {
     //test
     Button button1;
-    static TextView textView;
+    TextView textView;
+
+    HttpUtils httpUtilsPost = new HttpUtils("POST");
+    String postData = "id=200&category=Drinks&price=3222";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,26 +63,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String url = "jdbc:derby://10.0.2.2:1527/DB";
-        String username = "APP";
-        String password = "APP";
-
-        try {
-            Connection connection = DriverManager.getConnection(url, username, password);
-            Statement stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM MENU_ITEMS");
-            while (rs.next()) {
-                String column1 = rs.getString("column1");
-                int column2 = rs.getInt("column2");
-                // do something with the results
-            }
-            rs.close();
-            stmt.close();
-            connection.close();
-        } catch (SQLException e) {
-            // handle the exception
-            e.printStackTrace();
-        }
+        httpUtilsPost.execute("http://10.0.2.2:8080/antons-skafferi/api/MenuItems/Insert", postData);
 
         button1 = findViewById(R.id.personalBtn);
         textView = findViewById(R.id.textView);
@@ -77,8 +84,4 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
     }
-
-    /*public static void setStatus(String status){
-        textView.setText(status);
-    }*/
 }

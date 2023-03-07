@@ -50,10 +50,10 @@ public class addLunch extends AppCompatActivity {
         List<OrderItem> orderItemList = new ArrayList<>();
 
         SourceRecyclerAdapter foodsRecyclerAdapter = new SourceRecyclerAdapter(foodsItemList, sourceItem -> orderItemAdapter.addItem(sourceItem));
-
         SourceRecyclerAdapter drinksRecyclerAdapter = new SourceRecyclerAdapter(drinksItemList, sourceItem -> orderItemAdapter.addItem(sourceItem));
 
         orderItemAdapter = new OrderItemAdapter(orderItemList, this, OrderItem::setQuantity);
+
         foodsRecyclerView.setAdapter(foodsRecyclerAdapter);
         foodsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         drinksRecyclerView.setAdapter(drinksRecyclerAdapter);
@@ -61,7 +61,7 @@ public class addLunch extends AppCompatActivity {
         orderRecyclerView.setAdapter(orderItemAdapter);
         orderRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        new HttpUtils() {
+        new HttpUtils("GET") {
             @Override
             protected void onPostExecute(String result) {
                 // Parse JSON data and extract the items you need

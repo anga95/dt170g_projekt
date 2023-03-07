@@ -1,9 +1,9 @@
 package com.example.ordersystem;
 
 public class OrderItem {
-    private final String name;
+    private String name;
     private int quantity;
-    private final double price;
+    private double price;
     private String note;
     private String category;
 
@@ -49,5 +49,13 @@ public class OrderItem {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 }
