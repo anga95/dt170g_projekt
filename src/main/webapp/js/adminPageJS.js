@@ -115,9 +115,6 @@ form.addEventListener('submit', (event) => {
         let name = document.querySelector('#namn').value;
         let desc = document.querySelector('#description').value;
         let price = document.querySelector('#price').value;
-
-        alert(kategori);
-        alert(name);
     $.ajax({
         type: 'POST', // set the HTTP method
         url: 'AdminAddALaCarte', // set the URL of the servlet
@@ -128,4 +125,26 @@ form.addEventListener('submit', (event) => {
     });
 });
 
+const employeeForm = document.querySelector('#empForm');
+employeeForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // prevent the default form submission behavior
+
+
+    let fname = document.querySelector('#fname').value;
+    let ename = document.querySelector('#ename').value;
+    let email = document.querySelector('#email').value;
+    let telnr = document.querySelector('#telnr').value;
+
+    alert(fname);
+    alert(ename);
+
+    $.ajax({
+        type: 'POST', // set the HTTP method
+        url: 'AddEmp', // set the URL of the servlet
+        data: { fname: fname, ename: ename, email: email, telnr: telnr },
+        success: function () {
+            window.location.href = "AdminPanel.jsp?functionName=myFunction";
+        }
+    });
+});
 

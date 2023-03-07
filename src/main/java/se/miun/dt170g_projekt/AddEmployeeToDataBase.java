@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.rmi.ServerException;
 
-@WebServlet(name = "AdminPage", value = "/AddEmp")
+@WebServlet(name = "AddEmp", value = "/AddEmp")
 public class AddEmployeeToDataBase extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServerException, IOException, ServletException {
@@ -23,6 +23,8 @@ public class AddEmployeeToDataBase extends HttpServlet {
         String lname = request.getParameter("ename");
         String email = request.getParameter("email");
         String telnumber = request.getParameter("telnr");
+
+        System.out.println(fname);
 
         EmployeeEntity employee = new EmployeeEntity();
         employee.setFirstName(fname);
@@ -37,11 +39,5 @@ public class AddEmployeeToDataBase extends HttpServlet {
             e.printStackTrace();
         }
         newEmployee.saveData(employee);
-
-        String redirectUrl = "/AdminPanel.jsp?functionName=myFunction";
-        RequestDispatcher dispatcher = request.getRequestDispatcher(redirectUrl);
-        dispatcher.forward(request, response);
-
-
     }
 }

@@ -55,7 +55,7 @@
 
                     <div class="choice-info" id="anställda-info">
                             <div class="card-body">
-                                <form accept-charset="UTF-8" action="${pageContext.request.contextPath}/AddEmp" method="post">
+                                <form accept-charset="UTF-8" action="" method="post" id="empForm">
                                     <div class="form-group">
                                         <h3 class="text-center mb-4">Lägg till Anställd</h3>
                                         <label class="form-label" for="fname">Förnamn</label>
