@@ -1,16 +1,13 @@
 package se.miun.dt170g_projekt;
 
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import se.miun.dt170g_projekt.entites.EmployeeEntity;
 import se.miun.dt170g_projekt.persistanceManager.Manager;
-
+import se.miun.dt170g_projekt.entities.EmployeeEntity;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.rmi.ServerException;
 
 @WebServlet(name = "AddEmp", value = "/AddEmp")

@@ -1,8 +1,7 @@
 package se.miun.dt170g_projekt.persistanceManager;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.*;
-import se.miun.dt170g_projekt.entites.*;
-
+import se.miun.dt170g_projekt.entities.*;
 import javax.naming.NamingException;
 import java.util.List;
 

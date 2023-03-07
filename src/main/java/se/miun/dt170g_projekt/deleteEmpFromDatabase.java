@@ -1,20 +1,13 @@
 package se.miun.dt170g_projekt;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
-import jakarta.persistence.Query;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import se.miun.dt170g_projekt.entites.DailyLunchEntity;
 import se.miun.dt170g_projekt.persistanceManager.Manager;
 
 import java.io.IOException;
 import java.rmi.ServerException;
-import java.util.List;
 
 @WebServlet(name = "deleteEmp", value = "/deleteEmployee")
 public class deleteEmpFromDatabase extends HttpServlet{

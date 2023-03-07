@@ -1,4 +1,4 @@
-<%@ page import="se.miun.dt170g_projekt.entites.MenuItemsEntity" %>
+<%@ page import="se.miun.dt170g_projekt.entities.MenuItemsEntity" %>
 <%@ page import="se.miun.dt170g_projekt.persistanceManager.Manager" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.awt.*" %><%--

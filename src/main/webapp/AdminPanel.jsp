@@ -1,9 +1,8 @@
 <%@ page import="java.util.Iterator" %>
 <%@ page import="java.util.List" %>
-<%@ page import="se.miun.dt170g_projekt.entites.EmployeeEntity" %>
-<%@ page import="se.miun.dt170g_projekt.AdminGetEmployeeFromDatabase" %>
+<%@ page import="se.miun.dt170g_projekt.entities.EmployeeEntity" %>
 <%@ page import="se.miun.dt170g_projekt.persistanceManager.Manager" %>
-<%@ page import="se.miun.dt170g_projekt.entites.MenuItemsEntity" %>
+<%@ page import="se.miun.dt170g_projekt.entities.MenuItemsEntity" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ include file="head.jsp" %>
 

@@ -5,9 +5,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import se.miun.dt170g_projekt.entites.BookingEntity;
 import se.miun.dt170g_projekt.persistanceManager.Manager;
-
+import se.miun.dt170g_projekt.entities.BookingEntity;
 import java.io.IOException;
 import java.rmi.ServerException;
 import java.util.ArrayList;
