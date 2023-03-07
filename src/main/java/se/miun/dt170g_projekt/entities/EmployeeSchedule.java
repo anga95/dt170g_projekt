@@ -13,7 +13,7 @@ public class EmployeeSchedule {
     // foreign key to employee
     @OneToOne
     @JoinColumn(name = "emp_id", nullable = false)
-    private Employee employee;
+    private EmployeeEntity employee;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "v_one_monday", nullable = false)
@@ -73,7 +73,7 @@ public class EmployeeSchedule {
 
     public EmployeeSchedule() {}
 
-    public EmployeeSchedule(Employee employee, Shift vOneMonday, Shift vOneTuesday, Shift vOneWednesday, Shift vOneThursday, Shift vOneFriday, Shift vOneSaturday, Shift vOneSunday, Shift vTwoMonday, Shift vTwoTuesday, Shift vTwoWednesday, Shift vTwoThursday, Shift vTwoFriday, Shift vTwoSaturday, Shift vTwoSunday) {
+    public EmployeeSchedule(EmployeeEntity employee, Shift vOneMonday, Shift vOneTuesday, Shift vOneWednesday, Shift vOneThursday, Shift vOneFriday, Shift vOneSaturday, Shift vOneSunday, Shift vTwoMonday, Shift vTwoTuesday, Shift vTwoWednesday, Shift vTwoThursday, Shift vTwoFriday, Shift vTwoSaturday, Shift vTwoSunday) {
         this.employee = employee;
         this.vOneMonday = vOneMonday;
         this.vOneTuesday = vOneTuesday;
@@ -99,11 +99,11 @@ public class EmployeeSchedule {
         this.id = id;
     }
 
-    public Employee getEmployee() {
+    public EmployeeEntity getEmployee() {
         return employee;
     }
 
-    public void setEmployee(Employee employee) {
+    public void setEmployee(EmployeeEntity employee) {
         this.employee = employee;
     }
 
