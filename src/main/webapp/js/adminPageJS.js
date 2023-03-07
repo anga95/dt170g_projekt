@@ -85,7 +85,7 @@ function deleteEmployee(id) {
             data: { id: id },
             success: function() {
                 // Reload the page after the employee is deleted
-                location.reload();
+                window.location.href = "AdminPanel.jsp?functionName=myFunction";
             }
         });
     }
