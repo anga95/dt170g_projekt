@@ -56,7 +56,6 @@ public class MenuItemsResource {
     @POST
     @Path("/Insert")
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces()
     public Response insertMenuItem(MenuItems menuItem) {
         MenuItems createdMenuItem = menuItemsBean.create(menuItem);
         return Response.status(Response.Status.CREATED)
