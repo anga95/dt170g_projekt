@@ -1,5 +1,6 @@
 package com.example.ordersystem;
 
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -108,11 +109,27 @@ public class addLunch extends AppCompatActivity {
             new HttpUtils("POST") {
                 @Override
                 protected void onPostExecute(String result) {
-                    // Do something with the result, if needed
+                    try {
+                        // Parse the result JSON string to a JSONObject
+                        JSONObject responseJson = new JSONObject(result);
+
+                        // Check if the request was successful
+                        boolean success = responseJson.getBoolean("success");
+                        if (success) {
+                            // The order was added to the database successfully
+                            Toast.makeText(getApplicationContext(), "Order added to database.", Toast.LENGTH_SHORT).show();
+                        } else {
+                            // The order was not added to the database
+                            String errorMessage = responseJson.getString("errorMessage");
+                            Toast.makeText(getApplicationContext(), "Error adding order to database: " + errorMessage, Toast.LENGTH_SHORT).show();
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        // Handle any JSON parsing errors here
+                    }
                 }
             }.execute("http://10.0.2.2:8080/antons-skafferi/api/MenuItems/Insert", jsonOrder);
 
         }
-
     }
 }

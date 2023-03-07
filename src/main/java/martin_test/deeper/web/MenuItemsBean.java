@@ -23,7 +23,6 @@ public class MenuItemsBean {
         return MenuItemsList.getResultList();
     }
 
-    @Transactional
     public MenuItems create(MenuItems mi) {
         em.persist(mi);
         return mi;

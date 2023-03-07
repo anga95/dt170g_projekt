@@ -59,7 +59,7 @@ public class HttpUtils extends AsyncTask<String,String,String> {
 
     @Override
     protected void onPostExecute(String result) {
-        // Parse JSON data and extract the items you need
+        /*// Parse JSON data and extract the items you need
         try {
             JSONArray jsonArray = new JSONArray(result); // assuming 'response' is the string containing the JSON array
             for (int i = 0; i < jsonArray.length(); i++) {
@@ -72,6 +72,6 @@ public class HttpUtils extends AsyncTask<String,String,String> {
             }
         } catch (JSONException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 }
