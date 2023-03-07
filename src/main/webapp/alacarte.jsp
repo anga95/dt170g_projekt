@@ -25,38 +25,38 @@
         <div class="col-3">
             <ul class="list-group">
                 <li class="list-group-item border-0" id="forratt">
-                    <h2>FÖRRÄTT</h2><hr><%
+                    <h2><strong>FÖRRÄTTER</strong></h2><hr><%
                     List<MenuItemsEntity> list = Manager.getAllMENY();
                     for (MenuItemsEntity obj : list) { %>
                     <h3 class="text-center"><%
                         if (obj.getCategory().equals("Starters")) {
                             out.println(obj.getName() + " " + obj.getPrice() + ":-");
                             out.println("<br>"); %>
-                    </h3><p> <%= obj.getDescription() %> </p>
+                    </h3><p class="text-center"> <%= obj.getDescription() %> </p>
                     <% }
                     }
                     %></li>
 
                 <li class="list-group-item border-0" id="huvudratt">
-                    <h2>HUVUDRÄTT</h2><hr><%
+                    <h2><strong>HUVUDRÄTTER</strong></h2><hr><%
                         for (MenuItemsEntity obj : list) { %>
                     <h3 class="text-center"><%
                             if (obj.getCategory().equals("MainCourse")) {
                                 out.println(obj.getName() + " " + obj.getPrice() + ":-");
                                 out.println("<br>"); %>
-                                </h3><p> <%= obj.getDescription() %> </p>
+                                </h3><p class="text-center"> <%= obj.getDescription() %> </p>
                                 <% }
                         }
                     %></li>
                 <li class="list-group-item border-0" id="dessert">
-                    <h2>DESSERT</h2><hr>
+                    <h2><strong>DESSERTER</strong></h2><hr>
                     <%
                         for (MenuItemsEntity obj : list) { %>
                     <h3 class="text-center"><%
                         if (obj.getCategory().equals("Dessert")) {
                         out.println(obj.getName() + " " + obj.getPrice() + ":-");
                         out.println("<br>"); %>
-                    </h3><p> <%= obj.getDescription() %> </p>
+                    </h3><p class="text-center"> <%= obj.getDescription() %> </p>
                     <% }
                         }
                     %></li>

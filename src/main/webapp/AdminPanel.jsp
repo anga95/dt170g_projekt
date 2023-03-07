@@ -14,7 +14,9 @@
         <nav class="col-sm-2 navbar navbar-dark position-fixed ms-5">
             <div class="container-fluid">
                 <div class="sidebar">
+
                     <ul class="list-group">
+                        <li class="lista list-group-item border-0"><a style="color: #212529; text-decoration: none" href="index.jsp"><strong>Hem</strong></a></li>
                         <li class="lista list-group-item border-0 mb-2" id="veckomeny" onclick="showChoiceInfo('veckomeny'); hideSecondCard(); hideAddCarteCard()">Veckomeny</li>
                         <li class="lista list-group-item border-0 mb-2" id="carte" onclick="showChoiceInfo('carte'); hideSecondCard(); displayAddCarteCard()">A la carte</li>
                         <li class="lista list-group-item border-0 mb-2" id="anställda" onclick="showChoiceInfo('anställda'); displaySecondCard(); hideAddCarteCard()">Anställda</li>
@@ -145,7 +147,7 @@
                     <li class="list-group-item d-flex justify-content-between">
                         <%= obj2.getName() %>
                         <div>
-                            <button type="button" class="btn btn-sm btn-danger" onclick="deleteMenuItem(<%=obj2.getId()%>);">Delete</button>
+                            <button type="button" class="btn btn-sm btn-danger" onclick="deleteMenuItem(<%=obj2.getId()%>)">Delete</button>
                         </div>
                     </li>
                     <%
