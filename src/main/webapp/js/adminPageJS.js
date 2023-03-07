@@ -98,11 +98,34 @@ function deleteMenuItem(id) {
             type: "POST",
             data: { id: id },
             success: function() {
-                // Reload the page after the employee is deleted
-                location.reload();
+                // Reload the page after the employee is deleted and show carte
+                window.location.href = "AdminPanel.jsp?functionCarte=showCarte";
             }
         });
     }
 }
+
+const form = document.querySelector('#carteForm');
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault(); // prevent the default form submission behavior
+
+
+    let kategori = document.querySelector('#category').value;
+        let name = document.querySelector('#namn').value;
+        let desc = document.querySelector('#description').value;
+        let price = document.querySelector('#price').value;
+
+        alert(kategori);
+        alert(name);
+    $.ajax({
+        type: 'POST', // set the HTTP method
+        url: 'AdminAddALaCarte', // set the URL of the servlet
+        data: { kategori: kategori, name: name, desc: desc, price: price },
+        success: function () {
+            window.location.href = "AdminPanel.jsp?functionCarte=showCarte";
+        }
+    });
+});
 
 

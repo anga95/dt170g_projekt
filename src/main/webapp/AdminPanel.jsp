@@ -86,7 +86,7 @@
 
                     <div class="choice-info" id="carte-info">
                         <div class="card-body">
-                            <form accept-charset="UTF-8" action="${pageContext.request.contextPath}/AdminAddALaCarte" method="post">
+                            <form accept-charset="UTF-8" action=""  method="post" id="carteForm">
                                 <div class="form-group">
                                     <h3 class="text-center mb-4">Måltider</h3>
                                     <label for="category">Kategori</label>
@@ -145,7 +145,7 @@
                     <li class="list-group-item d-flex justify-content-between">
                         <%= obj2.getName() %>
                         <div>
-                            <button type="button" class="btn btn-sm btn-danger" onclick="deleteMenuItem(<%=obj2.getId()%>);showCarte()">Delete</button>
+                            <button type="button" class="btn btn-sm btn-danger" onclick="deleteMenuItem(<%=obj2.getId()%>);">Delete</button>
                         </div>
                     </li>
                     <%
