@@ -26,7 +26,7 @@ function nextDay() {
     document.getElementById("selectedDay").value = days[currentDayIndex];
 }
 
-const choices = document.querySelectorAll(".list-group-item");
+const choices = document.querySelectorAll(".lista");
 const choiceInfos =document.querySelectorAll(".choice-info");
 const veckomeny = document.getElementById("veckomeny");
 const carte = document.getElementById("carte");
@@ -85,7 +85,7 @@ function deleteEmployee(id) {
             data: { id: id },
             success: function() {
                 // Reload the page after the employee is deleted
-                location.reload();
+                window.location.href = "AdminPanel.jsp?functionName=myFunction";
             }
         });
     }
