@@ -60,7 +60,7 @@ public class AdminAddALaCarteToDatabase extends HttpServlet{
         addALaCarte.saveData(newFood);
 
         // Redirect to employee list page
-        String redirectUrl = "/AdminPanel.jsp";
+        String redirectUrl = "/AdminPanel.jsp?functionCarte=showCarte";
         RequestDispatcher dispatcher = request.getRequestDispatcher(redirectUrl);
         dispatcher.forward(request, response);
     }

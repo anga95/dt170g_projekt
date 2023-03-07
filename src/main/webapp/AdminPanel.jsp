@@ -145,7 +145,7 @@
                     <li class="list-group-item d-flex justify-content-between">
                         <%= obj.getName() %>
                         <div>
-                            <button type="button" class="btn btn-sm btn-danger" onclick="">Delete</button>
+                            <button type="button" class="btn btn-sm btn-danger" onclick="deleteMenuItem(<%=obj.getId()%>)">Delete</button>
                         </div>
                     </li>
                     <%
