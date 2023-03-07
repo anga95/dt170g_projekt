@@ -145,7 +145,7 @@
                     <li class="list-group-item d-flex justify-content-between">
                         <%= obj2.getName() %>
                         <div>
-                            <button type="button" class="btn btn-sm btn-danger" onclick="deleteMenuItem(<%=obj2.getId()%>);showCarte()">Delete</button>
+                            <button type="button" class="btn btn-sm btn-danger" onclick="deleteMenuItem(<%=obj2.getId()%>)">Delete</button>
                         </div>
                     </li>
                     <%
@@ -163,7 +163,7 @@
                     <li class="list-group-item d-flex justify-content-between">
                         <%= obj2.getName() %>
                         <div>
-                            <button type="button" class="btn btn-sm btn-danger" onclick="">Delete</button>
+                            <button type="button" class="btn btn-sm btn-danger" onclick="deleteMenuItem(<%=obj2.getId()%>)">Delete</button>
                         </div>
                     </li>
                     <% }
@@ -179,7 +179,7 @@
                     <li class="list-group-item d-flex justify-content-between">
                         <%= obj2.getName() %>
                         <div>
-                            <button type="button" class="btn btn-sm btn-danger" onclick="">Delete</button>
+                            <button type="button" class="btn btn-sm btn-danger" onclick="deleteMenuItem(<%=obj2.getId()%>)">Delete</button>
                         </div>
                     </li>
                     <% }
