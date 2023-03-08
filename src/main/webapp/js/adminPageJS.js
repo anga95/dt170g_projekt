@@ -12,6 +12,10 @@ function previousDay() {
     document.getElementById("exampleFormControlInput3").value = "";
     // Update the hidden input field with the current day value
     document.getElementById("selectedDay").value = days[currentDayIndex];
+    document.getElementById("veckomeny-info").classList.remove("show");
+    setTimeout(function() {
+        document.getElementById("veckomeny-info").classList.add("show");
+    }, 230);
 }
 
 function nextDay() {
@@ -24,7 +28,13 @@ function nextDay() {
     document.getElementById("exampleFormControlInput3").value = "";
     // Update the hidden input field with the current day value
     document.getElementById("selectedDay").value = days[currentDayIndex];
+    // trigger the fade animation
+    document.getElementById("veckomeny-info").classList.remove("show");
+    setTimeout(function() {
+        document.getElementById("veckomeny-info").classList.add("show");
+    }, 230);
 }
+
 
 const choices = document.querySelectorAll(".lista");
 const choiceInfos =document.querySelectorAll(".choice-info");
@@ -145,4 +155,6 @@ employeeForm.addEventListener('submit', (event) => {
         }
     });
 });
+
+
 
