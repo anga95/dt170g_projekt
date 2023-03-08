@@ -1,11 +1,3 @@
-
-CREATE TABLE TEST.RESTAURANT (
-    ID INT PRIMARY KEY,
-    NAME VARCHAR(255)
-);
-INSERT INTO TEST.RESTAURANT (ID, NAME)
-VALUES (1, 'antons skafferi');
-
 CREATE TABLE TEST.employee (
       id INTEGER GENERATED ALWAYS AS IDENTITY constraint employee_pk PRIMARY KEY,
       first_name VARCHAR(255) NOT NULL,
@@ -74,7 +66,7 @@ create table TEST.daily_lunch
     id      INTEGER generated always as identity
         constraint daily_lunch_pk
             primary key,
-    weekday varchar(25),
+    weekday varchar(25) ,
     lunch_1 varchar(250),
     lunch_2 varchar(250),
     lunch_3 varchar(250)
@@ -123,10 +115,10 @@ create table TEST.ORDER_ITEMS
 (
     ID           INTEGER GENERATED ALWAYS AS IDENTITY
         constraint "ORDER_ITEMS_pk" primary key,
-    ORDER_ID     INTEGER
-        constraint ORDER_ID references ORDERS,
     MENU_ITEM_ID INTEGER
-        constraint MENU_ITEM_ID references MENU_ITEMS,
+        constraint MENU_ITEM_ID references TEST.MENU_ITEMS(ID),
+    ORDER_ID     INTEGER
+        constraint ORDER_ID references TEST.ORDERS(ID),
     STATUS       BOOLEAN default FALSE
 );
 
