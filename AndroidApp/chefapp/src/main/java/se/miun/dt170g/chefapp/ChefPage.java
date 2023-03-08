@@ -97,7 +97,8 @@ public class ChefPage extends AppCompatActivity {
         }
 
         if(checkBoxstarter.isChecked() && checkBoxmaincourse.isChecked() && checkBoxdessert.isChecked()){
-
+        ordersamples.remove(0);
+        chefpageadapter.notifyDataSetChanged();
         }
     }
         @Override
@@ -125,6 +126,14 @@ public class ChefPage extends AppCompatActivity {
             ordernr2.setStarter(new ArrayList<String>(Arrays.asList("kladdkaka", "glass", "cheesecake")));
             ordernr2.setDessert(new ArrayList<String>(Arrays.asList("kladdkaka", "glass", "cheesecake")));
             ordersamples.add(ordernr2);
+
+            Order ordernr3 = new Order(3, 3, new ArrayList<String>(), new ArrayList<String>(), new ArrayList<String>(), false, false, false);
+            ordernr3.setPriority(3);
+            ordernr3.setTableNr(3);
+            ordernr3.setStarter(new ArrayList<String>(Arrays.asList("soppa", "bröd")));
+            ordernr3.setMainCourse(new ArrayList<String>(Arrays.asList("köttbullar", "köttfärssås")));
+            ordernr3.setDessert(new ArrayList<String>(Arrays.asList("kladdkaka")));
+            ordersamples.add(ordernr3);
 
 
             chefpageadapter = new ChefPageAdapter(ordersamples);
