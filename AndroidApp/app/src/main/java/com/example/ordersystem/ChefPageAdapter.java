@@ -9,13 +9,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class ChefPageAdapter extends RecyclerView.Adapter<ChefPageAdapter.ViewHolder> {
 
-    private List<Order> orders;
+    private ArrayList<Order> orders;
 
-    public ChefPageAdapter(List<Order> orders) {
+    public ChefPageAdapter(ArrayList<Order> orders) {
         this.orders = orders;
     }
 

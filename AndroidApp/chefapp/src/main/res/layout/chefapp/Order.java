@@ -1,6 +1,6 @@
 package se.miun.dt170g.chefapp;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Order {
     private int tableNr;
@@ -8,16 +8,16 @@ public class Order {
     private int priority;
 
     private String course;
-    private List<String> starter;
-    private List<String> mainCourse;
-    private List<String> dessert;
+    private ArrayList<String> starter;
+    private ArrayList<String> mainCourse;
+    private ArrayList<String> dessert;
     private boolean starterready;
     private boolean mainCourseready;
     private boolean dessertready;
 
     private boolean completed;
 
-    public Order(int tableNr, List<String> starter, List<String> mainCourse, List<String> dessert, boolean
+    public Order(int tableNr, ArrayList<String> starter, ArrayList<String> mainCourse, ArrayList<String> dessert, boolean
                  starterisready, boolean mainCourseisready, boolean dessertisready){
         this.tableNr = tableNr;
         this.starter = starter;
@@ -36,7 +36,7 @@ public class Order {
         return tableNr;
     }
 
-    public List<String> getStarter() {
+    public ArrayList<String> getStarter() {
         return starter;
     }
 
@@ -48,7 +48,7 @@ public class Order {
         this.starterready = starterready;
     }
 
-    public List<String> getMainCourse(){
+    public ArrayList<String> getMainCourse(){
         return mainCourse;
     }
 
@@ -60,7 +60,7 @@ public class Order {
         this.mainCourseready = mainCourseready;
     }
 
-    public List<String> getDessert(){
+    public ArrayList<String> getDessert(){
         return dessert;
     }
 

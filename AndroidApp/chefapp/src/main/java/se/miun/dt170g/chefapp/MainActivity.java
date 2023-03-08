@@ -7,21 +7,15 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    //test
-    Button button1;
-    Button button2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button1 = (Button)findViewById(R.id.personalBtn);
 
-
-        button2 = (Button)findViewById(R.id.kockBtn);
-        button2.setOnClickListener(view -> {
-            Intent intent2 = new Intent(MainActivity.this, ChefPage.class);
+            Intent intent2 = new Intent(this, ChefPage.class);
             startActivity(intent2);
-        });
+            finish();
+
     }
 }

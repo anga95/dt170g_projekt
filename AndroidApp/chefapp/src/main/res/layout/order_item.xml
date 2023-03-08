@@ -1,104 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/table"
-        android:layout_width="187dp"
-        android:layout_height="wrap_content"
-        android:text="@string/table_x" />
 
-<!--    Starter-->
+
     <LinearLayout
-        android:layout_width="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:background="@drawable/outline"
+        android:outlineProvider="background"
+        android:elevation="4dp"
+        android:orientation="vertical"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp">
 
         <TextView
-            android:id="@+id/priostarter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/prio_3" />
-
-        <TextView
-            android:id="@+id/starter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/f_rr_tt" />
-
-        <CheckBox
-            android:id="@+id/checkBoxstarter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/table"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="@string/table_x"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:gravity="center"
             />
 
-    </LinearLayout>
+        <!--    Starter-->
+        <LinearLayout
+            android:id="@+id/starterLayout"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/outline2"
+            android:outlineProvider="background"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/starter_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+            >
 
-    <!--    MainCourse-->
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            <TextView
+                android:id="@+id/priostarter"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
 
-        <TextView
-            android:id="@+id/priomaincourse"
-            android:layout_width="wrap_content"
+                android:text="@string/prio_3"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/starter"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+                android:text="@string/f_rr_tt"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <CheckBox
+                android:id="@+id/checkBoxstarter"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+                android:layout_gravity="end"
+                android:buttonTint="@color/black" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/starter_List"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/prio_1" />
+            android:background="@drawable/outline3"
 
-        <TextView
-            android:id="@+id/maincourse"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/varmr_tt" />
-
-        <CheckBox
-            android:id="@+id/checkBoxmaincourse"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-             />
-
-    </LinearLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/maincourse_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <!--    Dessert-->
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/priodessert"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/prio_2" />
-
-        <TextView
-            android:id="@+id/dessert"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/efterr_tt" />
-
-        <CheckBox
-            android:id="@+id/checkBoxdessert"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             />
 
-    </LinearLayout>
+        <!--    MainCourse-->
+        <LinearLayout
+            android:id="@+id/maincourseLayout"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/outline2"
+            android:orientation="horizontal">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/dessert_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</LinearLayout>
+            <TextView
+                android:id="@+id/priomaincourse"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+                android:text="@string/prio_3"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/maincourse"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+                android:text="Varmrätt"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <CheckBox
+                android:id="@+id/checkBoxmaincourse"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:buttonTint="@color/black"
+
+                />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/maincourse_List"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/outline3"
+
+            />
+        <!--    Dessert-->
+        <LinearLayout
+            android:id="@+id/dessertLayout"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/outline2"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/priodessert"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+                android:text="@string/prio_3"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/dessert"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+                android:text="Efterrätt"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:gravity="center"
+                />
+
+            <CheckBox
+                android:id="@+id/checkBoxdessert"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:buttonTint="@color/black" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dessert_List"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/outline3"
+
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/bell"
+
+                android:onClick="myClickHandler"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>

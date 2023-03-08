@@ -7,17 +7,18 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.constraintlayout.utils.widget.MotionLabel;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
-import java.util.List;
 
-/*
+import java.util.ArrayList;
+
+
 public class ChefPageAdapter extends RecyclerView.Adapter<ChefPageAdapter.ViewHolder> {
 
-    private List<Order> orders;
+    private ArrayList<Order> orders;
 
-    public ChefPageAdapter(List<Order> orders) {
+    public ChefPageAdapter(ArrayList<Order> orders) {
         this.orders = orders;
     }
 
@@ -26,13 +27,13 @@ public class ChefPageAdapter extends RecyclerView.Adapter<ChefPageAdapter.ViewHo
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView table;
-        public RecyclerView starter_list;
+        public RecyclerView starter_List;
         public CheckBox checkBoxstarter;
 
-        public RecyclerView maincourse_list;
+        public RecyclerView maincourse_List;
         public CheckBox checkBoxmaincourse;
 
-        public RecyclerView dessert_list;
+        public RecyclerView dessert_List;
         public CheckBox checkBoxdessert;
 
         public TextView starter;
@@ -44,12 +45,16 @@ public class ChefPageAdapter extends RecyclerView.Adapter<ChefPageAdapter.ViewHo
         public ViewHolder(View itemView) {
             super(itemView);
             table = itemView.findViewById(R.id.table);
-            starter_list = itemView.findViewById(R.id.starter_list);
+            starter_List = itemView.findViewById(R.id.starter_List);
+            starter = itemView.findViewById(R.id.starter);
             checkBoxstarter = itemView.findViewById(R.id.checkBoxstarter);
-            maincourse_list = itemView.findViewById(R.id.maincourse_list);
+            maincourse_List = itemView.findViewById(R.id.maincourse_List);
+            maincourse = itemView.findViewById(R.id.maincourse);
             checkBoxmaincourse = itemView.findViewById(R.id.checkBoxmaincourse);
-            dessert_list = itemView.findViewById(R.id.dessert_list);
+            dessert_List = itemView.findViewById(R.id.dessert_List);
+            dessert = itemView.findViewById(R.id.dessert);
             checkBoxdessert = itemView.findViewById(R.id.checkBoxdessert);
+
         }
     }
 
@@ -65,45 +70,37 @@ public class ChefPageAdapter extends RecyclerView.Adapter<ChefPageAdapter.ViewHo
 
         Order order = orders.get(position);
 
-        holder.table.setText("Table" + order.getTableNr());
-
+        holder.table.setText("Table" + " " +order.getTableNr());
+        holder.starter.setText("Förrätt");
         if (order.getStarter().size() > 0) {
-            holder.starter_list.setVisibility(View.VISIBLE);
-            ArrayList<String> starterList = (ArrayList<String>) order.getStarter();
-            StringBuilder starterStringBuilder = new StringBuilder();
-            for (String starter : starterList) {
-                starterStringBuilder.append("- ").append(starter).append("\n");
-            }
-            holder.starter.setText(starterStringBuilder.toString());
-            holder.checkBoxstarter.setChecked(order.starterReady());
+            holder.starter_List.setVisibility(View.VISIBLE);
+            ArrayList<String> starterArrayList = (ArrayList<String>) order.getStarter();
+            holder.starter_List.setLayoutManager(new LinearLayoutManager(holder.itemView.getContext()));
+            holder.starter_List.setAdapter(new CourseAdapter(starterArrayList, "Starter"));
+
         } else {
-            holder.starter_list.setVisibility(View.GONE);
+            holder.starter_List.setVisibility(View.GONE);
         }
 
         if (order.getMainCourse().size() > 0) {
-            holder.maincourse_list.setVisibility(View.VISIBLE);
-            ArrayList<String> mainCourseList = (ArrayList<String>) order.getMainCourse();
-            StringBuilder mainCourseStringBuilder = new StringBuilder();
-            for (String mainCourse : mainCourseList) {
-                mainCourseStringBuilder.append("- ").append(mainCourse).append("\n");
-            }
-            holder.maincourse.setText(mainCourseStringBuilder.toString());
-            holder.checkBoxmaincourse.setChecked(order.mainCourseReady());
+            holder.maincourse_List.setVisibility(View.VISIBLE);
+            ArrayList<String> mainCourseArrayList = (ArrayList<String>) order.getMainCourse();
+            holder.maincourse_List.setLayoutManager(new LinearLayoutManager(holder.itemView.getContext()));
+            holder.maincourse_List.setAdapter(new CourseAdapter(mainCourseArrayList, "MainCourse"));
+
         } else {
-            holder.maincourse_list.setVisibility(View.GONE);
+            holder.maincourse_List.setVisibility(View.GONE);
         }
 
         if (order.getDessert().size() > 0) {
-            holder.dessert_list.setVisibility(View.VISIBLE);
-            ArrayList<String> dessertList = (ArrayList<String>) order.getDessert();
-            StringBuilder dessertStringBuilder = new StringBuilder();
-            for (String dessert : dessertList) {
-                dessertStringBuilder.append("- ").append(dessert).append("\n");
-            }
-            holder.dessert.setText(dessertStringBuilder.toString());
-            holder.checkBoxdessert.setChecked(order.dessertReady());
+            holder.dessert_List.setVisibility(View.VISIBLE);
+            ArrayList<String> dessertArrayList = (ArrayList<String>) order.getDessert();
+            holder.dessert_List.setLayoutManager(new LinearLayoutManager(holder.itemView.getContext()));
+            holder.dessert_List.setAdapter(new CourseAdapter(dessertArrayList, "Dessert"));
+
+
         } else {
-            holder.dessert_list.setVisibility(View.GONE);
+            holder.dessert_List.setVisibility(View.GONE);
         }
 
     }
@@ -113,5 +110,7 @@ public class ChefPageAdapter extends RecyclerView.Adapter<ChefPageAdapter.ViewHo
     public int getItemCount() {
         return orders.size();
     }
+
+
 }
-*/
+

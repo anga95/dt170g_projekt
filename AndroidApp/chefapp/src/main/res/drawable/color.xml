@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <color android:name="setcolor"
+        tools:ignore="ExtraText">#80DADADA</color>
+
+    <color android:name="green">#00FF00</color>
+</resources>

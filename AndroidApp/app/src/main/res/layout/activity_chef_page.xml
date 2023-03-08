@@ -32,11 +32,11 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/order_list"
+            android:id="@+id/order_ArrayList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            tools:listitem="@layout/order_item" />
+            tools:ArrayListitem="@layout/order_item" />
 
     </LinearLayout>
 

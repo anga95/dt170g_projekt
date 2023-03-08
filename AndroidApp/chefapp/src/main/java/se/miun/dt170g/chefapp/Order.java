@@ -1,6 +1,6 @@
 package se.miun.dt170g.chefapp;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Order {
     private int tableNr;
@@ -8,17 +8,17 @@ public class Order {
     private int priority;
 
     private String course;
-    private List<String> starter;
-    private List<String> mainCourse;
-    private List<String> dessert;
+    private ArrayList<String> starter;
+    private ArrayList<String> mainCourse;
+    private ArrayList<String> dessert;
     private boolean starterready;
     private boolean mainCourseready;
     private boolean dessertready;
 
     private boolean completed;
 
-    public Order(int priority, int tableNr, List<String> starter, List<String> mainCourse, List<String> dessert, boolean
-                 starterisready, boolean mainCourseisready, boolean dessertisready){
+    public Order(int priority, int tableNr, ArrayList<String> starter, ArrayList<String> mainCourse, ArrayList<String> dessert, boolean
+                 starterready, boolean mainCourseready, boolean dessertready){
         this.priority = priority;
         this.tableNr = tableNr;
         this.starter = starter;
@@ -38,11 +38,12 @@ public class Order {
     }
 
 
-    public void setStarter(List<String> starter) {
+    public void setStarter(ArrayList<String> starter) {
         this.starter = starter;
     }
-    public List<String> getStarter() {
-        return starter;
+
+    public ArrayList<String> getStarter() {
+        return new ArrayList<String>(starter);
     }
 
     public boolean starterReady() {
@@ -54,10 +55,10 @@ public class Order {
     }
 
 
-    public void setMainCourse(List<String> mainCourse) {
+    public void setMainCourse(ArrayList<String> mainCourse) {
         this.mainCourse = mainCourse;
     }
-    public List<String> getMainCourse(){
+    public ArrayList<String> getMainCourse(){
         return mainCourse;
     }
 
@@ -69,10 +70,10 @@ public class Order {
         this.mainCourseready = mainCourseready;
     }
 
-    public void setDessert(List<String> dessert) {
+    public void setDessert(ArrayList<String> dessert) {
         this.dessert = dessert;
     }
-    public List<String> getDessert(){
+    public ArrayList<String> getDessert(){
         return dessert;
     }
 

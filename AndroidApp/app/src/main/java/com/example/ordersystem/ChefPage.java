@@ -13,12 +13,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 
+import java.util.ArrayArrayList;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ChefPage extends AppCompatActivity {
 
-    private RecyclerView orderlist;
+    private RecyclerView orderArrayList;
     private ChefPageAdapter chefpageadapter;
 
     @Override
@@ -26,17 +26,17 @@ public class ChefPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chef_page);
 
-        orderlist = findViewById(R.id.order_list);
+        orderArrayList = findViewById(R.id.order_ArrayList);
 
         chefpageadapter = new ChefPageAdapter(getOrderSample());
-        orderlist.setAdapter(chefpageadapter);
-        orderlist.setLayoutManager(new LinearLayoutManager(this));
+        orderArrayList.setAdapter(chefpageadapter);
+        orderArrayList.setLayoutManager(new LinearLayoutManager(this));
         }
 
-        private List<Order> getOrderSample() {
-            List<Order> ordersamples = new ArrayList<>();
+        private ArrayList<Order> getOrderSample() {
+            ArrayList<Order> ordersamples = new ArrayArrayList<>();
 
-            Order ordernr1 = new Order(1, new ArrayList<String>(), new ArrayList<String>(), new ArrayList<String>(), false, false, false);
+            Order ordernr1 = new Order(1, new ArrayArrayList<String>(), new ArrayArrayList<String>(), new ArrayArrayList<String>(), false, false, false);
             ordernr1.setTableNr(1);
             ordernr1.getStarter().add("Tomatsoppa");
             ordernr1.getMainCourse().add("Köttbullar");
