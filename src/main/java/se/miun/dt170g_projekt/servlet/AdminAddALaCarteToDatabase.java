@@ -1,4 +1,4 @@
-package se.miun.dt170g_projekt;
+package se.miun.dt170g_projekt.servlet;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -6,8 +6,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import se.miun.dt170g_projekt.entites.*;
-import se.miun.dt170g_projekt.persistanceManager.Manager;
+import se.miun.dt170g_projekt.entities.*;
+import se.miun.dt170g_projekt.persistanceManager.ServletManager;
 //import se.miun.dt170g_projekt.persistanceManager.dailyLunch;
 
 import java.io.IOException;
@@ -29,10 +29,10 @@ public class AdminAddALaCarteToDatabase extends HttpServlet{
         System.out.println(name);
         System.out.println(desc);
 
-        Manager addALaCarte = null;
+        ServletManager addALaCarte = null;
 
         try {
-            addALaCarte = new Manager();
+            addALaCarte = new ServletManager();
         } catch (Exception e) {
             e.printStackTrace();
         }

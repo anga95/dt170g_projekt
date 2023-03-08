@@ -1,9 +1,7 @@
-package se.miun.dt170g_projekt.entites;
+package se.miun.dt170g_projekt.entities;
 
 import jakarta.persistence.*;
 
-import java.sql.Date;
-import java.sql.Time;
 import java.util.Objects;
 
 @Entity

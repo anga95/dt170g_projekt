@@ -1,7 +1,7 @@
-<%@ page import="se.miun.dt170g_projekt.entites.EmployeeEntity" %>
+<%@ page import="se.miun.dt170g_projekt.entities.EmployeeEntity" %>
 <%@ page import="java.util.List" %>
-<%@ page import="se.miun.dt170g_projekt.persistanceManager.Manager" %>
-<%@ page import="se.miun.dt170g_projekt.entites.DailyLunchEntity" %>
+<%@ page import="se.miun.dt170g_projekt.persistanceManager.ServletManager" %>
+<%@ page import="se.miun.dt170g_projekt.entities.DailyLunchEntity" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"  %>
 
 <%@ include file="head.jsp" %>
@@ -29,7 +29,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Måndag</h5>
                         <%
-                            List<DailyLunchEntity> list = Manager.getAllDaily();
+                            List<DailyLunchEntity> list = ServletManager.getAllDaily();
                             for (DailyLunchEntity obj : list) {
                                 if (obj.getWeekday().equals("Måndag")) {
                         %>

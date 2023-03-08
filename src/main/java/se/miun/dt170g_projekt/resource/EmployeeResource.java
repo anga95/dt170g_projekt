@@ -1,12 +1,12 @@
-package se.miun.dt170g_projekt;
+package se.miun.dt170g_projekt.resource;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.core.MediaType;
-import se.miun.dt170g_projekt.persistanceManager.Manager;
-import se.miun.dt170g_projekt.entites.EmployeeEntity;
+import se.miun.dt170g_projekt.bean.EmployeeBean;
+import se.miun.dt170g_projekt.entities.EmployeeEntity;
 
 import javax.naming.NamingException;
 

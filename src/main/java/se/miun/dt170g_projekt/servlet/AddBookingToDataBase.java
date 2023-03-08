@@ -1,12 +1,12 @@
-package se.miun.dt170g_projekt;
+package se.miun.dt170g_projekt.servlet;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import se.miun.dt170g_projekt.entites.BookingEntity;
-import se.miun.dt170g_projekt.persistanceManager.Manager;
+import se.miun.dt170g_projekt.entities.BookingEntity;
+import se.miun.dt170g_projekt.persistanceManager.ServletManager;
 
 import java.io.IOException;
 import java.rmi.ServerException;
@@ -45,10 +45,10 @@ public class AddBookingToDataBase extends HttpServlet {
         booking.setNumberOfPeople(paramValue.get(6));
         booking.setExtra(paramValue.get(7));
 
-        Manager newBooking = null;
+        ServletManager newBooking = null;
 
         try {
-            newBooking = new Manager();
+            newBooking = new ServletManager();
         } catch (Exception e) {
             e.printStackTrace();
         }

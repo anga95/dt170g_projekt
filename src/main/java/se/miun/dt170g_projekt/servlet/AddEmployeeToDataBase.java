@@ -1,16 +1,14 @@
-package se.miun.dt170g_projekt;
+package se.miun.dt170g_projekt.servlet;
 
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import se.miun.dt170g_projekt.entites.EmployeeEntity;
-import se.miun.dt170g_projekt.persistanceManager.Manager;
+import se.miun.dt170g_projekt.entities.EmployeeEntity;
+import se.miun.dt170g_projekt.persistanceManager.ServletManager;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.rmi.ServerException;
 
 @WebServlet(name = "AddEmp", value = "/AddEmp")
@@ -32,9 +30,9 @@ public class AddEmployeeToDataBase extends HttpServlet {
         employee.setEmail(email);
         employee.setPhone(telnumber);
 
-        Manager newEmployee = null;
+        ServletManager newEmployee = null;
         try {
-            newEmployee = new Manager();
+            newEmployee = new ServletManager();
         } catch (Exception e) {
             e.printStackTrace();
         }
