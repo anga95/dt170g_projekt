@@ -1,0 +1,120 @@
+
+@font-face {
+    font-family: "Julius Sans One";
+    src: url("JuliusSansOne-Regular.ttf");
+}
+
+
+@font-face {
+    font-family: "Cedarville Cursive";
+    src : url("CedarvilleCursive-Regular.ttf");
+}
+
+ .foot-text{
+     font-size: 10px;
+ }
+
+
+@font-face {
+    font-family: "Sofia Sans Semi";
+    src: url("SofiaSansSemiCondensed-VariableFont_wght.ttf");
+}
+
+  h1{
+      font-family:"Julius Sans One", sans-serif;
+      color: #666666;
+
+    }
+  h3{
+      font-family: "Julius Sans One", sans-serif;
+
+    }
+
+ p{
+    font-family: "Julius Sans One", sans-serif;
+
+ }
+#forratt{
+    background-color: #fffbf2;
+
+}
+
+#forratt p{
+    font-family: "Cedarville Cursive", sans-serif;
+    font-size: 1.5rem;
+}
+
+#huvudratt{
+    background-color: #fffbf2;
+}
+
+#huvudratt p{
+    font-family: "Cedarville Cursive", sans-serif;
+    font-size: 1.5rem;
+}
+
+#dessert{
+    background-color: #fffbf2;
+}
+
+#dessert p{
+    font-family: "Cedarville Cursive", sans-serif;
+    font-size: 1.5rem;
+}
+
+body{
+    background-color: #fffbf2;
+}
+
+hr{
+    margin-left: 35px;
+    margin-right: 35px;
+    border: 1px dashed #a0772d;
+}
+
+.navbar {
+    font-family: "Julius Sans One", sans-serif;
+    background-color: #fffbf2;
+    font-size: 1.5rem;
+}
+.list-group{
+    background-color: #fffbf2;
+}
+.lista{
+    font-size: 2rem;
+    font-family: "Julius Sans One", sans-serif;
+    background-color: #fffbf2;
+}
+
+.lista:hover{
+    cursor: pointer;
+}
+.lista.selected {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.card p{
+    font-size: 1.5rem;
+    font-family: "Cedarville Cursive", sans-serif;
+}
+
+.card{
+    background-color: rgba(255, 251, 242, 0.88);
+}
+
+footer{
+    font-family: "Julius Sans One", sans-serif;
+    position: relative;
+    margin-top: -150px; /* negative value of footer height */
+    height: 150px;
+    clear:both;
+    padding-top:20px;
+    text-align: center;
+}
+
+h2 {
+    font-family: "Julius Sans One", sans-serif;
+    text-align: center;
+}
+
+
+

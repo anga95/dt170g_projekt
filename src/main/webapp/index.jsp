@@ -1,74 +1,119 @@
-<%--
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page import="jakarta.persistence.EntityManagerFactory, jakarta.persistence.Persistence, java.util.List" %>
-<%@ page import="se.miun.dt170g_projekt.persistanceManager.*" %>
-<%@ page import="se.miun.dt170g_projekt.entities.Employee" %>
-<%@page import="se.miun.dt170g_projekt.servlet.LunchListServlet" %>
+<%@ page import="se.miun.dt170g_projekt.entities.EmployeeEntity" %>
+<%@ page import="java.util.List" %>
+<%@ page import="se.miun.dt170g_projekt.persistanceManager.ServletManager" %>
+<%@ page import="se.miun.dt170g_projekt.entities.DailyLunchEntity" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"  %>
 
-<!DOCTYPE html>
-<html>
-<head>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <title>JSP - Hello World</title>
-</head>
-<body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-<h1><%= "Hello World!" %></h1>
+<%@ include file="head.jsp" %>
+
+
+ <%@ include file="navbar.jsp" %>
+
+
+<h1 class="display-1 text-center mt-3"><%= "Dagens lunch" %></h1>
 <br/>
-<h1>Lunch List</h1>
-<%= se.miun.dt170g_projekt.servlet.LunchListServlet.getLunchList() %>
+<div class="container-fluid d-flex justify-content-center mt-3 mb-5">
+    <div class="row">
+        <div class="col-6 d-flex align-items-center">
+            <ul>
+                <li class="lista list-group-item border-0 mb-2" id="måndag" onclick="showDayInfo('måndag')">Måndag</li>
+                <li class="lista list-group-item border-0 mb-2" id="tisdag" onclick="showDayInfo('tisdag')">Tisdag</li>
+                <li class="lista list-group-item border-0 mb-2" id="onsdag" onclick="showDayInfo('onsdag')">Onsdag</li>
+                <li class="lista list-group-item border-0 mb-2" id="torsdag" onclick="showDayInfo('torsdag')">Torsdag</li>
+                <li class="lista list-group-item border-0" id="fredag" onclick="showDayInfo('fredag')">Fredag</li>
+            </ul>
+        </div>
+        <div class="col-6">
+            <div class="card mt-3 pb-5" style="width: 20rem;">
+                <div class="day-info" id="måndag-info">
+                    <div class="card-body">
+                        <h5 class="card-title">Måndag</h5>
+                        <%
+                            List<DailyLunchEntity> list = ServletManager.getAllDaily();
+                            for (DailyLunchEntity obj : list) {
+                                if (obj.getWeekday().equals("Måndag")) {
+                        %>
+                        <p class="card-text"><%= obj.getLunch1() %></p>
+                        <br/>
+                        <p class="card-text"><%= obj.getLunch2() %></p>
+                        <br/>
+                        <p class="card-text"><%= obj.getLunch3() %></p>
+                        <% }} %>
+                    </div>
+                </div>
+
+
+                <div class="day-info" id="tisdag-info">
+                    <div class="card-body">
+                        <h5 class="card-title">Tisdag</h5>
+                        <%
+                            for (DailyLunchEntity obj : list) {
+                                if (obj.getWeekday().equals("Tisdag")) {
+                        %>
+                        <p class="card-text"><%= obj.getLunch1() %></p>
+                        <br/>
+                        <p class="card-text"><%= obj.getLunch2() %></p>
+                        <br/>
+                        <p class="card-text"><%= obj.getLunch3() %></p>
+                        <% }} %>
+                    </div>
+                </div>
+
+                <div class="day-info" id="onsdag-info">
+                    <div class="card-body">
+                        <h5 class="card-title">Onsdag</h5>
+                        <%
+                            for (DailyLunchEntity obj : list) {
+                                if (obj.getWeekday().equals("Onsdag")) {
+                        %>
+                        <p class="card-text"><%= obj.getLunch1() %></p>
+                        <br/>
+                        <p class="card-text"><%= obj.getLunch2() %></p>
+                        <br/>
+                        <p class="card-text"><%= obj.getLunch3() %></p>
+                        <% }} %>
+                    </div>
+                </div>
+
+                <div class="day-info" id="torsdag-info">
+                    <div class="card-body">
+                        <h5 class="card-title">Torsdag</h5>
+                        <%
+                            for (DailyLunchEntity obj : list) {
+                                if (obj.getWeekday().equals("Torsdag")) {
+                        %>
+                        <p class="card-text"><%= obj.getLunch1() %></p>
+                        <br/>
+                        <p class="card-text"><%= obj.getLunch2() %></p>
+                        <br/>
+                        <p class="card-text"><%= obj.getLunch3() %></p>
+                        <% }} %>
+                    </div>
+                </div>
+
+                <div class="day-info" id="fredag-info">
+                    <div class="card-body">
+                        <h5 class="card-title">Fredag</h5>
+                        <%
+                            for (DailyLunchEntity obj : list) {
+                                if (obj.getWeekday().equals("Fredag")) {
+                        %>
+                        <p class="card-text"><%= obj.getLunch1() %></p>
+                        <br/>
+                        <p class="card-text"><%= obj.getLunch2() %></p>
+                        <br/>
+                        <p class="card-text"><%= obj.getLunch3() %></p>
+                        <% }} %>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
 <br/>
-<a href="hello-servlet">Hello Servlet</a><br>
-<%
-Employee_pm employee_pm = new Employee_pm();
-List<Employee> employees = employee_pm.getAllEmployees();
-
-
-%>
-
-<table>
-  <thead>
-  <tr>
-    <th>ID</th>
-    <th>Email</th>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Phone</th>
-    <th>Hourly Rate</th>
-    <th>Start Date</th>
-  </tr>
-  </thead>
-  <tbody>
-  <% for (Employee employee : employees) { %>
-  <tr>
-    <td><%= employee.getId() %></td>
-    <td><%= employee.getEmail() %></td>
-    <td><%= employee.getFirstName() %></td>
-    <td><%= employee.getLastName() %></td>
-    <td><%= employee.getPhone() %></td>
-    <td><%= employee.getHourlyRate() %></td>
-    <td><%= employee.getStartDate() %></td>
-  </tr>
-  <% } %>
-  </tbody>
-</table>
-<!-- Create new employee form -->
-<h2>Create New Employee</h2>
-<form action="${pageContext.request.contextPath}/addEmployee" method="post">
-  <label for="email">Email:</label>
-  <input type="text" id="email" name="email"><br>
-
-  <label for="firstName">First Name:</label>
-  <input type="text" id="firstName" name="firstName"><br>
-
-  <label for="lastName">Last Name:</label>
-  <input type="text" id="lastName" name="lastName"><br>
-
-  <label for="telephone">Telephone:</label>
-  <input type="text" id="telephone" name="telephone"><br>
-
-  <input type="submit" name="submit" value="Submit" />
-</form>
-
+<script src="js/dagensLunch.js"></script>
+<%@ include file="event.jsp" %>
+<%@ include file="footer.jsp" %>
 </body>
-</html>--%>
+</html>

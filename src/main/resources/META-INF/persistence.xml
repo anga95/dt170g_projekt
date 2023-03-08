@@ -3,54 +3,24 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
              version="3.0">
-    <persistence-unit name="default">
-        <jta-data-source>db</jta-data-source>
-
-        <mapping-file>MenuItems.xml</mapping-file>
-        <mapping-file>Orders.xml</mapping-file>
-        <mapping-file>OrderItems.xml</mapping-file>
-        <mapping-file>Employee.xml</mapping-file>
-        <mapping-file>Shift.xml</mapping-file>
-        <mapping-file>Schedule.xml</mapping-file>
-        <mapping-file>LeaveDay.xml</mapping-file>
-        <mapping-file>ExtraDay.xml</mapping-file>
-
-<!--        <class>se.miun.dt170g_projekt.entities.Restaurant_entity</class>-->
-<!--        <class>se.miun.dt170g_projekt.entities.Employee</class>-->
-<!--        <class>se.miun.dt170g_projekt.entities.EmployeeSchedule</class>-->
-<!--        <class>se.miun.dt170g_projekt.entities.Shift</class>-->
-<!--        <class>se.miun.dt170g_projekt.entities.DailyLunch</class>-->
-        <class>martin_test.deeper.entities.MenuItems</class>
-        <class>martin_test.deeper.entities.Orders</class>
-        <class>martin_test.deeper.entities.OrderItems</class>
-        <class>martin_test.deeper.entities.Employee</class>
-        <class>martin_test.deeper.entities.Shift</class>
-        <class>martin_test.deeper.entities.Schedule</class>
-        <class>martin_test.deeper.entities.LeaveDay</class>
-        <class>martin_test.deeper.entities.ExtraDay</class>
-
-        <exclude-unlisted-classes>false</exclude-unlisted-classes>
-
+    <persistence-unit name="DB">
+        <jta-data-source>DB</jta-data-source>
+        <class>se.miun.dt170g_projekt.entities.Restaurant_entity</class>
+        <class>se.miun.dt170g_projekt.entities.Employee</class>
+        <class>se.miun.dt170g_projekt.entities.EmployeeSchedule</class>
+        <class>se.miun.dt170g_projekt.entities.Shift</class>
+        <class>se.miun.dt170g_projekt.entities.DailyLunch</class>
+        <class>se.miun.dt170g_projekt.entities.DailyLunchEntity</class>
+        <class>se.miun.dt170g_projekt.entities.BookingEntity</class>
+        <class>se.miun.dt170g_projekt.entities.EmployeeEntity</class>
+        <class>se.miun.dt170g_projekt.entities.MenuItemsEntity</class>
         <properties>
-<!--            jakarta persistence login-->
-<!--            <property name="jakarta.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>-->
-<!--            <property name="jakarta.persistence.jdbc.url" value="jdbc:derby://localhost:1527/DB;create=true"/>-->
-<!--            <property name="jakarta.persistence.jdbc.user" value="APP"/>-->
-<!--            <property name="jakarta.persistence.jdbc.password" value="APP"/>-->
-
-<!--            <property name="eclipselink.logging.level" value="FINEST"/>-->
-        </properties>
-
-        <!--<properties>
-            &lt;!&ndash;            driver, url and connection credentials&ndash;&gt;
+            <!--            driver, url and connection credentials-->
             <property name="jakarta.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:derby://localhost:1527/DB"/>
             <property name="jakarta.persistence.jdbc.user" value="APP"/>
             <property name="jakarta.persistence.jdbc.password" value="APP"/>
-            <property name="eclipselink.jdbc.url" value="jdbc:derby://localhost:1527/DB;create=true"/>
-            <property name="eclipselink.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
-            <property name="eclipselink.jdbc.password" value="app"/>
 
-        </properties>-->
+        </properties>
     </persistence-unit>
 </persistence>

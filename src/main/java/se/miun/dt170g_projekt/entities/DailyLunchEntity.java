@@ -6,8 +6,8 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "DAILY_LUNCH", schema = "TEST")
-public class DailyLunch {
+@Table(name = "DAILY_LUNCH", schema = "TEST", catalog = "")
+public class DailyLunchEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "ID")
@@ -69,7 +69,7 @@ public class DailyLunch {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        DailyLunch that = (DailyLunch) o;
+        DailyLunchEntity that = (DailyLunchEntity) o;
         return id == that.id && Objects.equals(weekday, that.weekday) && Objects.equals(lunch1, that.lunch1) && Objects.equals(lunch2, that.lunch2) && Objects.equals(lunch3, that.lunch3);
     }
 
