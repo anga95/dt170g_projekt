@@ -79,6 +79,15 @@ create table TEST.daily_lunch
     lunch_2 varchar(250),
     lunch_3 varchar(250)
 );
+
+insert into TEST.daily_lunch (weekday, lunch_1, lunch_2, lunch_3)
+values
+    ('Måndag', 'Pyttipanna (stekt potatis med lök och kött)', 'Fish and chips med remouladsås', 'Vegetarisk lasagne'),
+    ('Tisdag','Köttbullar med potatismos och lingonsylt', 'Köttfärslimpa med potatismos och lingonsylt', 'Vegetarisk lasagne'),
+    ('Onsdag', 'Grillad kyckling med rostade rotfrukter','Stekt strömming med potatismos och lingon' ,'Vegetarisk quinoasallad med fetaost och rödbetor'),
+    ('Torsdag', 'Fatimas skogs biff med nyodlade potatisar och brunsås ', 'Lax panett med rotmos och grönsaker', 'Vegetarisk bergshamburgare med tillbehör'),
+    ('Fredag', 'Köttfärssås med pasta', 'Köttfärslimpa med potatismos och lingonsylt', 'Vegetarisk lasagne');
+
 create table TEST.booking
 (
     id      INTEGER generated always as identity
