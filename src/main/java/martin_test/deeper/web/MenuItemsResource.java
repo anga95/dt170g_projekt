@@ -1,6 +1,7 @@
 package martin_test.deeper.web;
 
 //import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import jakarta.inject.Inject;
 import jakarta.json.*;
 import jakarta.persistence.EntityManager;
@@ -27,7 +28,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
+import martin_test.deeper.pm.Manager;
 
+import javax.naming.NamingException;
 
 
 @Path("/MenuItems")
@@ -56,11 +59,33 @@ public class MenuItemsResource {
     @POST
     @Path("/Insert")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response insertMenuItem(MenuItems menuItem) {
-        MenuItems createdMenuItem = menuItemsBean.create(menuItem);
-        return Response.status(Response.Status.CREATED)
-                .entity(createdMenuItem)
-                .build();
+    public void insertMenuItem(String jsonObject) {
+        System.out.println("/INSERT REACHED");
+        MenuItems menuItems = new MenuItems();
+        menuItems.setDescription("TEST LYCKADES");
+        menuItems.setPrice(300);
+        Manager manager = null;
+        try{
+            manager = new Manager();
+            System.out.println("MANAGER REACHED");
+        } catch (NamingException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("OUTSIDE REACHED");
+        manager.saveData(menuItems);
+        /*Gson gson = new Gson();
+        MenuItems menuItems = gson.fromJson(jsonObject, MenuItems.class);
+        *//*MenuItems menuItems = new MenuItems();
+        menuItems.setPrice(jsonObject.getInt("price"));
+        menuItems.setName(jsonObject.getString("name"));
+        menuItems.setCategory(jsonObject.getString("category"));
+        menuItems.setTime(30);
+        menuItems.setDescription("TESTTEST");
+*//*
+        EntityManager em = Persistence.createEntityManagerFactory("DB").createEntityManager();
+        em.getTransaction().begin();
+        em.persist(menuItems);
+        em.getTransaction().commit();*/
     }
 
     /*@POST

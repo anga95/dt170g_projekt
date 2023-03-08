@@ -33,6 +33,7 @@ public class HttpUtils extends AsyncTask<String,String,String> {
             connection.setRequestMethod(method);
 
             if(method.equals("POST")){
+                Log.d(TAG, "HELLO");
                 connection.setDoOutput(true);
                 connection.setRequestProperty("Content-Type", "application/json");
                 OutputStream os = connection.getOutputStream();
@@ -55,23 +56,5 @@ public class HttpUtils extends AsyncTask<String,String,String> {
             e.printStackTrace();
         }
         return jsonString;
-    }
-
-    @Override
-    protected void onPostExecute(String result) {
-        /*// Parse JSON data and extract the items you need
-        try {
-            JSONArray jsonArray = new JSONArray(result); // assuming 'response' is the string containing the JSON array
-            for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                int id = jsonObject.getInt("id");
-                String status = jsonObject.getString("category");
-                int tableNr = jsonObject.getInt("price");
-                // do something with the extracted values
-                //MainActivity.setStatus(status);
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }*/
     }
 }

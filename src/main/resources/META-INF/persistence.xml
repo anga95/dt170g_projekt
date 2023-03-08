@@ -9,11 +9,6 @@
         <mapping-file>Orders.xml</mapping-file>
         <mapping-file>OrderItems.xml</mapping-file>
 
-        <class>se.miun.dt170g_projekt.entities.Restaurant_entity</class>
-        <class>se.miun.dt170g_projekt.entities.Employee</class>
-        <class>se.miun.dt170g_projekt.entities.EmployeeSchedule</class>
-        <class>se.miun.dt170g_projekt.entities.Shift</class>
-        <class>se.miun.dt170g_projekt.entities.DailyLunch</class>
         <class>martin_test.deeper.entities.MenuItems</class>
         <class>martin_test.deeper.entities.Orders</class>
         <class>martin_test.deeper.entities.OrderItems</class>

@@ -14,6 +14,7 @@ import android.widget.TextView;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.Socket;
+import java.net.URL;
 
 
 public class PersonalPage1 extends AppCompatActivity {

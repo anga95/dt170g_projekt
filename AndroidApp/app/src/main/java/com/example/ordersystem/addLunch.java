@@ -22,6 +22,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
+
 public class addLunch extends AppCompatActivity {
 
     private OrderItemAdapter orderItemAdapter;
@@ -104,12 +105,13 @@ public class addLunch extends AppCompatActivity {
             // Convert the order to a JSON string
             Gson gson = new Gson();
             String jsonOrder = gson.toJson(order);
-
+            HttpUtils httpUtils = new HttpUtils("POST");
+            httpUtils.execute("http://10.0.2.2:8080/antons-skafferi/api/MenuItems/Insert", jsonOrder);
             // Send a POST request to add the order to the database table
-            new HttpUtils("POST") {
+            /*new HttpUtils("POST") {
                 @Override
                 protected void onPostExecute(String result) {
-                    try {
+                    *//*try {
                         // Parse the result JSON string to a JSONObject
                         JSONObject responseJson = new JSONObject(result);
 
@@ -126,9 +128,9 @@ public class addLunch extends AppCompatActivity {
                     } catch (JSONException e) {
                         e.printStackTrace();
                         // Handle any JSON parsing errors here
-                    }
+                    }*//*
                 }
-            }.execute("http://10.0.2.2:8080/antons-skafferi/api/MenuItems/Insert", jsonOrder);
+            }.execute("http://10.0.2.2:8080/antons-skafferi/api/MenuItems/Insert", jsonOrder);*/
 
         }
     }

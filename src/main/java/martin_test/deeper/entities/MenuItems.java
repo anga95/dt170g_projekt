@@ -2,6 +2,7 @@ package martin_test.deeper.entities;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
@@ -10,7 +11,7 @@ import java.util.Objects;
         @NamedQuery(name ="menuItems.selectAll", query = "select menuItems from MenuItems menuItems "),
         @NamedQuery(name ="menuItems.remove", query = "delete from MenuItems menuItems where menuItems.id = :id")
 })
-public class MenuItems {
+public class MenuItems{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "ID", nullable = false)
