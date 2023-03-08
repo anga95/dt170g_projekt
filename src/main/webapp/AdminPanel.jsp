@@ -1,7 +1,7 @@
 <%@ page import="java.util.Iterator" %>
 <%@ page import="java.util.List" %>
 <%@ page import="se.miun.dt170g_projekt.entities.EmployeeEntity" %>
-<%@ page import="se.miun.dt170g_projekt.persistanceManager.Manager" %>
+<%@ page import="se.miun.dt170g_projekt.persistanceManager.ServletManager" %>
 <%@ page import="se.miun.dt170g_projekt.entities.MenuItemsEntity" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ include file="head.jsp" %>
@@ -30,7 +30,8 @@
         <div class="row">
             <div class="col">
                 <div class="card mt-3 pb-5 bg-gradient d-flex align-items-center" style="width: 20rem;">
-                    <div class="choice-info fade show" id="veckomeny-info">
+
+                    <div class="choice-info" id="veckomeny-info">
                         <div class="card-body">
                             <form accept-charset="UTF-8" action="${pageContext.request.contextPath}/AdminPage" method="post">
                                 <input type="hidden" id="selectedDay" name="selectedDay" value="Måndag">
@@ -118,7 +119,7 @@
                 <ul class="list-group">
 
                         <%
-                            List<EmployeeEntity> list = Manager.getAllEmployee();
+                            List<EmployeeEntity> list = ServletManager.getAllEmployee();
                             for (EmployeeEntity obj : list) {
                         %>
 
@@ -138,7 +139,7 @@
                 <h5 class="mb-2">Förrätter</h5>
                 <ul class="list-group mb-2">
                     <%
-                        List<MenuItemsEntity> list2 = Manager.getAllMENY();
+                        List<MenuItemsEntity> list2 = ServletManager.getAllMENY();
                         for (MenuItemsEntity obj2 : list2) {
                             if (obj2.getCategory().equals("Starters")) {
                     %>

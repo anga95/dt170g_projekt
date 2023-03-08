@@ -1,5 +1,5 @@
 <%@ page import="se.miun.dt170g_projekt.entities.MenuItemsEntity" %>
-<%@ page import="se.miun.dt170g_projekt.persistanceManager.Manager" %>
+<%@ page import="se.miun.dt170g_projekt.persistanceManager.ServletManager" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.awt.*" %><%--
   Created by IntelliJ IDEA.
@@ -26,7 +26,7 @@
             <ul class="list-group">
                 <li class="list-group-item border-0" id="forratt">
                     <h2><strong>FÖRRÄTTER</strong></h2><hr><%
-                    List<MenuItemsEntity> list = Manager.getAllMENY();
+                    List<MenuItemsEntity> list = ServletManager.getAllMENY();
                     for (MenuItemsEntity obj : list) { %>
                     <h3 class="text-center"><%
                         if (obj.getCategory().equals("Starters")) {

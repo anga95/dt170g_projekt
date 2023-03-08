@@ -1,4 +1,4 @@
-package se.miun.dt170g_projekt;
+package se.miun.dt170g_projekt.servlet;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -7,7 +7,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import se.miun.dt170g_projekt.entities.DailyLunchEntity;
-import se.miun.dt170g_projekt.persistanceManager.Manager;
+import se.miun.dt170g_projekt.persistanceManager.ServletManager;
 //import se.miun.dt170g_projekt.persistanceManager.dailyLunch;
 
 import java.io.IOException;
@@ -37,10 +37,10 @@ public class AdminAddDailyFoodToDataBase extends HttpServlet {
         Daily.setLunch2(dish2);
         Daily.setLunch3(dish3);
 
-        Manager newdailyLunch = null;
+        ServletManager newdailyLunch = null;
 
         try {
-            newdailyLunch = new Manager();
+            newdailyLunch = new ServletManager();
         } catch (Exception e) {
             e.printStackTrace();
         }
