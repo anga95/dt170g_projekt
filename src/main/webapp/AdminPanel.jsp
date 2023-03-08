@@ -30,7 +30,6 @@
         <div class="row">
             <div class="col">
                 <div class="card mt-3 pb-5 bg-gradient d-flex align-items-center" style="width: 20rem;">
-
                     <div class="choice-info fade show" id="veckomeny-info">
                         <div class="card-body">
                             <form accept-charset="UTF-8" action="${pageContext.request.contextPath}/AdminPage" method="post">
