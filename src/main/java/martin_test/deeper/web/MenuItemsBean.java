@@ -15,7 +15,7 @@ import java.util.List;
 @Named
 @RequestScoped
 public class MenuItemsBean {
-    @PersistenceContext(unitName = "default")
+    @PersistenceContext(unitName = "DB")
     EntityManager em;
 
     public List<MenuItems> getMenuItems() {

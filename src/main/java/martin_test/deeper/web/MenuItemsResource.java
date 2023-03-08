@@ -73,7 +73,7 @@ public class MenuItemsResource {
             throw new RuntimeException(e);
         }
         System.out.println("OUTSIDE REACHED");
-        //manager.saveData(menuItems);
+        manager.saveData(menuItems);
         /*Gson gson = new Gson();
         MenuItems menuItems = gson.fromJson(jsonObject, MenuItems.class);
         *//*MenuItems menuItems = new MenuItems();

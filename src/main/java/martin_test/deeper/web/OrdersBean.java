@@ -13,7 +13,7 @@ import java.util.List;
 @Named
 public class OrdersBean {
 
-    @PersistenceContext(unitName = "default")
+    @PersistenceContext(unitName = "DB")
     EntityManager em;
 
     public List<Orders> getOrders() {
