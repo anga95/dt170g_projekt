@@ -12,17 +12,17 @@
         <class>martin_test.deeper.entities.MenuItems</class>
         <class>martin_test.deeper.entities.Orders</class>
         <class>martin_test.deeper.entities.OrderItems</class>
-
         <!--<properties>
-            &lt;!&ndash;            driver, url and connection credentials&ndash;&gt;
+            <property name="eclipselink.jdbc.url" value="jdbc:derby://localhost:1527/DB;create=true"/>
+            <property name="eclipselink.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+            <property name="eclipselink.jdbc.password" value="APP"/>
+        </properties>-->
+
+        <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:derby://localhost:1527/DB"/>
             <property name="jakarta.persistence.jdbc.user" value="APP"/>
             <property name="jakarta.persistence.jdbc.password" value="APP"/>
-            <property name="eclipselink.jdbc.url" value="jdbc:derby://localhost:1527/DB;create=true"/>
-            <property name="eclipselink.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
-            <property name="eclipselink.jdbc.password" value="app"/>
-
-        </properties>-->
+        </properties>
     </persistence-unit>
 </persistence>

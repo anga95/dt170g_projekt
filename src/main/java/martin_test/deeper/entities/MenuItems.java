@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Table(name = "MENU_ITEMS")
+@Table(name = "MENU_ITEMS", schema = "APP", catalog = "")
 @NamedQueries({
         @NamedQuery(name ="menuItems.selectAll", query = "select menuItems from MenuItems menuItems "),
         @NamedQuery(name ="menuItems.remove", query = "delete from MenuItems menuItems where menuItems.id = :id")

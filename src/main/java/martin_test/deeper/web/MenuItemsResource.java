@@ -62,6 +62,7 @@ public class MenuItemsResource {
     public void insertMenuItem(String jsonObject) {
         System.out.println("/INSERT REACHED");
         MenuItems menuItems = new MenuItems();
+        System.out.println("/SUCCESSFULLY CREATED IM");
         menuItems.setDescription("TEST LYCKADES");
         menuItems.setPrice(300);
         Manager manager = null;
@@ -72,7 +73,7 @@ public class MenuItemsResource {
             throw new RuntimeException(e);
         }
         System.out.println("OUTSIDE REACHED");
-        manager.saveData(menuItems);
+        //manager.saveData(menuItems);
         /*Gson gson = new Gson();
         MenuItems menuItems = gson.fromJson(jsonObject, MenuItems.class);
         *//*MenuItems menuItems = new MenuItems();
