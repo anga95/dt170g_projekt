@@ -10,8 +10,7 @@ import java.util.List;
 
 @Path("/employee")
 public class EmployeeResource {
-    @Inject
-    EmployeeBean employeeBean;
+    @Inject EmployeeBean employeeBean;
 
     @GET
     @Path("/all")
@@ -48,31 +47,34 @@ public class EmployeeResource {
         employeeBean.updateEmployeeById(id, employee.getName(), employee.getDeviceId(), employee.getEmail(), employee.getPhone());
     }
 
+    // post request to create new employee with body json body
     @POST
     @Path("/create")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Employee create(Employee employee) {
-        return employeeBean.create(employee);
+    public Response create(Employee employee) {
+        employeeBean.create(employee);
+        return Response.ok(employee).build();
     }
 
-    @POST
-    @Path("/verify")
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.MULTIPART_FORM_DATA)
-    public Response verify(@FormParam("email") String email, @FormParam("device-id") String deviceId) {
-        // is employee with email and deviceId in database?
-        Employee empInDB = employeeBean.getEmployeeByEmail(email);
-        if (empInDB != null) {
-            if (empInDB.getDeviceId().equals(deviceId)) {
-                // status code 200
-                return Response.ok(empInDB).build();
-            } else if (empInDB.getDeviceId().equals("")) {
-                empInDB.setDeviceId(deviceId);
-                employeeBean.updateEmployeeById((int)empInDB.getId(), empInDB.getName(), empInDB.getDeviceId(), empInDB.getEmail(), empInDB.getPhone());
-                return Response.ok(empInDB).build();
-            }
-        }
-        // status code 404
-        return Response.status(Response.Status.NOT_FOUND).build();
-    }
+//    @POST
+//    @Path("/verify")
+//    @Consumes(MediaType.APPLICATION_JSON)
+//    public Response verify(@Valid VerifyRequest request) {
+////         is employee with email and deviceId in database?
+//        Employee empInDB = employeeBean.getEmployeeByEmail(request.getEmail());
+//        return Response.ok(empInDB).build();
+//        if (empInDB != null) {
+//            if (empInDB.getDeviceId().equals(deviceId)) {
+//                // status code 200
+//                return Response.ok(empInDB).build();
+//            } else if (empInDB.getDeviceId().equals("")) {
+//                empInDB.setDeviceId(deviceId);
+//                employeeBean.updateEmployeeById((int)empInDB.getId(), empInDB.getName(), empInDB.getDeviceId(), empInDB.getEmail(), empInDB.getPhone());
+//                return Response.ok(empInDB).build();
+//            }
+//        }
+    // status code 404
+//        return Response.status(Response.Status.NOT_FOUND).build();
+//        return Response.ok("email: " + email + ", device-id: " + deviceId).build();
+//    }
 }

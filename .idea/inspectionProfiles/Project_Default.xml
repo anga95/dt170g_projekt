@@ -25,6 +25,28 @@
         <set>
           <option value="    &quot;email&quot;" />
           <option value="    &quot;device-id&quot;" />
+          <option value="email = &quot;john@antons-skafferi.com&quot;" />
+          <option value="device-id = &quot;2222&quot;" />
+          <option value="&amp;device-id = &quot;2222&quot;" />
+          <option value="email=john@antons-skafferi.com" />
+          <option value="&amp;device-id=2222" />
+          <option value="email=john@antons-skafferi.com&amp;device-id=2222" />
+          <option value="?email=john@antons-skafferi.com&amp;device-id=2222" />
+          <option value="    &quot;email&quot; " />
+          <option value="{" />
+          <option value="}" />
+          <option value="email=john@example.com" />
+          <option value="email=john@example.com&amp;device-id=44444" />
+          <option value="{ &quot;email&quot;" />
+          <option value="&quot;email&quot;" />
+          <option value="&quot;deviceId&quot;" />
+          <option value="    &quot;deviceId&quot;" />
+          <option value="    &quot;name&quot;" />
+          <option value="    &quot;phone&quot;" />
+          <option value="&quot;phone&quot;" />
+          <option value="&quot;name&quot;" />
+          <option value="&quot;id&quot; " />
+          <option value="email=ori@example.com&amp;name=Ori&amp;phone=1234567890&amp;deviceId=33333333" />
         </set>
       </option>
     </inspection_tool>

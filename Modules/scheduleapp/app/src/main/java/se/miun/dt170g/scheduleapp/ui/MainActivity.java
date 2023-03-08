@@ -32,14 +32,14 @@ public class MainActivity extends AppCompatActivity {
 
         // Save the user info in shared preferences
         SharedPreferences sharedPref = getSharedPreferences("appPrefs", Context.MODE_PRIVATE);
-        String myValue = sharedPref.getString("empId", "");
-        if (!myValue.equals("")){
+        String myValue = sharedPref.getString("empId", "0");
+        if (!myValue.equals("0")){
             // change view to LoginAcitvity
             Intent myIntent = new Intent(this, LoginActivity.class);
             startActivity(myIntent);
         } else {
-            // change view to LoginAcitvity
-            Intent myIntent = new Intent(this, ViewEmpSchedulesActivity.class);
+            // change view to schedule
+            Intent myIntent = new Intent(this, ViewSchduleActivity.class);
             startActivity(myIntent);
         }
     }

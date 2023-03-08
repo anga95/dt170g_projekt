@@ -319,7 +319,7 @@ public class ViewSchduleActivity extends AppCompatActivity {
             public void onClick(View view) {
                 SharedPreferences sharedPref = getSharedPreferences("appPrefs", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPref.edit();
-                editor.putString("empId", ""); //userInfo.getUsername()
+                editor.putString("empId", "0"); //userInfo.getUsername()
                 editor.apply();
 
                 Intent intent = new Intent(ViewSchduleActivity.this, MainActivity.class);

@@ -14,12 +14,11 @@ import jakarta.persistence.*;
 
         @NamedQuery(name = "employee.removeById", query = "delete from Employee employee where employee.id = :id"),
 })
-public class Employee implements java.io.Serializable {
+public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "ID", nullable = false)
-    private Long id;
-
+    private int id;
     @Basic
     @Column(name = "NAME", nullable = true, length = 50)
     private String name;
@@ -33,11 +32,11 @@ public class Employee implements java.io.Serializable {
     @Column(name = "PHONE", nullable = true, length = 50)
     private String phone;
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -71,5 +70,16 @@ public class Employee implements java.io.Serializable {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", deviceId='" + deviceId + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
     }
 }

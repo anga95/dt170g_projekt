@@ -6,9 +6,7 @@ drop table EMPLOYEE;
 
 create table APP.EMPLOYEE
 (
-
-    ID        INTEGER GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1)
-        constraint "EMPLOYEE_pk" primary key,
+    ID INTEGER GENERATED ALWAYS AS IDENTITY constraint EMPLOYEE_pk PRIMARY KEY,
     NAME      VARCHAR(50),
     DEVICE_ID VARCHAR(50),
     EMAIL     VARCHAR(50),
@@ -17,8 +15,7 @@ create table APP.EMPLOYEE
 
 create table APP.SHIFT
 (
-    ID         INTEGER GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1)
-        constraint "SHIFT_pk" primary key,
+    ID INTEGER GENERATED ALWAYS AS IDENTITY constraint SHIFT_pk PRIMARY KEY,
     START_TIME TIME not null,
     END_TIME   TIME not null
 );
@@ -26,8 +23,8 @@ create table APP.SHIFT
 
 create table APP.SCHEDULE
 (
-    ID     INTEGER GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1)
-        constraint "SCHEDULE_pk" primary key,
+
+    ID INTEGER GENERATED ALWAYS AS IDENTITY constraint SCHEDULE_pk PRIMARY KEY,
     EMP_ID INTEGER not null
         constraint "SCHEDULE_EMPLOYEE_ID_fk"
             references APP.EMPLOYEE,
@@ -57,8 +54,8 @@ create table APP.SCHEDULE
 
 create table APP.LEAVE_DAY
 (
-    ID         INTEGER GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1)
-        constraint "LEAVE_DAY_pk" primary key,
+
+    ID INTEGER GENERATED ALWAYS AS IDENTITY constraint LEAVE_DAY_pk PRIMARY KEY,
     EMP_ID     INTEGER not null
         constraint "LEAVE_DAY_EMPLOYEE_ID_fk"
             references APP.EMPLOYEE,
@@ -69,8 +66,7 @@ create table APP.LEAVE_DAY
 
 create table APP.EXTRA_DAY
 (
-    ID         INTEGER GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1)
-        constraint "EXTRA_DAY_pk" primary key,
+    ID INTEGER GENERATED ALWAYS AS IDENTITY constraint EXTRA_DAY_pk PRIMARY KEY,
     EMP_ID     INTEGER not null
         constraint "EXTRA_DAY_EMPLOYEE_ID_fk"
             references APP.EMPLOYEE,

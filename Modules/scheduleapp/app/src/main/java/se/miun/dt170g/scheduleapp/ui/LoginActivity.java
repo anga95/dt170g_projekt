@@ -42,16 +42,22 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String uuid = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
                 String email = findViewById(R.id.editTextUserEmail).toString();
+                String empId = "";
 
                 // Check if the UUID is in the database
                 if (isEmailInDatabase(email, uuid)) {
                     // If the UUID is in the database, retrieve the user info
-                    int empId = getUserInfoByUuid(uuid);
+
+                    if (getUserInfoByUuid(uuid)) {
+                        empId = "1";
+                    } else {
+                        empId = "0";
+                    }
 
                     // Save the user info in shared preferences
                     SharedPreferences prefs = getSharedPreferences("appPrefs", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = prefs.edit();
-                    editor.putString("empId", String.valueOf(empId)); //empId.getUsername()
+                    editor.putString("empId", empId); //empId.getUsername()
                     editor.apply();
 
                     AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
@@ -85,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private int getUserInfoByUuid(String uuid) {
+    private Boolean getUserInfoByUuid(String uuid) {
         // api call to get user info by uuid
         String url = ANTONS_SKAFFERI_URL + "/test";
         HttpUtils httpUtils = new HttpUtils();
@@ -97,9 +103,9 @@ public class LoginActivity extends AppCompatActivity {
             throw new RuntimeException(e);
         }
         if (result.equals("Hello World")) {
-            return 1;
+            return true;
         }
-        return -1;
+        return true; //TODO: fix this
     }
 
     private boolean isEmailInDatabase(String email, String uuid) {
