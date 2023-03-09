@@ -6,6 +6,10 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "MENU_ITEMS")
+@NamedQueries({
+        @NamedQuery(name ="menuItems.selectAll", query = "select menuItems from MenuItemsEntity menuItems "),
+        @NamedQuery(name ="menuItems.remove", query = "delete from MenuItemsEntity menuItems where menuItems.id = :id")
+})
 public class MenuItemsEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

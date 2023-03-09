@@ -73,9 +73,9 @@ public class ServletManager {
         return Daily;
     }
 
-    public static List<MenuItemsEntity> getAllMENY() {
+    public static List<MenuItemsEntity> getAllMenu() {
         TypedQuery<MenuItemsEntity> query = em.createQuery("SELECT e FROM MenuItemsEntity  e", MenuItemsEntity.class);
-        List<MenuItemsEntity> meny = query.getResultList();
-        return meny;
+        List<MenuItemsEntity> menu = query.getResultList();
+        return menu;
     }
 }

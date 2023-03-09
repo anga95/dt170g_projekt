@@ -1,3 +1,4 @@
+/*
 package se.miun.dt170g_projekt.persistanceManager;
 
 import jakarta.ejb.Stateless;
@@ -22,3 +23,4 @@ public class Manager {
         em.getTransaction().commit();
     }
 }
+*/

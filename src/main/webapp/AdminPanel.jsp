@@ -139,7 +139,7 @@
                 <h5 class="mb-2">Förrätter</h5>
                 <ul class="list-group mb-2">
                     <%
-                        List<MenuItemsEntity> list2 = ServletManager.getAllMENY();
+                        List<MenuItemsEntity> list2 = ServletManager.getAllMenu();
                         for (MenuItemsEntity obj2 : list2) {
                             if (obj2.getCategory().equals("Starters")) {
                     %>

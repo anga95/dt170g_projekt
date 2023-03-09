@@ -26,7 +26,7 @@
             <ul class="list-group">
                 <li class="list-group-item border-0" id="forratt">
                     <h2><strong>FÖRRÄTTER</strong></h2><hr><%
-                    List<MenuItemsEntity> list = ServletManager.getAllMENY();
+                    List<MenuItemsEntity> list = ServletManager.getAllMenu();
                     for (MenuItemsEntity obj : list) { %>
                     <h3 class="text-center"><%
                         if (obj.getCategory().equals("Starters")) {
