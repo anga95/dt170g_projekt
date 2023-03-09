@@ -1,15 +1,15 @@
 package se.miun.dt170g_projekt.persistanceManager;
 
 import jakarta.ejb.Stateless;
-import jakarta.json.JsonArray;
+//import jakarta.json.JsonArray;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
-import jakarta.persistence.metamodel.Attribute;
-import org.json.JSONObject;
+//import jakarta.persistence.metamodel.Attribute;
+//import org.json.JSONObject;
 
 import javax.naming.NamingException;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.List;
 
 @Stateless
@@ -55,9 +55,9 @@ public class Manager {
     }
 
     // join two tables by given columns and return the result as a json string
-    public <T, U> Object getJoinedTables(Class<T> table1, Class<U> table2, String column1, String column2) {
-        return em.createNativeQuery("SELECT * FROM " + table1.getSimpleName() + " JOIN " + table2.getSimpleName() + " ON " + table1.getSimpleName() + "." + column1 + " = " + table2.getSimpleName() + "." + column2)
-                .getResultList();
+//    public <T, U> Object getJoinedTables(Class<T> table1, Class<U> table2, String column1, String column2) {
+//        return em.createNativeQuery("SELECT * FROM " + table1.getSimpleName() + " JOIN " + table2.getSimpleName() + " ON " + table1.getSimpleName() + "." + column1 + " = " + table2.getSimpleName() + "." + column2)
+//                .getResultList();
         // save result in a list
 //        List resultList = em.createNativeQuery("SELECT * FROM " + table1.getSimpleName() + " JOIN " + table2.getSimpleName() + " ON " + table1.getSimpleName() + "." + column1 + " = " + table2.getSimpleName() + "." + column2)
 //                .getResultList();
@@ -85,5 +85,5 @@ public class Manager {
 //        }
 //
 //        return jsonList;
-    }
+//    }
 }

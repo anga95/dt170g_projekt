@@ -43,19 +43,19 @@ public class EmployeeResource {
     }
 
 
-    @GET
-    @Path("/joined-schedules")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response getEmployeesWithSchedules() {
-        // if is empty return 404 else return 200
-        Object employees = empBean.getEmployeesWithSchedules(Schedule.class, Employee.class, "EMP_ID", "ID");
-
-        if (employees == null) {
-            return Response.status(Response.Status.NOT_FOUND).build();
-        } else {
-            return Response.ok(employees).build();
-        }
-    }
+//    @GET
+//    @Path("/joined-schedules")
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public Response getEmployeesWithSchedules() {
+//        // if is empty return 404 else return 200
+//        Object employees = empBean.getEmployeesWithSchedules(Schedule.class, Employee.class, "EMP_ID", "ID");
+//
+//        if (employees == null) {
+//            return Response.status(Response.Status.NOT_FOUND).build();
+//        } else {
+//            return Response.ok(employees).build();
+//        }
+//    }
 
     @GET
     @Path("/id/{id}")
