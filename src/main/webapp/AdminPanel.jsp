@@ -1,6 +1,6 @@
 <%@ page import="java.util.Iterator" %>
 <%@ page import="java.util.List" %>
-<%@ page import="se.miun.dt170g_projekt.entities.EmployeeEntity" %>
+<%@ page import="se.miun.dt170g_projekt.entities.Employee" %>
 <%@ page import="se.miun.dt170g_projekt.persistanceManager.ServletManager" %>
 <%@ page import="se.miun.dt170g_projekt.entities.MenuItemsEntity" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
@@ -119,8 +119,8 @@
                 <ul class="list-group">
 
                         <%
-                            List<EmployeeEntity> list = ServletManager.getAllEmployee();
-                            for (EmployeeEntity obj : list) {
+                            List<Employee> list = ServletManager.getAllEmployee();
+                            for (Employee obj : list) {
                         %>
 
                     <li class="list-group-item d-flex justify-content-between"><%= obj.getFirstName() + " " + obj.getLastName() %>

@@ -6,8 +6,18 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name = "EMPLOYEE", schema = "TEST", catalog = "")
-public class EmployeeEntity {
+//@NamedQueries({
+//        @NamedQuery(name = "employee.selectAll", query = "select employee from Employee employee "),
+//        @NamedQuery(name = "employee.selectById", query = "select employee from Employee employee where employee.id = :id"),
+//        @NamedQuery(name = "employee.selectByDeviceId", query = "select employee from Employee employee where employee.deviceId = :deviceId"),
+//        @NamedQuery(name = "employee.selectByEmail", query = "select employee from Employee employee where employee.email = :email"),
+//
+//        @NamedQuery(name = "employee.updateById", query = "update Employee employee set employee.firstName = :firstName, employee.lastName = :lastName, employee.deviceId = :deviceId, employee.email = :email, employee.phone = :phone, employee.hourlyRate = :hourlyRate where employee.id = :id"),
+//
+//        @NamedQuery(name = "employee.removeById", query = "delete from Employee employee where employee.id = :id"),
+//})
+@Table(name = "EMPLOYEE")
+public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "ID")
@@ -30,6 +40,10 @@ public class EmployeeEntity {
     @Basic
     @Column(name = "START_DATE")
     private Timestamp startDate;
+
+    @Basic
+    @Column(name = "DEVICE_ID")
+    private String deviceId;
 
     public int getId() {
         return id;
@@ -87,16 +101,31 @@ public class EmployeeEntity {
         this.startDate = startDate;
     }
 
+    public String getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        EmployeeEntity that = (EmployeeEntity) o;
-        return id == that.id && hourlyRate == that.hourlyRate && Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName) && Objects.equals(email, that.email) && Objects.equals(phone, that.phone) && Objects.equals(startDate, that.startDate);
+        Employee that = (Employee) o;
+        return Objects.equals(id, that.id) &&
+                Objects.equals(firstName, that.firstName) &&
+                Objects.equals(lastName, that.lastName) &&
+                Objects.equals(email, that.email) &&
+                Objects.equals(phone, that.phone) &&
+                Objects.equals(hourlyRate, that.hourlyRate) &&
+                Objects.equals(startDate, that.startDate) &&
+                Objects.equals(deviceId, that.deviceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, email, phone, hourlyRate, startDate);
+        return Objects.hash(id, firstName, lastName, email, phone, hourlyRate, startDate, deviceId);
     }
 }

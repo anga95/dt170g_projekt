@@ -1,12 +1,13 @@
-package martin_test.deeper.entities;
+package se.miun.dt170g_projekt.entities;
 
 import jakarta.persistence.*;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.util.Objects;
 
 @Entity
-@Table(name = "LEAVE_DAY", schema = "APP", catalog = "")
+@Table(name = "LEAVE_DAY")
 public class LeaveDay {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -65,4 +66,22 @@ public class LeaveDay {
     public void setEndTime(Time endTime) {
         this.endTime = endTime;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        LeaveDay leaveDay = (LeaveDay) o;
+        return id == leaveDay.id &&
+                empId == leaveDay.empId &&
+                leaveDate.equals(leaveDay.leaveDate) &&
+                startTime.equals(leaveDay.startTime) &&
+                endTime.equals(leaveDay.endTime);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, leaveDate, startTime, endTime, empId);
+    }
+
 }

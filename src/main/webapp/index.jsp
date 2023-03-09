@@ -1,4 +1,4 @@
-<%@ page import="se.miun.dt170g_projekt.entities.EmployeeEntity" %>
+<%@ page import="se.miun.dt170g_projekt.entities.Employee" %>
 <%@ page import="java.util.List" %>
 <%@ page import="se.miun.dt170g_projekt.persistanceManager.ServletManager" %>
 <%@ page import="se.miun.dt170g_projekt.entities.DailyLunchEntity" %>

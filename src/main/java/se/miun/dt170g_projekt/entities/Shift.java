@@ -1,67 +1,65 @@
-/*
 package se.miun.dt170g_projekt.entities;
 
 import jakarta.persistence.*;
 
-import java.time.LocalTime;
+import java.sql.Time;
+import java.util.Objects;
 
 @Entity
-@Table(name = "shift", schema = "TEST")
+@Table(name = "SHIFT")
 public class Shift {
-    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
-    private Long id;
+    @Id
+    @Column(name = "ID", nullable = false)
+    private int id;
 
-    @Column(name = "shift_name", nullable = false)
-    private String name;
+    @Basic
+    @Column(name = "SHIFT_NAME", nullable = false)
+    private String shiftName;
 
-    @Column(name = "start_time", nullable = false)
-    private LocalTime startTime;
+    @Basic
+    @Column(name = "START_TIME", nullable = false)
+    private Time startTime;
+    @Basic
+    @Column(name = "END_TIME", nullable = true)
+    private Time endTime;
 
-    @Column(name = "end_time", nullable = false)
-    private LocalTime endTime;
-
-    public Shift() {
-    }
-
-    public Shift(String name, LocalTime startTime, LocalTime endTime) {
-        this.name = name;
-        this.startTime = startTime;
-        this.endTime = endTime;
-    }
-
-    // Getters and Setters
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public LocalTime getStartTime() {
+    public Time getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(LocalTime startTime) {
+    public void setStartTime(Time startTime) {
         this.startTime = startTime;
     }
 
-    public LocalTime getEndTime() {
+    public Time getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(LocalTime endTime) {
+    public void setEndTime(Time endTime) {
         this.endTime = endTime;
     }
 
-}*/
+    // equals
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Shift shift = (Shift) o;
+        return id == shift.id && Objects.equals(shiftName, shift.shiftName) && Objects.equals(startTime, shift.startTime) && Objects.equals(endTime, shift.endTime);
+    }
+
+    // hashCode
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, shiftName, startTime, endTime);
+    }
+}

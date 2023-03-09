@@ -1,10 +1,12 @@
-package martin_test.deeper.web;
+package se.miun.dt170g_projekt.resource;
 
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
-import martin_test.deeper.entities.Schedule;
+import jakarta.ws.rs.core.Response;
+import se.miun.dt170g_projekt.entities.Schedule;
+import se.miun.dt170g_projekt.bean.ScheduleBean;
 
 import java.util.List;
 
@@ -16,15 +18,28 @@ public class ScheduleResource {
     @GET
     @Path("/all")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Schedule> getSchedule() {
-        return scheduleBean.getSchedule();
+    // Response
+    public Response getSchedules() {
+        // if is empty return 404 else return 200
+        List<Schedule> schedules = scheduleBean.getSchedules();
+        if (schedules.isEmpty()) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        } else {
+            return Response.ok(schedules).build();
+        }
     }
 
     @GET
     @Path("/id/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Schedule getScheduleById(@PathParam("id") int id) {
-        return scheduleBean.getScheduleById(id);
+    // Response
+    public Response getScheduleById(@PathParam("id") int id) {
+        Schedule schedule = scheduleBean.getScheduleById(id);
+        if (schedule == null) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        } else {
+            return Response.ok(schedule).build();
+        }
     }
 
 //    @GET
@@ -43,7 +58,7 @@ public class ScheduleResource {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public Schedule create(Schedule schedule) {
-        return scheduleBean.create(schedule);
+    public void create(Schedule schedule) {
+        scheduleBean.create(schedule);
     }
 }
