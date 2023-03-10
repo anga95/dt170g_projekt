@@ -71,9 +71,16 @@
             <artifactId>eclipselink</artifactId>
             <version>3.0.0</version>
         </dependency>
+<!--        org json-->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20220320</version>
+        </dependency>
     </dependencies>
 
     <build>
+        <finalName>antons-skafferi</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

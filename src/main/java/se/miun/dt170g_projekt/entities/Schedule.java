@@ -24,7 +24,7 @@ public class Schedule{
 
     @Basic
     @Column(name = "EMP_ID", nullable = false)
-    private Long empId;
+    private int empId;
 
     @Basic
     @Column(name = "MON", nullable = true)
@@ -56,13 +56,11 @@ public class Schedule{
         this.id = id;
     }
 
-//    @OneToOne
-//    @JoinColumn(name = "EMP_ID", nullable = false)
-    public Long getEmpId() {
+    public int getEmpId() {
         return empId;
     }
 
-    public void setEmpId(Long empId) {
+    public void setEmpId(int empId) {
         this.empId = empId;
     }
 

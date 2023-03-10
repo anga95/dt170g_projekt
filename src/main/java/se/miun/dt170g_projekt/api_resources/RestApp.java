@@ -1,4 +1,4 @@
-package se.miun.dt170g_projekt;
+package se.miun.dt170g_projekt.api_resources;
 
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;

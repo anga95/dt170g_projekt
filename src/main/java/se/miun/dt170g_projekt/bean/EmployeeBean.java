@@ -4,6 +4,7 @@ import se.miun.dt170g_projekt.entities.*;
 import se.miun.dt170g_projekt.persistanceManager.Manager;
 
 import javax.naming.NamingException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Stateless
@@ -34,9 +35,9 @@ public class EmployeeBean {
         return pm.getByColumnName(Employee.class, "email", email);
     }
 
-//    public <T, U> Object getEmployeesWithSchedules(Class<T> table1, Class<U> table2, String column1, String column2) {
-//        return pm.getJoinedTables(table1, table2, column1, column2);
-//    }
+    public <T, U, X> List<X> getEmployeesWithSchedules(Class<T> table1, Class<U> table2, String column1, String column2, Class<X> returnType) {
+        return pm.getJoinedTables(table1, table2, column1, column2, returnType);
+    }
 
     // update by id
 //    public void updateEmployeeById(int id, String name, String deviceId, String email, String phone) {

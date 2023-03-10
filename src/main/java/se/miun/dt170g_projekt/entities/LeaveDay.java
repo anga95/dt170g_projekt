@@ -23,11 +23,11 @@ public class LeaveDay {
     @Column(name = "END_TIME", nullable = false)
     private Time endTime;
 
-    @OneToOne
-    @JoinColumn(name = "EMP_ID", referencedColumnName = "ID")
+    @Basic
+    @Column(name = "EMP_ID", nullable = false)
     private int empId;
 
-    public Object getEmpId() {
+    public int getEmpId() {
         return empId;
     }
 

@@ -5,6 +5,7 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import se.miun.dt170g_projekt.bean.EmployeeBean;
+import se.miun.dt170g_projekt.entities.EmpScheduleJoined;
 import se.miun.dt170g_projekt.entities.Employee;
 import se.miun.dt170g_projekt.entities.Schedule;
 
@@ -28,7 +29,6 @@ public class EmployeeResource {
         }
     }
 
-
     @GET
     @Path("/all")
     @Produces(MediaType.APPLICATION_JSON)
@@ -43,24 +43,23 @@ public class EmployeeResource {
     }
 
 
-//    @GET
-//    @Path("/joined-schedules")
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public Response getEmployeesWithSchedules() {
-//        // if is empty return 404 else return 200
-//        Object employees = empBean.getEmployeesWithSchedules(Schedule.class, Employee.class, "EMP_ID", "ID");
-//
-//        if (employees == null) {
-//            return Response.status(Response.Status.NOT_FOUND).build();
-//        } else {
-//            return Response.ok(employees).build();
-//        }
-//    }
+    @GET
+    @Path("/joined-schedules")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getEmployeesWithSchedules() {
+        // if is empty return 404 else return 200
+        List<EmpScheduleJoined> empScheduleJoined = empBean.getEmployeesWithSchedules(Schedule.class, Employee.class, "EMP_ID", "ID", EmpScheduleJoined.class);
+
+        if (empScheduleJoined == null) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        } else {
+            return Response.ok(empScheduleJoined).build();
+        }
+    }
 
     @GET
     @Path("/id/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    // Response
     public Response getEmployeeById(@PathParam("id") int id) {
         Employee employee = empBean.getEmployeeById(id);
         if (employee == null) {

@@ -5,7 +5,7 @@
              version="3.0">
     <persistence-unit name="DB">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-        <jta-data-source>db</jta-data-source>
+        <jta-data-source>DB</jta-data-source>
         <class>se.miun.dt170g_projekt.entities.Shift</class>
         <class>se.miun.dt170g_projekt.entities.Employee</class>
         <class>se.miun.dt170g_projekt.entities.Schedule</class>
