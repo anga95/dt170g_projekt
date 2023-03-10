@@ -83,7 +83,9 @@ public class addALaCarte extends AppCompatActivity {
                         String itemName = jsonObject.getString("name");
                         double itemPrice = jsonObject.getDouble("price");
                         String category = jsonObject.getString("category");
-                        SourceItem item = new SourceItem(itemName, itemPrice, category);
+                        int idNum = jsonObject.getInt("id");
+                        int time = jsonObject.getInt("time");
+                        SourceItem item = new SourceItem(itemName, itemPrice, category, idNum, time);
                         if (category.equals("Starters")) {
                             appertizerList.add(item);
                         } else if (category.equals("MainCourse")) {

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                 version="3.0">
+
+    <entity class="se.miun.dt170g_projekt.entities.TotalOrdersEntity">
+        <table name="TOTALORDERS" schema="APP" catalog=""/>
+        <attributes>
+            <id name="id">
+                <column name="ID" precision="-1"/>
+            </id>
+            <basic name="name">
+                <column name="NAME" nullable="false" length="100"/>
+            </basic>
+            <basic name="category">
+                <column name="CATEGORY" nullable="false" length="50"/>
+            </basic>
+            <basic name="note">
+                <column name="NOTE" nullable="false" length="100"/>
+            </basic>
+            <basic name="time">
+                <column name="TIME" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="quantity">
+                <column name="QUANTITY" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="status">
+                <column name="STATUS" nullable="false" precision="-1"/>
+            </basic>
+        </attributes>
+    </entity>
+    <entity class="se.miun.dt170g_projekt.entities.OrderItemsEntity">
+        <table name="ORDER_ITEMS" schema="APP" catalog=""/>
+        <attributes>
+            <id name="id">
+                <column name="ID" precision="-1"/>
+            </id>
+            <basic name="menuItemId">
+                <column name="MENU_ITEM_ID" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="status">
+                <column name="STATUS" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="quantity">
+                <column name="QUANTITY" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="tableNr">
+                <column name="TABLE_NR" nullable="false" precision="-1"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>

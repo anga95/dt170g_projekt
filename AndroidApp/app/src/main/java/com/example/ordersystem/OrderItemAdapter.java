@@ -95,7 +95,7 @@ public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.View
             }
         }
         // Item does not exist, add to order
-        OrderItem orderItem = new OrderItem(sourceItem.getName(), 1, sourceItem.getPrice(), "", sourceItem.getCategory());
+        OrderItem orderItem = new OrderItem(sourceItem.getName(), 1, sourceItem.getPrice(), "", sourceItem.getCategory(), sourceItem.getIdNum(), sourceItem.getTime());
         orderItemList.add(orderItem);
         notifyItemInserted(orderItemList.size() - 1);
     }

@@ -6,13 +6,17 @@ public class OrderItem {
     private double price;
     private String note;
     private String category;
+    private int idNum;
+    private int time;
 
-    public OrderItem(String name, int quantity, double price, String note, String category) {
+    public OrderItem(String name, int quantity, double price, String note, String category, int idNum, int time) {
         this.name = name;
         this.quantity = quantity;
         this.price = price;
         this.note = note;
         this.category = category;
+        this.idNum = idNum;
+        this.time = time;
     }
 
     public String getName() {
@@ -57,5 +61,13 @@ public class OrderItem {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public int getIdNum() {
+        return idNum;
+    }
+
+    public int getTime() {
+        return time;
     }
 }

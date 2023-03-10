@@ -4,11 +4,16 @@ public class SourceItem {
     private String foodName;
     private double price;
     private String category;
+    private int idNum;
 
-    public SourceItem(String name, double price, String category) {
+    private int time;
+
+    public SourceItem(String name, double price, String category, int idNum, int time) {
         this.foodName = name;
         this.price = price;
         this.category = category;
+        this.idNum = idNum;
+        this.time = time;
     }
 
     public String getName() {
@@ -33,5 +38,13 @@ public class SourceItem {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public int getIdNum() {
+        return idNum;
+    }
+
+    public int getTime() {
+        return time;
     }
 }

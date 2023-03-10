@@ -32,6 +32,13 @@ public class ServletManager {
         em.getTransaction().commit();
     }
 
+
+    public MenuItemsEntity findById(int id) {
+        MenuItemsEntity menuItems = em.find(MenuItemsEntity.class ,id);
+        em.close();
+        return menuItems;
+    }
+
     public static void removeEmployee(int id) {
         em.getTransaction().begin();
         em.createQuery("DELETE FROM EmployeeEntity WHERE id = :id")
@@ -77,5 +84,12 @@ public class ServletManager {
         TypedQuery<MenuItemsEntity> query = em.createQuery("SELECT e FROM MenuItemsEntity  e", MenuItemsEntity.class);
         List<MenuItemsEntity> menu = query.getResultList();
         return menu;
+    }
+
+    public static int findByName(String name) {
+        MenuItemsEntity menuItems = em.find(MenuItemsEntity.class, name);
+        int id = menuItems.getId();
+        em.close();
+        return id;
     }
 }
