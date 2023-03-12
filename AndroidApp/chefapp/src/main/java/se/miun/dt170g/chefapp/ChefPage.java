@@ -18,7 +18,7 @@ import java.util.Arrays;
 import java.util.Collections;
 
 
-public class ChefPage extends AppCompatActivity {
+public class ChefPage extends AppCompatActivity{
 
     private RecyclerView orderArrayList;
     private ChefPageAdapter chefpageadapter;
@@ -42,7 +42,7 @@ public class ChefPage extends AppCompatActivity {
 
 
 
-    public void myClickHandler(View view) {
+    /*public void myClickHandler(View view) {
         LinearLayout myLinearLayout = findViewById(R.id.starterLayout);
         LayerDrawable layerDrawable = (LayerDrawable) myLinearLayout.getBackground();
         GradientDrawable backgroundDrawable = (GradientDrawable) layerDrawable.findDrawableByLayerId(R.id.bgcategory);
@@ -100,7 +100,7 @@ public class ChefPage extends AppCompatActivity {
         ordersamples.remove(0);
         chefpageadapter.notifyDataSetChanged();
         }
-    }
+    }*/
         @Override
         protected void onCreate (Bundle savedInstanceState){
             super.onCreate(savedInstanceState);
@@ -122,9 +122,9 @@ public class ChefPage extends AppCompatActivity {
             Order ordernr2 = new Order(2, 2, new ArrayList<String>(), new ArrayList<String>(), new ArrayList<String>(), false, false, false);
             ordernr2.setPriority(2);
             ordernr2.setTableNr(2);
-            ordernr2.setMainCourse(new ArrayList<String>(Arrays.asList("köttbullar", "pasta", "köttfärssås")));
-            ordernr2.setStarter(new ArrayList<String>(Arrays.asList("kladdkaka", "glass", "cheesecake")));
-            ordernr2.setDessert(new ArrayList<String>(Arrays.asList("kladdkaka", "glass", "cheesecake")));
+            ordernr2.setMainCourse(new ArrayList<String>(Arrays.asList("köttbullar")));
+            ordernr2.setStarter(new ArrayList<String>(Arrays.asList("kladdkaka")));
+            ordernr2.setDessert(new ArrayList<String>(Arrays.asList("kladdkaka")));
             ordersamples.add(ordernr2);
 
             Order ordernr3 = new Order(3, 3, new ArrayList<String>(), new ArrayList<String>(), new ArrayList<String>(), false, false, false);
@@ -136,9 +136,11 @@ public class ChefPage extends AppCompatActivity {
             ordersamples.add(ordernr3);
 
 
-            chefpageadapter = new ChefPageAdapter(ordersamples);
+            chefpageadapter = new ChefPageAdapter(getApplicationContext(),ordersamples);
             orderArrayList.setAdapter(chefpageadapter);
             orderArrayList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         }
-    }
+
+
+}
