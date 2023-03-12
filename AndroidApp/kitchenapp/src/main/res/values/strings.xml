@@ -1,10 +1,16 @@
 <resources>
-    <string name="app_name">KitchenApp</string>
-    <string name="personal" />
-    <string name="table_x" />
-    <string name="prio_3" />
-    <string name="f_rr_tt" />
-    <string name="checkbox3" />
-    <string name="kock" />
-    <string name="kocktext">Kock</string>
+    <string name="app_name">ChefApp</string>
+    <string name="kock">kock</string>
+    <string name="personal">personal</string>
+    <string name="table_x">table_x</string>
+    <string name="prio_1">Prio 1</string>
+    <string name="varmr_tt">Varmrätt</string>
+    <string name="checkbox">CheckBox</string>
+    <string name="prio_2">Prio 2</string>
+    <string name="efterr_tt">Efterrätt</string>
+    <string name="prio_3">Prio 3</string>
+    <string name="f_rr_tt">Förrätt</string>
+    <string name="checkbox3">CheckBox3</string>
+    <string name="checkbox4">CheckBox4</string>
+    <string name="chef">chef</string>
 </resources>

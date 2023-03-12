@@ -108,16 +108,19 @@ public class addLunch extends AppCompatActivity {
             JsonArray orderItemArray = new JsonArray();
             for (OrderItem item : order.getOrderItemList()) {
                 JsonObject orderItemObject = new JsonObject();
-                orderItemObject.addProperty("menuItemID", item.getIdNum());
+                orderItemObject.addProperty("name", item.getName());
                 orderItemObject.addProperty("quantity", item.getQuantity());
-                orderItemObject.addProperty("tableNumber", order.getTableNumber());
+                orderItemObject.addProperty("category", item.getCategory());
+                orderItemObject.addProperty("time", item.getTime());
+                orderItemObject.addProperty("note", item.getNote());
                 orderItemArray.add(orderItemObject);
             }
-            JsonObject orderItemObject = new JsonObject();
-            orderItemObject.add("orderItemList", orderItemArray);
-            String jsonOrder = gson.toJson(orderItemObject);
+            JsonObject orderObject = new JsonObject();
+            orderObject.addProperty("tableNumber", order.getTableNumber());
+            orderObject.add("orderItems", orderItemArray);
+            String jsonOrder = gson.toJson(orderObject);
             HttpUtils httpUtils = new HttpUtils("POST");
-            httpUtils.execute("http://10.0.2.2:8080/antons-skafferi/api/OrderItems/addOrderItems", jsonOrder);
+            httpUtils.execute("http://10.0.2.2:8080/antons-skafferi/api/TotalOrders/addOrders", jsonOrder);
 
         }
     }

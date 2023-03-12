@@ -1,19 +1,14 @@
 package se.miun.dt170g_projekt.resource;
 
-import com.google.gson.Gson;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 
-import java.awt.*;
 import java.util.List;
 
-import se.miun.dt170g_projekt.bean.EmployeeBean;
 import se.miun.dt170g_projekt.bean.MenuItemsBean;
-import se.miun.dt170g_projekt.entities.EmployeeEntity;
 import se.miun.dt170g_projekt.entities.MenuItemsEntity;
 
-import javax.naming.NamingException;
 
 
 @Path("/MenuItems")

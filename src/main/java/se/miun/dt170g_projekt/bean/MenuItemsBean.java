@@ -37,4 +37,9 @@ public class MenuItemsBean {
         manager.saveData(data);
     }
 
+    public MenuItemsEntity find(int menuItemId) {
+        MenuItemsEntity menuItems = em.find(MenuItemsEntity.class, menuItemId);
+        em.close();
+        return menuItems;
+    }
 }

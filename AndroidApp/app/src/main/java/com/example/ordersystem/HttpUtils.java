@@ -33,7 +33,6 @@ public class HttpUtils extends AsyncTask<String,String,String> {
             connection.setRequestMethod(method);
 
             if(method.equals("POST")){
-                Log.d(TAG, "HELLO");
                 connection.setDoOutput(true);
                 connection.setRequestProperty("Content-Type", "application/json");
                 OutputStream os = connection.getOutputStream();
@@ -52,9 +51,12 @@ public class HttpUtils extends AsyncTask<String,String,String> {
             inputStream.close();
             connection.disconnect();
 
+        } catch (MalformedURLException e) {
+            return "Malformed URL: " + e.getMessage();
         } catch (IOException e) {
-            e.printStackTrace();
+            return "IO Exception: " + e.getMessage();
         }
+
         return jsonString;
     }
 }

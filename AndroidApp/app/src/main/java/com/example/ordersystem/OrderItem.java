@@ -70,4 +70,12 @@ public class OrderItem {
     public int getTime() {
         return time;
     }
+
+    public void setIdNum(int idNum) {
+        this.idNum = idNum;
+    }
+
+    public void setTime(int time) {
+        this.time = time;
+    }
 }

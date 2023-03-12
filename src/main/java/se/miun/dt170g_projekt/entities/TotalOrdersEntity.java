@@ -3,30 +3,34 @@ package se.miun.dt170g_projekt.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "TOTALORDERS")
+@Table(name = "TOTAL_ORDERS")
 public class TotalOrdersEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "ID", nullable = false)
     private int id;
     @Basic
-    @Column(name = "NAME", nullable = true, length = 100)
+    @Column(name = "NAME", length = 50)
     private String name;
     @Basic
-    @Column(name = "CATEGORY", nullable = true, length = 50)
+    @Column(name = "CATEGORY", length = 250)
     private String category;
     @Basic
-    @Column(name = "NOTE", nullable = true, length = 100)
+    @Column(name = "NOTE", nullable = true, length = 250)
     private String note;
     @Basic
     @Column(name = "TIME", nullable = true)
     private Integer time;
     @Basic
-    @Column(name = "QUANTITY", nullable = true)
+    @Column(name = "QUANTITY")
     private Integer quantity;
     @Basic
     @Column(name = "STATUS", nullable = true)
     private Boolean status;
+
+    @Basic
+    @Column(name = "TABLE_NUMBER", nullable = true)
+    private Integer tableNr;
 
     public int getId() {
         return id;
@@ -72,6 +76,10 @@ public class TotalOrdersEntity {
         return quantity;
     }
 
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
@@ -82,5 +90,13 @@ public class TotalOrdersEntity {
 
     public void setStatus(Boolean status) {
         this.status = status;
+    }
+
+    public Integer getTableNr() {
+        return tableNr;
+    }
+
+    public void setTableNr(Integer tableNr) {
+        this.tableNr = tableNr;
     }
 }
