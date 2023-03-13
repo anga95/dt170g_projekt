@@ -40,67 +40,9 @@ public class ChefPage extends AppCompatActivity{
 
     private ArrayList<Order> ordersamples;
 
+    private ArrayList<Order> orders;
 
 
-    /*public void myClickHandler(View view) {
-        LinearLayout myLinearLayout = findViewById(R.id.starterLayout);
-        LayerDrawable layerDrawable = (LayerDrawable) myLinearLayout.getBackground();
-        GradientDrawable backgroundDrawable = (GradientDrawable) layerDrawable.findDrawableByLayerId(R.id.bgcategory);
-
-        LinearLayout myLinearLayout2 = findViewById(R.id.maincourseLayout);
-        LayerDrawable layerDrawable2 = (LayerDrawable) myLinearLayout2.getBackground();
-        GradientDrawable backgroundDrawable2 = (GradientDrawable) layerDrawable2.findDrawableByLayerId(R.id.bgcategory);
-
-        LinearLayout myLinearLayout3 = findViewById(R.id.dessertLayout);
-        LayerDrawable layerDrawable3 = (LayerDrawable) myLinearLayout3.getBackground();
-        GradientDrawable backgroundDrawable3 = (GradientDrawable) layerDrawable3.findDrawableByLayerId(R.id.bgcategory);
-
-        RecyclerView myRecyclerView = findViewById(R.id.starter_List);
-        LayerDrawable layerDrawable4 = (LayerDrawable) myRecyclerView.getBackground();
-        GradientDrawable backgroundDrawable4 = (GradientDrawable) layerDrawable4.findDrawableByLayerId(R.id.bgrecycler);
-
-        RecyclerView myRecyclerView2 = findViewById(R.id.maincourse_List);
-        LayerDrawable layerDrawable5 = (LayerDrawable) myRecyclerView2.getBackground();
-        GradientDrawable backgroundDrawable5 = (GradientDrawable) layerDrawable5.findDrawableByLayerId(R.id.bgrecycler);
-
-        RecyclerView myRecyclerView3 = findViewById(R.id.dessert_List);
-        LayerDrawable layerDrawable6 = (LayerDrawable) myRecyclerView3.getBackground();
-        GradientDrawable backgroundDrawable6 = (GradientDrawable) layerDrawable6.findDrawableByLayerId(R.id.bgrecycler);
-
-
-        checkBoxstarter = findViewById(R.id.checkBoxstarter);
-        checkBoxmaincourse = findViewById(R.id.checkBoxmaincourse);
-        checkBoxdessert = findViewById(R.id.checkBoxdessert);
-        dessertLayout = findViewById(R.id.dessertLayout);
-        maincourseLayout = findViewById(R.id.maincourseLayout);
-        starterLayout = findViewById(R.id.starterLayout);
-        starter_List = findViewById(R.id.starter_List);
-        maincourse_List = findViewById(R.id.maincourse_List);
-        dessert_List = findViewById(R.id.dessert_List);
-
-        if (checkBoxstarter.isChecked()) {
-            backgroundDrawable.setColor(Color.GREEN);
-            backgroundDrawable4.setColor(Color.GREEN);
-
-        }
-
-        if (checkBoxmaincourse.isChecked()) {
-            backgroundDrawable2.setColor(Color.GREEN);
-            backgroundDrawable5.setColor(Color.GREEN);
-
-        }
-
-        if (checkBoxdessert.isChecked()) {
-            backgroundDrawable3.setColor(Color.GREEN);
-            backgroundDrawable6.setColor(Color.GREEN);
-
-        }
-
-        if(checkBoxstarter.isChecked() && checkBoxmaincourse.isChecked() && checkBoxdessert.isChecked()){
-        ordersamples.remove(0);
-        chefpageadapter.notifyDataSetChanged();
-        }
-    }*/
         @Override
         protected void onCreate (Bundle savedInstanceState){
             super.onCreate(savedInstanceState);
@@ -136,7 +78,7 @@ public class ChefPage extends AppCompatActivity{
             ordersamples.add(ordernr3);
 
 
-            chefpageadapter = new ChefPageAdapter(getApplicationContext(),ordersamples);
+            chefpageadapter = new ChefPageAdapter(getApplicationContext(), ordersamples);
             orderArrayList.setAdapter(chefpageadapter);
             orderArrayList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
