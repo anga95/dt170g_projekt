@@ -6,9 +6,7 @@
   <persistence-unit name="DB">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <jta-data-source>DB</jta-data-source>
-    <mapping-file>TotalOrdersEntity.xml</mapping-file>
-    <class>se.miun.dt170g_projekt.entities.TotalOrdersEntity</class>
-    <!-- Add the following to work around exception issue -->
+      <!-- Add the following to work around exception issue -->
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
     <!--            driver, url and connection credentials-->
@@ -16,10 +14,6 @@
     <property name="jakarta.persistence.jdbc.url" value="jdbc:derby://localhost:1527/DB"/>
     <property name="jakarta.persistence.jdbc.user" value="APP"/>
     <property name="jakarta.persistence.jdbc.password" value="APP"/>
-      <property name="eclipselink.jdbc.url" value="jdbc:derby://localhost:1527/DB;create=true"/>
-      <property name="eclipselink.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
-      <property name="eclipselink.jdbc.user" value="APP"/>
-      <property name="eclipselink.jdbc.password" value="APP"/>
     </properties>
 
   </persistence-unit>

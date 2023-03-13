@@ -23,10 +23,12 @@ public class ServletManager {
     }
     public void changeLunch(DailyLunchEntity Daily) {
         em.getTransaction().begin();
-        em.createQuery("UPDATE DailyLunchEntity SET lunch1 = :lunch1, lunch2 = :lunch2, lunch3 = :lunch3 WHERE weekday = :weekday")
+        em.createQuery("UPDATE DailyLunchEntity SET lunch1 = :lunch1, lunch2 = :lunch2, lunch3 = :lunch3, price= :price, time=:time WHERE weekday = :weekday")
                 .setParameter("lunch1", Daily.getLunch1())
                 .setParameter("lunch2", Daily.getLunch2())
                 .setParameter("lunch3", Daily.getLunch3())
+                .setParameter("price", Daily.getPrice())
+                .setParameter("time", Daily.getTime())
                 .setParameter("weekday", Daily.getWeekday())
                 .executeUpdate();
         em.getTransaction().commit();

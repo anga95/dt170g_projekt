@@ -31,7 +31,7 @@
                         <%
                             List<DailyLunchEntity> list = ServletManager.getAllDaily();
                             for (DailyLunchEntity obj : list) {
-                                if (obj.getWeekday().equals("Måndag")) {
+                                if (obj.getWeekday().equals("monday")) {
                         %>
                         <p class="card-text"><%= obj.getLunch1() %></p>
                         <br/>
@@ -48,7 +48,7 @@
                         <h5 class="card-title">Tisdag</h5>
                         <%
                             for (DailyLunchEntity obj : list) {
-                                if (obj.getWeekday().equals("Tisdag")) {
+                                if (obj.getWeekday().equals("tuesday")) {
                         %>
                         <p class="card-text"><%= obj.getLunch1() %></p>
                         <br/>
@@ -64,7 +64,7 @@
                         <h5 class="card-title">Onsdag</h5>
                         <%
                             for (DailyLunchEntity obj : list) {
-                                if (obj.getWeekday().equals("Onsdag")) {
+                                if (obj.getWeekday().equals("wednesday")) {
                         %>
                         <p class="card-text"><%= obj.getLunch1() %></p>
                         <br/>
@@ -80,7 +80,7 @@
                         <h5 class="card-title">Torsdag</h5>
                         <%
                             for (DailyLunchEntity obj : list) {
-                                if (obj.getWeekday().equals("Torsdag")) {
+                                if (obj.getWeekday().equals("thursday")) {
                         %>
                         <p class="card-text"><%= obj.getLunch1() %></p>
                         <br/>
@@ -96,7 +96,7 @@
                         <h5 class="card-title">Fredag</h5>
                         <%
                             for (DailyLunchEntity obj : list) {
-                                if (obj.getWeekday().equals("Fredag")) {
+                                if (obj.getWeekday().equals("friday")) {
                         %>
                         <p class="card-text"><%= obj.getLunch1() %></p>
                         <br/>

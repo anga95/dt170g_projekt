@@ -4,22 +4,22 @@ import java.util.ArrayList;
 
 public class Order {
     private int tableNr;
+    private String notes;
+    private int time;
 
-    private int priority;
-
-    private String course;
     private ArrayList<String> starter;
     private ArrayList<String> mainCourse;
     private ArrayList<String> dessert;
+    private ArrayList<String> quantity;
     private boolean starterready;
     private boolean mainCourseready;
     private boolean dessertready;
 
     private boolean completed;
 
-    public Order(int priority, int tableNr, ArrayList<String> starter, ArrayList<String> mainCourse, ArrayList<String> dessert, boolean
-                 starterready, boolean mainCourseready, boolean dessertready){
-        this.priority = priority;
+    public Order( int tableNr, ArrayList<String> starter, ArrayList<String> mainCourse, ArrayList<String> dessert, boolean
+            starterready, boolean mainCourseready, boolean dessertready, String notes, ArrayList<String> quantity, int time){
+
         this.tableNr = tableNr;
         this.starter = starter;
         this.mainCourse = mainCourse;
@@ -27,6 +27,9 @@ public class Order {
         this.starterready = false;
         this.mainCourseready = false;
         this.dessertready = false;
+        this.notes = notes;
+        this.quantity = quantity;
+        this.time = time;
     }
 
     public void setTableNr(int tableNr){
@@ -85,22 +88,35 @@ public class Order {
         this.dessertready = dessertready;
     }
 
-    public void setPriority(int priority) {
-        this.priority = priority;
-    }
-    public int getPriority() {
-        return priority;
-    }
-
-    public String getCourse() {
-        return course;
-    }
 
     public void setOrderReady(boolean completed) {
         this.completed = completed;
     }
     public boolean OrderReady() {
         return completed;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+    public String getNotes() {
+        return notes;
+    }
+
+    public ArrayList<String> getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(ArrayList<String> quantity) {
+        this.quantity = quantity;
+    }
+
+    public void setTime(int time) {
+        this.time = time;
+    }
+
+    public int getTime() {
+        return time;
     }
 
 }

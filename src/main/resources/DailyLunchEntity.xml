@@ -20,33 +20,6 @@
             <basic name="lunch3">
                 <column name="LUNCH_3" nullable="false" length="250"/>
             </basic>
-            <basic name="pirce">
-                <column name="PIRCE" nullable="false" precision="-1"/>
-            </basic>
-            <basic name="time">
-                <column name="TIME" nullable="false" precision="-1"/>
-            </basic>
-        </attributes>
-    </entity>
-    <entity class="se.miun.dt170g_projekt.entities.DailyLunchEntity"/>
-    <entity class="se.miun.dt170g_projekt.entities.DailyLunchEntity">
-        <table name="DAILY_LUNCH" schema="APP" catalog=""/>
-        <attributes>
-            <id name="id">
-                <column name="ID" precision="-1"/>
-            </id>
-            <basic name="weekday">
-                <column name="WEEKDAY" nullable="false" length="25"/>
-            </basic>
-            <basic name="lunch1">
-                <column name="LUNCH_1" nullable="false" length="250"/>
-            </basic>
-            <basic name="lunch2">
-                <column name="LUNCH_2" nullable="false" length="250"/>
-            </basic>
-            <basic name="lunch3">
-                <column name="LUNCH_3" nullable="false" length="250"/>
-            </basic>
             <basic name="price">
                 <column name="PRICE" nullable="false" precision="-1"/>
             </basic>

@@ -2,27 +2,31 @@ package se.miun.dt170g_projekt.entities;
 
 import jakarta.persistence.*;
 
-import java.util.Objects;
-
 @Entity
-@Table(name = "DAILY_LUNCH")
+@Table(name = "DAILY_LUNCH", schema = "APP", catalog = "")
 public class DailyLunchEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "ID")
+    @Column(name = "ID", nullable = false)
     private int id;
     @Basic
-    @Column(name = "WEEKDAY")
+    @Column(name = "WEEKDAY", nullable = true, length = 25)
     private String weekday;
     @Basic
-    @Column(name = "LUNCH_1")
+    @Column(name = "LUNCH_1", nullable = true, length = 250)
     private String lunch1;
     @Basic
-    @Column(name = "LUNCH_2")
+    @Column(name = "LUNCH_2", nullable = true, length = 250)
     private String lunch2;
     @Basic
-    @Column(name = "LUNCH_3")
+    @Column(name = "LUNCH_3", nullable = true, length = 250)
     private String lunch3;
+    @Basic
+    @Column(name = "PRICE", nullable = true)
+    private Integer price;
+    @Basic
+    @Column(name = "TIME", nullable = true)
+    private Integer time;
 
     public int getId() {
         return id;
@@ -64,16 +68,19 @@ public class DailyLunchEntity {
         this.lunch3 = lunch3;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        DailyLunchEntity that = (DailyLunchEntity) o;
-        return id == that.id && Objects.equals(weekday, that.weekday) && Objects.equals(lunch1, that.lunch1) && Objects.equals(lunch2, that.lunch2) && Objects.equals(lunch3, that.lunch3);
+    public Integer getPrice() {
+        return price;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, weekday, lunch1, lunch2, lunch3);
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    public Integer getTime() {
+        return time;
+    }
+
+    public void setTime(Integer time) {
+        this.time = time;
     }
 }

@@ -25,7 +25,7 @@ public class TotalOrdersEntity {
     @Column(name = "QUANTITY")
     private Integer quantity;
     @Basic
-    @Column(name = "STATUS", nullable = true)
+    @Column(name = "STATUS", nullable = false)
     private Boolean status;
 
     @Basic

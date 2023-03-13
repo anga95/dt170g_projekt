@@ -21,6 +21,8 @@ public class AdminAddDailyFoodToDataBase extends HttpServlet {
         String dish1 = request.getParameter("dish1");
         String dish2 = request.getParameter("dish2");
         String dish3 = request.getParameter("dish3");
+        String price = request.getParameter("price");
+        String time = request.getParameter("time");
 
         String savedValues = "Day: " + day + ", Dish 1: " + dish1 + ", Dish 2: " + dish2 + ", Dish 3: " + dish3;
         System.out.println(savedValues); // Print the saved values to the console for debugging purposes
@@ -36,6 +38,8 @@ public class AdminAddDailyFoodToDataBase extends HttpServlet {
         Daily.setLunch1(dish1);
         Daily.setLunch2(dish2);
         Daily.setLunch3(dish3);
+        Daily.setPrice(Integer.valueOf(price));
+        Daily.setTime(Integer.valueOf(time));
 
         ServletManager newdailyLunch = null;
 

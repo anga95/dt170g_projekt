@@ -66,29 +66,29 @@ public class addLunch extends AppCompatActivity {
             protected void onPostExecute(String result) {
                 // Parse JSON data and extract the items you need
                 try {
-                    JSONArray jsonArray = new JSONArray(result);
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        JSONObject jsonObject = jsonArray.getJSONObject(i);
-                        String itemName = jsonObject.getString("name");
-                        double itemPrice = jsonObject.getDouble("price");
-                        String category = jsonObject.getString("category");
-                        int idNum = jsonObject.getInt("id");
-                        int time = jsonObject.getInt("time");
-                        SourceItem item = new SourceItem(itemName, itemPrice, category, idNum, time);
-                        if (category.equals("Lunch")) {
-                            foodsItemList.add(item);
-                        } else if (category.equals("Drinks")) {
-                            drinksItemList.add(item);
-                        }
-                    }
+                    JSONObject jsonObject = new JSONObject(result);
+                    String lunch1 = jsonObject.getString("lunch1");
+                    String lunch2 = jsonObject.getString("lunch2");
+                    String lunch3 = jsonObject.getString("lunch3");
+                    double itemPrice = jsonObject.getDouble("price");
+                    String category = jsonObject.getString("weekday");
+                    int idNum = jsonObject.getInt("id");
+                    int time = jsonObject.getInt("time");
+                    SourceItem lunchOne = new SourceItem(lunch1, itemPrice, category, idNum, time);
+                    SourceItem lunchTwo = new SourceItem(lunch2, itemPrice, category, idNum, time);
+                    SourceItem lunchThree = new SourceItem(lunch3, itemPrice, category, idNum, time);
+                    foodsItemList.add(lunchOne);
+                    foodsItemList.add(lunchTwo);
+                    foodsItemList.add(lunchThree);
+
                     // Notify adapter that data has changed
                     foodsRecyclerAdapter.notifyDataSetChanged();
-                    drinksRecyclerAdapter.notifyDataSetChanged();
+                    //drinksRecyclerAdapter.notifyDataSetChanged();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
-        }.execute("http://10.0.2.2:8080/antons-skafferi/api/MenuItems/Json");
+        }.execute("http://10.0.2.2:8080/antons-skafferi/api/dailylunch/getTodaysLunch");
 
     }
 

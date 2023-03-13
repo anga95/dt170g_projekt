@@ -40,9 +40,7 @@ public class ChefPage extends AppCompatActivity{
     private RecyclerView maincourse_List;
     private RecyclerView dessert_List;
 
-    private ArrayList<Order> ordersamples;
-
-        @SuppressLint("StaticFieldLeak")
+    @SuppressLint("StaticFieldLeak")
         @Override
         protected void onCreate (Bundle savedInstanceState){
             super.onCreate(savedInstanceState);
@@ -51,7 +49,7 @@ public class ChefPage extends AppCompatActivity{
             orderArrayList = findViewById(R.id.order_List);
 
 
-            ordersamples = new ArrayList<>();
+            ArrayList<Order> ordersamples = new ArrayList<>();
             new HttpUtils("GET") {
                 @Override
                 protected void onPostExecute(String result) {
@@ -62,21 +60,27 @@ public class ChefPage extends AppCompatActivity{
 
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
-                            int quantity = jsonObject.getInt("quantity");
+                            String quantity = jsonObject.getString("quantity");
                             int tableNr = jsonObject.getInt("tableNr");
                             String name = jsonObject.getString("name");
                             String category = jsonObject.getString("category");
 
                             Order order = ordersByTableNr.get(tableNr);
                             if (order == null) {
-                                order = new Order(i+1, tableNr, new ArrayList<String>(), new ArrayList<String>(), new ArrayList<String>(), false, false, false);
+                                order = new Order(tableNr, new ArrayList<String>(), new ArrayList<String>(), new ArrayList<String>(), false, false, false, "",new ArrayList<>(),0);
                                 ordersByTableNr.put(tableNr, order);
                             }
 
                             switch(category) {
+                                case "monday":
+                                case "tuesday":
+                                case "wednesday":
+                                case "thursday":
+                                case "friday":
                                 case "Lunch":
                                 case "MainCourse":
                                     order.getMainCourse().add(name);
+                                    order.getQuantity().add(quantity);
                                     break;
                                 case "Starters":
                                     order.getStarter().add(name);
@@ -89,8 +93,8 @@ public class ChefPage extends AppCompatActivity{
                             }
                         }
 
-                        List<Order> ordersamples = new ArrayList<>(ordersByTableNr.values());
-                        chefpageadapter = new ChefPageAdapter(getApplicationContext(), (ArrayList<Order>) ordersamples);
+                        ArrayList<Order> ordersamples = new ArrayList<>(ordersByTableNr.values());
+                        chefpageadapter = new ChefPageAdapter(getApplicationContext(), ordersamples);
                         orderArrayList.setAdapter(chefpageadapter);
                         orderArrayList.setLayoutManager(new LinearLayoutManager(ChefPage.this, LinearLayoutManager.HORIZONTAL, false));
                     } catch (JSONException e) {
@@ -124,7 +128,7 @@ public class ChefPage extends AppCompatActivity{
             ordersamples.add(ordernr3);*/
 
 
-            chefpageadapter = new ChefPageAdapter(getApplicationContext(),ordersamples);
+            chefpageadapter = new ChefPageAdapter(getApplicationContext(), ordersamples);
             orderArrayList.setAdapter(chefpageadapter);
             orderArrayList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 

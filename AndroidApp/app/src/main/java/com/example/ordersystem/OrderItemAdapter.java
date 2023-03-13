@@ -42,7 +42,7 @@ public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.View
         OrderItem orderItem = orderItemList.get(position);
         holder.nameTextView.setText(orderItem.getName());
         holder.quantityTextView.setText(String.valueOf(orderItem.getQuantity()));
-        holder.priceTextView.setText(String.format("$%.2f", orderItem.getPrice()));
+        holder.priceTextView.setText(String.format("%.2f" + "kr", orderItem.getPrice()));
 
         holder.removeButton.setOnClickListener(view -> {
             //OrderItem orderItem1 = orderItemList.get(getAdapterPosition());

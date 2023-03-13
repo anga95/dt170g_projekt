@@ -1,5 +1,5 @@
 // Define an array with the names of the days
-const days = ["Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag"];
+const days = ["monday", "tuesday", "wednesday", "thursday", "friday"];
 // Keep track of the index of the current day in the array
 let currentDayIndex = 0;
 function previousDay() {

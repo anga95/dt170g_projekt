@@ -40,29 +40,19 @@ public class ChefPageAdapter extends RecyclerView.Adapter<ChefPageAdapter.ViewHo
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView table;
-        public RecyclerView starter_List;
-        public CheckBox checkBoxstarter;
+        private final TextView table;
+        private final RecyclerView starter_List;
+        private final CheckBox checkBoxstarter;
 
-        public RecyclerView maincourse_List;
-        public CheckBox checkBoxmaincourse;
+        private final RecyclerView maincourse_List;
+        private final CheckBox checkBoxmaincourse;
 
-        public RecyclerView dessert_List;
-        public CheckBox checkBoxdessert;
+        private final RecyclerView dessert_List;
+        private final CheckBox checkBoxdessert;
 
-        public TextView starter;
+        private final TextView starter;
 
-        public TextView maincourse;
-
-        public TextView dessert;
-
-        private LinearLayout starterLayout;
-
-        private LinearLayout maincourseLayout;
-
-        private LinearLayout dessertLayout;
-
-        private ImageView bell;
+        private final ImageView bell;
 
 
         public ViewHolder(View itemView) {
@@ -72,18 +62,16 @@ public class ChefPageAdapter extends RecyclerView.Adapter<ChefPageAdapter.ViewHo
             starter = itemView.findViewById(R.id.starter);
             checkBoxstarter = itemView.findViewById(R.id.checkBoxstarter);
             maincourse_List = itemView.findViewById(R.id.maincourse_List);
-            maincourse = itemView.findViewById(R.id.maincourse);
+            TextView maincourse = itemView.findViewById(R.id.maincourse);
             checkBoxmaincourse = itemView.findViewById(R.id.checkBoxmaincourse);
             dessert_List = itemView.findViewById(R.id.dessert_List);
-            dessert = itemView.findViewById(R.id.dessert);
+            TextView dessert = itemView.findViewById(R.id.dessert);
             checkBoxdessert = itemView.findViewById(R.id.checkBoxdessert);
-            dessertLayout = itemView.findViewById(R.id.dessertLayout);
-            maincourseLayout = itemView.findViewById(R.id.maincourseLayout);
-            starterLayout = itemView.findViewById(R.id.starterLayout);
+            LinearLayout dessertLayout = itemView.findViewById(R.id.dessertLayout);
+            LinearLayout maincourseLayout = itemView.findViewById(R.id.maincourseLayout);
+            LinearLayout starterLayout = itemView.findViewById(R.id.starterLayout);
             bell = itemView.findViewById(R.id.bell);
-
-
-
+            TextView quantity = itemView.findViewById(R.id.itemQuantity);
         }
     }
 
@@ -124,15 +112,17 @@ public class ChefPageAdapter extends RecyclerView.Adapter<ChefPageAdapter.ViewHo
 
         Order order = orders.get(position);
 
+
         holder.table.setText("Table" + " " +order.getTableNr());
         holder.starter.setText("Förrätt");
 
 
         if (order.getStarter().size() > 0) {
             holder.starter_List.setVisibility(View.VISIBLE);
-            ArrayList<String> starterArrayList = (ArrayList<String>) order.getStarter();
+            ArrayList<String> starterArrayList = order.getStarter();
+            ArrayList<String> quantityArrayList = order.getQuantity();
             holder.starter_List.setLayoutManager(new LinearLayoutManager(holder.itemView.getContext()));
-            holder.starter_List.setAdapter(new CourseAdapter(starterArrayList, "Starter"));
+            holder.starter_List.setAdapter(new CourseAdapter(starterArrayList, "Starter", quantityArrayList));
 
         } else {
             holder.starter_List.setVisibility(View.GONE);
@@ -141,9 +131,10 @@ public class ChefPageAdapter extends RecyclerView.Adapter<ChefPageAdapter.ViewHo
 
         if (order.getMainCourse().size() > 0) {
             holder.maincourse_List.setVisibility(View.VISIBLE);
-            ArrayList<String> mainCourseArrayList = (ArrayList<String>) order.getMainCourse();
+            ArrayList<String> mainCourseArrayList = order.getMainCourse();
+            ArrayList<String> quantityArrayList = order.getQuantity();
             holder.maincourse_List.setLayoutManager(new LinearLayoutManager(holder.itemView.getContext()));
-            holder.maincourse_List.setAdapter(new CourseAdapter(mainCourseArrayList, "MainCourse"));
+            holder.maincourse_List.setAdapter(new CourseAdapter(mainCourseArrayList, "MainCourse", quantityArrayList));
 
         } else {
             holder.maincourse_List.setVisibility(View.GONE);
@@ -151,47 +142,43 @@ public class ChefPageAdapter extends RecyclerView.Adapter<ChefPageAdapter.ViewHo
 
         if (order.getDessert().size() > 0) {
             holder.dessert_List.setVisibility(View.VISIBLE);
-            ArrayList<String> dessertArrayList = (ArrayList<String>) order.getDessert();
+            ArrayList<String> dessertArrayList = order.getDessert();
+            ArrayList<String> quantityArrayList = order.getQuantity();
             holder.dessert_List.setLayoutManager(new LinearLayoutManager(holder.itemView.getContext()));
-            holder.dessert_List.setAdapter(new CourseAdapter(dessertArrayList, "Dessert"));
+            holder.dessert_List.setAdapter(new CourseAdapter(dessertArrayList, "Dessert", quantityArrayList));
 
 
         } else {
             holder.dessert_List.setVisibility(View.GONE);
         }
 
-        holder.bell.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(holder.checkBoxstarter.isChecked()){
-                    backgroundDrawable.setColor(Color.GREEN);
-                    backgroundDrawable4.setColor(Color.GREEN);
-
-                }
-                if(holder.checkBoxmaincourse.isChecked()){
-                    backgroundDrawable2.setColor(Color.GREEN);
-                    backgroundDrawable5.setColor(Color.GREEN);
-
-                }
-                if(holder.checkBoxdessert.isChecked()){
-                    backgroundDrawable3.setColor(Color.GREEN);
-                    backgroundDrawable6.setColor(Color.GREEN);
-
-                }
-
-                if(holder.checkBoxstarter.isChecked() && holder.checkBoxmaincourse.isChecked() && holder.checkBoxdessert.isChecked()){
-                    int position = orders.indexOf(order);
-                    orders.remove(position);
-                    notifyItemRemoved(position);
-
-                }
+        holder.bell.setOnClickListener(v -> {
+            if(holder.checkBoxstarter.isChecked()){
+                backgroundDrawable.setColor(Color.GREEN);
+                backgroundDrawable4.setColor(Color.GREEN);
 
             }
+            if(holder.checkBoxmaincourse.isChecked()){
+                backgroundDrawable2.setColor(Color.GREEN);
+                backgroundDrawable5.setColor(Color.GREEN);
+
+            }
+            if(holder.checkBoxdessert.isChecked()){
+                backgroundDrawable3.setColor(Color.GREEN);
+                backgroundDrawable6.setColor(Color.GREEN);
+
+            }
+
+            if(holder.checkBoxstarter.isChecked() && holder.checkBoxmaincourse.isChecked() && holder.checkBoxdessert.isChecked()){
+                int position1 = orders.indexOf(order);
+                orders.remove(position1);
+                notifyItemRemoved(position1);
+
+            }
+
         });
 
     }
-
-
 
     @Override
     public int getItemCount() {

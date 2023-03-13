@@ -38,7 +38,7 @@ public class TotalOrdersResource {
             totalOrdersEntity.setQuantity(order.getQuantity());
             totalOrdersEntity.setNote(order.getNote());
             totalOrdersEntity.setTime(order.getTime());
-            totalOrdersEntity.setStatus(order.getStatus());
+            totalOrdersEntity.setStatus(false);
             // set other properties
             totalOrdersBean.saveItem(totalOrdersEntity);
         }

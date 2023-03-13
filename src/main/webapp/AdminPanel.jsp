@@ -34,12 +34,14 @@
                     <div class="choice-info" id="veckomeny-info">
                         <div class="card-body">
                             <form accept-charset="UTF-8" action="${pageContext.request.contextPath}/AdminPage" method="post">
-                                <input type="hidden" id="selectedDay" name="selectedDay" value="Måndag">
+                                <input type="hidden" id="selectedDay" name="selectedDay" value="monday">
                                 <div class="form-group">
                                     <h3 class="text-center mb-4" id="day">Måndag</h3>
                                     <textarea type="text" class="form-control" id="exampleFormControlInput1" name="dish1" placeholder="Maträtt 1"></textarea>
                                     <textarea type="text" class="form-control mt-3 " id="exampleFormControlInput2" name="dish2" placeholder="Maträtt 2"></textarea>
                                     <textarea type="text" class="form-control mt-3" id="exampleFormControlInput3" name="dish3" placeholder="Maträtt 3"></textarea>
+                                    <textarea type="text" class="form-control mt-3" id="exampleFormControlInput4" name="price" placeholder="Pris"></textarea>
+                                    <textarea type="text" class="form-control mt-3" id="exampleFormControlInput5" name="time" placeholder="Tid"></textarea>
                                 </div>
                                 <div class="mt-5 d-flex justify-content-between">
                                     <button type="button" class="btn btn-secondary me-2" onclick="previousDay()"><-Föregående dag</button>

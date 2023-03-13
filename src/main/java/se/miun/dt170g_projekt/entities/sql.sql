@@ -77,7 +77,9 @@ create table APP.daily_lunch
     weekday varchar(25),
     lunch_1 varchar(250),
     lunch_2 varchar(250),
-    lunch_3 varchar(250)
+    lunch_3 varchar(250),
+    PRICE   INTEGER,
+    TIME    INTEGER
 );
 create table APP.booking
 (
