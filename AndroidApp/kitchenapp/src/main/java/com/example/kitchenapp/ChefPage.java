@@ -1,5 +1,6 @@
 package com.example.kitchenapp;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
@@ -12,10 +13,11 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
+import java.util.*;
 
 
 public class ChefPage extends AppCompatActivity{
@@ -40,67 +42,7 @@ public class ChefPage extends AppCompatActivity{
 
     private ArrayList<Order> ordersamples;
 
-
-
-    /*public void myClickHandler(View view) {
-        LinearLayout myLinearLayout = findViewById(R.id.starterLayout);
-        LayerDrawable layerDrawable = (LayerDrawable) myLinearLayout.getBackground();
-        GradientDrawable backgroundDrawable = (GradientDrawable) layerDrawable.findDrawableByLayerId(R.id.bgcategory);
-
-        LinearLayout myLinearLayout2 = findViewById(R.id.maincourseLayout);
-        LayerDrawable layerDrawable2 = (LayerDrawable) myLinearLayout2.getBackground();
-        GradientDrawable backgroundDrawable2 = (GradientDrawable) layerDrawable2.findDrawableByLayerId(R.id.bgcategory);
-
-        LinearLayout myLinearLayout3 = findViewById(R.id.dessertLayout);
-        LayerDrawable layerDrawable3 = (LayerDrawable) myLinearLayout3.getBackground();
-        GradientDrawable backgroundDrawable3 = (GradientDrawable) layerDrawable3.findDrawableByLayerId(R.id.bgcategory);
-
-        RecyclerView myRecyclerView = findViewById(R.id.starter_List);
-        LayerDrawable layerDrawable4 = (LayerDrawable) myRecyclerView.getBackground();
-        GradientDrawable backgroundDrawable4 = (GradientDrawable) layerDrawable4.findDrawableByLayerId(R.id.bgrecycler);
-
-        RecyclerView myRecyclerView2 = findViewById(R.id.maincourse_List);
-        LayerDrawable layerDrawable5 = (LayerDrawable) myRecyclerView2.getBackground();
-        GradientDrawable backgroundDrawable5 = (GradientDrawable) layerDrawable5.findDrawableByLayerId(R.id.bgrecycler);
-
-        RecyclerView myRecyclerView3 = findViewById(R.id.dessert_List);
-        LayerDrawable layerDrawable6 = (LayerDrawable) myRecyclerView3.getBackground();
-        GradientDrawable backgroundDrawable6 = (GradientDrawable) layerDrawable6.findDrawableByLayerId(R.id.bgrecycler);
-
-
-        checkBoxstarter = findViewById(R.id.checkBoxstarter);
-        checkBoxmaincourse = findViewById(R.id.checkBoxmaincourse);
-        checkBoxdessert = findViewById(R.id.checkBoxdessert);
-        dessertLayout = findViewById(R.id.dessertLayout);
-        maincourseLayout = findViewById(R.id.maincourseLayout);
-        starterLayout = findViewById(R.id.starterLayout);
-        starter_List = findViewById(R.id.starter_List);
-        maincourse_List = findViewById(R.id.maincourse_List);
-        dessert_List = findViewById(R.id.dessert_List);
-
-        if (checkBoxstarter.isChecked()) {
-            backgroundDrawable.setColor(Color.GREEN);
-            backgroundDrawable4.setColor(Color.GREEN);
-
-        }
-
-        if (checkBoxmaincourse.isChecked()) {
-            backgroundDrawable2.setColor(Color.GREEN);
-            backgroundDrawable5.setColor(Color.GREEN);
-
-        }
-
-        if (checkBoxdessert.isChecked()) {
-            backgroundDrawable3.setColor(Color.GREEN);
-            backgroundDrawable6.setColor(Color.GREEN);
-
-        }
-
-        if(checkBoxstarter.isChecked() && checkBoxmaincourse.isChecked() && checkBoxdessert.isChecked()){
-        ordersamples.remove(0);
-        chefpageadapter.notifyDataSetChanged();
-        }
-    }*/
+        @SuppressLint("StaticFieldLeak")
         @Override
         protected void onCreate (Bundle savedInstanceState){
             super.onCreate(savedInstanceState);
@@ -110,8 +52,54 @@ public class ChefPage extends AppCompatActivity{
 
 
             ordersamples = new ArrayList<>();
+            new HttpUtils("GET") {
+                @Override
+                protected void onPostExecute(String result) {
+                    // Parse JSON data and extract the items you need
+                    try {
+                        JSONArray jsonArray = new JSONArray(result);
+                        Map<Integer, Order> ordersByTableNr = new HashMap<>();
 
-            Order ordernr1 = new Order(1, 1, new ArrayList<String>(), new ArrayList<String>(), new ArrayList<String>(), false, false, false);
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JSONObject jsonObject = jsonArray.getJSONObject(i);
+                            int quantity = jsonObject.getInt("quantity");
+                            int tableNr = jsonObject.getInt("tableNr");
+                            String name = jsonObject.getString("name");
+                            String category = jsonObject.getString("category");
+
+                            Order order = ordersByTableNr.get(tableNr);
+                            if (order == null) {
+                                order = new Order(i+1, tableNr, new ArrayList<String>(), new ArrayList<String>(), new ArrayList<String>(), false, false, false);
+                                ordersByTableNr.put(tableNr, order);
+                            }
+
+                            switch(category) {
+                                case "Lunch":
+                                case "MainCourse":
+                                    order.getMainCourse().add(name);
+                                    break;
+                                case "Starters":
+                                    order.getStarter().add(name);
+                                    break;
+                                case "Dessert":
+                                    order.getDessert().add(name);
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+
+                        List<Order> ordersamples = new ArrayList<>(ordersByTableNr.values());
+                        chefpageadapter = new ChefPageAdapter(getApplicationContext(), (ArrayList<Order>) ordersamples);
+                        orderArrayList.setAdapter(chefpageadapter);
+                        orderArrayList.setLayoutManager(new LinearLayoutManager(ChefPage.this, LinearLayoutManager.HORIZONTAL, false));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }.execute("http://10.0.2.2:8080/antons-skafferi/api/TotalOrders/Json");
+
+           /* Order ordernr1 = new Order(1, 1, new ArrayList<String>(), new ArrayList<String>(), new ArrayList<String>(), false, false, false);
             ordernr1.setPriority(1);
             ordernr1.setTableNr(1);
             ordernr1.setStarter(new ArrayList<String>(Arrays.asList("soppa", "bröd")));
@@ -133,7 +121,7 @@ public class ChefPage extends AppCompatActivity{
             ordernr3.setStarter(new ArrayList<String>(Arrays.asList("soppa", "bröd")));
             ordernr3.setMainCourse(new ArrayList<String>(Arrays.asList("köttbullar", "köttfärssås")));
             ordernr3.setDessert(new ArrayList<String>(Arrays.asList("kladdkaka")));
-            ordersamples.add(ordernr3);
+            ordersamples.add(ordernr3);*/
 
 
             chefpageadapter = new ChefPageAdapter(getApplicationContext(),ordersamples);

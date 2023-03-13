@@ -97,4 +97,10 @@ public class ServletManager {
         em.close();
         return id;
     }
+
+    public static List<TotalOrdersEntity> getAllOrders() {
+        TypedQuery<TotalOrdersEntity> query = em.createQuery("SELECT e from TotalOrdersEntity e", TotalOrdersEntity.class);
+        List<TotalOrdersEntity> order = query.getResultList();
+        return order;
+    }
 }

@@ -83,6 +83,7 @@ public class ChefPageAdapter extends RecyclerView.Adapter<ChefPageAdapter.ViewHo
             bell = itemView.findViewById(R.id.bell);
 
 
+
         }
     }
 
@@ -127,21 +128,6 @@ public class ChefPageAdapter extends RecyclerView.Adapter<ChefPageAdapter.ViewHo
         holder.starter.setText("Förrätt");
 
 
-        holder.checkBoxstarter.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                if(holder.checkBoxstarter.isChecked()){
-                    backgroundDrawable.setColor(Color.GREEN);
-                    backgroundDrawable4.setColor(Color.GREEN);
-
-                }
-                else{
-                    backgroundDrawable.setColor(Color.parseColor("#80DADADA"));
-                    backgroundDrawable4.setColor(Color.WHITE);
-
-                }
-            }
-        });
         if (order.getStarter().size() > 0) {
             holder.starter_List.setVisibility(View.VISIBLE);
             ArrayList<String> starterArrayList = (ArrayList<String>) order.getStarter();
@@ -152,21 +138,6 @@ public class ChefPageAdapter extends RecyclerView.Adapter<ChefPageAdapter.ViewHo
             holder.starter_List.setVisibility(View.GONE);
         }
 
-    holder.checkBoxmaincourse.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                if(holder.checkBoxmaincourse.isChecked()){
-                    backgroundDrawable2.setColor(Color.GREEN);
-                    backgroundDrawable5.setColor(Color.GREEN);
-
-                }
-                else{
-                    backgroundDrawable2.setColor(Color.parseColor("#80DADADA"));
-                    backgroundDrawable5.setColor(Color.WHITE);
-
-                }
-            }
-        });
 
         if (order.getMainCourse().size() > 0) {
             holder.maincourse_List.setVisibility(View.VISIBLE);
@@ -178,21 +149,6 @@ public class ChefPageAdapter extends RecyclerView.Adapter<ChefPageAdapter.ViewHo
             holder.maincourse_List.setVisibility(View.GONE);
         }
 
-    holder.checkBoxdessert.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                if(holder.checkBoxdessert.isChecked()){
-                    backgroundDrawable3.setColor(Color.GREEN);
-                    backgroundDrawable6.setColor(Color.GREEN);
-
-                }
-                else{
-                    backgroundDrawable3.setColor(Color.parseColor("#80DADADA"));
-                    backgroundDrawable6.setColor(Color.WHITE);
-
-                }
-            }
-        });
         if (order.getDessert().size() > 0) {
             holder.dessert_List.setVisibility(View.VISIBLE);
             ArrayList<String> dessertArrayList = (ArrayList<String>) order.getDessert();
@@ -207,9 +163,26 @@ public class ChefPageAdapter extends RecyclerView.Adapter<ChefPageAdapter.ViewHo
         holder.bell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(holder.checkBoxstarter.isChecked()){
+                    backgroundDrawable.setColor(Color.GREEN);
+                    backgroundDrawable4.setColor(Color.GREEN);
+
+                }
+                if(holder.checkBoxmaincourse.isChecked()){
+                    backgroundDrawable2.setColor(Color.GREEN);
+                    backgroundDrawable5.setColor(Color.GREEN);
+
+                }
+                if(holder.checkBoxdessert.isChecked()){
+                    backgroundDrawable3.setColor(Color.GREEN);
+                    backgroundDrawable6.setColor(Color.GREEN);
+
+                }
+
                 if(holder.checkBoxstarter.isChecked() && holder.checkBoxmaincourse.isChecked() && holder.checkBoxdessert.isChecked()){
-
-
+                    int position = orders.indexOf(order);
+                    orders.remove(position);
+                    notifyItemRemoved(position);
 
                 }
 

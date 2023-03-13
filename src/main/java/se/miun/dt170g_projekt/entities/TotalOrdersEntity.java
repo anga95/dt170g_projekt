@@ -30,7 +30,7 @@ public class TotalOrdersEntity {
 
     @Basic
     @Column(name = "TABLE_NUMBER", nullable = true)
-    private Integer tableNr;
+    private Integer tableNumber;
 
     public int getId() {
         return id;
@@ -76,10 +76,6 @@ public class TotalOrdersEntity {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
@@ -93,10 +89,10 @@ public class TotalOrdersEntity {
     }
 
     public Integer getTableNr() {
-        return tableNr;
+        return tableNumber;
     }
 
     public void setTableNr(Integer tableNr) {
-        this.tableNr = tableNr;
+        this.tableNumber = tableNr;
     }
 }

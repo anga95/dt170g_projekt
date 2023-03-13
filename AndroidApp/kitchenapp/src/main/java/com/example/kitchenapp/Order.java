@@ -43,7 +43,7 @@ public class Order {
     }
 
     public ArrayList<String> getStarter() {
-        return new ArrayList<String>(starter);
+        return starter;
     }
 
     public boolean starterReady() {

@@ -113,12 +113,11 @@ public class addLunch extends AppCompatActivity {
                 orderItemObject.addProperty("category", item.getCategory());
                 orderItemObject.addProperty("time", item.getTime());
                 orderItemObject.addProperty("note", item.getNote());
+                orderItemObject.addProperty("tableNumber", order.getTableNumber());
                 orderItemArray.add(orderItemObject);
             }
             JsonObject orderObject = new JsonObject();
-            orderObject.addProperty("tableNumber", order.getTableNumber());
-            orderObject.add("orderItems", orderItemArray);
-            String jsonOrder = gson.toJson(orderObject);
+            String jsonOrder = gson.toJson(orderItemArray);
             HttpUtils httpUtils = new HttpUtils("POST");
             httpUtils.execute("http://10.0.2.2:8080/antons-skafferi/api/TotalOrders/addOrders", jsonOrder);
 

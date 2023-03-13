@@ -14,7 +14,7 @@
         android:textSize="18sp"/>
 
     <TextView
-        android:id="@+id/item_quantity_view"
+        android:id="@+id/itemQuantity"
         android:layout_width="wrap_content"
         android:layout_weight="1"
         android:layout_height="match_parent"

@@ -11,6 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -108,9 +111,9 @@ public class addALaCarte extends AppCompatActivity {
         }.execute("http://10.0.2.2:8080/antons-skafferi/api/MenuItems/Json");
     }
 
+    @SuppressLint("StaticFieldLeak")
     public void sendToKitchen(View view) {
         String tableText = tableNumber.getText().toString();
-
         String regex = "\\d+";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(tableText);
@@ -119,8 +122,25 @@ public class addALaCarte extends AppCompatActivity {
             int tableNum = Integer.parseInt(numberString);
             List<OrderItem> orderItemList = orderItemAdapter.getOrderItemList();
             Order order = new Order(tableNum, orderItemList);
-        }
+            // Convert the order to a JSON string
+            Gson gson = new Gson();
+            JsonArray orderItemArray = new JsonArray();
+            for (OrderItem item : order.getOrderItemList()) {
+                JsonObject orderItemObject = new JsonObject();
+                orderItemObject.addProperty("name", item.getName());
+                orderItemObject.addProperty("quantity", item.getQuantity());
+                orderItemObject.addProperty("category", item.getCategory());
+                orderItemObject.addProperty("time", item.getTime());
+                orderItemObject.addProperty("note", item.getNote());
+                orderItemObject.addProperty("tableNumber", order.getTableNumber());
+                orderItemArray.add(orderItemObject);
+            }
+            JsonObject orderObject = new JsonObject();
+            String jsonOrder = gson.toJson(orderItemArray);
+            HttpUtils httpUtils = new HttpUtils("POST");
+            httpUtils.execute("http://10.0.2.2:8080/antons-skafferi/api/TotalOrders/addOrders", jsonOrder);
 
+        }
     }
 
 }
