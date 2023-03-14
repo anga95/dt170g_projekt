@@ -34,10 +34,12 @@ public class ServletManager {
         em.getTransaction().commit();
     }
 
-    public void updateStatus(int id ) {
-        int deleteCount = em.createNamedQuery("OrderItems.updateStatus", OrderItemsEntity.class)
+    public void updateStatus(int id) {
+        em.getTransaction().begin();
+        em.createNamedQuery("totalOrders.updateStatus", TotalOrdersEntity.class)
                 .setParameter("id", id)
                 .executeUpdate();
+        em.getTransaction().commit();
     }
 
     public MenuItemsEntity findById(int id) {

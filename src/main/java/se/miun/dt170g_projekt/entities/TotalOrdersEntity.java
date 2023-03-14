@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "TOTAL_ORDERS")
+@NamedQueries({
+        @NamedQuery(name ="totalOrders.updateStatus",query="update TotalOrdersEntity SET status = TRUE WHERE id = :id")
+})
 public class TotalOrdersEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

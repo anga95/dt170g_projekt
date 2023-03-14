@@ -1,14 +1,9 @@
 package com.example.kitchenapp;
 
 import android.annotation.SuppressLint;
-import android.graphics.Color;
-import android.graphics.drawable.GradientDrawable;
-import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -64,10 +59,14 @@ public class ChefPage extends AppCompatActivity{
                             int tableNr = jsonObject.getInt("tableNr");
                             String name = jsonObject.getString("name");
                             String category = jsonObject.getString("category");
+                            String note = jsonObject.getString("note");
+                            String orderId = jsonObject.getString("id");
 
                             Order order = ordersByTableNr.get(tableNr);
                             if (order == null) {
-                                order = new Order(tableNr, new ArrayList<String>(), new ArrayList<String>(), new ArrayList<String>(), false, false, false, "",new ArrayList<>(),0);
+                                order = new Order(tableNr, new ArrayList<String>(), new ArrayList<String>(),
+                                        new ArrayList<String>(), false, false,
+                            false, new ArrayList<>() ,new ArrayList<>(),0, new ArrayList<>());
                                 ordersByTableNr.put(tableNr, order);
                             }
 
@@ -81,12 +80,16 @@ public class ChefPage extends AppCompatActivity{
                                 case "MainCourse":
                                     order.getMainCourse().add(name);
                                     order.getQuantity().add(quantity);
+                                    order.getNotes().add(note);
+                                    order.getItemIDs().add(orderId);
                                     break;
                                 case "Starters":
                                     order.getStarter().add(name);
+                                    order.getQuantity().add(quantity);
                                     break;
                                 case "Dessert":
                                     order.getDessert().add(name);
+                                    order.getQuantity().add(quantity);
                                     break;
                                 default:
                                     break;

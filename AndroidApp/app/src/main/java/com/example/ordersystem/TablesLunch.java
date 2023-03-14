@@ -1,5 +1,6 @@
 package com.example.ordersystem;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -20,7 +21,7 @@ public class TablesLunch extends AppCompatActivity {
     public void nextWindow(String value){
         Intent intent = new Intent(TablesLunch.this, addLunch.class);
         intent.putExtra("message", value);
-        startActivity(intent);
+        startActivityForResult(intent, 1);
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -51,6 +52,18 @@ public class TablesLunch extends AppCompatActivity {
             case R.id.table8Btn:
                 nextWindow("Table 8");
                 break;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1 && resultCode == RESULT_OK) {
+            boolean isSentToKitchen = data.getBooleanExtra("isSentToKitchen", false);
+            if (isSentToKitchen) {
+                Button button = findViewById(R.id.table1Btn); // replace with the button you want to change the color of
+                button.setBackgroundColor(getResources().getColor(R.color.teal_200)); // replace with the color you want to use
+            }
         }
     }
 }

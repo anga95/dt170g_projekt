@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Order {
     private int tableNr;
-    private String notes;
+    private ArrayList<String> notes;
     private int time;
-
+    private ArrayList<String> itemIDs;
     private ArrayList<String> starter;
     private ArrayList<String> mainCourse;
     private ArrayList<String> dessert;
@@ -18,7 +18,9 @@ public class Order {
     private boolean completed;
 
     public Order( int tableNr, ArrayList<String> starter, ArrayList<String> mainCourse, ArrayList<String> dessert, boolean
-            starterready, boolean mainCourseready, boolean dessertready, String notes, ArrayList<String> quantity, int time){
+            starterready, boolean mainCourseready, boolean dessertready, ArrayList<String> notes, ArrayList<String> quantity,
+            int time, ArrayList<String> itemIDs){
+
 
         this.tableNr = tableNr;
         this.starter = starter;
@@ -30,6 +32,11 @@ public class Order {
         this.notes = notes;
         this.quantity = quantity;
         this.time = time;
+        this.itemIDs = itemIDs;
+    }
+
+    public ArrayList<String> getItemIDs() {
+        return itemIDs;
     }
 
     public void setTableNr(int tableNr){
@@ -96,11 +103,12 @@ public class Order {
         return completed;
     }
 
-    public void setNotes(String notes) {
-        this.notes = notes;
-    }
-    public String getNotes() {
+    public ArrayList<String> getNotes() {
         return notes;
+    }
+
+    public void setNotes(ArrayList<String> notes) {
+        this.notes = notes;
     }
 
     public ArrayList<String> getQuantity() {
