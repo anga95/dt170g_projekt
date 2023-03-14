@@ -24,12 +24,6 @@ public class AdminAddDailyFoodToDataBase extends HttpServlet {
         String price = request.getParameter("price");
         String time = request.getParameter("time");
 
-        String savedValues = "Day: " + day + ", Dish 1: " + dish1 + ", Dish 2: " + dish2 + ", Dish 3: " + dish3;
-        System.out.println(savedValues); // Print the saved values to the console for debugging purposes
-
-        // Set the saved values as an attribute in the request object
-        request.setAttribute("savedValues", savedValues);
-
         // Forward the request to a JSP page to display the saved values
 
         DailyLunchEntity Daily = new DailyLunchEntity();
