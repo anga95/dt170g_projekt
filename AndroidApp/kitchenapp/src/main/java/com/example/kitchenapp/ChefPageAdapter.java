@@ -117,11 +117,11 @@ public class ChefPageAdapter extends RecyclerView.Adapter<ChefPageAdapter.ViewHo
         if (order.getStarter().size() > 0) {
             holder.starter_List.setVisibility(View.VISIBLE);
             ArrayList<String> starterArrayList = order.getStarter();
-            ArrayList<String> quantityArrayList = order.getQuantity();
-            ArrayList<String> noteArrayList = order.getNotes();
-            ArrayList<String> itemCourseId = order.getItemIDs();
+            ArrayList<String> quantityArrayList = order.getStarterQuantity();
+            ArrayList<String> noteArrayList = order.getStarterNotes();
+            ArrayList<String> itemCourseId = order.getStarterIDs();
             holder.starter_List.setLayoutManager(new LinearLayoutManager(holder.itemView.getContext()));
-            holder.starter_List.setAdapter(new CourseAdapter(starterArrayList, "Starter", quantityArrayList, noteArrayList, itemCourseId));
+            holder.starter_List.setAdapter(new CourseAdapter(starterArrayList, quantityArrayList, noteArrayList));
 
         } else {
             holder.starter_List.setVisibility(View.GONE);
@@ -131,11 +131,11 @@ public class ChefPageAdapter extends RecyclerView.Adapter<ChefPageAdapter.ViewHo
         if (order.getMainCourse().size() > 0) {
             holder.maincourse_List.setVisibility(View.VISIBLE);
             ArrayList<String> mainCourseArrayList = order.getMainCourse();
-            ArrayList<String> quantityArrayList = order.getQuantity();
-            ArrayList<String> noteArrayList = order.getNotes();
-            ArrayList<String> itemCourseId = order.getItemIDs();
+            ArrayList<String> quantityArrayList = order.getMainCourseQuantity();
+            ArrayList<String> noteArrayList = order.getMainCourseNotes();
+            ArrayList<String> itemCourseId = order.getMainCourseIDs();
             holder.maincourse_List.setLayoutManager(new LinearLayoutManager(holder.itemView.getContext()));
-            holder.maincourse_List.setAdapter(new CourseAdapter(mainCourseArrayList, "MainCourse", quantityArrayList, noteArrayList, itemCourseId));
+            holder.maincourse_List.setAdapter(new CourseAdapter(mainCourseArrayList, quantityArrayList, noteArrayList));
 
         } else {
             holder.maincourse_List.setVisibility(View.GONE);
@@ -144,11 +144,11 @@ public class ChefPageAdapter extends RecyclerView.Adapter<ChefPageAdapter.ViewHo
         if (order.getDessert().size() > 0) {
             holder.dessert_List.setVisibility(View.VISIBLE);
             ArrayList<String> dessertArrayList = order.getDessert();
-            ArrayList<String> quantityArrayList = order.getQuantity();
-            ArrayList<String> noteArrayList = order.getNotes();
-            ArrayList<String> itemCourseId = order.getItemIDs();
+            ArrayList<String> quantityArrayList = order.getDessertQuantity();
+            ArrayList<String> noteArrayList = order.getDessertNotes();
+            ArrayList<String> itemCourseId = order.getDessertIDs();
             holder.dessert_List.setLayoutManager(new LinearLayoutManager(holder.itemView.getContext()));
-            holder.dessert_List.setAdapter(new CourseAdapter(dessertArrayList, "Dessert", quantityArrayList, noteArrayList, itemCourseId));
+            holder.dessert_List.setAdapter(new CourseAdapter(dessertArrayList, quantityArrayList, noteArrayList));
 
 
         } else {
@@ -157,8 +157,17 @@ public class ChefPageAdapter extends RecyclerView.Adapter<ChefPageAdapter.ViewHo
 
         holder.bell.setOnClickListener(v -> {
             if (holder.checkBoxstarter.isChecked()) {
-
-
+                if (holder.checkBoxstarter.isChecked()) {
+                    JSONArray jsonArray = new JSONArray();
+                    try{
+                        JSONObject json = new JSONObject();
+                        json.put("order_id", new JSONArray(order.getStarterIDs()));
+                        jsonArray.put(json);
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
+                    new HttpUtils("POST").execute("http://10.0.2.2:8080/antons-skafferi/api/TotalOrders/updateStarters", jsonArray.toString());
+                }
                 backgroundDrawable.setColor(Color.GREEN);
                 backgroundDrawable4.setColor(Color.GREEN);
                 holder.starter_List.setVisibility(View.GONE);
@@ -168,11 +177,11 @@ public class ChefPageAdapter extends RecyclerView.Adapter<ChefPageAdapter.ViewHo
                 if (order.getStarter().size() > 0) {
                     holder.starter_List.setVisibility(View.VISIBLE);
                     ArrayList<String> starterArrayList = order.getStarter();
-                    ArrayList<String> quantityArrayList = order.getQuantity();
-                    ArrayList<String> noteArrayList = order.getNotes();
-                    ArrayList<String> itemCourseId = order.getItemIDs();
+                    ArrayList<String> quantityArrayList = order.getStarterQuantity();
+                    ArrayList<String> noteArrayList = order.getStarterNotes();
+                    ArrayList<String> startersId = order.getStarterIDs();
                     holder.starter_List.setLayoutManager(new LinearLayoutManager(holder.itemView.getContext()));
-                    holder.starter_List.setAdapter(new CourseAdapter(starterArrayList, "Starter", quantityArrayList, noteArrayList, itemCourseId));
+                    holder.starter_List.setAdapter(new CourseAdapter(starterArrayList, quantityArrayList, noteArrayList));
                 }
             }
 
@@ -182,7 +191,7 @@ public class ChefPageAdapter extends RecyclerView.Adapter<ChefPageAdapter.ViewHo
                     JSONArray jsonArray = new JSONArray();
                     try{
                         JSONObject json = new JSONObject();
-                        json.put("order_id", new JSONArray(order.getItemIDs()));
+                        json.put("order_id", new JSONArray(order.getMainCourseIDs()));
                         jsonArray.put(json);
                     } catch (Exception e) {
                         throw new RuntimeException(e);
@@ -199,15 +208,26 @@ public class ChefPageAdapter extends RecyclerView.Adapter<ChefPageAdapter.ViewHo
                 if (order.getMainCourse().size() > 0) {
                     holder.maincourse_List.setVisibility(View.VISIBLE);
                     ArrayList<String> mainCourseArrayList = order.getMainCourse();
-                    ArrayList<String> quantityArrayList = order.getQuantity();
-                    ArrayList<String> noteArrayList = order.getNotes();
-                    ArrayList<String> mainCourseIds = order.getItemIDs();
+                    ArrayList<String> quantityArrayList = order.getMainCourseQuantity();
+                    ArrayList<String> noteArrayList = order.getMainCourseNotes();
+                    ArrayList<String> mainCourseIds = order.getMainCourseIDs();
                     holder.maincourse_List.setLayoutManager(new LinearLayoutManager(holder.itemView.getContext()));
-                    holder.maincourse_List.setAdapter(new CourseAdapter(mainCourseArrayList, "MainCourse", quantityArrayList, noteArrayList,mainCourseIds));
+                    holder.maincourse_List.setAdapter(new CourseAdapter(mainCourseArrayList, quantityArrayList, noteArrayList));
                 }
             }
 
             if (holder.checkBoxdessert.isChecked()) {
+                if (holder.checkBoxstarter.isChecked()) {
+                    JSONArray jsonArray = new JSONArray();
+                    try{
+                        JSONObject json = new JSONObject();
+                        json.put("order_id", new JSONArray(order.getDessertIDs()));
+                        jsonArray.put(json);
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
+                    new HttpUtils("POST").execute("http://10.0.2.2:8080/antons-skafferi/api/TotalOrders/updateStarters", jsonArray.toString());
+                }
                 backgroundDrawable3.setColor(Color.GREEN);
                 backgroundDrawable6.setColor(Color.GREEN);
                 holder.dessert_List.setVisibility(View.GONE);
@@ -217,11 +237,11 @@ public class ChefPageAdapter extends RecyclerView.Adapter<ChefPageAdapter.ViewHo
                 if (order.getDessert().size() > 0) {
                     holder.dessert_List.setVisibility(View.VISIBLE);
                     ArrayList<String> dessertArrayList = order.getDessert();
-                    ArrayList<String> quantityArrayList = order.getQuantity();
-                    ArrayList<String> noteArrayList = order.getNotes();
-                    ArrayList<String> itemCourseId = order.getItemIDs();
+                    ArrayList<String> quantityArrayList = order.getDessertQuantity();
+                    ArrayList<String> noteArrayList = order.getDessertNotes();
+                    ArrayList<String> dessertIds = order.getDessertIDs();
                     holder.dessert_List.setLayoutManager(new LinearLayoutManager(holder.itemView.getContext()));
-                    holder.dessert_List.setAdapter(new CourseAdapter(dessertArrayList, "Dessert", quantityArrayList, noteArrayList, itemCourseId));
+                    holder.dessert_List.setAdapter(new CourseAdapter(dessertArrayList, quantityArrayList, noteArrayList));
                 }
             }
 

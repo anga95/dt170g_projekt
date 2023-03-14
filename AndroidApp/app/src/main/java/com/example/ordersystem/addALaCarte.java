@@ -135,7 +135,6 @@ public class addALaCarte extends AppCompatActivity {
                 orderItemObject.addProperty("tableNumber", order.getTableNumber());
                 orderItemArray.add(orderItemObject);
             }
-            JsonObject orderObject = new JsonObject();
             String jsonOrder = gson.toJson(orderItemArray);
             HttpUtils httpUtils = new HttpUtils("POST");
             httpUtils.execute("http://10.0.2.2:8080/antons-skafferi/api/TotalOrders/addOrders", jsonOrder);

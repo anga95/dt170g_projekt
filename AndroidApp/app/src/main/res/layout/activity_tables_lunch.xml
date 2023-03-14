@@ -156,5 +156,18 @@
         app:layout_constraintHorizontal_bias="0.572"
         app:layout_constraintStart_toEndOf="@+id/table7Btn"
         app:layout_constraintTop_toBottomOf="@+id/table6Btn" />
+    <Button
+        android:id="@+id/ordersBtn"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="85dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="@string/table_8"
+        android:textColor="@color/black"
+        android:onClick="helpB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@+id/table8Btn"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

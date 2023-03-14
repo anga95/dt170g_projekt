@@ -66,7 +66,9 @@ public class ChefPage extends AppCompatActivity{
                             if (order == null) {
                                 order = new Order(tableNr, new ArrayList<String>(), new ArrayList<String>(),
                                         new ArrayList<String>(), false, false,
-                            false, new ArrayList<>() ,new ArrayList<>(),0, new ArrayList<>());
+                            false, new ArrayList<>() ,new ArrayList<>(),0, new ArrayList<>(),
+                                        new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>(),
+                                        new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
                                 ordersByTableNr.put(tableNr, order);
                             }
 
@@ -79,17 +81,21 @@ public class ChefPage extends AppCompatActivity{
                                 case "Lunch":
                                 case "MainCourse":
                                     order.getMainCourse().add(name);
-                                    order.getQuantity().add(quantity);
-                                    order.getNotes().add(note);
-                                    order.getItemIDs().add(orderId);
+                                    order.getMainCourseQuantity().add(quantity);
+                                    order.getStarterNotes().add(note);
+                                    order.getMainCourseIDs().add(orderId);
                                     break;
                                 case "Starters":
                                     order.getStarter().add(name);
-                                    order.getQuantity().add(quantity);
+                                    order.getStarterQuantity().add(quantity);
+                                    order.getMainCourseNotes().add(note);
+                                    order.getStarterIDs().add(orderId);
                                     break;
                                 case "Dessert":
                                     order.getDessert().add(name);
-                                    order.getQuantity().add(quantity);
+                                    order.getDessertQuantity().add(quantity);
+                                    order.getDessertNotes().add(note);
+                                    order.getDessertIDs().add(orderId);
                                     break;
                                 default:
                                     break;
@@ -105,35 +111,6 @@ public class ChefPage extends AppCompatActivity{
                     }
                 }
             }.execute("http://10.0.2.2:8080/antons-skafferi/api/TotalOrders/Json");
-
-           /* Order ordernr1 = new Order(1, 1, new ArrayList<String>(), new ArrayList<String>(), new ArrayList<String>(), false, false, false);
-            ordernr1.setPriority(1);
-            ordernr1.setTableNr(1);
-            ordernr1.setStarter(new ArrayList<String>(Arrays.asList("soppa", "bröd")));
-            ordernr1.setMainCourse(new ArrayList<String>(Arrays.asList("köttbullar")));
-            ordernr1.setDessert(new ArrayList<String>(Arrays.asList("kladdkaka")));
-            ordersamples.add(ordernr1);
-
-            Order ordernr2 = new Order(2, 2, new ArrayList<String>(), new ArrayList<String>(), new ArrayList<String>(), false, false, false);
-            ordernr2.setPriority(2);
-            ordernr2.setTableNr(2);
-            ordernr2.setMainCourse(new ArrayList<String>(Arrays.asList("köttbullar")));
-            ordernr2.setStarter(new ArrayList<String>(Arrays.asList("kladdkaka")));
-            ordernr2.setDessert(new ArrayList<String>(Arrays.asList("kladdkaka")));
-            ordersamples.add(ordernr2);
-
-            Order ordernr3 = new Order(3, 3, new ArrayList<String>(), new ArrayList<String>(), new ArrayList<String>(), false, false, false);
-            ordernr3.setPriority(3);
-            ordernr3.setTableNr(3);
-            ordernr3.setStarter(new ArrayList<String>(Arrays.asList("soppa", "bröd")));
-            ordernr3.setMainCourse(new ArrayList<String>(Arrays.asList("köttbullar", "köttfärssås")));
-            ordernr3.setDessert(new ArrayList<String>(Arrays.asList("kladdkaka")));
-            ordersamples.add(ordernr3);*/
-
-
-            //chefpageadapter = new ChefPageAdapter(getApplicationContext(), ordersamples);
-            //orderArrayList.setAdapter(chefpageadapter);
-            //orderArrayList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         }
 

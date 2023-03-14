@@ -15,7 +15,6 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
     private final ArrayList<String> CourseList;
     private final ArrayList<String> QuantityList;
     private final ArrayList<String> noteList;
-    private final ArrayList<String> itemIdList;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -31,12 +30,11 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
         }
     }
 
-    public CourseAdapter(ArrayList<String> courseList, String courseType, ArrayList<String> quantityList,
-                         ArrayList<String> noteList, ArrayList<String> itemIdList) {
+    public CourseAdapter(ArrayList<String> courseList, ArrayList<String> quantityList,
+                         ArrayList<String> noteList) {
         this.CourseList = courseList;
         this.QuantityList = quantityList;
         this.noteList = noteList;
-        this.itemIdList = itemIdList;
     }
 
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -53,10 +51,17 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
         String quantity = QuantityList.get(position);
         holder.quantity.setText("x" + quantity);
 
-        String note = noteList.get(position);
+        //String note = noteList.get(position);
+        String note = noteList.toString();
         if (note != null && !note.isEmpty()) {
-            holder.note.setVisibility(View.VISIBLE);
-            holder.note.setText(note);
+            note = note.replaceAll("\\[|\\]", "");
+            // Check if note is empty after removing brackets
+            if (!note.isEmpty()) {
+                holder.note.setVisibility(View.VISIBLE);
+                holder.note.setText(note);
+            } else {
+                holder.note.setVisibility(View.GONE);
+            }
         } else {
             holder.note.setVisibility(View.GONE);
         }

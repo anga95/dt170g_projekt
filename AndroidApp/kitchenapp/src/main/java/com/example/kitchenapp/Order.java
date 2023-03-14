@@ -4,13 +4,19 @@ import java.util.ArrayList;
 
 public class Order {
     private int tableNr;
-    private ArrayList<String> notes;
+    private ArrayList<String> starterNotes;
+    private ArrayList<String> mainCourseNotes;
+    private ArrayList<String> dessertNotes;
     private int time;
-    private ArrayList<String> itemIDs;
+    private ArrayList<String> starterIDs;
+    private ArrayList<String> mainCourseIDs;
+    private ArrayList<String> dessertIDs;
     private ArrayList<String> starter;
     private ArrayList<String> mainCourse;
     private ArrayList<String> dessert;
-    private ArrayList<String> quantity;
+    private ArrayList<String> starterQuantity;
+    private ArrayList<String> mainCourseQuantity;
+    private ArrayList<String> dessertQuantity;
     private boolean starterready;
     private boolean mainCourseready;
     private boolean dessertready;
@@ -18,8 +24,10 @@ public class Order {
     private boolean completed;
 
     public Order( int tableNr, ArrayList<String> starter, ArrayList<String> mainCourse, ArrayList<String> dessert, boolean
-            starterready, boolean mainCourseready, boolean dessertready, ArrayList<String> notes, ArrayList<String> quantity,
-            int time, ArrayList<String> itemIDs){
+            starterready, boolean mainCourseready, boolean dessertready, ArrayList<String> notes, ArrayList<String> starterQuantity,
+            int time, ArrayList<String> starterIDs, ArrayList<String> mainCourseIDs, ArrayList<String> dessertIDs,
+            ArrayList<String> mainCourseQuantity, ArrayList<String> dessertQuantity, ArrayList<String> starterNotes,
+            ArrayList<String> mainCourseNotes, ArrayList<String> dessertNotes){
 
 
         this.tableNr = tableNr;
@@ -29,14 +37,40 @@ public class Order {
         this.starterready = false;
         this.mainCourseready = false;
         this.dessertready = false;
-        this.notes = notes;
-        this.quantity = quantity;
+        this.starterNotes = starterNotes;
+        this.starterQuantity = starterQuantity;
         this.time = time;
-        this.itemIDs = itemIDs;
+        this.starterIDs = starterIDs;
+        this.mainCourseIDs = mainCourseIDs;
+        this.dessertIDs = dessertIDs;
+        this.mainCourseQuantity = mainCourseQuantity;
+        this.dessertQuantity = dessertQuantity;
+        this.mainCourseNotes = mainCourseNotes;
+        this.dessertNotes = dessertNotes;
     }
 
-    public ArrayList<String> getItemIDs() {
-        return itemIDs;
+    public ArrayList<String> getStarterIDs() {
+        return starterIDs;
+    }
+
+    public ArrayList<String> getMainCourseIDs() {
+        return mainCourseIDs;
+    }
+
+    public ArrayList<String> getDessertIDs() {
+        return dessertIDs;
+    }
+
+    public ArrayList<String> getStarterQuantity() {
+        return starterQuantity;
+    }
+
+    public ArrayList<String> getMainCourseQuantity() {
+        return mainCourseQuantity;
+    }
+
+    public ArrayList<String> getDessertQuantity() {
+        return dessertQuantity;
     }
 
     public void setTableNr(int tableNr){
@@ -103,20 +137,16 @@ public class Order {
         return completed;
     }
 
-    public ArrayList<String> getNotes() {
-        return notes;
+    public ArrayList<String> getStarterNotes() {
+        return starterNotes;
     }
 
-    public void setNotes(ArrayList<String> notes) {
-        this.notes = notes;
+    public ArrayList<String> getMainCourseNotes() {
+        return mainCourseNotes;
     }
 
-    public ArrayList<String> getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(ArrayList<String> quantity) {
-        this.quantity = quantity;
+    public ArrayList<String> getDessertNotes() {
+        return dessertNotes;
     }
 
     public void setTime(int time) {
