@@ -131,9 +131,9 @@ public class ChefPage extends AppCompatActivity{
             ordersamples.add(ordernr3);*/
 
 
-            chefpageadapter = new ChefPageAdapter(getApplicationContext(), ordersamples);
-            orderArrayList.setAdapter(chefpageadapter);
-            orderArrayList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+            //chefpageadapter = new ChefPageAdapter(getApplicationContext(), ordersamples);
+            //orderArrayList.setAdapter(chefpageadapter);
+            //orderArrayList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         }
 
