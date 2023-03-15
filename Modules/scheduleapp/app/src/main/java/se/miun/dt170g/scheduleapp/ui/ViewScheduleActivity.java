@@ -28,7 +28,7 @@ import java.util.Locale;
 import se.miun.dt170g.scheduleapp.R;
 
 
-public class ViewSchduleActivity extends AppCompatActivity {
+public class ViewScheduleActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,11 +104,11 @@ public class ViewSchduleActivity extends AppCompatActivity {
 
 
         // Create the header row
-        TableRow headerRow = new TableRow(ViewSchduleActivity.this);
+        TableRow headerRow = new TableRow(ViewScheduleActivity.this);
         headerRow.setLayoutParams(new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT, TableLayout.LayoutParams.WRAP_CONTENT));
 
         // Add a TextView column for employee title
-        TextView empHeaderTitle = new TextView(ViewSchduleActivity.this);
+        TextView empHeaderTitle = new TextView(ViewScheduleActivity.this);
         empHeaderTitle.setText("Employees");
         empHeaderTitle.setGravity(Gravity.CENTER_VERTICAL);
         empHeaderTitle.setTextAppearance(this, android.R.style.TextAppearance_Medium);
@@ -121,7 +121,7 @@ public class ViewSchduleActivity extends AppCompatActivity {
 
         // Add TextViews for each day of the month to the header row
         for (int i = 1; i <= numDaysInMonth; i++) {
-            TextView dayOfMonthTitle = new TextView(ViewSchduleActivity.this);
+            TextView dayOfMonthTitle = new TextView(ViewScheduleActivity.this);
             dayOfMonthTitle.setText(String.format("%s %s", i, daysOfMonth[i - 1]));
             dayOfMonthTitle.setGravity(Gravity.CENTER_VERTICAL);
             dayOfMonthTitle.setTextAppearance(this, android.R.style.TextAppearance_Medium);
@@ -319,10 +319,10 @@ public class ViewSchduleActivity extends AppCompatActivity {
             public void onClick(View view) {
                 SharedPreferences sharedPref = getSharedPreferences("appPrefs", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPref.edit();
-                editor.putString("empId", "0"); //userInfo.getUsername()
+                editor.putString("empId", ""); //userInfo.getUsername()
                 editor.apply();
 
-                Intent intent = new Intent(ViewSchduleActivity.this, MainActivity.class);
+                Intent intent = new Intent(ViewScheduleActivity.this, MainActivity.class);
                 // Change view to ViewScheduleActivity
                 startActivity(intent);
             }

@@ -34,7 +34,7 @@ public class ScheduleBean {
 //        TypedQuery<Schedule> schedule = em.createNamedQuery("schedule.selectByEmployeeId", Schedule.class);
 //        schedule.setParameter("employeeId", employeeId);
 //        return schedule.getSingleResult();
-        return pm.getByColumnName(Schedule.class, "EMP_ID", String.valueOf(employeeId));
+        return pm.getById(Schedule.class, employeeId);
     }
 
     public void updateScheduleByEmployeeId(int employeeId, Integer mon, Integer tue, Integer wed, Integer thu, Integer fri, Integer sat, Integer sun) {

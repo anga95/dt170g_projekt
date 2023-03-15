@@ -1,5 +1,7 @@
 package se.miun.dt170g.scheduleapp.ui;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,19 +11,21 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
-import java.util.concurrent.ExecutionException;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 
 import se.miun.dt170g.scheduleapp.R;
-import se.miun.dt170g.scheduleapp.utils.HttpUtils;
+import se.miun.dt170g.scheduleapp.utils.Constants;
+import se.miun.dt170g.scheduleapp.utils.HttpAsyncTask;
 
 public class LoginActivity extends AppCompatActivity {
-
-    private static final String ANTONS_SKAFFERI_URL = "http://10.0.2.2:8080/AntonsSkafferi/api";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,90 +44,128 @@ public class LoginActivity extends AppCompatActivity {
         identifyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                JSONObject requestData = new JSONObject();
                 String uuid = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
-                String email = findViewById(R.id.editTextUserEmail).toString();
-                String empId = "";
+                TextView emailView = findViewById(R.id.editTextUserEmail);
+                String email = emailView.getText().toString();
 
-                // Check if the UUID is in the database
-                if (isEmailInDatabase(email, uuid)) {
-                    // If the UUID is in the database, retrieve the user info
-
-                    if (getUserInfoByUuid(uuid)) {
-                        empId = "1";
-                    } else {
-                        empId = "0";
-                    }
-
-                    // Save the user info in shared preferences
-                    SharedPreferences prefs = getSharedPreferences("appPrefs", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = prefs.edit();
-                    editor.putString("empId", empId); //empId.getUsername()
-                    editor.apply();
-
+                // Check if email is not like an email address using regex
+                if (!email.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-                    builder.setMessage("You are now logged in. Continue to schedule page?");
+                    builder.setMessage("Please enter your email address");
                     builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             // user clicked OK, continue with operation
-                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                            // Change view to ViewScheduleActivity
-                            startActivity(intent);
-                        }
-                    });
-                    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            // user cancelled the dialog, do nothing
+                            emailView.setText("");
+                            emailView.requestFocus();
                         }
                     });
                     AlertDialog dialog = builder.create();
                     dialog.show();
-
-                } else {
-                    // If the email is not in the database, prompt the user to contact an admin
-                    AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-                    builder.setTitle("User not found");
-                    builder.setMessage("Please contact the manager to register your account.");
-                    builder.setPositiveButton("OK", null);
-                    builder.show();
+                    return;
                 }
+
+                try {
+                    requestData.put("email", email);
+                    requestData.put("deviceId", uuid);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                // Create an instance of HttpAsyncTask
+                HttpAsyncTask httpAsyncTask = new HttpAsyncTask(new HttpAsyncTask.HttpAsyncTaskListener() {
+                    @Override
+                    public void onSuccess(HttpAsyncTask.HttpResponse response) {
+                        if(response != null) {
+                            int statusCode = response.getStatusCode();
+                            String empId = "";
+                            if (statusCode >= 200 && statusCode < 300) {
+                                JSONObject responseJson = response.getResponseData();
+                                empId = responseJson.optString("id");
+
+                                // Save the user info in shared preferences
+                                SharedPreferences prefs = getSharedPreferences("appPrefs", Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = prefs.edit();
+                                editor.putString("empId", empId); //empId.getUsername()
+                                editor.apply();
+
+                                AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+                                builder.setMessage("You are now logged in. Continue to schedule page?");
+                                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        // user clicked OK, continue with operation
+                                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                        // Change view to ViewScheduleActivity
+                                        startActivity(intent);
+                                    }
+                                });
+                                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        // user cancelled the dialog, do nothing
+                                    }
+                                });
+                                AlertDialog dialog = builder.create();
+                                dialog.show();
+                            } else {
+                                // Handle null response
+                                Log.d(TAG, "Empty json response");
+                            }
+                        } else {
+                            // Handle null response
+                            AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+                            builder.setTitle("Error");
+                            builder.setMessage("Bad response from server. Please try again.");
+                            builder.setPositiveButton("OK", null);
+                            builder.show();
+                        }
+                    }
+
+                    @Override
+                    public void onError(HttpAsyncTask.HttpResponse response) {
+                        // Handle error response
+                        AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+
+                        if(response == null) {
+                            builder.setTitle("Error");
+                            builder.setMessage("Could not connect to server. Please try again.");
+                            builder.setPositiveButton("OK", null);
+                        } else {
+                            int statusCode = response.getStatusCode();
+                            if (statusCode >= 400 && statusCode < 500) {
+                                // Client error
+                                builder.setTitle("Client error");
+                                builder.setMessage("Something went wrong. Please try again.");
+                            } else if (statusCode >= 500 && statusCode < 600) {
+                                // Server error
+
+                                builder.setTitle("Server error");
+                                builder.setMessage("Something went wrong. Please try again.");
+                            } else {
+                                // Other error
+                                builder.setTitle("User not found");
+                                builder.setMessage("Please contact the manager to register your account.");
+                            }
+                        }
+
+
+                        // If the email is not in the database, prompt the user to contact an admin
+                        builder.setPositiveButton("OK", null);
+                        builder.show();
+
+
+                    }
+                });
+
+
+                String url = Constants.API_BASE_URL + "/employee/verify";
+                // Make a GET request
+                //httpAsyncTask.execute(url, "GET");
+
+                // Make a POST request
+                httpAsyncTask.execute(url, "POST", requestData.toString());
+
+
             }
         });
-
-    }
-
-    private Boolean getUserInfoByUuid(String uuid) {
-        // api call to get user info by uuid
-        String url = ANTONS_SKAFFERI_URL + "/test";
-        HttpUtils httpUtils = new HttpUtils();
-
-        String result;
-        try {
-            result = httpUtils.execute(url).get();
-        } catch (ExecutionException | InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        if (result.equals("Hello World")) {
-            return true;
-        }
-        return true; //TODO: fix this
-    }
-
-    private boolean isEmailInDatabase(String email, String uuid) {
-        // api call to check if email is in database
-
-        // api call to get user info by uuid
-        String url = ANTONS_SKAFFERI_URL + "/verify-emp?email=" + email + "&uuid=" + uuid;
-        HttpUtils httpUtils = new HttpUtils();
-
-        String result;
-        try {
-            result = httpUtils.execute(url).get();
-        } catch (ExecutionException | InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        if (result.equals("Hello World")) {
-            return true;
-        }
-        return true;
     }
 }

@@ -15,13 +15,16 @@
         android:theme="@style/Theme.ScheduleApp"
         tools:targetApi="31">
         <activity
+            android:name=".ui.ViewEmpsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.ViewEmpSchedulesActivity"
             android:exported="false" />
         <activity
             android:name=".ui.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.ViewSchduleActivity"
+            android:name=".ui.ViewScheduleActivity"
             android:exported="false" />
         <activity
             android:name=".ui.MainActivity"

@@ -8,14 +8,14 @@
 
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         tools:ignore="MissingConstraints">
 
         <Button
-            android:id="@+id/previous_month"
+            android:id="@+id/previous_month2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0"
@@ -31,7 +31,7 @@
             app:icon="@android:drawable/ic_media_play" />
 
         <TextView
-            android:id="@+id/month_year_title"
+            android:id="@+id/month_year_title2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -42,7 +42,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/next_month"
+            android:id="@+id/next_month2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0"
@@ -58,7 +58,7 @@
     </LinearLayout>
 
     <HorizontalScrollView
-        android:id="@+id/schedule_scroll"
+        android:id="@+id/schedule_scroll2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="50dp"
@@ -67,7 +67,7 @@
         tools:layout_editor_absoluteY="50dp">
 
         <TableLayout
-            android:id="@+id/schedule_table"
+            android:id="@+id/schedule_table2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/white" />
@@ -78,12 +78,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/schedule_scroll"
+        app:layout_constraintBottom_toBottomOf="@+id/schedule_scroll2"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints">
 
         <Button
-            android:id="@+id/forget_user_button"
+            android:id="@+id/forget_user_button2"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_weight="0"

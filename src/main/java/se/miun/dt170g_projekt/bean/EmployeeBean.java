@@ -4,7 +4,7 @@ import se.miun.dt170g_projekt.entities.*;
 import se.miun.dt170g_projekt.persistanceManager.Manager;
 
 import javax.naming.NamingException;
-import java.util.ArrayList;
+import java.sql.Date;
 import java.util.List;
 
 @Stateless
@@ -17,6 +17,13 @@ public class EmployeeBean {
     public void create(Employee empEntity){
         pm.create(empEntity);
     }
+    public void createLeave(LeaveDay leaveEntity){
+        pm.create(leaveEntity);
+    }
+
+    public void createExtra(ExtraDay extraEntity){
+        pm.create(extraEntity);
+    }
 
     public List<Employee> getEmployees() {
         return pm.getAll(Employee.class);
@@ -27,12 +34,12 @@ public class EmployeeBean {
         return pm.getById(Employee.class, id);
     }
 
-    public Employee getEmployeeByDeviceId(String deviceId) {
-        return pm.getByColumnName(Employee.class, "device_id", deviceId);
-    }
+//    public Employee getEmployeeByDeviceId(String deviceId) {
+//        return pm.getByEmail(Employee.class, "DEVICE_ID", deviceId);
+//    }
 
     public Employee getEmployeeByEmail(String email) {
-        return pm.getByColumnName(Employee.class, "email", email);
+        return pm.getByEmail(Employee.class, email);
     }
 
     public <T, U, X> List<X> getEmployeesWithSchedules(Class<T> table1, Class<U> table2, String column1, String column2, Class<X> returnType) {
@@ -40,16 +47,36 @@ public class EmployeeBean {
     }
 
     // update by id
-//    public void updateEmployeeById(int id, String name, String deviceId, String email, String phone) {
-//        TypedQuery<Employee> EmployeeList = em.createNamedQuery("employee.updateById", Employee.class);
-//        EmployeeList.setParameter("id", id);
-//        EmployeeList.setParameter("name", name);
-//        EmployeeList.setParameter("deviceId", deviceId);
-//        EmployeeList.setParameter("email", email);
-//        EmployeeList.setParameter("phone", phone);
-//        EmployeeList.executeUpdate();
-//    }
+    public void updateEmployeeById(Employee empEntity) {
+        pm.update(empEntity);
+    }
 
+    public List<LeaveDay> getLeaves(String datum) {
+        return pm.getLeaves(LeaveDay.class, datum);
+    }
+    public List<ExtraDay> getExtras(String datum) {
+        return pm.getExtras(ExtraDay.class, datum);
+    }
+
+    public LeaveDay getLeaveByDateAndEmp(Date leaveDate, int empId) {
+        return pm.getLeaveByDateAndEmp(LeaveDay.class, leaveDate, empId);
+    }
+
+    public void updateLeave(LeaveDay leaveInDB) {
+        pm.update(leaveInDB);
+    }
+
+    public ExtraDay getExtraByDateAndEmp(Date extraDate, int empId) {
+        return pm.getExtraByDateAndEmp(ExtraDay.class, extraDate, empId);
+    }
+
+    public void updateExtra(ExtraDay extraInDB) {
+        pm.update(extraInDB);
+    }
+
+    public List<Shift> getShifts() {
+        return pm.getAll(Shift.class);
+    }
 //    public void deleteEmployee(int id) {
 //        TypedQuery<Employee> EmployeeList = em.createNamedQuery("employee.removeById", Employee.class);
 //        EmployeeList.setParameter("id", id);

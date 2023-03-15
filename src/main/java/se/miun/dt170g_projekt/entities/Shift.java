@@ -3,11 +3,12 @@ package se.miun.dt170g_projekt.entities;
 import jakarta.persistence.*;
 
 import java.sql.Time;
+import java.time.LocalTime;
 import java.util.Objects;
 
 @Entity
 @Table(name = "SHIFT")
-public class Shift {
+public class Shift implements java.io.Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "ID", nullable = false)
@@ -19,10 +20,10 @@ public class Shift {
 
     @Basic
     @Column(name = "START_TIME", nullable = false)
-    private Time startTime;
+    private LocalTime startTime;
     @Basic
-    @Column(name = "END_TIME", nullable = true)
-    private Time endTime;
+    @Column(name = "END_TIME", nullable = false)
+    private LocalTime endTime;
 
     public int getId() {
         return id;
@@ -32,19 +33,19 @@ public class Shift {
         this.id = id;
     }
 
-    public Time getStartTime() {
+    public LocalTime getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Time startTime) {
+    public void setStartTime(LocalTime startTime) {
         this.startTime = startTime;
     }
 
-    public Time getEndTime() {
+    public LocalTime getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Time endTime) {
+    public void setEndTime(LocalTime endTime) {
         this.endTime = endTime;
     }
 
@@ -54,7 +55,10 @@ public class Shift {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Shift shift = (Shift) o;
-        return id == shift.id && Objects.equals(shiftName, shift.shiftName) && Objects.equals(startTime, shift.startTime) && Objects.equals(endTime, shift.endTime);
+        return id == shift.id &&
+                Objects.equals(shiftName, shift.shiftName) &&
+                Objects.equals(startTime, shift.startTime) &&
+                Objects.equals(endTime, shift.endTime);
     }
 
     // hashCode

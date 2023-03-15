@@ -16,13 +16,18 @@ public class ExtraDay {
     @Basic
     @Column(name = "EXTRA_DATE", nullable = false)
     private Date extraDate;
-    @Basic
-    @Column(name = "START_TIME", nullable = false)
-    private Time startTime;
-    @Basic
-    @Column(name = "END_TIME", nullable = false)
-    private Time endTime;
 
+    @Basic
+    @Column(name = "SHIFT", nullable = false)
+    private int shiftId;
+
+    public int getShiftId() {
+        return shiftId;
+    }
+
+    public void setShiftId(int shiftId) {
+        this.shiftId = shiftId;
+    }
 
     @Basic
     @Column(name = "EMP_ID", nullable = false)
@@ -52,38 +57,18 @@ public class ExtraDay {
         this.extraDate = extraDate;
     }
 
-    public Time getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(Time startTime) {
-        this.startTime = startTime;
-    }
-
-    public Time getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(Time endTime) {
-        this.endTime = endTime;
-    }
-
     // equals
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ExtraDay extraDay = (ExtraDay) o;
-        return id == extraDay.id &&
-                empId == extraDay.empId &&
-                extraDate.equals(extraDay.extraDate) &&
-                startTime.equals(extraDay.startTime) &&
-                endTime.equals(extraDay.endTime);
+        return id == extraDay.id && empId == extraDay.empId && Objects.equals(extraDate, extraDay.extraDate);
     }
 
     // hashCode
     @Override
     public int hashCode() {
-        return Objects.hash(id, extraDate, startTime, endTime, empId);
+        return Objects.hash(id, extraDate, empId);
     }
 }
