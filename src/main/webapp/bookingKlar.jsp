@@ -8,13 +8,5 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ include file="head.jsp" %>
 <%@ include file="navbar.jsp" %>
-<div class="container mt-5">
-  <p><%= request.getAttribute("savedValues") %></p>
-</div>
-<div class="container mt-5">
-  <p><%= request.getAttribute("savedValues2") %></p>
-</div>
-<div class="container mt-5">
-  <p><%= request.getAttribute("savedValues3") %></p>
-</div>
+<h1 class="text-center">Tack för din bokning!</h1>
 <%@ include file="footer.jsp" %>

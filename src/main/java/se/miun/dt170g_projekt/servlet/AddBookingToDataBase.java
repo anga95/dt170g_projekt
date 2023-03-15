@@ -57,7 +57,7 @@ public class AddBookingToDataBase extends HttpServlet {
 
 
         request.setAttribute("savedValues2", savedValues);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/savedValues.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/bookingKlar.jsp");
         dispatcher.forward(request, response);
 
 
